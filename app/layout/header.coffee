@@ -5,7 +5,7 @@ header = ($scope, Auth) ->
   $scope.login = Auth.login
   $scope.isAuth = Auth.isAuthenticated
 
-angular.module('peerReview').controller 'header', [
+angular.module('lime-topcoder').controller 'header', [
   '$scope'
   'Auth'
   header

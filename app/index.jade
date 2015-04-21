@@ -11,17 +11,14 @@
 - jsFiles.push('app.constants')
 - jsFiles.push('app.interceptors')
 - jsFiles.push('app.routes')
-- jsFiles.push('review-status/review-status')
-- jsFiles.push('review-status/review-status.filter')
-- jsFiles.push('edit-review/edit-review')
+- jsFiles.push('landing/landing')
+- jsFiles.push('learn/learn')
 - jsFiles.push('layout/header')
-- jsFiles.push('completed-review/completed-review')
 - jsFiles.push('services/api.service')
 - jsFiles.push('services/auth-token.service')
 - jsFiles.push('services/auth.service')
 - jsFiles.push('services/helpers.service')
 - jsFiles.push('services/review.service')
-- jsFiles.push('services/scorecard.service')
 - jsFiles.push('services/user.service')
 
 doctype html
@@ -29,7 +26,7 @@ html
   head
     meta(charset="utf-8")
 
-    title App Review
+    title Lime Topcoder
 
     meta(name="description", content="")
 
@@ -49,77 +46,16 @@ html
     link(rel="stylesheet", href="content/css/footer.css", type='text/css')
     // endbuild
 
-  body(ng-app="peerReview")
-    //- Header
-    nav.navbar.navbar-default(ng-controller="header")
-      .content
-        .navbar-header
-          button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          img#logo(src="content/images/logo.png")
-        ul#navbar-top.nav.navbar-nav.navbar-right
-          li#login(ng-hide="isAuth()") #[a(href="#", ng-click="login()") Log In]
-          li#logout(ng-show="isAuth()") #[a(href="#", ng-click="logout()") Log Out]
-          li #[a.separator |]
-          li #[a(href="#") Contact]
-          li #[a.separator |]
-          li #[a(href="#") Help Center]
-          li #[a.separator |]
-          li #[a(href="#") Search]
-        div#navbar.navbar-collapse.collapse
-          ul#navbar-bottom.nav.navbar-nav.navbar-right
-            li #[a(href="https://www.topcoder.com/challenges/") Challenges]
-            li #[a(href="https://www.topcoder.com/community/") Community]
-            li #[a(href="https://www.topcoder.com/about/") About]
-            li #[a.blog(href="https://www.topcoder.com/blog/") Blog]
-        a#signup(ng-hide="isAuth()", href="#") Sign Up
-        a#my-account(ng-show="isAuth()", href="#", ng-click="isActive = !isActive", ng-init="isActive = false") My Account
-          i(ng-class="{'active': isActive}")
-      ul#navbar-hidden
-        li#login-small(ng-hide="isAuth()") #[a(href="#") Log In]
-        li#logout-small(ng-show="isAuth()") #[a(href="#") Log Out]
-        li.signup #[a(href="#") Sign up]
-    //- End Header
+  body(ng-app="lime-topcoder")
+    header
 
     .view-container
       div(ui-view)
 
-    footer#footer
-      .container
-        .connected
-          section.social
-            h4 Get Connected
+    footer
 
-            ul
-              li #[a.fb(href='https://www.facebook.com/topcoder') FB]
-              li #[a.tw(href='http://www.twitter.com/topcoder') TW]
-              li #[a.gp(href='https://plus.google.com/u/0/b/104268008777050019973/104268008777050019973/posts') GP]
-              li #[a.in(href='https://www.linkedin.com/company/topcoder') IN]
-
-            .clear
-          section.updates
-            .row
-              form#emailForm(style='display:block')
-                input.email.isBlured(type='email', name='EMAIL', placeholder='Your email address', maxlength='64', style='display: block;')
-
-                input.btn.btnSubmitFooter(type='button', value='Submit')
-
-        .copyright
-          section
-            br
-            |&copy; 2014 topcoder. All Rights Reserved.
-
-            br
-
-            a.privacyStmtLink(href='http://topcoder.com/community/how-it-works/privacy-policy/') Privacy Policy
-            |  |&#32;
-            a.legalDisclaimerLink(href='http://topcoder.com/community/how-it-works/terms/') Terms
-        .clear
-
-    script(src="https://cdn.auth0.com/js/lock-7.0.min.js", type="text/javascript")
+    //- We can delete if not using v3 auth
+    // script(src="https://cdn.auth0.com/js/lock-7.0.min.js", type="text/javascript")
 
     // build:js(.) scripts/vendor.js
     // bower:js

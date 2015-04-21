@@ -7,7 +7,7 @@ UserService = (ENV, ApiService, jwtHelper, AuthToken) ->
     url = ENV.API_URL + '/users/' + userId
     ApiService.requestHandler 'GET', url
 
-angular.module('peerReview').factory 'UserService', [
+angular.module('lime-topcoder').factory 'UserService', [
   'ENV'
   'ApiService'
   'jwtHelper'

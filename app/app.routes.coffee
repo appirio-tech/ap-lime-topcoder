@@ -2,21 +2,14 @@
 
 routes = ($stateProvider, $urlRouterProvider, $httpProvider) ->
   states =
-    reviewStatus:
+    landing:
       url         : '/'
-      templateUrl : 'review-status/review-status.html'
-      controller  : 'reviewStatus'
-      authenticate: true
-    completed:
-      url         : '/:challengeId/reviews/:reviewId/completed'
-      templateUrl : 'completed-review/completed-review.html'
-      controller  : 'completedReview'
-      authenticate: true
-    edit:
-      url         : '/:challengeId/reviews/:reviewId/edit'
-      templateUrl : 'edit-review/edit-review.html'
-      controller  : 'editReview'
-      authenticate: true
+      templateUrl : 'landing/landing.html'
+      controller  : 'landing'
+    learn:
+      url         : '/learn'
+      templateUrl : 'learn/learn.html'
+      controller  : 'learn'
 
   for name, state of states
     $stateProvider.state name, state
@@ -25,7 +18,7 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider) ->
 
   $httpProvider.interceptors.push 'HeaderInterceptor'
 
-angular.module('peerReview').config [
+angular.module('lime-topcoder').config [
   '$stateProvider'
   '$urlRouterProvider'
   '$httpProvider'

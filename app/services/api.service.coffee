@@ -17,4 +17,4 @@ ApiService = ($http) ->
 
     $http options
 
-angular.module('peerReview').factory 'ApiService',['$http', ApiService]
+angular.module('lime-topcoder').factory 'ApiService',['$http', ApiService]
