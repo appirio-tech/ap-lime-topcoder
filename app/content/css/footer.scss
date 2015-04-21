@@ -1,0 +1,193 @@
+#footer * {
+  box-sizing: content-box;
+  line-height: 18px;
+}
+
+#footer section {
+  display: block;
+}
+#footer {
+  background-color: #333;
+  color: #959595;
+  min-height: 150px;
+  z-index: 0;
+  position: relative;
+}
+#footer .container {
+  overflow: visible;
+  padding-top: 26px;
+  min-height: 100px;
+  width: 1010px;
+  margin: 0 auto;
+  position: relative;
+}
+#footer .connected {
+  float: right;
+}
+#footer .connected h4 {
+  padding-bottom: 16px;
+  margin-right: 20px;
+  float: left;
+  font-weight: 400;
+  font-family: lato, Arial, Helvetica, sans-serif;
+}
+#footer h4 {
+  display: block;
+  color: #D8D8D8;
+  text-indent: 2px;
+  font-size: 20px;
+}
+#footer .social ul {
+  overflow: hidden;
+  margin-top: 2px;
+  display: block;
+  float: left;
+  list-style: none;
+}
+#footer .social ul li:first-child {
+  margin-left: 0;
+}
+
+#footer .social ul li {
+  float: left;
+  height: 35px;
+  width: 26px;
+  margin-right: 2px;
+}
+#footer .social ul li a {
+  display: block;
+  text-align: left;
+  text-indent: -100px;
+  overflow: hidden;
+  height: 27px;
+  width: 27px;
+  background: url('../images/ico-social.png') no-repeat;
+  background-position: 0 0;
+}
+#footer .social ul li a:hover {
+  background-position: -45px 0;
+}
+#footer .social ul li .tw {
+  background-position: 0 -29px;
+}
+#footer .social ul li .tw:hover {
+  background-position: -45px -29px;
+}
+#footer .social ul li .gp {
+  background-position: 0 -57px;
+}
+#footer .social ul li .gp:hover {
+  background-position: -45px -57px;
+}
+#footer .social ul li .in {
+  background-position: 0 -86px;
+}
+#footer .social ul li .in:hover {
+  background-position: -45px -86px;
+}
+#footer .clear {
+  clear: both;
+}
+
+#footer .updates {
+  margin-bottom: 25px;
+}
+#footer .row {
+  width: 349px;
+}
+#footer form {
+  display: block;
+}
+#footer .updates .email {
+  float: left;
+  border-radius: 4px 0 0 4px;
+  width: 233px;
+  vertical-align: top;
+  color: #a1a1a1;
+  font-size: 15px;
+  box-shadow: none;
+}
+
+#footer input {
+  font-family: lato, Arial, Helvetica, sans-serif;
+  outline: 0;
+}
+#footer input[type=email] {
+  border: none;
+  padding: 6px;
+  margin: 0;
+  height: 20px;
+  line-height: 20px;
+  background-color: #3f4143;
+}
+
+#footer .updates .btn {
+  float: left;
+  border-radius: 0 4px 4px 0;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  height: 16px;
+  width: 80px;
+}
+#footer .updates .btn:hover {
+  background-color: #ff7a00;
+}
+#footer .btnSubmitFooter {
+  font-size: 15px;
+}
+
+#footer .btn {
+  display: inline-block;
+  background-color: #f90;
+  color: #fff;
+  border-bottom: 4px solid #ff7a00;
+  text-align: center;
+  position: relative;
+}
+
+#footer .copyright {
+  float: left;
+  font-size: 15px;
+}
+#footer .copyright a {
+  color: #a1a1a1;
+  text-decoration: underline;
+  font-weight: 400;
+}
+#footer .privacyStmtLink {
+  padding-right: 5px;
+}
+#footer .legalDisclaimerLink {
+  padding-left: 5px;
+}
+
+@media screen and (max-width: 1010px){
+  #footer {
+    background-color: #333;
+    color: #959595;
+    position: relative;
+    min-height: 244px;
+    padding-bottom: 22px;
+  }
+
+  #footer .container {
+    min-height: 175px !important;
+    width: auto;
+    margin: 0 10px;
+    padding-top: 0;
+  }
+
+  #footer .connected {
+    margin-top: 20px;
+    width: 100%;
+    float: right;
+  }
+
+  #footer .connected h4 {
+    display: block;
+    padding-bottom: 6px;
+    float: left;
+    line-height: 38px;
+  }
+}

@@ -1,0 +1,33 @@
+div.container(ng-show="loaded")
+  .links
+    h5 #[a.back(href="https://www.topcoder-dev.com/challenge-details/30049130/?type=develop&noncache=true") #[i] Back to Challenge]
+
+  h2.challenge-link Swift Peer Review 1
+
+  p.help-center Remember to uphold honesty and fair judging principles as described in the&#32;
+    #[a(href="http://help.topcoder.com") help center].
+
+
+  .peer-reviews
+    h3 Your Reviews ({{completed}} of 5 completed)
+
+    h4 All Reviews Due: {{reviewsDue}}
+
+    table.table.table-bordered.table-striped
+      thead
+        tr
+          th Reviews
+          th Status
+          th Submission
+      tbody
+        tr(ng-repeat="review in reviews | orderBy: 'id'")
+          td Review {{$index + 1}}
+          td(ng-if="review.committed === 1")
+            a(ui-sref="completed({challengeId: $parent.challengeId, reviewId: review.id})") {{review.committed | reviewStatus}}
+          td(ng-if="review.committed === 0")
+            a(ui-sref="edit({challengeId: $parent.challengeId, reviewId: review.id})") {{review.committed | reviewStatus}}
+          td
+            a(ng-href="https://software.{{domain}}{{submissionDownloadPath}}{{review.uploadId}}")
+              span.glyphicon.glyphicon-download-alt
+
+  button.start-review(type="button", ng-click="getNextReview()") Start another review

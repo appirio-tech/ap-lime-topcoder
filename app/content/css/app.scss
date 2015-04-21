@@ -1,0 +1,176 @@
+// bower:scss
+// endbower
+
+body {
+  padding: 0;
+}
+.view-container {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  min-height: 600px;
+}
+// Shared (review-status.html, edit-review.html, completed-review.html)
+.links {
+  height: 15px;
+
+  h5 {
+    font-size: 19px;
+    font-weight: normal;
+  }
+}
+
+.back {
+  color: #FF8A00;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: #FFB800;
+    text-decoration: none;
+  }
+
+  i {
+    background: url('../images/arrow-prev.png') no-repeat;
+    height: 13px;
+    width: 8px;
+    display: inline-block;
+  }
+}
+
+// Review Status (review-status.html)
+h2.challenge-link {
+  font-style: normal;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.help-center {
+  margin-top: 10px;
+}
+.help-center a {
+  color: #FF8A00;
+}
+.help-center a:hover {
+  color: #FFB800;
+  text-decoration: none;
+}
+.peer-reviews {
+  margin-top: 30px;
+}
+.peer-reviews .table {
+  margin-top: 25px;
+  width: 320px;
+}
+button.start-review {
+  background-image: url('../images/headerBG.gif');
+  border: 1px solid #999999;
+}
+
+// Shared (edit-review.html, completed-review.html)
+.review-info {
+  padding: 10px 0;
+  margin-left: 17px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.review-info p {
+  margin-bottom: 0;
+  font-size: 13px;
+}
+
+// Edit Review (edit-review.html)
+.scorecard-container {
+  margin-top: 20px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+.scorecard-container .challenge-info {
+  height: 70px;
+  margin-left: 15px;
+  margin-top: 9px;
+}
+.scorecard-container .challenge-info img {
+  height: 65px;
+  width: 65px;
+  margin-right: 20px;
+  float: left;
+}
+.scorecard-container .challenge-info h2 {
+  float: left;
+}
+.scorecard-container .form-container {
+  margin-top: 25px;
+  margin-left: 17px;
+  border-radius: 5px;
+  border: 1px solid #e1e1e1;
+  background-color: #f7f7f7;
+}
+#review-form .scorecard {
+  margin-top: 10px;
+}
+#review-form .scorecard h5 {
+  padding: 4px;
+  margin-bottom: 0;
+}
+#review-form .scorecard p {
+  padding: 4px;
+}
+#review-form .scorecard .topic {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+#review-form .scorecard .description {
+  margin-left: 5px;
+  background-color: #f7f7f7;
+  margin-top: 3px;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+#review-form .scorecard .guideline {
+  padding-bottom: 0;
+  padding-top: 0;
+  margin-left: 15px;
+  margin-bottom: 0;
+}
+#review-form .scorecard select {
+  margin: 10px 15px;
+  width: 100px;
+}
+#review-form .scorecard textarea {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 18px;
+  min-width: 90%;
+  max-width: 90%;
+}
+#review-form .scorecard hr {
+  border-top: 1px solid #e1e1e1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.required {
+  border: 1px solid red;
+}
+.required-message {
+  color: red;
+  margin-left: 15px;
+}
+.lastHr {
+  display: none;
+}
+.scorecard-container button {
+  background-image: url('../images/headerBG.gif');
+  border: 1px solid #999999;
+  float: right;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 17px;
+}
+.clear {
+  clear: both;
+  display: block;
+}
+
+// Completed Review (completed-review.html)
+#review-form .scorecard .answer {
+  margin-top: 8px;
+  margin-left: 15px;
+}
