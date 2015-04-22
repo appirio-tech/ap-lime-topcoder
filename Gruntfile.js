@@ -95,7 +95,7 @@ module.exports = function (grunt) {
         tasks: ['newer:coffee:test', 'karma:unit']
       },
       sass: {
-        files: ['<%= yeoman.app %>/content/css/*.scss'],
+        files: ['<%= yeoman.app %>/content/css/**/*.scss'],
         tasks: ['sass']
       },
       gruntfile: {
@@ -273,21 +273,6 @@ module.exports = function (grunt) {
           src   : '{,*/}*.css',
           dest  : '.tmp/content/css/'
         }]
-      }
-    },
-
-    // Automatically inject Bower components into the app
-    wiredep: {
-      options: {
-        cwd: ''
-      },
-      app: {
-        src: ['.tmp/index.html'],
-        ignorePath:  /\.\.\//
-      },
-      sass: {
-        src: ['<%= yeoman.app %>/content/css/{,*/}*.{scss,sass}'],
-        ignorePath: /(\.\.\/){1,2}bower_components\//
       }
     },
 
@@ -517,7 +502,6 @@ module.exports = function (grunt) {
       'ngconstant:development',
       'js2coffee',
       'clean:constants',
-      'wiredep',
       'concurrent:server',
       'autoprefixer:server',
       'connect:livereload',
@@ -544,7 +528,6 @@ module.exports = function (grunt) {
     'js2coffee',
     'clean:constants',
     'concurrent:dist',
-    'wiredep',
     'useminPrepare',
     'autoprefixer',
     'concat:generated',
