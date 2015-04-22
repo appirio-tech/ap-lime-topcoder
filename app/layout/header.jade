@@ -1,1 +1,22 @@
-p header
+nav.navbar.navbar-default
+  div.container-fluid
+    div.navbar-header
+      button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#lime-nav-bar")
+        span.sr-only Togger Navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href="#") Lime
+    div.collapse.navbar-collapse(id="lime-nav-bar")
+      ul.nav.navbar-nav.navbar-right
+        li.active
+          a(href="#") Challenges
+        li
+          a(href="#") Learn
+        li
+          a(href="#") Help
+        li
+          a(href="#") Become a member
+        li
+          img.login-thumb.pull-left
+          a.pull-left(href="#") Log in

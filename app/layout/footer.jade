@@ -1,1 +1,15 @@
-p footer
+nav.navbar.navbar-default
+  div.container-fluid
+    div.navbar-header
+      button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#lime-nav-bar")
+        span.sr-only Togger Navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href="#") Lime
+    div.collapse.navbar-collapse(id="lime-nav-bar")
+      form.navbar-form.navbar-right(role="search")
+        span Stay Informed
+        div.form-group
+          input.form-control(type="text", placeholder="Your Email")
+        button.btn.btn-default(type="submit") OK

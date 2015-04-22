@@ -1,3 +1,6 @@
-header {
+@import 'partials/combined';
 
+header {
+  background-color: $black;
+  color: $white;
 }

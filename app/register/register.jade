@@ -1,0 +1,23 @@
+.container
+  .logo
+    img(src="")
+  div.col-xs-12(rel="welcome-msg")
+    div(rel="title")
+      h5 Welcome friend.
+    div(rel="description")
+      p We're happy to have you join our community.
+      p Please tell us alittle bit about yourself.
+  div(rel="form")
+    div.col-xs-12.col-md-6
+      input.form-group.form-control(type="text", placeholder="Firstname")
+      input.form-group.form-control(type="text", placeholder="Lastname")
+      input.form-group.form-control(type="text", placeholder="Username")
+      input.form-group.form-control(type="text", placeholder="Age")
+    div.col-xs-12.col-md-6
+      input.form-group.form-control(type="text", placeholder="Select Country")
+      input.form-group.form-control(type="text", placeholder="Email")
+      input.form-group.form-control(type="text", placeholder="Password")
+      input.form-group.form-control(type="checkbox", id="agree")
+      label(for="agree") Agree to terms and privacy policy
+  div.col-xs-12(rel="submit")
+    input.pull-right(type="submit", value="Register")
