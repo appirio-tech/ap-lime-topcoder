@@ -18,7 +18,6 @@
 - jsFiles.push('services/auth-token.service')
 - jsFiles.push('services/auth.service')
 - jsFiles.push('services/helpers.service')
-- jsFiles.push('services/review.service')
 - jsFiles.push('services/user.service')
 
 doctype html
@@ -33,12 +32,10 @@ html
     meta(name="viewport", content="width=device-width")
 
     // build:css(.) content/css/vendor.css
-    // bower:css
     each bowerCssFile in bowerCssFiles
       link(rel="stylesheet", href="bower_components/#{bowerCssFile}.css")
-
-    // endbower
     // endbuild
+
     // build:css(.tmp) content/css/app.css
     link(rel="stylesheet", href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700', type='text/css')
     link(rel="stylesheet", href="content/css/app.css", type='text/css')
@@ -47,25 +44,21 @@ html
     // endbuild
 
   body(ng-app="lime-topcoder")
-    header
+    header(ng-include="'layout/header.html'")
 
-    .view-container
-      div(ui-view)
+    .view-container(ui-view)
 
-    footer
+    footer(ng-include="'layout/footer.html'")
 
     //- We can delete if not using v3 auth
     // script(src="https://cdn.auth0.com/js/lock-7.0.min.js", type="text/javascript")
 
     // build:js(.) scripts/vendor.js
-    // bower:js
     each bowerJsFile in bowerJsFiles
       script(src="bower_components/#{bowerJsFile}.js", type="text/javascript")
-    // endbower
     // endbuild
 
     // build:js({.tmp,app}) scripts/app.js
     each jsFile in jsFiles
       script(src="#{jsFile}.js", type="text/javascript")
     // endbuild
-

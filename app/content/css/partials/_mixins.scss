@@ -1,0 +1,27 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin font-line($pt) {
+  font-size: ($pt * 1px);
+
+  @include line-height($pt * 1.20);
+}
+
+@mixin line-height($pt) {
+  line-height: ($pt * 1px);
+}
+
+@mixin source-sans() {
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+@mixin source-sans-bold() {
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}

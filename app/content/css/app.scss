@@ -1,6 +1,15 @@
-// bower:scss
-// endbower
+@import 'partials/combined';
 
 body {
   padding: 0;
+  margin: 0;
+  background-color: $dark-gray;
+}
+
+.container {
+  width: 1200px;
+}
+
+header {
+  background-color: $tc-btn-dark-orange;
 }
