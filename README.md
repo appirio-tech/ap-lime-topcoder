@@ -17,6 +17,11 @@ If you don't have compass installed run the following:
  - Windows    - gem install compass
  - Linux/OS X - sudo gem install compass
 
+Install dependencies with:
+
+ - npm install
+ - bower install
+
 ## Build & development
 
 - To run locally: `grunt serve`
