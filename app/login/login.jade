@@ -1,0 +1,18 @@
+.container.login
+  .logo
+    img(src="")
+  div.col-xs-12(rel="welcome-msg")
+    div(rel="title")
+      span Welcome back.
+    div(rel="description")
+      p Please sign in.
+  div.col-md-6.row
+    div(rel="form")
+      div.col-xs-12
+        input.form-group.form-control(type="text", placeholder="Username")
+        input.form-group.form-control(type="text", placeholder="Password")
+    div.col-xs-12(rel="submit")
+      a.pull-left(href="#/forgotpassword") Forgot your password?
+      input.btn.btn-primary.pull-right(type="submit", value="Sign In")
+    div.col-xs-12
+      a.pull-left(href="#/register") Register?

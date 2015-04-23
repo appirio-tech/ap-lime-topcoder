@@ -3,8 +3,8 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: $dark-gray;
-  color: $white;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 .container {
@@ -17,4 +17,7 @@ body {
 
 .container div[rel="welcome-msg"] div[rel="description"] {
 	font-size: 14px;
+}
+
+.container.login {
 }

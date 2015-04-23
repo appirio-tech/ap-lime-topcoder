@@ -10,6 +10,10 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider) ->
       url         : '/learn'
       templateUrl : 'learn/learn.html'
       controller  : 'learn'
+    login:
+      url         : '/login'
+      templateUrl : 'login/login.html'
+      controller  : 'login'
     register:
       url         : '/register'
       templateUrl : 'register/register.html'
