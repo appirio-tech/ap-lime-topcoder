@@ -1,9 +1,7 @@
-.container
-  .pitch
-    h1 Learn about the Program'use strict'
+'use strict'
 
-learn = () ->
+register = () ->
 
-angular.module('lime-topcoder').controller 'learn', [
-  learn
+angular.module('lime-topcoder').controller 'register', [
+  register
 ]

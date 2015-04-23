@@ -4,3 +4,8 @@ header {
   background-color: $black;
   color: $white;
 }
+
+header nav.navbar {
+	background-color: inherit;
+	border: none;
+}

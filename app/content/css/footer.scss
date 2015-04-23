@@ -1,3 +1,31 @@
-footer {
+@import 'partials/combined';
 
+footer {
+  background-color: $black;
+  color: $white;
+}
+
+footer nav.navbar {
+	background-color: inherit;
+	border: none;
+}
+
+footer ul.social li a {
+  display: block;
+  text-align: left;
+  text-indent: -100px;
+  overflow: hidden;
+  height: 27px;
+  width: 27px;
+  background: url('../images/ico-social.png') no-repeat;
+  background-position: 0 0;
+}
+footer ul.social li a:hover {
+  background-position: -45px 0;
+}
+footer ul.social li .tw {
+  background-position: 0 -29px;
+}
+footer ul.social li .tw:hover {
+  background-position: -45px -29px;
 }
