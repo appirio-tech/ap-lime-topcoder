@@ -1,21 +1,22 @@
 'use strict'
 
-Auth = (ENV, $window, AuthToken, $state, $stateParams) ->
+Auth = (ENV, $window, AuthToken, $state, $stateParams, $cookies) ->
   auth0 = new Auth0
     domain: ENV.auth0Domain
     clientID: ENV.clientId
     callbackURL: ENV.auth0Callback
 
   login: (username, password, retUrl, errorCallback) ->
-    state = $window.encodeURIComponent 'retUrl=' + retUrl
     auth0.signin({
       connection: 'LDAP',
-      state: state,
+      scope: 'openid profile',
       username: username,
       password: password,
-    }, (err) ->
-      console.log('login failed: ' + err)
-      errorCallback err
+    }, (err, profile, id_token, access_token, state) ->
+      if (err) 
+        errorCallback err
+      else
+        AuthToken.setToken id_token
     )
 
   logout: () ->
