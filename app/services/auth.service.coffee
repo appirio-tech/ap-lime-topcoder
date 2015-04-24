@@ -1,6 +1,6 @@
 'use strict'
 
-Auth = (ENV, $window, AuthToken, $state, $stateParams, $cookies) ->
+Auth = (ENV, $window, AuthToken, $state, $stateParams, $location, $timeout) ->
   auth0 = new Auth0
     domain: ENV.auth0Domain
     clientID: ENV.clientId
@@ -17,6 +17,7 @@ Auth = (ENV, $window, AuthToken, $state, $stateParams, $cookies) ->
         errorCallback err
       else
         AuthToken.setToken id_token
+        $timeout $location.path retUrl
     )
 
   logout: () ->
@@ -35,5 +36,7 @@ angular.module('lime-topcoder').factory 'Auth', [
   'AuthToken'
   '$state'
   '$stateParams'
+  '$location'
+  '$timeout'
   Auth
 ]
