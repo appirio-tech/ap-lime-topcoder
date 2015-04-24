@@ -13,9 +13,7 @@ Auth = (ENV, $window, AuthToken, $state, $stateParams) ->
   else
     state = $window.encodeURIComponent 'retUrl=https://www.topcoder-dev.com/reviews/index.html'
 
-  login: (username, password) ->
-    username = 'FireIce'
-    password = 'appirio123'
+  login: (username, password, errorCallback) ->
     auth0.signin({
       connection: 'LDAP',
       state: state,
@@ -23,7 +21,7 @@ Auth = (ENV, $window, AuthToken, $state, $stateParams) ->
       password: password,
     }, (err) ->
       console.log('login failed: ' + err)
-      #TODO
+      errorCallback err
     )
 
   logout: () ->

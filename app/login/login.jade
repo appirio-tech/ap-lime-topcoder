@@ -1,4 +1,4 @@
-.container.login
+.container.login(ng-controller="login as vm")
   .logo
     img(src="")
   div.col-xs-12(rel="welcome-msg")
@@ -7,12 +7,21 @@
     div(rel="description")
       p Please sign in.
   div.col-md-6.row
-    div(rel="form")
-      div.col-xs-12
-        input.form-group.form-control(type="text", placeholder="Username")
-        input.form-group.form-control(type="text", placeholder="Password")
+    div.col-xs-12(rel="form")
+      div.alert.alert-danger(ng-show="vm.frm.error", ng-bind="vm.frm.errorMessage")
+      form
+        div.form-group(ng-class="{'has-error has-feedback': vm.frm.username.error}")
+          input.form-control(type="text", placeholder="Username", ng-model="vm.frm.username.value", aria-describedby="usernameErrorStatus")
+          // used ng-show workaround to hide in non error state
+          span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.frm.username.error")
+          span#usernameErrorStatus.sr-only (error)
+        div.form-group(ng-class="{'has-error has-feedback': vm.frm.password.error}")
+          input.form-control(type="password", placeholder="Password", ng-model="vm.frm.password.value", aria-describedby="passwordErrorStatus")
+          // used ng-show workaround to hide in non error state
+          span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.frm.password.error")
+          span#passwordErrorStatus.sr-only (error)
     div.col-xs-12(rel="submit")
       a.pull-left(href="#/forgotpassword") Forgot your password?
-      input.btn.btn-primary.pull-right(type="submit", value="Sign In", ng-click="login()")
+      input.btn.btn-primary.pull-right(type="submit", value="Sign In", ng-click="vm.doLogin()")
     div.col-xs-12
       a.pull-left(href="#/register") Register?
