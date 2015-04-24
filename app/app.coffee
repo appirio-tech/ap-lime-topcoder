@@ -22,7 +22,7 @@ run = ($rootScope, $state, AuthToken, Auth) ->
     # Check if the user is authenticated when the state requires authentication
     if toState.authenticate && !Auth.isAuthenticated()
       console.log 'State requires authentication, and user is not logged in.'
-      Auth.login()
+      # TODO Auth.login() should redirect to /login
 
 angular.module('lime-topcoder', dependencies).run [
   '$rootScope'

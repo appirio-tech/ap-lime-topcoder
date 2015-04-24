@@ -1,33 +1,37 @@
 'use strict'
 
 Auth = (ENV, $window, AuthToken, $state, $stateParams) ->
-  # Will require reworking with V2 auth
-  # lock = new Auth0Lock ENV.clientId, ENV.auth0Domain
+  auth0 = new Auth0
+    domain: ENV.auth0Domain
+    clientID: ENV.clientId
+    callbackURL: ENV.auth0Callback
+    
+  # The page to which the browser will be forwarded after the login (can be the current page)
+  # TODO fix me in this and ap-review, this cant go live
+  if ENV.name == 'development'
+    state = $window.encodeURIComponent 'retUrl=http://localhost:9001'
+  else
+    state = $window.encodeURIComponent 'retUrl=https://www.topcoder-dev.com/reviews/index.html'
 
-  # # The page to which the browser will be forwarded after the login (can be the current page)
-  # if ENV.name == 'development'
-  #   state = $window.encodeURIComponent 'retUrl=http://localhost:9001'
-  # else
-  #   state = $window.encodeURIComponent 'retUrl=https://www.topcoder-dev.com/reviews/index.html'
+  login: (username, password) ->
+    username = 'FireIce'
+    password = 'appirio123'
+    auth0.signin({
+      connection: 'LDAP',
+      state: state,
+      username: username,
+      password: password,
+    }, (err) ->
+      console.log('login failed: ' + err)
+      #TODO
+    )
 
-
-  # # Displays the login widget and performs the login process
-  # login: () ->
-  #   lock.show
-  #     callbackURL: 'https://api.topcoder-dev.com/pub/callback.html'
-  #     responseType: 'code'
-  #     connections: ['LDAP']
-  #     authParams:
-  #       scope: 'openid profile offline_access'
-  #       state: state
-  #     usernameStyle: 'username'
-
-  # logout: () ->
-  #   AuthToken.removeToken()
-  #   $state.transitionTo $state.current, $stateParams,
-  #     reload: true
-  #     inherit: false
-  #     notify: true
+  logout: () ->
+    AuthToken.removeToken()
+    $state.transitionTo $state.current, $stateParams,
+      reload: true
+      inherit: false
+      notify: true
 
   isAuthenticated: () ->
     !!AuthToken.getToken()

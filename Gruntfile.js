@@ -25,6 +25,7 @@ module.exports = function (grunt) {
     clientId              : 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT',
     domain                : 'topcoder-dev.com',
     auth0Domain           : 'topcoder-dev.auth0.com',
+    auth0Callback         : 'https://www.topcoder-dev.com/reg2/callback.action',
     submissionDownloadPath: '/review/actions/DownloadContestSubmission?uid='
   };
 
@@ -54,6 +55,7 @@ module.exports = function (grunt) {
             clientId              : appConfig.clientId,
             domain                : appConfig.domain,
             auth0Domain           : appConfig.auth0Domain,
+            auth0Callback         : appConfig.auth0Callback,
             submissionDownloadPath: appConfig.submissionDownloadPath
           }
         }
@@ -70,6 +72,7 @@ module.exports = function (grunt) {
             clientId              : appConfig.clientId,
             domain                : appConfig.domain,
             auth0Domain           : appConfig.auth0Domain,
+            auth0Callback         : appConfig.auth0Callback,
             submissionDownloadPath: appConfig.submissionDownloadPath
           }
         }
