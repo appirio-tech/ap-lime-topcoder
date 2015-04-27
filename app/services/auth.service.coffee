@@ -6,7 +6,7 @@ Auth = (ENV, $window, AuthToken, $state, $stateParams, $location, $timeout) ->
     clientID: ENV.clientId
     callbackURL: ENV.auth0Callback
 
-  login: (username, password, retUrl, errorCallback) ->
+  login: (username, password, successCallback, errorCallback) ->
     auth0.signin({
       connection: 'LDAP',
       scope: 'openid profile',
@@ -17,7 +17,7 @@ Auth = (ENV, $window, AuthToken, $state, $stateParams, $location, $timeout) ->
         errorCallback err
       else
         AuthToken.setToken id_token
-        $timeout $location.path retUrl
+        successCallback profile,id_token,access_token,state
     )
 
   logout: () ->
