@@ -22,6 +22,7 @@
           span#passwordErrorStatus.sr-only (error)
     div.col-xs-12(rel="submit")
       a.pull-left(href="#/forgotpassword") Forgot your password?
-      input.btn.btn-primary.pull-right(type="submit", value="Sign In", ng-click="vm.doLogin()")
+      input.btn.btn-primary.pull-right(type="submit", value="Sign In", ng-click="vm.doLogin()", ng-show="!vm.loggingIn")
+      input.btn.btn-primary.pull-right(type="button", value="Signing In", ng-show="vm.loggingIn")
     div.col-xs-12
       a.pull-left(href="#/register") Register?
