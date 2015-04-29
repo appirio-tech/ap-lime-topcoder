@@ -1,6 +1,6 @@
 'use strict'
 
-register = ($scope, Auth) ->
+register = ($scope, Auth, Countries) ->
   vm = this
   vm.registering = false
   
@@ -8,6 +8,7 @@ register = ($scope, Auth) ->
   vm.frm =
     error: false
     errorMessage: ''
+    countries: Countries.all
 
   vm.doRegister = () ->
     vm.registering = true
@@ -33,5 +34,6 @@ register = ($scope, Auth) ->
 angular.module('lime-topcoder').controller 'register', [
   '$scope'
   'Auth'
+  'Countries'
   register
 ]

@@ -34,11 +34,22 @@
           span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('age')")
           span#ageErrorStatus.sr-only (error)
     div.col-xs-12.col-md-6
-      div.form-group(ng-class="{'has-error has-feedback': vm.hasError('country')}")
+      //div.form-group(ng-class="{'has-error has-feedback': vm.hasError('country')}")
           input.form-control(name="country", type="text", placeholder="Select Country", ng-model="vm.reg.country", aria-describedby="countryErrorStatus", required)
           // used ng-show workaround to hide in non error state
           span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('country')")
           span#countryErrorStatus.sr-only (error)
+          
+      div.select-options(ng-form="optionForm")
+            select(
+              ng-init="vm.reg.country = 'Select Country'",
+              ng-model="vm.reg.country",
+              ng-options="country for country in vm.frm.countries",
+              required,
+              name="country",
+              ng-class="{required: editForm.$submitted && optionForm.select.$error.required}")
+
+            //p.required-message(ng-show="editForm.$submitted && optionForm.select.$error.required") Required
 
       div.form-group(ng-class="{'has-error has-feedback': vm.hasError('email')}")
           input.form-control(name="email", type="email", placeholder="Email", ng-model="vm.reg.email", aria-describedby="emailErrorStatus", required)
