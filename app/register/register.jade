@@ -6,7 +6,7 @@
       span Welcome friend.
     div(rel="description")
       p We're happy to have you join our community.
-      p Please tell us alittle bit about yourself.
+      p Please tell us a little bit about yourself.
   div.alert.alert-danger(ng-show="vm.frm.error", ng-bind="vm.frm.errorMessage")
   form(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()")
     div.col-xs-12.col-md-6

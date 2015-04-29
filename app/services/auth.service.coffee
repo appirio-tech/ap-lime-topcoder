@@ -27,7 +27,7 @@ Auth = (ENV, $window, AuthToken, $state, $stateParams, $location, $timeout, ApiS
       inherit: false
       notify: true
 
-  register: (reg, successCallback, errorCallback) ->
+  register: (reg) ->
     # api params
     # required: ["firstName", "lastName", "handle", "country", "email"],
     # optional: ["password", "socialProviderId", "socialUserName", "socialEmail", "socialEmailVerified", "regSource", "socialUserId", "utm_source", "utm_medium", "utm_campaign"]
