@@ -7,6 +7,7 @@
     div(rel="description")
       p We're happy to have you join our community.
       p Please tell us alittle bit about yourself.
+  div.alert.alert-danger(ng-show="vm.frm.error", ng-bind="vm.frm.errorMessage")
   form(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()")
     div.col-xs-12.col-md-6
       div.form-group(ng-class="{'has-error has-feedback': vm.hasError('firstName')}")
@@ -21,14 +22,14 @@
           span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('lastName')")
           span#lastNameErrorStatus.sr-only (error)
 
-      div.form-group(ng-class="{'has-error has-feedback': vm.hasError('username')}")
-          input.form-control(name="username", type="text", placeholder="Username", ng-model="vm.reg.username", aria-describedby="usernameErrorStatus", required)
+      div.form-group(ng-class="{'has-error has-feedback': vm.hasError('handle')}")
+          input.form-control(name="handle", type="text", placeholder="Username", ng-model="vm.reg.handle", aria-describedby="usernameErrorStatus", required)
           // used ng-show workaround to hide in non error state
-          span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('username')")
+          span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('handle')")
           span#usernameErrorStatus.sr-only (error)
 
       div.form-group(ng-class="{'has-error has-feedback': vm.hasError('age')}")
-          input.form-control(name="age", type="number", placeholder="Age", ng-model="vm.reg.age", aria-describedby="ageErrorStatus", required, min="10", max="100")
+          input.form-control(name="age", type="number", placeholder="Age", ng-model="vm.frm.age", aria-describedby="ageErrorStatus", required, min="10", max="100")
           // used ng-show workaround to hide in non error state
           span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('age')")
           span#ageErrorStatus.sr-only (error)
@@ -53,8 +54,9 @@
 
       div.checkbox(ng-class="{'has-error has-feedback': vm.hasError('agree')}")
           label(for="agree")
-            input(name="agree", type="checkbox", ng-model="vm.reg.agree", aria-describedby="agreeErrorStatus", required)
+            input(name="agree", type="checkbox", ng-model="vm.frm.agree", aria-describedby="agreeErrorStatus", required)
             | Agree to terms and privacy policy
           span#agreeErrorStatus.sr-only (error)
     div.col-xs-12(rel="submit")
-      input.btn.btn-primary.pull-right(type="submit", value="Register")
+      input.btn.btn-primary.pull-right(type="submit", value="Register", ng-click="vm.doRegister()", ng-show="!vm.registering")
+      input.btn.btn-primary.pull-right(type="button", value="Registering", ng-show="vm.registering")
