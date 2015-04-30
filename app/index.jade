@@ -1,10 +1,16 @@
 - bowerJsFiles = []
+- bowerJsFiles.push('jquery/dist/jquery.min')
+- bowerJsFiles.push('bootstrap/dist/js/bootstrap.min')
 - bowerJsFiles.push('angular/angular')
 - bowerJsFiles.push('angular-ui-router/release/angular-ui-router')
 - bowerJsFiles.push('angular-jwt/dist/angular-jwt')
+- bowerJsFiles.push('angular-dropdowns/dist/angular-dropdowns.min')
+- bowerJsFiles.push('angular-bootstrap/ui-bootstrap-tpls.min')
+- bowerJsFiles.push('angular-bootstrap/ui-bootstrap.min')
 
 - bowerCssFiles = []
 - bowerCssFiles.push('bootstrap/dist/css/bootstrap')
+- bowerCssFiles.push('angular-dropdowns/dist/angular-dropdowns')
 
 - jsFiles = []
 - jsFiles.push('app')
@@ -21,6 +27,7 @@
 - jsFiles.push('services/auth.service')
 - jsFiles.push('services/helpers.service')
 - jsFiles.push('services/user.service')
+- jsFiles.push('directives/checkbox')
 
 doctype html
 html
@@ -43,14 +50,15 @@ html
     link(rel="stylesheet", href="content/css/app.css", type='text/css')
     link(rel="stylesheet", href="content/css/header.css", type='text/css')
     link(rel="stylesheet", href="content/css/footer.css", type='text/css')
+    link(rel="stylesheet", href="content/css/login.css", type='text/css')
     // endbuild
 
   body(ng-app="lime-topcoder")
-    header(ng-include="'layout/header.html'")
+    header.row.header-row(ng-include="'layout/header.html'")
 
-    .view-container(ui-view)
+    .view-container.container-angular(ui-view)
 
-    footer(ng-include="'layout/footer.html'")
+    footer.login-footer.footer(ng-include="'layout/footer.html'")
 
     //- We can delete if not using v3 auth
     // script(src="https://cdn.auth0.com/js/lock-7.0.min.js", type="text/javascript")

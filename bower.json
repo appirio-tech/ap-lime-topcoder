@@ -4,6 +4,9 @@
   "dependencies": {
     "angular": "^1.3.0",
     "angular-ui-router": "~0.2.13",
+    "angular-dropdowns": "~1.1.0",
+    "angular-sanitize": "~1.3.0",
+    "angular-bootstrap": "~0.12.1",
     "bootstrap": "~3.3.4",
     "angular-jwt": "~0.0.7"
   },
@@ -11,5 +14,8 @@
     "angular-mocks": "^1.3.0"
   },
   "appPath": "app",
-  "moduleName": "lime-topcoder"
+  "moduleName": "lime-topcoder",
+  "resolutions": {
+    "angular": "^1.3.0"
+  }
 }
