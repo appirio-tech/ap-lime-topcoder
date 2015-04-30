@@ -20,11 +20,11 @@ module.exports = function (grunt) {
     app                   : require('./bower.json').appPath || 'app',
     dist                  : 'dist',
     cdnPath               : 's3.amazonaws.com/abc123',
-    API_URL               : 'https://api.topcoder-dev.com/v3',
-    API_URL_V2            : 'https://api.topcoder-dev.com/v2',
-    clientId              : 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT',
-    domain                : 'topcoder-dev.com',
-    auth0Domain           : 'topcoder-dev.auth0.com',
+    API_URL               : process.env.API_URL || 'https://api.topcoder-dev.com/v3',
+    API_URL_V2            : process.env.API_URL_V2 || 'https://api.topcoder-dev.com/v2',
+    clientId              : process.env.CLIENT_ID || 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT',
+    domain                : process.env.DOMAIN || 'topcoder-dev.com',
+    auth0Domain           : process.env.AUTH0_DOMAIN || 'topcoder-dev.auth0.com',
     submissionDownloadPath: '/review/actions/DownloadContestSubmission?uid='
   };
 
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name                  : 'development',
-            API_URL               : process.env.API_URL || appConfig.API_URL,
+            API_URL               : appConfig.API_URL,
             API_URL_V2            : appConfig.API_URL_V2,
             clientId              : appConfig.clientId,
             domain                : appConfig.domain,
@@ -65,7 +65,7 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name                  : 'production',
-            API_URL               : process.env.API_URL || appConfig.API_URL,
+            API_URL               : appConfig.API_URL,
             API_URL_V2            : appConfig.API_URL_V2,
             clientId              : appConfig.clientId,
             domain                : appConfig.domain,
@@ -78,13 +78,9 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      bower: {
-        files: ['bower.json'],
-        tasks: ['wiredep']
-      },
       jade: {
         files: ['<%= yeoman.app %>/**/*.jade'],
-        tasks: ['newer:jade:compile']
+        tasks: ['newer:jade:compile', 'jade:index']
       },
       coffee: {
         files: ['<%= yeoman.app %>/**/*.coffee'],
@@ -116,7 +112,7 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9001,
+        port: 9002,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
         livereload: 35730
@@ -190,6 +186,23 @@ module.exports = function (grunt) {
             expand: true,
             cwd   : '<%= yeoman.app %>',
             src   : '**/*.jade',
+            dest  : '.tmp',
+            ext   : '.html'
+          }
+        ]
+      },
+      index: {
+        options: {
+          pretty: true,
+          data: {
+            debug: false
+          }
+        },
+        files: [
+          {
+            expand: true,
+            cwd   : '<%= yeoman.app %>',
+            src   : 'index.jade',
             dest  : '.tmp',
             ext   : '.html'
           }
@@ -467,7 +480,7 @@ module.exports = function (grunt) {
       test: [
         'coffee',
         'sass',
-        'jade',
+        'jade:compile',
       ],
       dist: [
         'coffee',
