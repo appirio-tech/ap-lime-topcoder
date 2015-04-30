@@ -7,7 +7,8 @@
     div(rel="description")
       p We're happy to have you join our community.
       p Please tell us a little bit about yourself.
-  div.alert.alert-danger(ng-show="vm.frm.error", ng-bind="vm.frm.errorMessage")
+  div.col-xs-12(ng-show="vm.frm.error")
+    div.alert.alert-danger(ng-bind="vm.frm.errorMessage")
   form(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()")
     div.col-xs-12.col-md-6
       div.form-group(ng-class="{'has-error has-feedback': vm.hasError('firstName')}")
@@ -40,14 +41,15 @@
           span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('country')")
           span#countryErrorStatus.sr-only (error)
           
-      div.select-options(ng-form="optionForm")
+      div.form-group(ng-form="optionForm")
             select(
               ng-init="vm.reg.country = 'Select Country'",
               ng-model="vm.reg.country",
               ng-options="country for country in vm.frm.countries",
               required,
               name="country",
-              ng-class="{required: editForm.$submitted && optionForm.select.$error.required}")
+              ng-class="{required: editForm.$submitted && optionForm.select.$error.required}"
+              class="form-control")
 
             //p.required-message(ng-show="editForm.$submitted && optionForm.select.$error.required") Required
 
@@ -64,10 +66,10 @@
           span#passwordErrorStatus.sr-only (error)
 
       div.checkbox(ng-class="{'has-error has-feedback': vm.hasError('agree')}")
-          label(for="agree")
+          label
             input(name="agree", type="checkbox", ng-model="vm.frm.agree", aria-describedby="agreeErrorStatus", required)
             | Agree to terms and privacy policy
           span#agreeErrorStatus.sr-only (error)
     div.col-xs-12(rel="submit")
-      input.btn.btn-primary.pull-right(type="submit", value="Register", ng-click="vm.doRegister()", ng-show="!vm.registering")
+      input.btn.btn-primary.pull-right(type="submit", value="Register", ng-show="!vm.registering")
       input.btn.btn-primary.pull-right(type="button", value="Registering", ng-show="vm.registering")
