@@ -6,4 +6,5 @@ angular.module('app.config', []).constant 'ENV',
   clientId: 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT'
   domain: 'topcoder-dev.com'
   auth0Domain: 'topcoder-dev.auth0.com'
+  auth0Callback: 'no-callback-needed-without-social-login'
   submissionDownloadPath: '/review/actions/DownloadContestSubmission?uid='

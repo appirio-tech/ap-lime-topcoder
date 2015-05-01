@@ -2,8 +2,7 @@
 
 AuthToken = ($window, $location, Helpers, $http, ENV) ->
   storage = $window.localStorage
-  # need new token name:
-  # userToken = 'userJWTToken'
+  userToken = 'tcjwt'
   cachedToken = null
 
   token =
@@ -21,34 +20,6 @@ AuthToken = ($window, $location, Helpers, $http, ENV) ->
     removeToken: () ->
       cachedToken = null
       storage.removeItem userToken
-
-    # For v3 auth, probably can delete if using v2 auth
-    # Stores the JWT from the url into local storage
-    # storeQueryStringToken: (url) ->
-    #   userJWTToken = Helpers.getParameterByName userToken, url
-
-    #   if userJWTToken && storage
-    #     storage.setItem userToken, userJWTToken
-
-    #     absUrl = $location.absUrl()
-    #     urlEnd =
-    #     if   absUrl.indexOf('?') == -1
-    #     then absUrl.length
-    #     else absUrl.indexOf '?'
-
-    #     clean_uri = absUrl.substring 0, urlEnd
-    #     $window.location.replace clean_uri
-
-    # refreshToken: (token) ->
-    #   options =
-    #     url: ENV.API_URL + '/authorizations/1'
-    #     # This makes it so that this request doesn't send the JWT
-    #     skipAuthorization: true
-    #     method: 'GET'
-    #     headers:
-    #       'Authorization': 'Bearer ' + token
-
-    #   $http options
 
 angular.module('lime-topcoder').factory 'AuthToken', [
   '$window'
