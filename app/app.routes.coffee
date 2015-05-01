@@ -11,7 +11,7 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider) ->
       templateUrl : 'learn/learn.html'
       controller  : 'learn'
     login:
-      url         : '/login'
+      url         : '/login?retUrl&retState'
       templateUrl : 'login/login.html'
       controller  : 'login'
     register:
