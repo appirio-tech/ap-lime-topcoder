@@ -3,7 +3,7 @@
 dependencies = [
   'angular-jwt'
   'app.config'
-  #'app.directives'
+  'app.directives'
   'ui.router'
   'ngDropdowns'
   'ui.bootstrap'

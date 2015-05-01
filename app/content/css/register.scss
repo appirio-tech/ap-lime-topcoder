@@ -10,7 +10,7 @@
 }
 	.register-bg{
 		width: 100%;
-		background: url('../img/register-bg.jpg') no-repeat;
+		background: url('../images/register-bg.jpg') no-repeat;
 		background-size: cover;
 		min-height: 927px;
 	}
@@ -81,12 +81,12 @@
 .fields .icheckbox{
 	width: 35px;
 	height: 31px;
-	background: url("../img/checkbox.png") no-repeat 0 0;
+	background: url("../images/checkbox.png") no-repeat 0 0;
 	float: left;
 	margin: 12px 13px 0 0;
 }
 .icheckbox.checked{
-	background: url("../img/checkbox.png") no-repeat 0 -38px;
+	background: url("../images/checkbox.png") no-repeat 0 -38px;
 }		        
 	/*** SELECT BOX RESET ***/
 	.wrap-dd-select {
