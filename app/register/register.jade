@@ -1,4 +1,4 @@
-.container.register-bg.row(ng-controller="register as vm")
+.register-bg.row(ng-controller="register as vm")
   .register-content.row
     .row
       a.big-logo
@@ -40,7 +40,7 @@
             // used ng-show workaround to hide in non error state
             span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('country')")
             span#countryErrorStatus.sr-only (error)
-            
+
         div.form-group.fields(ng-form="optionForm")
               select(
                 ng-init="vm.reg.country = 'Select Country'",
