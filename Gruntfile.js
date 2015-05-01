@@ -424,7 +424,8 @@ module.exports = function (grunt) {
           src   : [
             // 'content/images/**/*',
             'content/fonts/**/*',
-            'content/locales/**/*'
+            'content/locales/**/*',
+            'content/data/**/*'
           ]
         }, {
           expand: true,
