@@ -3,7 +3,10 @@
 dependencies = [
   'angular-jwt'
   'app.config'
+  #'app.directives'
   'ui.router'
+  'ngDropdowns'
+  'ui.bootstrap'
 ]
 
 run = ($rootScope, $state, AuthToken, Auth) ->
