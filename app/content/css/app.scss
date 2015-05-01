@@ -21,40 +21,40 @@
 }
 
 /*Bootstrap Reset Css*/
-.row, .container-fluid, ul, p,h1,h2,h3,h4,h5,h6{
-	padding: 0;
-	margin: 0;
-}
-p{
-	line-height: normal;
-}
-[class*="col-"] {
-	padding: 0;
-}
-a, a:active, a:focus {
-	outline: none;
-	text-decoration: none;
-	color: #ffffff;
-}
-a:hover{
-	text-decoration: none;
-	color: #ffffff;
-}
-/*** iOS textbox inner shadow reset ***/
-input[type="checkbox"],input[type="password"],input[type="email"],textarea,.txt-box{
-	-webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-body{
-	font-family: 'MyriadPro-Regulars';
-}
+// .row, .container-fluid, ul, p,h1,h2,h3,h4,h5,h6{
+// 	padding: 0;
+// 	margin: 0;
+// }
+// p{
+// 	line-height: normal;
+// }
+// [class*="col-"] {
+// 	padding: 0;
+// }
+// a, a:active, a:focus {
+// 	outline: none;
+// 	text-decoration: none;
+// 	color: #ffffff;
+// }
+// a:hover{
+// 	text-decoration: none;
+// 	color: #ffffff;
+// }
+// /*** iOS textbox inner shadow reset ***/
+// input[type="checkbox"],input[type="password"],input[type="email"],textarea,.txt-box{
+// 	-webkit-appearance: none;
+//     -moz-appearance: none;
+//     appearance: none;
+// }
+// body{
+// 	font-family: 'MyriadPro-Regulars';
+// }
 
-@media(max-width: 490px){
-	.fields label .agree-txt{
-		width: 197px;
-		display: block;
-		line-height: 20px;
-		margin: 10px 0 0 0;
-	}
-}
+// @media(max-width: 490px){
+// 	.fields label .agree-txt{
+// 		width: 197px;
+// 		display: block;
+// 		line-height: 20px;
+// 		margin: 10px 0 0 0;
+// 	}
+// }
