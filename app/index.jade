@@ -34,11 +34,13 @@ html
   head
     meta(charset="utf-8")
 
-    title Lime Topcoder
+    title iOS Member Program
 
     meta(name="description", content="")
 
-    meta(name="viewport", content="width=device-width")
+    meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
+
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no')
 
     // build:css(.) content/css/vendor.css
     each bowerCssFile in bowerCssFiles
@@ -47,16 +49,19 @@ html
 
     // build:css(.tmp) content/css/app.css
     link(rel="stylesheet", href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700', type='text/css')
+    link(rel="stylesheet", href="content/css/reset.css", type="text/css")
     link(rel="stylesheet", href="content/css/app.css", type='text/css')
     link(rel="stylesheet", href="content/css/header.css", type='text/css')
     link(rel="stylesheet", href="content/css/footer.css", type='text/css')
     link(rel="stylesheet", href="content/css/login.css", type='text/css')
+    link(rel="stylesheet", href="content/css/register.css", type='text/css')
+    link(rel="stylesheet", href="content/css/landing.css", type="text/css")
     // endbuild
 
   body(ng-app="lime-topcoder")
     header.row.header-row(ng-include="'layout/header.html'")
 
-    .view-container.container-angular(ui-view)
+    .view-container.container-angular(ui-view, ng-class="$state.current.name")
 
     footer.login-footer.footer(ng-include="'layout/footer.html'")
 

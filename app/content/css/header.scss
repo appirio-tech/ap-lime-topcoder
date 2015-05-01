@@ -1,15 +1,5 @@
 @import 'partials/combined';
 
-header {
-  background-color: $black;
-  color: $white;
-}
-
-header nav.navbar {
-	background-color: inherit;
-	border: none;
-}
-
 /*** BOOTSTRAP NAVIGATION ***/
 .header-row .navbar-inverse {
   background-color: transparent;
@@ -27,8 +17,12 @@ header nav.navbar {
 /*** HEADER STYLE ***/
 .header-row{
 	height: 48px;
-	background: #2e2f32;
+	background-color: rgba(0, 0, 0, 0.75);
+	position: absolute;
+	top: 0;
 	width: 100%;
+	z-index: 1;
+	border: none;
 }
 .header-row .small-logo{
 	display: block;
@@ -39,9 +33,9 @@ header nav.navbar {
 }
 	.main-nav ul li{
 		list-style: none;
-		float: left;	
-		position: relative;	
-	}	
+		float: left;
+		position: relative;
+	}
 	.navbar-inverse .main-nav ul li a,
 	.main-nav ul li a{
 		font-size: 15px;
