@@ -549,7 +549,7 @@ module.exports = function (grunt) {
     'sass',
     'jade:compile',
     'imagemin',
-    'svgmin'
+    'svgmin',
     'useminPrepare',
     'autoprefixer',
     'concat:generated',
