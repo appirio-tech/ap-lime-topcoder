@@ -544,7 +544,12 @@ module.exports = function (grunt) {
     'ngconstant:production',
     'js2coffee',
     'clean:constants',
-    'concurrent:dist',
+    // 'concurrent:dist',
+    'coffee',
+    'sass',
+    'jade:compile',
+    'imagemin',
+    'svgmin'
     'useminPrepare',
     'autoprefixer',
     'concat:generated',
