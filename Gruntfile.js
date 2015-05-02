@@ -548,7 +548,7 @@ module.exports = function (grunt) {
     'coffee',
     'sass',
     'jade:compile',
-    'imagemin',
+    // 'imagemin',
     'svgmin',
     'useminPrepare',
     'autoprefixer',
