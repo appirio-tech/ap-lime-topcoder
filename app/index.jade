@@ -18,6 +18,7 @@
 - jsFiles.push('app.constants')
 - jsFiles.push('app.interceptors')
 - jsFiles.push('app.routes')
+- jsFiles.push('layout/main')
 - jsFiles.push('landing/landing')
 - jsFiles.push('learn/learn')
 - jsFiles.push('login/login')
@@ -60,7 +61,7 @@ html
     link(rel="stylesheet", href="content/css/register.css", type='text/css')
     // endbuild
 
-  body(ng-app="lime-topcoder")
+  body(ng-app="lime-topcoder", ng-controller="main as main")
     header.row.header-row(ng-include="'layout/header.html'")
 
     .view-container.container-angular(ui-view, ng-class="$state.current.name")

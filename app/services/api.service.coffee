@@ -2,12 +2,14 @@
 
 'use strict'
 
-ApiService = ($http) ->
+ApiService = ($http, AuthToken) ->
   requestHandler: (method, url, data) ->
     options =
       method : method
       url    : url
-      headers: {}
+      headers: {
+        'Authorization' : 'Bearer ' + AuthToken.getToken()
+      }
 
     if data
       options.data = data
@@ -17,4 +19,4 @@ ApiService = ($http) ->
 
     $http options
 
-angular.module('lime-topcoder').factory 'ApiService',['$http', ApiService]
+angular.module('lime-topcoder').factory 'ApiService',['$http', 'AuthToken', ApiService]

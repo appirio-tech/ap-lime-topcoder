@@ -18,8 +18,18 @@ div.navbar.navbar-inverse.navbar-static-top.container
           a(href="#") Help
         li
           a.btns.glow-btn.become-member(href="#/register") Become a member
-        li
+        li(ng-show="!main.loggedInUser")
           a.dropdown-profile.pull-left(href="#/login")
             img.pull-left(src="content/images/user.png")
             span.pull-left Log in
             span.drop-arrow.pull-left
+        li.dropdown(ng-show="main.loggedInUser")
+          a.dropdown-toggle.dropdown-profile.pull-left(data-toggle="dropdown", aria-expanded="false")
+            img.pull-left(ng-src="{{main.loggedInUser.photo}}")
+            span.pull-left(ng-bind="main.loggedInUser.handle")
+            span.drop-arrow.pull-left
+          ul.profile-data.dropdown-menu.dropdown-menu-right
+            li
+              a(href="#/profile") Profile
+            li()
+              a(href="#", ng-click="main.logout()") Logout
