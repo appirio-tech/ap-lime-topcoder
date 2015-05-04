@@ -22,7 +22,7 @@ register = ($scope, Auth, Countries) ->
       if data.data.error
         handleError data.data.error
       else handleSuccess
-    .catch (data, a) ->
+    .catch (data) ->
       vm.registering = false
       if data.data && data.data.error
         handleError data.data.error.details[0]
@@ -46,9 +46,6 @@ register = ($scope, Auth, Countries) ->
     # $scope.$apply () ->
     vm.frm.error = true
     vm.frm.errorMessage = 'Account could not be created. ' + error
-
-  $scope.$watch 'vm.reg.country', (newValue, oldValue) ->
-    
 
 angular.module('lime-topcoder').controller 'register', [
   '$scope'
