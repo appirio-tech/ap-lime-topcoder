@@ -32,6 +32,7 @@
 		}
 		.register-form .fields{
 			padding: 0 20px 20px 0;
+			margin: 0px; /* reset bootstrap's margin on .checkbox etc classes */
 		}
 		.register-form .txt-box{
 			border: none;
@@ -44,11 +45,19 @@
 			font-size: 20px;
 			color: rgba(51, 70, 81, 0.81);	
 		}
-		.fields label{
+		.register-form .form-control-feedback {
+			/* height and line-height are altered to match with .txt-box */
+			height: 53px;
+			line-height: 53px;
+			/* right is altered to match with padding of .fileds */
+			right: 20px;
+		}
+		.fields label {
 			font-family: 'MyriadPro-Regulars';
 		    font-size: 24px;
 		    color: #ffffff;
-		    margin: 0 0 0 16px;
+		    /*margin: 0 0 0 16px;*/
+		    padding-left: 0px;/* reset boostrap's .radio label, .checkbox label */
 		    line-height: 60px;
 		    font-weight: 400;
 		}
@@ -59,6 +68,7 @@
 			margin: 54px 0 0;
 			float: right;
 			font-size: 22px;
+			border: none;
 		}
 		.register-form .txt-box::-webkit-input-placeholder,
 		.login-form .txt-box::-webkit-input-placeholder{
@@ -127,7 +137,8 @@
 		list-style: none;
 		visibility: hidden;
 		z-index: 100;
-
+		max-height: 300px;
+		overflow: scroll;
 	}
 	.wrap-dd-select .dropdown li a {
 		display: block;
@@ -144,3 +155,25 @@
 	}
 	/*** END SELECT BOX RESET ***/
 /*** END REGISTER STYLE ***/
+
+.dropdown-select {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	padding: 10px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	background: #fff;
+	border-radius: 10px;
+	border: 1px solid rgba(0,0,0,0.15);
+	box-shadow: 0 1px 1px rgba(50,50,50,0.1);
+	cursor: pointer;
+	outline: none;
+	font-weight: 400;
+	height: 53px;
+	font-family: 'MyriadPro-Regulars';
+    font-size: 20px;
+    color: rgba(51, 70, 81, 0.81);
+    line-height: 38px;
+}

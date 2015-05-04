@@ -3,12 +3,15 @@
 register = ($scope, Auth, Countries) ->
   vm = this
   vm.registering = false
+
+  createDropdownModel = (country, index) ->
+    {text: country, value: index}
   
   vm.reg = null
   vm.frm =
     error: false
     errorMessage: ''
-    countries: Countries.all
+    countries: Countries.all.map createDropdownModel
 
   vm.doRegister = () ->
     vm.registering = true
@@ -27,7 +30,11 @@ register = ($scope, Auth, Countries) ->
 
   vm.hasError = (field) ->
     form = $scope.frm
-    return (form[field].$dirty || form.$submitted) && form[field].$invalid
+    (form[field].$dirty || form.$submitted) && form[field].$invalid
+
+  vm.handleAgree = () ->
+    console.log(vm.frm.agree);
+    vm.frm.agree = !vm.frm.agree
 
   handleSuccess = () ->
     vm.registering = false
