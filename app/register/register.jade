@@ -36,7 +36,7 @@
             span#ageErrorStatus.sr-only (error)
       div.col-xs-12.col-md-6
         div.fields(ng-class="{'has-error has-feedback': vm.hasError('country')}")
-          input(type="hidden", ng-model="vm.reg.country", name="country", required)
+          input(type="hidden", ng-model="vm.reg.country", name="country", required-dropdown)
           div(dropdown-select="vm.frm.countries", dropdown-model="vm.reg.country")
           span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('country')")
           span#ageErrorStatus.sr-only (error)
@@ -59,4 +59,4 @@
             span#agreeErrorStatus.sr-only (error)
       div.col-xs-12.fields(rel="submit")
         input.btns.glow-btn.register-btn.pull-right(type="submit", value="Register", ng-show="!vm.registering")
-        input.btn.btn-primary.pull-right(type="button", value="Registering", ng-show="vm.registering")
+        input.btns.glow-btn.register-btn.pull-right(type="button", value="Registering", ng-show="vm.registering")
