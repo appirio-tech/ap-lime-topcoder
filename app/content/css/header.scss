@@ -58,7 +58,7 @@ header nav.navbar {
 		padding-left: 0;
 	}
 	.main-nav ul li:last-child a{
-		line-height: 53px;
+		/*line-height: 53px;*/
 	}
 	.main-nav ul li:last-child a{
 		padding: 0;
@@ -89,13 +89,13 @@ header nav.navbar {
 		.dropdown-profile{
 			font-size: 15px;
 			color: #ffffff;
-			line-height: 53px;
+			/*line-height: 53px;*/
 			display: block;
 			position: relative;
 		}
 		.dropdown-profile img{
 			display: block;
-			margin: 12px 8px 0 0;
+			margin: 10px 8px 0 0;
 			width: 25px;
 			height: 25px;
 			border-radius: 100%;
@@ -112,21 +112,24 @@ header nav.navbar {
 			width: 13px;
 			height: 8px;
 			background: url('../images/icons.png') no-repeat 0 0;
-			margin: 22px 0 0 8px;
+			margin: 19px 0 0 8px;
 		}
 		.profile-data.prof{
 			display: block;
 		}
-		.profile-data{
-			position: absolute;
-			bottom: 0;
-			min-height: 170px;
+		.profile-data {
 			background: #2e2f32;
+			/*position: absolute;
+			bottom: 0;
+			min-height: 70px;
 			float: left;
 			top: 48px;
 			left: -96px;
 			width: 190px;
-			display: none;
+			display: none;*/
+		}
+		.main-nav ul li .profile-data li a:hover {
+			background: $black;
 		}
 		.main-nav ul li .profile-data li{
 			float: none;

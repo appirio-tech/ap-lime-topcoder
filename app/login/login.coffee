@@ -6,6 +6,8 @@ login = ($scope, Auth, $state, $stateParams, $location) ->
   vm.loggingIn = false
   vm.retState = DEFAULT_STATE
 
+  main = $scope.$parent.main;
+
   vm.frm =
     username: 
       value: ''
@@ -44,6 +46,7 @@ login = ($scope, Auth, $state, $stateParams, $location) ->
   # handles success event of the login action
   handleSuccess = (profile) ->
     vm.loggingIn = false
+    main.activate()
     if $state.get vm.retState
       $state.go(vm.retState)
     else
