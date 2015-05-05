@@ -16,7 +16,7 @@
           a(ui-sref="learn") Learn
         li
           a(href="#") Help
-        li
+        li(ng-show="!main.loggedInUser")
           a.btns.glow-btn.become-member(ui-sref="register") Become a member
         li(ng-show="!main.loggedInUser")
           a.dropdown-profile.pull-left(ui-sref="login")
