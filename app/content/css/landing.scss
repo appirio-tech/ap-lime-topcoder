@@ -1,3 +1,5 @@
+@import 'partials/combined';
+
 .landing {
   // Common section styles
   .section-actions {
@@ -13,7 +15,7 @@
   }
 
   .section-actions li, .section-action {
-    color: #009dce;
+    color: $light-blue;
     font-size: 22px;
   }
 
@@ -27,7 +29,7 @@
     .newsletter-form-section {
       font-size: 30px;
       font-weight: 300;
-      color: #fff;
+      color: $white;
       text-align: center;
 
       .heading {
@@ -101,7 +103,7 @@
     line-height: 1.3em;
 
     .heading {
-      color: #383d43;
+      color: $header-gray;
       font-size: 48px;
       margin-bottom: 20px;
     }
@@ -125,7 +127,7 @@
       }
     }
     .btn {
-      color: #fff;
+      color: $white;
       margin-top: 38px;
       width: 120px;
     }
@@ -153,7 +155,7 @@
     .section-header {
       text-align: left;
       padding: 0;
-      font-weight: 300;
+      @include myriad-pro-light();
 
       .heading {
         margin-top: 45px;
@@ -168,16 +170,31 @@
     }
     .banner-text {
       max-width: 520px;
-      color: #334651;
+      color: $blue-gray;
       font-size: 20px;
       margin-top: 42px;
+      margin-left: 6px;
+      line-height: 1.3em;
     }
-    .banner-actions a:not(.btn) {
-      color: #3a444c;
-      font-size: 24px;
-    }
-    .banner-actions .btn {
-      padding: 0 25px;
+    .banner-actions {
+      margin-top: 75px;
+      line-height: 30px;
+
+      li {
+        display: inline-block;
+
+        & + li {
+          margin-left: 40px;
+        }
+      }
+
+      a:not(.btn) {
+        color: #3a444c;
+        font-size: 24px;
+      }
+      .btn {
+        padding: 0 25px;
+      }
     }
   }
 
@@ -196,7 +213,7 @@
 
   // Not logged in: Get training section
   .get-training-section .section-header {
-    color: #383d43;
+    color: $header-gray;
     font-size: 48px;
     opacity: 1;
     font-weight: 300;
@@ -204,7 +221,7 @@
   }
 
   .get-training-section .content-col {
-    color: #334651;
+    color: $blue-gray;
     font-size: 18px;
     line-height: 26px;
 
@@ -217,7 +234,7 @@
     }
     & > a {
       display: block;
-      color: #009dce;
+      color: $light-blue;
       font-size: 22px;
       margin-top: 56px;
     }
@@ -227,7 +244,7 @@
     margin-bottom: 20px;
     font-size: 29px;
     opacity: 0.9;
-    color: #242f2d;
+    color: $header-gray;
   }
 
   .get-training-section.learn-page {
@@ -244,7 +261,7 @@
       margin-top: 54px;
 
       a:not(.btn) {
-        color: #009dce;
+        color: $light-blue;
       }
     }
   }
@@ -304,7 +321,7 @@
   // Learn section
 
   .learn-improve-section .section-header {
-    color: #383d43;
+    color: $header-gray;
     font-size: 30px;
     margin-top: 48px;
 
@@ -317,7 +334,7 @@
   .learn-improve-section .section-content {
     margin-top: 52px;
     max-width: 410px;
-    color: #334651;
+    color: $blue-gray;
     font-size: 18px;
     font-weight: 300;
     line-height: 1.35em;
@@ -338,7 +355,7 @@
   .learn-improve-section .subsections {
     margin-top: 57px;
     padding-top: 41px;
-    color: #334651;
+    color: $blue-gray;
     font-size: 14px;
     font-weight: 300;
     line-height: 1.3em;
@@ -359,7 +376,7 @@
       max-width: 1024px;
     }
     .subsection-header {
-      color: #383d43;
+      color: $header-gray;
       font-size: 30px;
       margin-bottom: 24px;
     }
@@ -438,7 +455,7 @@
     padding-bottom: 40px;
 
     .section-header {
-      color: #383d43;
+      color: $header-gray;
       font-weight: 300;
       font-size: 30px;
       margin-top: 51px;
@@ -451,7 +468,7 @@
       text-align: center;
 
       &:not(.challenge-types) a {
-        color: #009dce;
+        color: $light-blue;
       }
     }
   }
@@ -487,7 +504,7 @@
     color: inherit;
   }
   .challenge-types .highlight {
-    color: #009dce;
+    color: $light-blue;
   }
 
   .challenges {
@@ -497,7 +514,7 @@
   .challenge {
     max-width: 256px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: $white;
     margin-bottom: 37px;
   }
 
@@ -520,7 +537,7 @@
 
   .challenge-header {
     opacity: 0.9;
-    color: #030304;
+    color: $challenge-black;
     font-size: 20px;
     margin: 3px 0 0 4px;
   }
@@ -530,7 +547,7 @@
 
   .challenge-data {
     opacity: 0.7;
-    color: #030304;
+    color: $challenge-black;
     font-size: 14px;
     line-height: 20px;
     margin: 6px 0 0 3px;
@@ -542,14 +559,14 @@
 
   .challenge-prize {
     opacity: 0.9;
-    color: #030304;
+    color: $challenge-black;
     font-size: 36px;
     margin-top: 12px;
   }
 
   .challenge-deadline {
     opacity: 0.8;
-    color: #030304;
+    color: $challenge-black;
     font-size: 14px;
     font-weight: 300;
     margin: 3px 0 0 4px;
@@ -567,7 +584,7 @@
 
   .stats-type {
     opacity: 0.8;
-    color: #030304;
+    color: $challenge-black;
     font-size: 10px;
     font-weight: 600;
   }
