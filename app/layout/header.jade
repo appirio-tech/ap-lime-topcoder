@@ -1,25 +1,25 @@
-div.navbar.navbar-inverse.navbar-static-top
+.navbar.navbar-inverse.navbar-static-top.container
   a.small-logo.pull-left(href="#")
     img(src="content/images/small-logo.png")
-  div.navbar-header
+  .navbar-header
     button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#lime-nav-bar")
-      span.sr-only Togger Navigation
+      span.sr-only Toggle Navigation
       span.icon-bar
       span.icon-bar
       span.icon-bar
-  div.header-right.pull-right
+  .header-right.pull-right
     nav.main-nav.navbar-collapse.collapse(id="lime-nav-bar")
       ul.nav.navbar-nav
         li.active
           a(href="#") Challenges
         li
-          a(href="#") Learn
+          a(ui-sref="learn") Learn
         li
           a(href="#") Help
         li
-          a.btns.glow-btn.become-member(href="#/register") Become a member
+          a.btns.glow-btn.become-member(ui-sref="register") Become a member
         li(ng-show="!main.loggedInUser")
-          a.dropdown-profile.pull-left(href="#/login")
+          a.dropdown-profile.pull-left(ui-sref="login")
             img.pull-left(src="content/images/user.png")
             span.pull-left Log in
             span.drop-arrow.pull-left

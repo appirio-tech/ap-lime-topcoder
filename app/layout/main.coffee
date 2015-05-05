@@ -7,8 +7,8 @@ main = ($scope, ENV, AuthService, UserService) ->
 
   vm.updatePhotoLink = () ->
     user = vm.loggedInUser
-    if (user && user.photoLink != '') 
-      if (user.photoLink.indexOf('//') != -1)
+    if user && user.photoLink != ''
+      if user.photoLink.indexOf('//') != -1
         user.photo = user.photoLink
       else
         user.photo = ENV.photoLinkLocation + user.photoLink

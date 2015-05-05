@@ -25,3 +25,11 @@
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   font-weight: 700;
 }
+
+@mixin myriad-pro() {
+  font-family: 'MyriadPro-Regulars', Calibri, sans-serif;
+}
+
+@mixin myriad-pro-light() {
+  font-family: 'MyriadPro-Light', Calibri, sans-serif;
+}

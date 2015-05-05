@@ -8,4 +8,3 @@ angular.module('app.config', []).constant 'ENV',
   auth0Domain: 'topcoder-dev.auth0.com'
   auth0Callback: 'no-callback-needed-without-social-login'
   submissionDownloadPath: '/review/actions/DownloadContestSubmission?uid='
-  photoLinkLocation: 'http://community.topcoder.com'

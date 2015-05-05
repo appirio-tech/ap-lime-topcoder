@@ -3,22 +3,16 @@
 dependencies = [
   'angular-jwt'
   'app.config'
-  #'app.directives'
+  'app.directives'
   'ui.router'
   'ngDropdowns'
   'ui.bootstrap'
 ]
 
 run = ($rootScope, $state, AuthToken, Auth) ->
-
-  # If we are using V2 auth, we can probably delete this:
-
-  # $rootScope.$on '$locationChangeStart', (event, newUrl, oldUrl) ->
-  #   # When the url changes, checks if userJWTToken is in the query string.
-  #   # If so, store it in local storage
-  #   if newUrl.indexOf('userJWTToken') > -1
-  #     console.log 'found JWT in url and storing it'
-  #     AuthToken.storeQueryStringToken newUrl
+  # Attaching $state to the $rootScope allows us to access the
+  # current state in index.html (see div with ui-view on the index page)
+  $rootScope.$state = $state
 
   # On each state change, Angular will check for authentication
   $rootScope.$on '$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) ->
