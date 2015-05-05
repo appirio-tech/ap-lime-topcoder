@@ -124,6 +124,7 @@
     }
     .wrap-dd-select.active{
       border-radius: 10px 10px 0 0;
+      display: block;
     }
     .wrap-dd-select .dropdown {
       position: absolute;
@@ -137,9 +138,14 @@
       box-shadow: none;
       font-weight: normal;
       list-style: none;
-      visibility: hidden;
+      display: none;
       z-index: 100;
 
+    }
+    .wrap-dd-select.active .dropdown {
+      max-height: 300px;
+      overflow: scroll;
+      display: block;
     }
     .wrap-dd-select .dropdown li a {
       display: block;
