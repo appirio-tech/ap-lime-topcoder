@@ -1,4 +1,20 @@
-.landing-banner
+carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
+  slide.developer-slide-1.slide
+    section.container
+      h1.section-header Welcome 
+        strong(ng-bind="main.loggedInUser.name")
+      ul.developer-badges
+        li.participant-badge
+        li.challenger-badge
+        li.education-badge
+        li.performer-badge
+
+      ul.info
+        li Current Status:  Associate
+        li Member since: 
+          span(ng-bind="main.loggedInUser.memberSince | date")
+      a.btn.btn-view-profile(href="#/profile") View My Profile
+.landing-banner(ng-show="!main.loggedInUser")
   section.container
     header.section-header
       img(src="content/images/logo-landing.png", alt="TopCoder logo")

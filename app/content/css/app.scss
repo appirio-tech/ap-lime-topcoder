@@ -22,6 +22,20 @@ body {
   @include myriad-pro-light();
 }
 
+.view-container-loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  // TODO change loading image
+  background: rgba( 0, 0, 0, .8 ) 
+              url('http://i.stack.imgur.com/FhHRx.gif') 
+              50% 50% 
+              no-repeat;
+}
+
 .page-header {
   padding: 0;
   margin: 0;
