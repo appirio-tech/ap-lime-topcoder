@@ -57,6 +57,7 @@
               input(name="agree", type="checkbox", ng-model="vm.frm.agree", aria-describedby="agreeErrorStatus", required, checkbox )
               | Agree to terms and privacy policy
             span#agreeErrorStatus.sr-only (error)
-      .col-xs-12.fields(rel="submit")
-        input.btns.glow-btn.register-btn.pull-right(type="submit", value="Register", ng-show="!vm.registering")
-        input.btns.glow-btn.register-btn.pull-right(type="button", value="Registering", ng-show="vm.registering")
+      .col-xs-12(rel="submit")
+        div.fields
+          input.btns.glow-btn.register-btn.pull-right(type="submit", value="Register", ng-show="!vm.registering")
+          input.btns.glow-btn.register-btn.pull-right(type="button", value="Registering", ng-show="vm.registering")
