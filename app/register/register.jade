@@ -1,6 +1,6 @@
-.register-bg.row(ng-controller="register as vm")
-  .register-content.row
-    .row
+.register-bg(ng-controller="register as vm")
+  .register-content
+    .col-xs-12
       a.big-logo
       img(src="content/images/main-logo.png")
       p.welcome Welcome friend.
@@ -9,8 +9,8 @@
         p Please tell us a little bit about yourself.
     .col-xs-12(ng-show="vm.frm.error")
       .alert.alert-danger(ng-bind="vm.frm.errorMessage")
-    form.register-form.row(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()")
-      .col-xs-12.col-md-6
+    form.register-form.col-xs-12(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()")
+      .col-xs-12.col-md-6.padding-reset
         .fields(ng-class="{'has-error has-feedback': vm.hasError('firstName')}")
             input.txt-box(name="firstName", type="text", placeholder="First Name", ng-model="vm.reg.firstName", aria-describedby="firstNameErrorStatus", required)
             // used ng-show workaround to hide in non error state
@@ -34,7 +34,7 @@
             // used ng-show workaround to hide in non error state
             span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('age')")
             span#ageErrorStatus.sr-only (error)
-      .col-xs-12.col-md-6
+      .col-xs-12.col-md-6.padding-reset
         div.fields(ng-class="{'has-error has-feedback': vm.hasError('country')}")
           input(type="hidden", ng-model="vm.reg.country", name="country", required-dropdown)
           div(dropdown-select="vm.frm.countries", dropdown-model="vm.reg.country")
@@ -57,7 +57,6 @@
               input(name="agree", type="checkbox", ng-model="vm.frm.agree", aria-describedby="agreeErrorStatus", required, checkbox )
               | Agree to terms and privacy policy
             span#agreeErrorStatus.sr-only (error)
-      .col-xs-12(rel="submit")
-        div.fields
-          input.btns.glow-btn.register-btn.pull-right(type="submit", value="Register", ng-show="!vm.registering")
-          input.btns.glow-btn.register-btn.pull-right(type="button", value="Registering", ng-show="vm.registering")
+      .col-xs-12.fields(rel="submit")
+        input.btns.glow-btn.register-btn.pull-right(type="submit", value="Register", ng-show="!vm.registering")
+        input.btns.glow-btn.register-btn.pull-right(type="button", value="Registering", ng-show="vm.registering")
