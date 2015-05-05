@@ -1,25 +1,29 @@
 .container.login-content.row(ng-controller="login as vm")
-  div.row
+  .row
     a.big-logo
       img(src="content/images/main-logo.png")
+
     p.welcome Welcome back.
-    div.login-form
+
+    .login-form
       p.form-msg Please sign in.
-      div.alert.alert-danger(ng-show="vm.frm.error", ng-bind="vm.frm.errorMessage")
+
+      .alert.alert-danger(ng-show="vm.frm.error", ng-bind="vm.frm.errorMessage")
+
       form.col-xs-6
-        div.row(ng-class="{'has-error has-feedback': vm.frm.username.error}")
+        .row(ng-class="{'has-error has-feedback': vm.frm.username.error}")
           input.form-control.txt-box(type="text", placeholder="Username", ng-model="vm.frm.username.value", aria-describedby="usernameErrorStatus")
           // used ng-show workaround to hide in non error state
           span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.frm.username.error")
           span#usernameErrorStatus.sr-only (error)
-        div.row.form-group(ng-class="{'has-error has-feedback': vm.frm.password.error}")
+        .row.form-group(ng-class="{'has-error has-feedback': vm.frm.password.error}")
           input.form-control.txt-box(type="password", placeholder="Password", ng-model="vm.frm.password.value", aria-describedby="passwordErrorStatus")
           // used ng-show workaround to hide in non error state
           span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.frm.password.error")
           span#passwordErrorStatus.sr-only (error)
-        div.row(rel="submit")
+        .row(rel="submit")
           a.pull-left.forget(href="#/forgotpassword") Forgot your password?
           input.btns.glow-btn.sign-in.pull-right(type="submit", value="Sign In", ng-click="vm.doLogin()", ng-show="!vm.loggingIn")
-          input.btn.btn-primary.pull-right(type="button", value="Signing In", ng-show="vm.loggingIn")
-        div.row
+          input.btns.glow-btn.sign-in.pull-right(type="button", value="Signing In", ng-show="vm.loggingIn")
+        .row
           a.pull-left.reg-link(href="#/register") Register?

@@ -6,8 +6,10 @@ login = ($scope, Auth, $state, $stateParams, $location) ->
   vm.loggingIn = false
   vm.retState = DEFAULT_STATE
 
+  main = $scope.$parent.main;
+
   vm.frm =
-    username: 
+    username:
       value: ''
     password:
       value: ''
@@ -39,15 +41,16 @@ login = ($scope, Auth, $state, $stateParams, $location) ->
       vm.retState = if $stateParams.retState then $stateParams.retState else DEFAULT_STATE
       vm.loggingIn = true
       #authenticate
-      Auth.login(vm.frm.username.value, vm.frm.password.value, handleSuccess, handleError)
+      Auth.login vm.frm.username.value, vm.frm.password.value, handleSuccess, handleError
 
   # handles success event of the login action
   handleSuccess = (profile) ->
     vm.loggingIn = false
+    main.activate()
     if $state.get vm.retState
-      $state.go(vm.retState)
+      $state.go vm.retState
     else
-      $state.go(DEFAULT_STATE)
+      $state.go DEFAULT_STATE
 
   # handles error event of the login action
   handleError = (error) ->

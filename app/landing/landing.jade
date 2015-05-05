@@ -1,2 +1,160 @@
-.container(ng-show="loaded")
-  h1 The Landing Page
+carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
+  slide.developer-slide-1.slide
+    section.container
+      h1.section-header Welcome 
+        strong(ng-bind="main.loggedInUser.name")
+      ul.developer-badges
+        li.participant-badge
+        li.challenger-badge
+        li.education-badge
+        li.performer-badge
+
+      ul.info
+        li Current Status:  Associate
+        li Member since: 
+          span(ng-bind="main.loggedInUser.memberSince | date")
+      a.btn.btn-view-profile(href="#/profile") View My Profile
+.landing-banner(ng-show="!main.loggedInUser")
+  section.container
+    header.section-header
+      img(src="content/images/logo-landing.png", alt="TopCoder logo")
+
+      h1.heading Dear Developers,
+        strong We love you.
+
+    .banner-text
+      p Become part of the extensive, global Appirio crowdsourcing community. Developers of all kinds join Appirio to raise their game&mdash;to find mentors, to collaborate and to learn from each other, but ultimately to stand out from the crowd, by submitting (and being paid for) your best ideas.
+
+    ul.banner-actions
+      li #[a(ui-sref="learn") Learn More]
+
+      li #[a.btn(href="#") Become a member]
+
+.get-training-section.learn-page
+  section.container
+    h1.section-header Get iOS training and instruction
+
+    .row
+      .col-xs-12.col-md-6.col-md-push-6.content-col
+        .section-subheader Compete and learn from the best.
+
+        p We want thinkers. The &ldquo;why not&ldquo; people. The ones who never met a problem they couldn&rsquo;t solve. Jowl sirloin brisket tri-tip tongue tenderloin shoulder salami strip steak pork belly hamburger filet mignon pork chop ball tip cupim. Pork belly beef ribs ribeye shoulder. Ribeye pork loin beef ribs landjaeger bacon. Short loin drumstick brisket, ribeye pork chop shoulder pork loin swine turkey. Sausage tenderloin prosciutto swine ball tip. Salami t-bone capicola doner bacon tongue pork filet mignon kevin shank sirloin drumstick boudin andouille.
+
+        ul.section-actions
+          li #[a(href="#") View challenges &gt;]
+
+          li #[a.btn(ui-sref="register") Become a member]
+
+.newsletter-form-wrapper
+  section.newsletter-form-section.container
+    h1.heading iOS Developer Community.
+
+    form.newsletter-form Sign up to join the conversation.
+      input(type="email", placeholder="Your email please")
+
+      button.btn(type="submit") Submit
+
+.challenges-section.landing-annon-page
+  section.container
+    header.section-header
+      h1.heading Current Challenges
+
+      p Browse our available challenges and compete.
+
+    ul.challenge-types.section-actions
+      li.highlight #[a(href="#") Arena Challenges]
+
+      li #[a(href="#") Peer Challenges]
+
+      li #[a(href="#") Performance Challenges]
+
+      li #[a(href="#") Community Challenges]
+
+    ul.challenges.row
+      li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in challenges")
+        section.challenge
+          .challenge-type {{challenge.type}}
+
+          img.challenge-image(ng-src="{{challenge.image}}", alt="challenge image")
+
+          .challenge-details
+            h2.challenge-header
+              a(href="javascript:;") {{challenge.title}}
+
+            .challenge-data
+              p #[span.challenge-field Technologies:] {{challenge.technologies}}
+
+            .challenge-data
+              p #[span.challenge-field Platform:] {{challenge.platforms}}
+
+            .challenge-prize {{challenge.prize}}
+
+            .challenge-deadline {{challenge.deadline | date:&apos;short&apos; : &apos;UTC&apos;}} UTC
+
+            .row.challenge-stats
+              .col-sm-6.challenge-registrants.challenge-stat
+                .stats-type REGISTRANTS
+
+                .stats-value
+                  a(href="javascript:;") {{challenge.registrants}}
+
+              .col-sm-6.challenge-submissions.challenge-stat
+                .stats-type SUBMISSIONS
+
+                .stats-value
+                  a(href="javascript:;") {{challenge.submissions}}
+
+    ul.section-actions
+      li #[a(href="#") Learn more about challenge types &gt;]
+
+      li #[a(href="#") View full challenge list &gt;]
+
+section.learn-improve-section.landing-annon-page
+  .container
+    header.section-header
+      h1.heading Learn and improve
+
+      p Participate in the iOS Developer Community program
+
+    .section-content
+      .section-subheader You're on the road to becoming a member of the iOS Developer Community.
+
+      p Experienced and proven iOS developers are in high-demand.  Prove your skills by earning these iOS topcoder badges and gain exclusive access to iOS challenges and prize accelerators, special previews into Apple&rsquo;s content and releases, and special community-related events and info.
+
+      a.section-action(href="#") Learn more about the program. &gt;
+
+  .subsections
+    .container
+      .row
+        section.col-sm-12.col-md-4.info-col
+          h2.subsection-header Learn from your peers
+
+          p Whether you are an experienced iOS developer or are just getting started, follow these steps to join and grow in the iOS Developer Community
+
+          .link-row
+            a.btn(ui-sref="learn") Learn more
+
+        section.col-sm-12.col-md-4.info-col
+          h2.subsection-header Train and improve
+
+          p New to the community? Want to improve your skills? Why not try one of our Arena Challenges to get you on the path to righteousness. Choose from one of our many different challenges types and train your way into becomeing a iOS champion!
+
+          .link-row
+            a.btn(ui-sref="learn") Learn more
+
+        section.col-sm-12.col-md-4.info-col
+          h2.subsection-header Compete and win
+
+          p Ready to prove yourself on a global stage? have what it takes to compete and win in the iOS Developer Community? Well step right  up and find a challenge to test your merit on. Any and all are welcome...just view our open challenges and Let&rsquo;s get ready to Ruumbleeeeeee!
+
+          .link-row
+            a.btn(ui-sref="learn") Learn more
+
+.learn-section.learn-page
+  section.container
+    header.section-header
+      h1.heading What will you learn?
+
+      p Learn, train, compete, and win with the iOS Development Community.
+
+    a.btn(href="#") Get Started
