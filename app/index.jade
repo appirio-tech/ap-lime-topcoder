@@ -6,7 +6,6 @@
 - bowerJsFiles.push('angular-jwt/dist/angular-jwt')
 - bowerJsFiles.push('angular-dropdowns/dist/angular-dropdowns.min')
 - bowerJsFiles.push('angular-bootstrap/ui-bootstrap-tpls.min')
-- bowerJsFiles.push('angular-bootstrap/ui-bootstrap.min')
 - bowerJsFiles.push('iCheck/icheck.min')
 
 - bowerCssFiles = []
@@ -66,6 +65,8 @@ html
     header.header-row(ng-include="'layout/header.html'")
 
     .view-container(ui-view, ng-class="$state.current.name")
+    .view-container-loading(ng-show="main.loggingIn")
+      div Loading...
 
     footer.login-footer.footer(ng-include="'layout/footer.html'")
 

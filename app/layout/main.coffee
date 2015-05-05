@@ -4,6 +4,7 @@ main = ($scope, ENV, AuthService, UserService) ->
   vm = this
 
   vm.loggedInUser = null
+  vm.loggingIn = false
 
   vm.updatePhotoLink = () ->
     user = vm.loggedInUser
@@ -20,12 +21,15 @@ main = ($scope, ENV, AuthService, UserService) ->
     vm.loggedInUser = null
 
   vm.activate = () ->
+    vm.loggingIn = true
     if AuthService.isAuthenticated()
       UserService.getLoggedInUser()
       .then (data) ->
+        vm.loggingIn = false
         vm.loggedInUser = data.data
         vm.updatePhotoLink()
       .catch (error) ->
+        vm.loggingIn = false
         console.log error
 
   vm.activate()
