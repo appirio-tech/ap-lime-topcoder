@@ -25,7 +25,8 @@ module.exports = function (grunt) {
     domain                : process.env.DOMAIN || 'topcoder-dev.com',
     auth0Domain           : process.env.AUTH0_DOMAIN || 'topcoder-dev.auth0.com',
     auth0Callback         : 'no-callback-needed-without-social-login',
-    submissionDownloadPath: '/review/actions/DownloadContestSubmission?uid='
+    submissionDownloadPath: '/review/actions/DownloadContestSubmission?uid=',
+    photoLinkLocation     : process.env.PHOTO_LINK_LOCATION || 'http://community.topcoder.com'
   };
 
   // Define the configuration for all the tasks
