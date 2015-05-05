@@ -7,18 +7,17 @@ Auth = (ENV, $window, AuthToken, $state, $stateParams, $location, $timeout, ApiS
     callbackURL: ENV.auth0Callback
 
   login: (username, password, successCallback, errorCallback) ->
-    auth0.signin({
+    auth0.signin
       connection: 'LDAP',
       scope: 'openid profile',
       username: username,
       password: password,
-    }, (err, profile, id_token, access_token, state) ->
-      if (err) 
+    , (err, profile, id_token, access_token, state) ->
+      if (err)
         errorCallback err
       else
         AuthToken.setToken id_token
-        successCallback profile,id_token,access_token,state
-    )
+        successCallback profile, id_token,access_token, state
 
   logout: () ->
     AuthToken.removeToken()

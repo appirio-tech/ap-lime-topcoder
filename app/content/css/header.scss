@@ -5,32 +5,33 @@
   background-color: transparent;
 }
 .header-row .navbar-inverse{
-	border-color: transparent;
+  border-color: transparent;
 }
 .header-row .navbar-fixed-top{
-	right: 0;
-	left: inherit;
+  right: 0;
+  left: inherit;
 }
 .header-row .navbar{
-	min-height: 48px;
+  min-height: 48px;
 }
 /*** HEADER STYLE ***/
 .header-row{
-	height: 48px;
-	background-color: rgba(0, 0, 0, 0.75);
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: 1;
-	border: none;
+  height: 48px;
+  background-color: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  border: none;
 }
 .header-row .small-logo{
-	display: block;
-	margin: 13px 0 0 44px;
+  display: block;
+  margin: 13px 0 0 44px;
 }
 .header-row .header-right{
-	margin: 0 45px 0 0;
+  margin: 0 45px 0 0;
 }
+
 	.main-nav ul li{
 		list-style: none;
 		float: left;
@@ -132,4 +133,85 @@
 			color: #ffffff;
 			padding: 0 0 0 20px;
 		}
+
 /*** END HEADER STYLE ***/
+
+
+/* Styles for 2nd Header if we want that one instead
+
+.page-header {
+  background-color: rgba(0, 0, 0, 0.75);
+  line-height: 48px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  border: none; }
+  .page-header .avatar-wrapper {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 8px;
+    vertical-align: middle;
+    width: 30px;
+    height: 31px; }
+  .page-header .logo-column {
+    text-align: left; }
+  .page-header .btn-user a:after {
+    background-image: url('../images/sprite.png');
+    background-position: -266px -110px;
+    background-repeat: no-repeat;
+    width: 13px;
+    height: 8px;
+    content: '';
+    display: inline-block;
+    margin-left: 5px; }
+
+.btn-menu-toggle {
+  background-image: url('../images/sprite.png');
+  background-position: -255px -72px;
+  background-repeat: no-repeat;
+  width: 28px;
+  height: 20px;
+  background-color: transparent;
+  background-origin: content-box;
+  background-clip: content-box;
+  box-sizing: content-box;
+  margin-top: 10px;
+  padding: 5px;
+  outline: none; }
+
+.header-nav {
+  text-align: right;
+  vertical-align: middle; }
+  .header-nav a {
+    color: #fff; }
+
+@media only screen and (max-width: 767px) {
+  .header-link {
+    text-align: center;
+    border-bottom: 1px solid #999; }
+    .header-link:first-child {
+      border-top: 1px solid #999; }
+    .header-link a {
+      display: block; }
+    .header-link .btn {
+      border-radius: 0;
+      line-height: 48px;
+      height: 48px;
+      font-size: 16px; } }
+
+@media only screen and (min-width: 768px) {
+  .header-link {
+    display: inline-block;
+    font-size: 15px;
+    margin-right: 32px; }
+    .header-link:last-child {
+      margin-right: 28px; } }
+
+@media only screen and (min-width: 992px) {
+  .logo-column {
+    padding-left: 41px; } }
+
+
+*/

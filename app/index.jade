@@ -41,9 +41,9 @@ html
 
     meta(name="description", content="")
 
-    meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
+    meta(http-equiv="X-UA-Compatible", content="IE=edge, chrome=1")
 
-    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no')
+    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no")
 
     // build:css(.) content/css/vendor.css
     each bowerCssFile in bowerCssFiles
@@ -57,14 +57,15 @@ html
     link(rel="stylesheet", href="content/css/header.css", type='text/css')
     link(rel="stylesheet", href="content/css/footer.css", type='text/css')
     link(rel="stylesheet", href="content/css/landing.css", type="text/css")
+    link(rel="stylesheet", href="content/css/learn.css", type="text/css")
     link(rel="stylesheet", href="content/css/login.css", type='text/css')
     link(rel="stylesheet", href="content/css/register.css", type='text/css')
     // endbuild
 
   body(ng-app="lime-topcoder", ng-controller="main as main")
-    header.row.header-row(ng-include="'layout/header.html'")
+    header.header-row(ng-include="'layout/header.html'")
 
-    .view-container.container-angular(ui-view, ng-class="$state.current.name")
+    .view-container(ui-view, ng-class="$state.current.name")
 
     footer.login-footer.footer(ng-include="'layout/footer.html'")
 

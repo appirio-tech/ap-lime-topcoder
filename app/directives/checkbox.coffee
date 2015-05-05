@@ -6,6 +6,6 @@ dependencies = [
 
 checkbox = ($window) ->
   link = (scope, element, attrs) ->
-    element.iCheck();
+    element.iCheck()
 
 angular.module('app.directives', dependencies).directive 'checkbox', [checkbox]

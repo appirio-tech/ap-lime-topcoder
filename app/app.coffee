@@ -14,15 +14,6 @@ run = ($rootScope, $state, AuthToken, Auth) ->
   # current state in index.html (see div with ui-view on the index page)
   $rootScope.$state = $state
 
-  # If we are using V2 auth, we can probably delete this:
-
-  # $rootScope.$on '$locationChangeStart', (event, newUrl, oldUrl) ->
-  #   # When the url changes, checks if userJWTToken is in the query string.
-  #   # If so, store it in local storage
-  #   if newUrl.indexOf('userJWTToken') > -1
-  #     console.log 'found JWT in url and storing it'
-  #     AuthToken.storeQueryStringToken newUrl
-
   # On each state change, Angular will check for authentication
   $rootScope.$on '$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) ->
     # Check if the user is authenticated when the state requires authentication

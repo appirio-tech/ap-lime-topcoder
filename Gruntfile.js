@@ -1,4 +1,3 @@
-// Generated on 2015-03-12 using generator-angular 0.11.1
 'use strict';
 
 // # Globbing
@@ -36,13 +35,11 @@ module.exports = function (grunt) {
     yeoman: appConfig,
 
     ngconstant: {
-      // Options for all targets
       options: {
         space: '  ',
         wrap : '"use strict";\n\n {%= __ngModule %}',
         name : 'app.config',
       },
-      // Environment targets
       development: {
         options: {
           dest: '<%= yeoman.app %>/app.constants.js'

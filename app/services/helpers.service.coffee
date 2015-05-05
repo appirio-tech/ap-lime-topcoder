@@ -1,7 +1,7 @@
 'use strict'
 
 Helpers = () ->
-  holder: () ->
+  insertMethodHere: () ->
 
 angular.module('lime-topcoder').factory 'Helpers', [
   Helpers
