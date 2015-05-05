@@ -54,7 +54,8 @@ module.exports = function (grunt) {
             domain                : appConfig.domain,
             auth0Domain           : appConfig.auth0Domain,
             auth0Callback         : appConfig.auth0Callback,
-            submissionDownloadPath: appConfig.submissionDownloadPath
+            submissionDownloadPath: appConfig.submissionDownloadPath,
+            photoLinkLocation     : appConfig.photoLinkLocation
           }
         }
       },
@@ -71,7 +72,8 @@ module.exports = function (grunt) {
             domain                : appConfig.domain,
             auth0Domain           : appConfig.auth0Domain,
             auth0Callback         : appConfig.auth0Callback,
-            submissionDownloadPath: appConfig.submissionDownloadPath
+            submissionDownloadPath: appConfig.submissionDownloadPath,
+            photoLinkLocation     : appConfig.photoLinkLocation
           }
         }
       }
