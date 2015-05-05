@@ -19,6 +19,12 @@
     }
     .login-form{
       margin: 0 0 0 5px;
+
+      .form-control-feedback {
+        /* height and line-height are altered to match with .txt-box */
+        height: 53px;
+        line-height: 53px;
+      }
     }
     .login-form .form-msg{
       @include myriad-pro-light();

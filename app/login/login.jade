@@ -8,7 +8,9 @@
     .login-form
       p.form-msg Please sign in.
 
-      .alert.alert-danger(ng-show="vm.frm.error", ng-bind="vm.frm.errorMessage")
+      .alert.alert-danger.col-xs-6(ng-show="vm.frm.error", ng-bind="vm.frm.errorMessage")
+
+      .clearfix
 
       form.col-xs-6
         .row(ng-class="{'has-error has-feedback': vm.frm.username.error}")
