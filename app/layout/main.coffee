@@ -21,8 +21,8 @@ main = ($scope, ENV, AuthService, UserService) ->
     vm.loggedInUser = null
 
   vm.activate = () ->
-    vm.loggingIn = true
     if AuthService.isAuthenticated()
+      vm.loggingIn = true
       UserService.getLoggedInUser()
       .then (data) ->
         vm.loggingIn = false
