@@ -1,7 +1,7 @@
 carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
   slide.developer-slide-1.slide
     section.container
-      h1.section-header Welcome 
+      h1.section-header Welcome
         strong(ng-bind="main.loggedInUser.name")
       ul.developer-badges
         li.participant-badge
@@ -11,9 +11,10 @@ carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
 
       ul.info
         li Current Status:  Associate
-        li Member since: 
+        li Member since:
           span(ng-bind="main.loggedInUser.memberSince | date")
       a.btn.btn-view-profile(href="#/profile") View My Profile
+
 .landing-banner(ng-show="!main.loggedInUser")
   section.container
     header.section-header
@@ -23,7 +24,7 @@ carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
         strong We love you.
 
     .banner-text
-      p Become part of the extensive, global Appirio crowdsourcing community. Developers of all kinds join Appirio to raise their game&mdash;to find mentors, to collaborate and to learn from each other, but ultimately to stand out from the crowd, by submitting (and being paid for) your best ideas.
+      p Become part of the extensive, global Apple Developer Community powered by Appirio. Developers of all kinds join the community to raise their game&mdash;to find mentors, to collaborate and to learn from each other, but ultimately to stand out from the crowd, by submitting (and being paid for) your best ideas.
 
     ul.banner-actions
       li #[a(ui-sref="learn") Learn More]
@@ -60,15 +61,6 @@ carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
       h1.heading Current Challenges
 
       p Browse our available challenges and compete.
-
-    ul.challenge-types.section-actions
-      li.highlight #[a(href="#") Arena Challenges]
-
-      li #[a(href="#") Peer Challenges]
-
-      li #[a(href="#") Performance Challenges]
-
-      li #[a(href="#") Community Challenges]
 
     ul.challenges.row
       li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in challenges")

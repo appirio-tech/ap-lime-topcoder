@@ -37,9 +37,8 @@
         margin-top: 18px;
       }
       &:before {
-        background-image: url('../images/sprite.png');
+        @include icon-sprite;
         background-position: 0px 0px;
-        background-repeat: no-repeat;
         width: 110px;
         height: 81px;
         display: block;
@@ -138,6 +137,7 @@
 
     .section-header {
       margin-top: 70px;
+      @include myriad-pro-light;
     }
     .btn {
       margin-top: 52px;
@@ -155,7 +155,7 @@
     .section-header {
       text-align: left;
       padding: 0;
-      @include myriad-pro-light();
+      @include myriad-pro-light;
 
       .heading {
         margin-top: 45px;
@@ -393,6 +393,7 @@
 
     .section-header {
       margin-top: 46px;
+      @include myriad-pro-light;
     }
   }
 
@@ -467,7 +468,7 @@
     .section-actions {
       text-align: center;
 
-      &:not(.challenge-types) a {
+      a {
         color: $light-blue;
       }
     }
@@ -476,35 +477,20 @@
     padding-top: 5px;
     margin-top: 7px;
 
+    .section-header {
+      @include myriad-pro-light;
+    }
+
     .section-actions {
       margin-top: 28px;
 
-      &:not(.challenge-types) a {
+      a {
         margin-top: 10px;
       }
     }
     .challenges {
       margin-top: 33px;
     }
-  }
-
-  .challenge-types li, .challenge-types li + li:before {
-    font-size: 18px;
-    color: #2f3c42;
-    opacity: 0.9;
-  }
-  .challenge-types li + li {
-    margin: 0;
-  }
-    .challenge-types li + li:before {
-      content: '|';
-      padding: 0 10px;
-    }
-  .challenge-types a {
-    color: inherit;
-  }
-  .challenge-types .highlight {
-    color: $light-blue;
   }
 
   .challenges {
@@ -608,17 +594,15 @@
   }
 
   .challenge-registrants .stats-value:before {
-    background-image: url('../images/sprite.png');
+    @include icon-sprite;
     background-position: -102px -175px;
-    background-repeat: no-repeat;
     width: 34px;
     height: 29px;
   }
 
   .challenge-submissions .stats-value:before {
-    background-image: url('../images/sprite.png');
+    @include icon-sprite;
     background-position: -66px -175px;
-    background-repeat: no-repeat;
     width: 34px;
     height: 30px;
   }
@@ -693,30 +677,26 @@
     margin-top: 16px;
 
     .participant-badge {
-      background-image: url('../images/sprite.png');
+      @include icon-sprite;
       background-position: -68px -83px;
-      background-repeat: no-repeat;
       width: 35px;
       height: 35px;
     }
     .challenger-badge {
-      background-image: url('../images/sprite.png');
+      @include icon-sprite;
       background-position: -255px -36px;
-      background-repeat: no-repeat;
       width: 25px;
       height: 34px;
     }
     .education-badge {
-      background-image: url('../images/sprite.png');
+      @include icon-sprite;
       background-position: -68px -120px;
-      background-repeat: no-repeat;
       width: 34px;
       height: 34px;
     }
     .performer-badge {
-      background-image: url('../images/sprite.png');
+      @include icon-sprite;
       background-position: -255px 0px;
-      background-repeat: no-repeat;
       width: 29px;
       height: 34px;
     }

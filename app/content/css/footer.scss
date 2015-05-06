@@ -55,22 +55,22 @@ footer ul.social li .tw:hover {
     height: 41px;
     text-indent: 12px;
     float: left;
-    @include source-sans();
+    @include source-sans;
     font-size: 14px;
     color: rgba(102, 102, 102, 0.50);
   }
   .footer-mail .txtbox::-webkit-input-placeholder{
-    @include source-sans();
+    @include source-sans;
     font-size: 14px;
     color: rgba(102, 102, 102, 0.50);
   }
   .footer-mail .txtbox::-moz-placeholder{
-    @include source-sans();
+    @include source-sans;
     font-size: 14px;
     color: rgba(102, 102, 102, 0.50);
   }
     .footer-mail .txtbox::-ms-input-placeholder{
-    @include source-sans();
+    @include source-sans;
     font-size: 14px;
     color: rgba(102, 102, 102, 0.50);
     }
@@ -81,7 +81,7 @@ footer ul.social li .tw:hover {
     border-radius: 4px;
     margin: 30px 0 0 10px;
     line-height: 36px;
-    @include source-sans();
+    @include source-sans;
     float: left;
   }
     .twit-icon{

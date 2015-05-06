@@ -4,7 +4,7 @@
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 body {
-  @include myriad-pro();
+  @include myriad-pro;
 }
 
 .view-container-loading {
@@ -48,7 +48,7 @@ a, a:visited, a:hover {
   border: none;
   outline: none;
   box-shadow: none;
-  color: #fff;
+  color: $white;
   background-color: transparent;
   background-repeat: repeat-x;
   background-size: auto 100%;
