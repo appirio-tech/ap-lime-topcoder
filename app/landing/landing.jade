@@ -65,11 +65,12 @@ carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
     ul.challenges.row
       li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in challenges")
         section.challenge
-          img.challenge-image(src="content/images/swift-challenge.png", alt="challenge image")
+          a(ng-href="https://www.topcoder.com/challenge-details/{{challenge.challengeId}}/?type=develop")
+            img.challenge-image(src="content/images/swift-challenge.png", alt="challenge image")
 
           .challenge-details
             h2.challenge-header
-              a(href="javascript:;") {{challenge.challengeName}}
+              a(ng-href="https://www.topcoder.com/challenge-details/{{challenge.challengeId}}/?type=develop") {{challenge.challengeName}}
 
             .challenge-data
               p #[span.challenge-field Technologies:] {{challenge.technologies}}
@@ -79,20 +80,20 @@ carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
 
             .challenge-prize {{challenge.firstPlacePrize | currency:undefined:0}}
 
-            .challenge-deadline {{challenge.submissionEndDate | date:&apos;short&apos; : &apos;UTC&apos;}} UTC
+            .challenge-deadline {{challenge.submissionEndDate | localTime}}
 
             .row.challenge-stats
               .col-sm-6.challenge-registrants.challenge-stat
                 .stats-type REGISTRANTS
 
                 .stats-value
-                  a(href="javascript:;") {{challenge.numRegistrants}}
+                  a(ng-href="https://www.topcoder.com/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numRegistrants}}
 
               .col-sm-6.challenge-submissions.challenge-stat
                 .stats-type SUBMISSIONS
 
                 .stats-value
-                  a(href="javascript:;") {{challenge.numSubmissions}}
+                  a(ng-href="https://www.topcoder.com/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numSubmissions}}
 
     ul.section-actions
       li #[a(ui-sref="learn") Learn more about challenge types &gt;]
