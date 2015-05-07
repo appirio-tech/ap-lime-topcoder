@@ -65,11 +65,11 @@ carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
     ul.challenges.row
       li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in challenges")
         section.challenge
-          img.challenge-image(ng-src="{{challenge.image}}", alt="challenge image")
+          img.challenge-image(src="content/images/swift-challenge.png", alt="challenge image")
 
           .challenge-details
             h2.challenge-header
-              a(href="javascript:;") {{challenge.title}}
+              a(href="javascript:;") {{challenge.challengeName}}
 
             .challenge-data
               p #[span.challenge-field Technologies:] {{challenge.technologies}}
@@ -77,25 +77,25 @@ carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
             .challenge-data
               p #[span.challenge-field Platform:] {{challenge.platforms}}
 
-            .challenge-prize {{challenge.prize}}
+            .challenge-prize {{challenge.firstPlacePrize | currency:undefined:0}}
 
-            .challenge-deadline {{challenge.deadline | date:&apos;short&apos; : &apos;UTC&apos;}} UTC
+            .challenge-deadline {{challenge.submissionEndDate | date:&apos;short&apos; : &apos;UTC&apos;}} UTC
 
             .row.challenge-stats
               .col-sm-6.challenge-registrants.challenge-stat
                 .stats-type REGISTRANTS
 
                 .stats-value
-                  a(href="javascript:;") {{challenge.registrants}}
+                  a(href="javascript:;") {{challenge.numRegistrants}}
 
               .col-sm-6.challenge-submissions.challenge-stat
                 .stats-type SUBMISSIONS
 
                 .stats-value
-                  a(href="javascript:;") {{challenge.submissions}}
+                  a(href="javascript:;") {{challenge.numSubmissions}}
 
     ul.section-actions
-      li #[a(href="#") Learn more about challenge types &gt;]
+      li #[a(ui-sref="learn") Learn more about challenge types &gt;]
 
       li #[a(ui-sref="challenges") View full challenge list &gt;]
 
