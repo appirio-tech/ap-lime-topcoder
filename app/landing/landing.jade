@@ -78,7 +78,7 @@ carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
             .challenge-data
               p #[span.challenge-field Platform:] {{challenge.platforms}}
 
-            .challenge-prize {{challenge.firstPlacePrize | currency:undefined:0}}
+            .challenge-prize {{challenge.totalPrize | currency:undefined:0}}
 
             .challenge-deadline {{challenge.submissionEndDate | localTime}}
 
