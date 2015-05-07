@@ -27,11 +27,11 @@ carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
       p Become part of the extensive, global Apple Developer Community powered by Appirio. Developers of all kinds join the community to raise their game&mdash;to find mentors, to collaborate and to learn from each other, but ultimately to stand out from the crowd, by submitting (and being paid for) your best ideas.
 
     ul.banner-actions
-      li #[a(ui-sref="learn") Learn More]
+      li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn More]
 
-      li #[a.btn(href="#") Become a member]
+      li #[a.btn(ui-sref="register") Become a member]
 
-.get-training-section.learn-page
+.get-training-section.learn-page#learn-more
   section.container
     h1.section-header Get iOS training and instruction
 
@@ -42,7 +42,7 @@ carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
         p We want thinkers. The &ldquo;why not&ldquo; people. The ones who never met a problem they couldn&rsquo;t solve. Jowl sirloin brisket tri-tip tongue tenderloin shoulder salami strip steak pork belly hamburger filet mignon pork chop ball tip cupim. Pork belly beef ribs ribeye shoulder. Ribeye pork loin beef ribs landjaeger bacon. Short loin drumstick brisket, ribeye pork chop shoulder pork loin swine turkey. Sausage tenderloin prosciutto swine ball tip. Salami t-bone capicola doner bacon tongue pork filet mignon kevin shank sirloin drumstick boudin andouille.
 
         ul.section-actions
-          li #[a(href="#") View challenges &gt;]
+          li #[a(ui-sref="challenges") View challenges &gt;]
 
           li #[a.btn(ui-sref="register") Become a member]
 
@@ -65,8 +65,6 @@ carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
     ul.challenges.row
       li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in challenges")
         section.challenge
-          .challenge-type {{challenge.type}}
-
           img.challenge-image(ng-src="{{challenge.image}}", alt="challenge image")
 
           .challenge-details
@@ -99,17 +97,17 @@ carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
     ul.section-actions
       li #[a(href="#") Learn more about challenge types &gt;]
 
-      li #[a(href="#") View full challenge list &gt;]
+      li #[a(ui-sref="challenges") View full challenge list &gt;]
 
 section.learn-improve-section.landing-annon-page
   .container
     header.section-header
       h1.heading Learn and improve
 
-      p Participate in the iOS Developer Community program
+      p Participate in the Apple Developer Community program
 
     .section-content
-      .section-subheader You're on the road to becoming a member of the iOS Developer Community.
+      .section-subheader You're on the road to becoming a member of the Apple Developer Community.
 
       p Experienced and proven iOS developers are in high-demand.  Prove your skills by earning these iOS topcoder badges and gain exclusive access to iOS challenges and prize accelerators, special previews into Apple&rsquo;s content and releases, and special community-related events and info.
 
@@ -121,7 +119,7 @@ section.learn-improve-section.landing-annon-page
         section.col-sm-12.col-md-4.info-col
           h2.subsection-header Learn from your peers
 
-          p Whether you are an experienced iOS developer or are just getting started, follow these steps to join and grow in the iOS Developer Community
+          p Whether you are an experienced iOS developer or are just getting started, follow these steps to join and grow in the Apple Developer Community
 
           .link-row
             a.btn(ui-sref="learn") Learn more
@@ -129,7 +127,7 @@ section.learn-improve-section.landing-annon-page
         section.col-sm-12.col-md-4.info-col
           h2.subsection-header Train and improve
 
-          p New to the community? Want to improve your skills? Why not try one of our Arena Challenges to get you on the path to righteousness. Choose from one of our many different challenges types and train your way into becomeing a iOS champion!
+          p New to the community? Want to improve your skills? Why not try one of our Challenges to sharpen and elevate your skill level. Choose from one of our many different challenges types and train your way into becoming an iOS champion!
 
           .link-row
             a.btn(ui-sref="learn") Learn more
@@ -137,10 +135,10 @@ section.learn-improve-section.landing-annon-page
         section.col-sm-12.col-md-4.info-col
           h2.subsection-header Compete and win
 
-          p Ready to prove yourself on a global stage? have what it takes to compete and win in the iOS Developer Community? Well step right  up and find a challenge to test your merit on. Any and all are welcome...just view our open challenges and Let&rsquo;s get ready to Ruumbleeeeeee!
+          p Ready to prove yourself on a global stage? Have what it takes to compete and win in the Apple Developer Community? Well step right up and find a challenge to test your merit on. Any and all are welcome...register for a challenge today!
 
           .link-row
-            a.btn(ui-sref="learn") Learn more
+            a.btn(ui-sref="challenges") Learn more
 
 .learn-section.learn-page
   section.container
@@ -149,4 +147,4 @@ section.learn-improve-section.landing-annon-page
 
       p Learn, train, compete, and win with the iOS Development Community.
 
-    a.btn(href="#") Get Started
+    a.btn(ui-sref="learn") Get Started

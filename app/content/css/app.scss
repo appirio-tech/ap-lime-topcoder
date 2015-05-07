@@ -32,11 +32,13 @@ body {
 }
 
 // Element Styles
-a, a:visited, a:hover {
+a, a:visited, a:focus, a:hover {
   text-decoration: none;
 }
 
 .btn {
+  @include myriad-pro-light;
+  font-size: 16px;
   display: inline-block;
   line-height: 30px;
   padding: 0 14px 0 17px;

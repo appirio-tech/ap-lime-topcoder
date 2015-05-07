@@ -177,20 +177,25 @@
       line-height: 1.3em;
     }
     .banner-actions {
-      margin-top: 75px;
+      margin-top: 60px;
+      margin-left: 6px;
       line-height: 30px;
 
       li {
         display: inline-block;
+        vertical-align: middle;
 
         & + li {
           margin-left: 40px;
         }
       }
-
+      .learn-link {
+        @include myriad-pro-light;
+        line-height: 1em;
+        font-size: 22px;
+      }
       a:not(.btn) {
-        color: #3a444c;
-        font-size: 24px;
+        color: $light-blue;
       }
       .btn {
         padding: 0 25px;
@@ -376,8 +381,9 @@
       max-width: 1024px;
     }
     .subsection-header {
-      color: $header-gray;
+      @include myriad-pro-light;
       font-size: 30px;
+      color: $header-gray;
       margin-bottom: 24px;
     }
     .info-col:not(:first-child) .subsection-header {
@@ -510,15 +516,6 @@
 
   .challenge-image {
     width: 100%;
-  }
-
-  .challenge-type {
-    text-align: center;
-    background-color: #8dc642;
-    line-height: 24px;
-    text-transform: uppercase;
-    color: rgba(247, 247, 247, 0.8);
-    font-size: 12px;
   }
 
   .challenge-header {

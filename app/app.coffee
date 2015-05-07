@@ -5,8 +5,9 @@ dependencies = [
   'app.config'
   'app.directives'
   'ui.router'
-  'ngDropdowns'
   'ui.bootstrap'
+  'ngDropdowns'
+  'duScroll'
 ]
 
 run = ($rootScope, $state, AuthToken, Auth) ->
