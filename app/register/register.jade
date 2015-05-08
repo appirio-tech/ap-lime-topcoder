@@ -7,9 +7,9 @@
       .register-msg
         p We're happy to have you join our community.
         p Please tell us a little bit about yourself.
-    .col-xs-12(ng-show="vm.frm.error")
-      .alert.alert-danger(ng-bind="vm.frm.errorMessage")
     form.register-form.col-xs-12(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()")
+      .col-xs-12.fields(ng-show="vm.frm.error")
+        .alert.alert-danger(ng-bind="vm.frm.errorMessage")
       .col-xs-12.col-md-6.padding-reset
         .fields(ng-class="{'has-error has-feedback': vm.hasError('firstName')}")
             input.txt-box(name="firstName", type="text", placeholder="First Name", ng-model="vm.reg.firstName", aria-describedby="firstNameErrorStatus", required)
@@ -36,8 +36,7 @@
             span#ageErrorStatus.sr-only (error)
       .col-xs-12.col-md-6.padding-reset
         div.fields(ng-class="{'has-error has-feedback': vm.hasError('country')}")
-          input(type="hidden", ng-model="vm.reg.country", name="country", required-dropdown)
-          div(dropdown-select="vm.frm.countries", dropdown-model="vm.reg.country")
+          input.txt-box(type="text", placeholder="Select Country", ng-model="vm.reg.country", name="country", typeahead="country.text for country in vm.frm.countries | filter:$viewValue | limitTo:8", required)
           span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('country')")
           span#ageErrorStatus.sr-only (error)
 
@@ -55,7 +54,11 @@
         .checkbox.fields(ng-class="{'has-error has-feedback': vm.hasError('agree')}")
             label(ng-click="vm.handleAgree")
               input(name="agree", type="checkbox", ng-model="vm.frm.agree", aria-describedby="agreeErrorStatus", required, checkbox )
-              | Agree to terms and privacy policy
+              | Agree to 
+              a(href="http://www.topcoder.com/community/how-it-works/terms/", target="_blank") terms 
+              | and privacy 
+              a(href="http://www.topcoder.com/community/how-it-works/privacy-policy/", target="_blank") policy
+              span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('agree')")
             span#agreeErrorStatus.sr-only (error)
       .col-xs-12.fields(rel="submit")
         input.btns.glow-btn.register-btn.pull-right(type="submit", value="Register", ng-show="!vm.registering")

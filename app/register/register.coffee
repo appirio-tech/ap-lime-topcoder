@@ -7,7 +7,7 @@ register = ($scope, Auth, Countries) ->
   createDropdownModel = (country, index) ->
     {text: country, value: index}
   
-  vm.reg = {country: {value: -1, text: "Select Country"}}
+  vm.reg = {}
   vm.frm =
     error: false
     errorMessage: ''
@@ -25,7 +25,7 @@ register = ($scope, Auth, Countries) ->
     .catch (data) ->
       vm.registering = false
       if data.data && data.data.error
-        handleError data.data.error.details[0]
+        handleError data.data.error.details
       else handleError
 
   vm.hasError = (field) ->
