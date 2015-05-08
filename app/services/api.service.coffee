@@ -7,8 +7,12 @@ ApiService = ($http, AuthToken) ->
     options =
       method : method
       url    : url
-      headers: {
-        'Authorization' : 'Bearer ' + AuthToken.getToken()
+      headers: { } 
+      
+    token = AuthToken.getToken()
+    if token
+      options.headers = {
+        'Authorization' : 'Bearer ' + token
       }
 
     if data && method != 'GET'

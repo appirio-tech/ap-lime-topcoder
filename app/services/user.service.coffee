@@ -2,9 +2,11 @@
 
 UserService = (ENV, ApiService, jwtHelper, AuthToken) ->
   getUsername: () ->
-    token = AuthToken.getToken()
-    userId = jwtHelper.decodeToken(token).userId
-    url = ENV.API_URL + '/users/' + userId
+#    token = AuthToken.getToken()
+#    userId = jwtHelper.decodeToken(token).userId
+#    url = ENV.API_URL + '/users/' + userId
+#    ApiService.requestHandler 'GET', url
+    url = ENV.API_URL_V2 + '/user/identity'
     ApiService.requestHandler 'GET', url
 
   getLoggedInUser: () ->
