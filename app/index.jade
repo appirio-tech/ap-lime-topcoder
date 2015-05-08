@@ -9,7 +9,9 @@
 - bowerJsFiles.push('angular-bootstrap/ui-bootstrap-tpls.min')
 - bowerJsFiles.push('iCheck/icheck.min')
 - bowerJsFiles.push('moment/moment')
-- bowerJsFiles.push('moment-timezone/moment-timezone-with-data-2010-2020')
+
+- nonBowerJsFiles = []
+- nonBowerJsFiles.push('moment-timezone-with-data-2010-2020')
 
 - bowerCssFiles = []
 - bowerCssFiles.push('bootstrap/dist/css/bootstrap')
@@ -78,9 +80,11 @@ html
     script(src="https://cdn.auth0.com/w2/auth0-1.6.4.js", type="text/javascript")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js", type="text/javascript")
 
-    // build:js(.) scripts/vendor.js
+    // build:js({.,app}) scripts/vendor.js
     each bowerJsFile in bowerJsFiles
       script(src="bower_components/#{bowerJsFile}.js", type="text/javascript")
+    each nonBowerJsFile in nonBowerJsFiles
+      script(src="content/scripts/#{nonBowerJsFile}.js", type="text/javascript")
     // endbuild
 
     // build:js({.tmp,app}) scripts/app.js

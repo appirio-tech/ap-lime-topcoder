@@ -470,6 +470,12 @@ module.exports = function (grunt) {
         cwd   : '<%= yeoman.app %>/content/images',
         dest  : '.tmp/content/images/',
         src   : ['*.png', '*.ico', '*.gif']
+      },
+      scripts: {
+        expand: true,
+        cwd   : '<%= yeoman.app %>/content/scripts',
+        dest  : '.tmp/content/scripts/',
+        src   : '{,*/}*.js'
       }
     },
 
@@ -479,7 +485,8 @@ module.exports = function (grunt) {
         'sass',
         'coffee:dist',
         'jade:compile',
-        'copy:images'
+        'copy:images',
+        'copy:scripts'
       ],
       test: [
         'coffee',
