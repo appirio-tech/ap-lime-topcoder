@@ -1,6 +1,7 @@
 'use strict'
 
-register = ($scope, Auth, Countries) ->
+register = ($scope, $state, Auth, Countries) ->
+  DEFAULT_STATE = 'landing'
   vm = this
   vm.registering = false
 
@@ -15,18 +16,20 @@ register = ($scope, Auth, Countries) ->
 
   vm.doRegister = () ->
     vm.registering = true
+    vm.frm.error = false
+    vm.frm.errorMessage = ''
     vm.reg.regSource = 'apple'
     Auth.register vm.reg
     .then (data) ->
       vm.registering = false
       if data.data.error
-        handleError data.data.error
-      else handleSuccess
+        regError data.data.error
+      else regSuccess()
     .catch (data) ->
       vm.registering = false
       if data.data && data.data.error
-        handleError data.data.error.details
-      else handleError
+        regError data.data.error.details
+      else regSuccess()
 
   vm.hasError = (field) ->
     form = $scope.frm
@@ -36,19 +39,31 @@ register = ($scope, Auth, Countries) ->
     console.log(vm.frm.agree);
     vm.frm.agree = !vm.frm.agree
 
-  handleSuccess = () ->
-    vm.registering = false
-    console.log 'account created: ' + JSON.stringify vm.reg
+  regSuccess = () ->
+    Auth.login vm.reg.handle, vm.reg.password, loginSuccess, loginError
 
+  loginSuccess = () ->
+    $scope.$parent.main.activate()
+    if $state.get vm.retState
+      $state.go vm.retState
+    else
+      $state.go DEFAULT_STATE
+          
   # handles error event of the login action
-  handleError = (error) ->
+  regError = (error) ->
     vm.registering = false
     # $scope.$apply () ->
     vm.frm.error = true
     vm.frm.errorMessage = 'Account could not be created. ' + error
+    
+  loginError = (error) ->
+    vm.registering = false
+    vm.frm.error = true
+    vm.frm.errorMessage = 'Your account was created, but we were unable to log you in. If this problem persists, please contact: support@topcoder.com'
 
 angular.module('lime-topcoder').controller 'register', [
   '$scope'
+  '$state'
   'Auth'
   'Countries'
   register

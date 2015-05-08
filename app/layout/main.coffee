@@ -30,7 +30,12 @@ main = ($scope, ENV, AuthService, UserService) ->
         vm.updatePhotoLink()
       .catch (error) ->
         vm.loggingIn = false
-        console.log error
+        UserService.getUsername()
+        .then (data) ->
+          vm.loggedInUser = {
+            "handle": data.data.handle,
+            "photo": "content/images/user.png"
+          }        
 
   vm.activate()
 
