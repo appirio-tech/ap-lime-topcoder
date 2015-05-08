@@ -54,7 +54,10 @@
         .checkbox.fields(ng-class="{'has-error has-feedback': vm.hasError('agree')}")
             label(ng-click="vm.handleAgree")
               input(name="agree", type="checkbox", ng-model="vm.frm.agree", aria-describedby="agreeErrorStatus", required, checkbox )
-              | Agree to terms and privacy policy
+              | Agree to 
+              a(href="http://www.topcoder.com/community/how-it-works/terms/", target="_blank") terms 
+              | and privacy 
+              a(href="http://www.topcoder.com/community/how-it-works/privacy-policy/", target="_blank") policy
               span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('agree')")
             span#agreeErrorStatus.sr-only (error)
       .col-xs-12.fields(rel="submit")
