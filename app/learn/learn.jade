@@ -1,6 +1,6 @@
 .top-banner
   section.container
-    h1.banner-header Ready to join our #[strong iOS Developer Community?]
+    h1.banner-header Ready to join our #[strong Apple Developer Community?]
 
     .banner-text
       p Experienced and proven iOS developers are in high-demand.  Prove your skills by earning these iOS topcoder badges and gain exclusive access to iOS challenges and prize accelerators, special previews into Apple&rsquo;s content and releases, and special community-related events and info.
@@ -15,11 +15,11 @@
         li &bull; Earn more badges and prestige!
 
       ul.banner-actions
-        li #[a.learn-link(data-ui-sref='learn') Learn More]
+        li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn more]
 
-        li #[a.btn(href='javascript:;') Become a member]
+        li #[a.btn(ui-sref='register') Become a member]
 
-section.container.learn-badges-section
+section.container.learn-badges-section#learn-more
   header.section-header
     h1.heading Get iOS training and instruction
 
@@ -29,12 +29,10 @@ section.container.learn-badges-section
     .badge-item.participant-badge.col-xs-12.col-md-4
       .badge-header Participant Badge
 
-      p Sign up as a iOS Developer Community participant and  earn a participant badge.
+      p Sign up as an iOS Developer Community participant and earn a participant badge.
 
       .badge-link
-        a(href='javascript:;') Learn More &gt;
-
-        a(href='javascript:;') View Challenges &gt;
+        a.btn Select
 
     .badge-item.education-badge.col-xs-12.col-md-4
       .badge-header Education Badges
@@ -42,9 +40,7 @@ section.container.learn-badges-section
       p Take an Apple-certified training class to earn Education badges
 
       .badge-link
-        a(href='javascript:;') Learn More &gt;
-
-        a(href='javascript:;') View Challenges &gt;
+        a.btn Select
 
     .badge-item.peer-badge.col-xs-12.col-md-4
       .badge-header Peer Badges
@@ -52,9 +48,7 @@ section.container.learn-badges-section
       p Pass a Peer-Review Challenge and get recognized as &ldquo;Swift/iOS Ready!&rdquo;
 
       .badge-link
-        a(href='javascript:;') Learn More &gt;
-
-        a(href='javascript:;') View Challenges &gt;
+        a.btn Select
 
   .badge-list.row
     .badge-item.challenger-badge.col-xs-12.col-md-4
@@ -63,9 +57,7 @@ section.container.learn-badges-section
       p Register/Submit for your first iOS Mobile App challenge
 
       .badge-link
-        a(href='javascript:;') Learn More &gt;
-
-        a(href='javascript:;') View Challenges &gt;
+        a.btn Select
 
     .badge-item.performer-badge.col-xs-12.col-md-4
       .badge-header High Performer Badges
@@ -73,19 +65,7 @@ section.container.learn-badges-section
       p Demonstrate Customer-Ready Skills
 
       .badge-link
-        a(href='javascript:;') Learn More &gt;
-
-        a(href='javascript:;') View Challenges &gt;
-
-    .badge-item.custom-badge.col-xs-12.col-md-4
-      .badge-header Badge Category
-
-      p Lorem ipsum alpha dolar istest nido
-
-      .badge-link
-        a(href='javascript:;') Learn More &gt;
-
-        a(href='javascript:;') View Challenges &gt;
+        a.btn Select
 
 .newsletter-form-wrapper
   section.newsletter-form-section.container
@@ -106,55 +86,36 @@ section.resources-section
     .container
       section.row
         .col-xs-12.col-md-6.col-md-push-6.logo-column
-          img(alt='design logo', src='content/images/design-logo.png')
+          img(alt='design logo', src='content/images/developer-logo.png')
 
         .col-xs-12.col-md-6.col-md-pull-6.content-col
           header.section-subheader
-            h2.heading UI/UX Design resources
+            h2.heading Just getting started with iOS?
 
-            p Learn to design for iOS standards
-
-          .resource-description
-            p Ground round porchetta pancetta ribeye shankle frankfurter flank spare ribs beef. Jowl sirloin brisket tri-tip tongue tenderloin shoulder salami strip steak pork belly hamburger filet mignon pork chop ball tip cupim. Pork belly beef ribs ribeye shoulder. Ribeye pork loin beef ribs landjaeger bacon. Short loin drumstick brisket, ribeye pork chop shoulder pork loin swine turkey. Sausage tenderloin prosciutto swine ball tip. Salami t-bone capicola doner bacon tongue pork filet mignon kevin shank sirloin drumstick boudin andouille.
-
-          ul.resource-links
-            li #[a(href='javascript:;') Popular]
-
-            li #[a(href='javascript:;') Application]
-
-            li #[a(href='javascript:;') Mobile]
-
-            li #[a(href='javascript:;') Web]
-
-  .resource-subsection
-    .container
-      section.row
-        .col-xs-12.col-md-6.logo-column
-          img(alt='design logo', src='content/images/developer-logo.png')
-
-        .col-xs-12.col-md-6.content-col
-          header.section-subheader
-            h2.heading iOS Developer resources
-
-            p Learn to develop for iOS standards
+            p There are some great resources available
 
           .resource-description
-            p Is this your first time learning about Swift? There are some great resources available. ribs beef. Jowl sirloin brisket tri-tip tongue tenderloin shoulder salami strip steak pork belly hamburger filet mignon pork chop ball tip cupim. Pork belly beef ribs ribeye shoulder. Ribeye pork loin beef ribs landjaeger bacon. Short loin drumstick brisket, ribeye pork chop shoulder pork loin swine turkey. Sausage tenderloin prosciutto swine ball tip. Salami t-bone capicola doner bacon tongue pork filet mignon kevin shank sirloin drumstick boudin andouille.
+            p Whether you're looking for formal training classes or the chance to learn-by-doing, there are some great resources available within the Topcoder community, from universities, and from Apple and Apple's training partner.
 
-          ul.resource-links
-            li #[a(href='javascript:;') Popular]
+          .resource-links
+            h2.heading Resource Links:
 
-            li #[a(href='javascript:;') Application]
+            ul
+              li - First start with Apple's #[a(href="https://developer.apple.com/swift/") overview] and #[a(href="https://developer.apple.com/swift/resources/") resources]
 
-            li #[a(href='javascript:;') Mobile]
+              li - iTunes has free classes from #[a(href="https://itunes.com/StanfordSwift") Stanford University] and #[a(href="https://itunes.com/PlymouthSwift") Plymouth University]
 
-            li #[a(href='javascript:;') Web]
+              li - Complete an online iOS developer #[a(href="https://www.udacity.com/course/nd003") nanodegree] from Udacity
+
+              li - Review Topcoder's #[a(href="https://www.topcoder.com/tag/swift/") Swift Blog posts] and #[a(href="https://www.topcoder.com/challenges/develop/past/?startDate=2014-04-01&technologies=SWIFT&pageIndex=1") previous challenges]
+
+              li - Take an Apple-certified training class from Big Nerd Ranch
 
 .learn-section.learn-page
   section.container
     header.section-header
       h1.heading What will you learn?
 
-      p Learn, train, compete, and win with the iOS Development Community.
+      p Learn, train, compete, and win with the Apple Development Community.
 
     a.btn(href='javascript:;') Get Started

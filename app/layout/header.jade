@@ -1,5 +1,5 @@
 .navbar.navbar-inverse.navbar-static-top.container
-  a.small-logo.pull-left(href="#")
+  a.small-logo.pull-left(ui-sref="landing")
     img(src="content/images/small-logo.png")
   .navbar-header
     button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#lime-nav-bar")
@@ -16,7 +16,7 @@
           a(ui-sref="learn") Learn
         li
           a(href="#") Help
-        li
+        li(ng-show="!main.loggedInUser")
           a.btns.glow-btn.become-member(ui-sref="register") Become a member
         li(ng-show="!main.loggedInUser")
           a.dropdown-profile.pull-left(ui-sref="login")

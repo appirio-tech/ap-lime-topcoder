@@ -54,7 +54,8 @@ module.exports = function (grunt) {
             domain                : appConfig.domain,
             auth0Domain           : appConfig.auth0Domain,
             auth0Callback         : appConfig.auth0Callback,
-            submissionDownloadPath: appConfig.submissionDownloadPath
+            submissionDownloadPath: appConfig.submissionDownloadPath,
+            photoLinkLocation     : appConfig.photoLinkLocation
           }
         }
       },
@@ -71,7 +72,8 @@ module.exports = function (grunt) {
             domain                : appConfig.domain,
             auth0Domain           : appConfig.auth0Domain,
             auth0Callback         : appConfig.auth0Callback,
-            submissionDownloadPath: appConfig.submissionDownloadPath
+            submissionDownloadPath: appConfig.submissionDownloadPath,
+            photoLinkLocation     : appConfig.photoLinkLocation
           }
         }
       }
@@ -468,6 +470,12 @@ module.exports = function (grunt) {
         cwd   : '<%= yeoman.app %>/content/images',
         dest  : '.tmp/content/images/',
         src   : ['*.png', '*.ico', '*.gif']
+      },
+      scripts: {
+        expand: true,
+        cwd   : '<%= yeoman.app %>/content/scripts',
+        dest  : '.tmp/content/scripts/',
+        src   : '{,*/}*.js'
       }
     },
 
@@ -477,7 +485,8 @@ module.exports = function (grunt) {
         'sass',
         'coffee:dist',
         'jade:compile',
-        'copy:images'
+        'copy:images',
+        'copy:scripts'
       ],
       test: [
         'coffee',

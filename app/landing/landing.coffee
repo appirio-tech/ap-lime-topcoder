@@ -1,12 +1,14 @@
 'use strict'
 
-landing = ($scope, $http) ->
-  $http.get 'content/data/challenges.json'
-  .success (challenges) ->
-      $scope.challenges = challenges.slice 0, 3
+landing = ($scope, ChallengeService, Helpers) ->
+  ChallengeService.getChallenges()
+  .then (response) ->
+    $scope.challenges = response.data.data.slice 0, 3
+    Helpers.formatArray $scope.challenges
 
 angular.module('lime-topcoder').controller 'landing', [
   '$scope'
-  '$http'
+  'ChallengeService'
+  'Helpers'
   landing
 ]

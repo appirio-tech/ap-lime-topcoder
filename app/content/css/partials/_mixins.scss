@@ -16,20 +16,25 @@
   line-height: ($pt * 1px);
 }
 
-@mixin source-sans() {
+@mixin source-sans {
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   font-weight: 400;
 }
 
-@mixin source-sans-bold() {
+@mixin source-sans-bold {
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   font-weight: 700;
 }
 
-@mixin myriad-pro() {
+@mixin myriad-pro {
   font-family: 'MyriadPro-Regulars', Calibri, sans-serif;
 }
 
-@mixin myriad-pro-light() {
+@mixin myriad-pro-light {
   font-family: 'MyriadPro-Light', Calibri, sans-serif;
+}
+
+@mixin icon-sprite {
+  background-image: url('../images/sprite.png');
+  background-repeat: no-repeat;
 }

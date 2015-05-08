@@ -3,7 +3,7 @@
 'use strict'
 
 ApiService = ($http, AuthToken) ->
-  requestHandler: (method, url, data) ->
+  requestHandler: (method, url, data, noAuth) ->
     options =
       method : method
       url    : url
@@ -11,11 +11,17 @@ ApiService = ($http, AuthToken) ->
         'Authorization' : 'Bearer ' + AuthToken.getToken()
       }
 
-    if data
+    if data && method != 'GET'
       options.data = data
+
+    if data && method == 'GET'
+      options.params = data
 
     if method == 'POST'
       options.headers['Content-Type'] = 'application/json'
+
+    if noAuth
+      delete options.headers.Authorization
 
     $http options
 
