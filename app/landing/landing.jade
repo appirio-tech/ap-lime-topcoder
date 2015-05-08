@@ -29,7 +29,7 @@ carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
     ul.banner-actions
       li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn More]
 
-      li #[a.btn(ui-sref="register") Become a member]
+      li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a member]
 
 .get-training-section.learn-page#learn-more
   section.container
@@ -44,7 +44,7 @@ carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
         ul.section-actions
           li #[a(ui-sref="challenges") View challenges &gt;]
 
-          li #[a.btn(ui-sref="register") Become a member]
+          li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a member]
 
 .newsletter-form-wrapper
   section.newsletter-form-section.container
