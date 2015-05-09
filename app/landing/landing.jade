@@ -1,35 +1,30 @@
-carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
-  slide.developer-slide-1.slide
-    section.container
-      h1.section-header Welcome
-        strong(ng-bind="main.loggedInUser.name")
-      ul.developer-badges
-        li.participant-badge
-        li.challenger-badge
-        li.education-badge
-        li.performer-badge
-
-      ul.info
-        li Current Status:  Associate
-        li Member since:
-          span(ng-bind="main.loggedInUser.memberSince | date")
-      a.btn.btn-view-profile(href="#/profile") View My Profile
-
-.landing-banner(ng-show="!main.loggedInUser")
+.landing-banner
   section.container
     header.section-header
       img(src="content/images/logo-landing.png", alt="TopCoder logo")
 
-      h1.heading Dear Developers,
+      h1.heading(ng-show="!main.loggedInUser") Dear Developers,
         strong We love you.
 
-    .banner-text
+      h1.heading(ng-show="main.loggedInUser") Welcome 
+        span(ng-bind="main.loggedInUser.handle")
+        span ,
+        strong We especially love you.
+
+    .banner-text(ng-show="!main.loggedInUser")
       p Become part of the extensive, global Apple Developer Community powered by Appirio. Developers of all kinds join the community to raise their game&mdash;to find mentors, to collaborate and to learn from each other, but ultimately to stand out from the crowd, by submitting (and being paid for) your best ideas.
+      
+    .banner-text(ng-show="main.loggedInUser && !main.loggedInUser.memberSince")
+      p Thanks for joining. Before you can compete, you'll need to confirm your email account with topcoder, so be sure to check your email for the activation link.
+
+    .banner-text(ng-show="main.loggedInUser && main.loggedInUser.memberSince")
+      p I'm sure you're anxious to get started. Don't let us get in the way, we've got a bunch of new challenges lined up with Apple, lots of Swift challenges across the board, and a new model of competition based on peer reviews.
 
     ul.banner-actions
       li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn More]
 
       li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a member]
+      li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(href="#challenges", du-smooth-scroll) Get started competing]
 
 .get-training-section.learn-page#learn-more
   section.container
@@ -55,7 +50,7 @@ carousel.carousel-section(interval="5000", ng-show="main.loggedInUser")
 
       button.btn(type="submit") Submit
 
-.challenges-section.landing-annon-page
+.challenges-section.landing-annon-page#challenges
   section.container
     header.section-header
       h1.heading Current Challenges
