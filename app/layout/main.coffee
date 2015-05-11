@@ -21,11 +21,7 @@ main = ($scope, $state, ENV, AuthService, UserService) ->
     vm.loggedInUser = null
 
   vm.isActive = (state) ->
-    console.log 'checking state'
-    console.log 'current state is: ', $state.current.name
-    console.log 'checking tab: ', state
     if $state.current.name == state
-      console.log 'that is the current state'
       true
     false
 

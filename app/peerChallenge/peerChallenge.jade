@@ -49,27 +49,27 @@ carousel.carousel-section(interval="50000")
             .chge.col2.pull-left
               .inner
                 h4.chTitle
-                  a.ellipses(href="#"){{challenge.title}}
+                  a.ellipses(href="#") {{challenge.title}}
                 .rw.ellipses
                   span.lbl Technologies:
-                  span.val{{challenge.technologies}}
+                  span.val {{challenge.technologies}}
                 .rw.ellipses
                   span.lbl Platform:
-                  span.val{{challenge.platforms}}
+                  span.val {{challenge.platforms}}
             .pz.ct.col3.pull-left
               .inner
                 .rw.lbl Challenge start
-                .rw.time{{challenge.startsAt | date:&apos;short&apos; : &apos;UTC&apos;}} UTC
+                .rw.time {{challenge.startsAt | date:&apos;short&apos; : &apos;UTC&apos;}} UTC
                 .rw.lbl.nd Challenge end
-                .rw.time{{challenge.deadline | date:&apos;short&apos; : &apos;UTC&apos;}} UTC
+                .rw.time {{challenge.deadline | date:&apos;short&apos; : &apos;UTC&apos;}} UTC
             .regs.col4.pull-left
               .inner
                 .reg
-                  a{{challenge.registrants}}
+                  a {{challenge.registrants}}
             .subs.col5.pull-left
               .inner
                 .sub
-                  a{{challenge.submissions}}
+                  a {{challenge.submissions}}
             .bdgPref.col6.pull-left
               .inner
                 a.btn.secondary.btnSelect(href="#") Select
