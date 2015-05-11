@@ -59,6 +59,24 @@ module.exports = function (grunt) {
           }
         }
       },
+      qa: {
+        options: {
+          dest: '<%= yeoman.app %>/app.constants.js'
+        },
+        constants: {
+          ENV: {
+            name                  : 'qa',
+            API_URL               : 'https://api.topcoder-qa.com/v3',
+            API_URL_V2            : 'https://api.topcoder-qa.com/v2',
+            clientId              : 'EVOgWZlCtIFlbehkq02treuRRoJk12UR',
+            domain                : 'topcoder-qa.com',
+            auth0Domain           : 'topcoder-qa.auth0.com',
+            auth0Callback         : appConfig.auth0Callback,
+            submissionDownloadPath: appConfig.submissionDownloadPath,
+            photoLinkLocation     : appConfig.photoLinkLocation
+          }
+        }
+      },
       production: {
         options: {
           dest: '<%= yeoman.app %>/app.constants.js'
@@ -66,11 +84,11 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name                  : 'production',
-            API_URL               : appConfig.API_URL,
-            API_URL_V2            : appConfig.API_URL_V2,
-            clientId              : appConfig.clientId,
-            domain                : appConfig.domain,
-            auth0Domain           : appConfig.auth0Domain,
+            API_URL               : 'https://api.topcoder.com/v3',
+            API_URL_V2            : 'https://api.topcoder.com/v2',
+            clientId              : '6ZwZEUo2ZK4c50aLPpgupeg5v2Ffxp9P',
+            domain                : 'topcoder.com',
+            auth0Domain           : 'topcoder.auth0.com',
             auth0Callback         : appConfig.auth0Callback,
             submissionDownloadPath: appConfig.submissionDownloadPath,
             photoLinkLocation     : appConfig.photoLinkLocation
@@ -519,6 +537,8 @@ module.exports = function (grunt) {
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
+    } else if (target === 'qa') {
+      return grunt.task.run(['build-qa', 'connect:dist:keepalive']);
     }
 
     grunt.task.run([
@@ -545,10 +565,8 @@ module.exports = function (grunt) {
     'connect:test',
     'karma:unit'
   ]);
-
-  grunt.registerTask('build', [
-    'clean:dist',
-    'ngconstant:production',
+    
+  grunt.registerTask('build-release', [
     'js2coffee',
     'clean:constants',
     // 'concurrent:dist',
@@ -573,5 +591,17 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'build'
+  ]);
+  
+  grunt.registerTask('build-qa', [
+    'clean:dist',
+    'ngconstant:qa',
+    'build-release'  
+  ]);
+  
+  grunt.registerTask('build', [
+    'clean:dist',
+    'ngconstant:production',
+    'build-release'   
   ]);
 };
