@@ -6,11 +6,11 @@ carousel.carousel-section(interval="50000")
       h1.section-header.ellipses(ng-bind="challenge.title")
       .summary(ng-bind="challenge.summary")
       span.ico(ng-class="challenge.challengeIco")
-      .contestDetails 
-        .rw 
+      .contestDetails
+        .rw
           .lbl Technologies:
           .val(ng-bind="challenge.technologies")
-        .rw 
+        .rw
           .lbl Platform:
           .val(ng-bind="challenge.platform")
         .rw.alt.prizeRw
@@ -59,10 +59,10 @@ carousel.carousel-section(interval="50000")
                 h4.chTitle
                   a.ellipses(href="#"){{challenge.title}}
                 .rw.ellipses
-                  span.lbl Technologies: 
+                  span.lbl Technologies:
                   span.val{{challenge.technologies}}
                 .rw.ellipses
-                  span.lbl Platform: 
+                  span.lbl Platform:
                   span.val{{challenge.platforms}}
             .pz.col3.pull-left
               .inner
@@ -79,7 +79,7 @@ carousel.carousel-section(interval="50000")
             .bdgPref.col6.pull-left
               .inner
                 a.bgd(ng-if="challenge.isBadgePreferred")
- 
+
    ul.challenges.row(ng-show="isGrid")
       li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in challenges.challengeList")
         section.challenge
@@ -124,7 +124,7 @@ carousel.carousel-section(interval="50000")
 
       p Learn, train, compete, and win with the Apple Development Community.
 
-    a.btn(href="#") Get Started
+    a.btn(ui-sref="learn") Get Started
 
 
 
