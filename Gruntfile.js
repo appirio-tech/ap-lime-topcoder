@@ -535,7 +535,7 @@ module.exports = function (grunt) {
 
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
-    if (target === 'dist') {
+    if (target === 'prod') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     } else if (target === 'qa') {
       return grunt.task.run(['build-qa', 'connect:dist:keepalive']);
@@ -591,6 +591,12 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'build'
+  ]);
+  
+  grunt.registerTask('build-dev', [
+    'clean:dist',
+    'ngconstant:development',
+    'build-release'  
   ]);
   
   grunt.registerTask('build-qa', [
