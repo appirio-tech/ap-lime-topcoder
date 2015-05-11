@@ -10,10 +10,10 @@
   .header-right.pull-right
     nav.main-nav.navbar-collapse.collapse(id="lime-nav-bar")
       ul.nav.navbar-nav
-        li.active
-          a(href="#") Challenges
         li
-          a(ui-sref="learn") Learn
+          a(ui-sref="challengeListing", ng-class="{activeTab: $state.current.name == 'challengeListing'}") Challenges
+        li
+          a(ui-sref="learn", ng-class="{activeTab: $state.current.name == 'learn'}") Learn
         li
           a(href="#") Help
         li(ng-show="!main.loggedInUser")
@@ -31,5 +31,5 @@
           ul.profile-data.dropdown-menu.dropdown-menu-right
             li
               a(href="#/profile") Profile
-            li()
+            li
               a(href="#", ng-click="main.logout()") Logout

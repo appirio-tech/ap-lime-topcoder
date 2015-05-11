@@ -1,6 +1,9 @@
 @import 'partials/combined';
 
 /*** BOOTSTRAP NAVIGATION ***/
+.activeTab {
+	color: $light-blue !important;
+}
 .navbar-inverse {
 	background-color: #2e2f32;
 }

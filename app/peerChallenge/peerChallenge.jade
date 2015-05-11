@@ -7,12 +7,12 @@ carousel.carousel-section(interval="50000")
       .bdgCon
         h6.slide-title Badge Details
         h1.section-header.ellipses(ng-bind="challenge.title")
-        .summary 
+        .summary
          .row
-          .desc.col-xs-12 Ready to show your iOS mobile app development skills? The peer-review process is a great way to learn by doing, see how others approach the problem, and get feedback from your peers on your solution.  In fact at topcoder, we feel peer reviews are one of the most important activities you can do to improve your code and skills!  
-          .col-xs-12.col-sm-6.cn Successful completion of the peer-review process results in a "iOS Proficient" badge that helps set you apart from other developers in the community.  
+          .desc.col-xs-12 Ready to show your iOS mobile app development skills? The peer-review process is a great way to learn by doing, see how others approach the problem, and get feedback from your peers on your solution.  In fact at topcoder, we feel peer reviews are one of the most important activities you can do to improve your code and skills!
+          .col-xs-12.col-sm-6.cn Successful completion of the peer-review process results in a "iOS Proficient" badge that helps set you apart from other developers in the community.
           .col-xs-12.col-sm-6.cn Completion Includes:
-            ul.lst 
+            ul.lst
               li Completing a peer-review challenge
               li Reviewing and scoring your peers' solutions
               li Receiving feedback and a "pass" score from your peers
@@ -51,10 +51,10 @@ carousel.carousel-section(interval="50000")
                 h4.chTitle
                   a.ellipses(href="#"){{challenge.title}}
                 .rw.ellipses
-                  span.lbl Technologies: 
+                  span.lbl Technologies:
                   span.val{{challenge.technologies}}
                 .rw.ellipses
-                  span.lbl Platform: 
+                  span.lbl Platform:
                   span.val{{challenge.platforms}}
             .pz.ct.col3.pull-left
               .inner
@@ -73,7 +73,7 @@ carousel.carousel-section(interval="50000")
             .bdgPref.col6.pull-left
               .inner
                 a.btn.secondary.btnSelect(href="#") Select
- 
+
    ul.challenges.row(ng-show="isGrid")
       li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in challenges.peerChallenges")
         section.challenge
@@ -126,7 +126,7 @@ carousel.carousel-section(interval="50000")
 
       p Learn, train, compete, and win with the Apple Development Community.
 
-    a.btn(href="#") Get Started
+    a.btn(ui-sref="learn") Get Started
 
 
 

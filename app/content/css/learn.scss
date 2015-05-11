@@ -360,6 +360,11 @@
       margin-bottom: 10px;
 
     }
+    ul li {
+      @include myriad-pro;
+      font-size: 18px;
+      line-height: 1.4;
+    }
   }
 
   @media only screen and (min-width: 992px) {

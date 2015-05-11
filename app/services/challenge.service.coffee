@@ -5,6 +5,8 @@ ChallengeService = (ENV, ApiService) ->
     params =
       type: 'develop'
       technologies: 'iOS,SWIFT'
+      sortColumn: 'submissionEndDate'
+      sortOrder: 'desc'
 
     url = ENV.API_URL_V2 + '/challenges/active'
     ApiService.requestHandler 'GET', url, params, true
