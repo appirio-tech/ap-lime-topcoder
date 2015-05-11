@@ -31,7 +31,7 @@ Auth = (ENV, $window, AuthToken, $state, $stateParams, $location, $timeout, ApiS
     # required: ["firstName", "lastName", "handle", "country", "email"],
     # optional: ["password", "socialProviderId", "socialUserName", "socialEmail", "socialEmailVerified", "regSource", "socialUserId", "utm_source", "utm_medium", "utm_campaign"]
     url = ENV.API_URL_V2 + '/users/'
-    ApiService.requestHandler 'POST', url, JSON.stringify reg
+    ApiService.requestHandler 'POST', url, JSON.stringify reg, true
 
   isAuthenticated: () ->
     !!AuthToken.getToken()

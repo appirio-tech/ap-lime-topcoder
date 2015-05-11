@@ -10,7 +10,7 @@ ApiService = ($http, AuthToken) ->
       headers: { } 
       
     token = AuthToken.getToken()
-    if token
+    if token && !noAuth
       options.headers = {
         'Authorization' : 'Bearer ' + token
       }
@@ -23,9 +23,6 @@ ApiService = ($http, AuthToken) ->
 
     if method == 'POST'
       options.headers['Content-Type'] = 'application/json'
-
-    if noAuth
-      delete options.headers.Authorization
 
     $http options
 
