@@ -34,6 +34,10 @@
   font-family: 'MyriadPro-Light', Calibri, sans-serif;
 }
 
+@mixin myriad-pro-sb() {
+  font-family: 'MyriadPro-Semibold', Calibri, sans-serif;
+}
+
 @mixin icon-sprite {
   background-image: url('../images/sprite.png');
   background-repeat: no-repeat;

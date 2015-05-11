@@ -1,0 +1,202 @@
+{
+    "slides": [{
+        "title": "Lifelong iOS Mobile App",
+        "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.",
+        "technologies": "SWIFT, iOS",
+        "platform": "iOS",
+        "prize": "2,000",
+        "time": "3/15/15: 3:00 AM UTC",
+        "registrants": "26",
+        "submissions": "2",
+        "challengeIco": "swift"
+    }, {
+        "title": "Swift iOS Mobile App",
+        "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.",
+        "technologies": "SWIFT, iOS",
+        "platform": "iOS",
+        "prize": "2,000",
+        "time": "3/15/15: 3:00 AM UTC",
+        "registrants": "22",
+        "submissions": "3",
+        "challengeIco": "swift"
+    }, {
+        "title": "TC iOS Mobile App",
+        "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.",
+        "technologies": "SWIFT, iOS",
+        "platform": "iOS",
+        "prize": "2,000",
+        "time": "3/15/15: 3:00 AM UTC",
+        "registrants": "22",
+        "submissions": "3",
+        "challengeIco": "swift"
+    }, {
+        "title": "Swift UI iOS Mobile App",
+        "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.",
+        "technologies": "SWIFT, iOS",
+        "platform": "iOS",
+        "prize": "2,000",
+        "time": "3/15/15: 3:00 AM UTC",
+        "registrants": "22",
+        "submissions": "3",
+        "challengeIco": "swift"
+    }, {
+        "title": "Lifelong UI Mobile App",
+        "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.",
+        "technologies": "SWIFT, iOS",
+        "platform": "iOS",
+        "prize": "2,000",
+        "time": "3/15/15: 3:00 AM UTC",
+        "registrants": "22",
+        "submissions": "3",
+        "challengeIco": "swift"
+    }, {
+        "title": "Swift UX iOS Mobile App",
+        "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.",
+        "technologies": "SWIFT, iOS",
+        "platform": "iOS",
+        "prize": "2,000",
+        "time": "3/15/15: 3:00 AM UTC",
+        "registrants": "22",
+        "submissions": "3",
+        "challengeIco": "swift"
+    }],
+
+
+    "challengeList": [{
+        "type": "ARENA CHALLENGE",
+        "image": "content/images/ct-swift.png",
+        "title": "Lifelong iOS Mobile App",
+        "technologies": "SWIFT, iOS",
+        "platforms": "iOS",
+        "prize": "$2,100",
+        "deadline": "2015-03-15T03:00:00.000Z",
+        "registrants": 26,
+        "submissions": 2,
+        "isBadgePreferred":true
+    }, {
+        "type": "ARENA CHALLENGE",
+        "image": "content/images/ct-tk.png",
+        "title": "Lifelong iOS Mobile App",
+        "technologies": "SWIFT, iOS",
+        "platforms": "iOS",
+        "prize": "$2,100",
+        "deadline": "2015-03-15T03:00:00.000Z",
+        "registrants": 26,
+        "submissions": 2
+    }, {
+        "type": "ARENA CHALLENGE",
+        "image": "content/images/ct-bg.png",
+        "title": "Lifelong iOS Mobile App",
+        "technologies": "SWIFT, iOS",
+        "platforms": "iOS",
+        "prize": "$2,100",
+        "deadline": "2015-03-15T03:00:00.000Z",
+        "registrants": 26,
+        "submissions": 2
+    }, {
+        "type": "ARENA CHALLENGE",
+        "image": "content/images/ct-usr.png",
+        "title": "Lifelong iOS Mobile App",
+        "technologies": "SWIFT, iOS",
+        "platforms": "iOS",
+        "prize": "$2,100",
+        "deadline": "2015-03-15T03:00:00.000Z",
+        "registrants": 26,
+        "submissions": 2,
+        "isBadgePreferred":true
+    }, {
+        "type": "ARENA CHALLENGE",
+        "image": "content/images/ct-swift.png",
+        "title": "Lifelong iOS Mobile App",
+        "technologies": "SWIFT, iOS",
+        "platforms": "iOS",
+        "prize": "$2,100",
+        "deadline": "2015-03-15T03:00:00.000Z",
+        "registrants": 26,
+        "submissions": 2,
+        "isBadgePreferred":true
+    }, {
+        "type": "ARENA CHALLENGE",
+        "image": "content/images/ct-th.png",
+        "title": "Lifelong iOS Mobile App",
+        "technologies": "SWIFT, iOS",
+        "platforms": "iOS",
+        "prize": "$2,100",
+        "deadline": "2015-03-15T03:00:00.000Z",
+        "registrants": 26,
+        "submissions": 2
+    }, {
+        "type": "ARENA CHALLENGE",
+        "image": "content/images/ct-swift.png",
+        "title": "Lifelong iOS Mobile App",
+        "technologies": "SWIFT, iOS",
+        "platforms": "iOS",
+        "prize": "$2,100",
+        "deadline": "2015-03-15T03:00:00.000Z",
+        "registrants": 26,
+        "submissions": 2
+    }, {
+        "type": "ARENA CHALLENGE",
+        "image": "content/images/ct-swift.png",
+        "title": "Lifelong iOS Mobile App",
+        "technologies": "SWIFT, iOS",
+        "platforms": "iOS",
+        "prize": "$2,100",
+        "deadline": "2015-03-15T03:00:00.000Z",
+        "registrants": 26,
+        "submissions": 2,
+        "isBadgePreferred":true
+    }, {
+        "type": "ARENA CHALLENGE",
+        "image": "content/images/ct-star.png",
+        "title": "Lifelong iOS Mobile App",
+        "technologies": "SWIFT, iOS",
+        "platforms": "iOS",
+        "prize": "$2,100",
+        "deadline": "2015-03-15T03:00:00.000Z",
+        "registrants": 26,
+        "submissions": 2
+    }, {
+        "type": "ARENA CHALLENGE",
+        "image": "content/images/ct-pro.png",
+        "title": "Lifelong iOS Mobile App",
+        "technologies": "SWIFT, iOS",
+        "platforms": "iOS",
+        "prize": "$2,100",
+        "deadline": "2015-03-15T03:00:00.000Z",
+        "registrants": 26,
+        "submissions": 2,
+        "isBadgePreferred":true
+    }, {
+        "type": "ARENA CHALLENGE",
+        "image": "content/images/ct-tk.png",
+        "title": "Lifelong iOS Mobile App",
+        "technologies": "SWIFT, iOS",
+        "platforms": "iOS",
+        "prize": "$2,100",
+        "deadline": "2015-03-15T03:00:00.000Z",
+        "registrants": 26,
+        "submissions": 2
+    }, {
+        "type": "ARENA CHALLENGE",
+        "image": "content/images/ct-star.png",
+        "title": "Lifelong iOS Mobile App",
+        "technologies": "SWIFT, iOS",
+        "platforms": "iOS",
+        "prize": "$2,100",
+        "deadline": "2015-03-15T03:00:00.000Z",
+        "registrants": 26,
+        "submissions": 2
+    }, {
+        "type": "ARENA CHALLENGE",
+        "image": "content/images/ct-pro.png",
+        "title": "Lifelong iOS Mobile App",
+        "technologies": "SWIFT, iOS",
+        "platforms": "iOS",
+        "prize": "$2,100",
+        "deadline": "2015-03-15T03:00:00.000Z",
+        "registrants": 26,
+        "submissions": 2,
+        "isBadgePreferred":true
+    }]
+}
