@@ -1,0 +1,161 @@
+.pseudoHeader
+div(ng-controller="challenges as vm")
+  carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'peer'")
+    slide.developer-slide-2.badgeSlide.slide
+      section.container
+          figure.badgeWarp
+            span.bdg
+          .bdgCon
+            h6.slide-title Badge Details
+            h1.section-header.ellipses Peer Badges
+            .summary
+             .row
+              .desc.col-xs-12 Ready to show your iOS mobile app development skills? The peer-review process is a great way to learn by doing, see how others approach the problem, and get feedback from your peers on your solution.  In fact at topcoder, we feel peer reviews are one of the most important activities you can do to improve your code and skills!
+              .col-xs-12.col-sm-6.cn Successful completion of the peer-review process results in a "iOS Proficient" badge that helps set you apart from other developers in the community.
+              .col-xs-12.col-sm-6.cn Completion Includes:
+                ul.lst
+                  li Completing a peer-review challenge
+                  li Reviewing and scoring your peers' solutions
+                  li Receiving feedback and a "pass" score from your peers
+            .learn To learn more about performing peer reviews at topcoder visit our #[a.lnk(href="#") help center].
+            .actns
+              a.btn.btnChallenges(href='#view-challenges', du-smooth-scroll) View Peer Challenges
+  carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'all'")
+    slide.developer-slide-1.slide(ng-repeat="challenge in vm.slides")
+      section.container
+        h6.slide-title Feature challenge
+        h1.section-header.ellipses(ng-bind="challenge.challengeName")
+        .summary(ng-bind="challenge.challengeName")
+        span.ico(ng-class="challenge.icon")
+        .contestDetails
+          .rw
+            .lbl Technologies:
+            .val(ng-bind="challenge.technologies")
+          .rw
+            .lbl Platform:
+            .val(ng-bind="challenge.platforms")
+          .rw.alt.prizeRw
+            .v $
+              span(ng-bind="challenge.totalPrize")
+          .rw.alt.time(ng-bind="challenge.submissionEndDate | localTime")
+          .rw.reg
+            .lt.fr
+              .ca REGISTRANTS
+              .vl(ng-bind="challenge.numRegistrants")
+            .rt.fs
+              .ca SUBMISSIONS
+              .vl(ng-bind="challenge.numSubmissions")
+          .actns
+            a.btn.secondary.btnReg(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop", target="_blank") Register
+            a.lnkLiked
+            a.lnk(href='#view-challenges', du-smooth-scroll) View all challenges
+
+  .challenges-section.landing-annon-page#view-challenges
+    section.container
+      header.section-header.fluid
+        h1.heading(ng-show="vm.challengesType == 'all'") Current Challenges
+        h1.heading(ng-show="vm.challengesType == 'peer'") Current Peer Challenges
+
+        div.browse Browse our available challenges and compete.
+          .viewType.hidden-xs
+            a.lnk(ui-sref="challengeListing({type: 'all'})", ng-show="vm.challengesType == 'peer'") View All
+            a.lnk(ui-sref="challengeListing({type: 'peer'})", ng-show="vm.challengesType == 'all'") Peer
+            a.gridView(ng-click="isGrid=true")
+            a.listView(ng-click="isGrid=false")
+
+      div.listView.hidden-xs(ng-show="!isGrid")
+        ul.challengeList
+          li.col-xs-12.header
+            div.col1.pull-left &nbsp;
+            div.col2.pull-left CHALLENGE
+            div.col3.pull-left PRIZE &amp;  DEADLINE
+            div.col4.pull-left REGISTRANTS
+            div.col5.pull-left SUBMISSIONS
+            div.col6.pull-left(ng-show="vm.challengesType == 'all'") iOS Badged Preferred
+            div.col6.pull-left(ng-show="vm.challengesType == 'peer'") REGISTER
+
+          li.liRw.col-xs-12(ng-repeat="challenge in vm.challenges")
+            .chrw.clearfix
+              figure.col1.imgWrap.pull-left
+                a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop")
+                  img.challenge-image(ng-src="content/images/peer-swift-challenge.png", alt="challenge image")
+              .chge.col2.pull-left
+                .inner
+                  h4.chTitle
+                    a.ellipses(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") {{challenge.challengeName}}
+                  .rw.ellipses
+                    span.lbl Technologies:
+                    span.val {{challenge.technologies}}
+                  .rw.ellipses
+                    span.lbl Platform:
+                    span.val {{challenge.platforms}}
+              .pz.col3.pull-left
+                .inner
+                  .rw.prize(ng-bind="challenge.totalPrize | currency:undefined:0")
+                  .rw.time(ng-bind="challenge.submissionEndDate | localTime")
+              .regs.col4.pull-left
+                .inner
+                  .reg
+                    a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numRegistrants}}
+              .subs.col5.pull-left
+                .inner
+                  .sub
+                    a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numSubmissions}}
+              .bdgPref.col6.pull-left(ng-show="vm.challengesType == 'all'")
+                .inner
+                  a.bgd(ng-if="challenge.isBadgePreferred")
+              .bdgPref.col6.pull-left(ng-show="vm.challengesType == 'peer'")
+                .inner
+                  a.btn.secondary.btnSelect(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") Select
+
+     ul.challenges.row(ng-show="isGrid")
+        li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in vm.challenges")
+          section.challenge
+            .challenge-type {{challenge.type}}
+
+            img.challenge-image(ng-src="content/images/peer-swift-challenge.png", alt="challenge image")
+
+            .challenge-details
+              h2.challenge-header.ellipses
+                a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") {{challenge.challengeName}}
+
+              .challenge-data
+                p.ellipses #[span.challenge-field Technologies:] {{challenge.technologies}}
+
+              .challenge-data
+                p.ellipses #[span.challenge-field Platform:] {{challenge.platforms}}
+
+              .challenge-prize(ng-bind="challenge.totalPrize | currency:undefined:0")
+
+              .challenge-deadline(ng-bind="challenge.submissionEndDate | localTime")
+
+              .row.challenge-stats
+                .col-xs-6.challenge-registrants.challenge-stat
+                  .stats-type REGISTRANTS
+
+                  .stats-value
+                    a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numRegistrants}}
+
+                .col-xs-6.challenge-submissions.challenge-stat
+                  .stats-type SUBMISSIONS
+
+                  .stats-value
+                    a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numSubmissions}}
+              .challenge-actns(ng-show="vm.challengesType == 'peer'")
+                a.btn.secondary.btnSelect(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") Select
+
+      ul.section-actions
+        li(ng-show="!vm.loading") #[a(ng-click="vm.loadMore()") Load more...]
+        li(ng-show="vm.loading") Loading...
+
+  .learn-section.learn-page
+    section.container
+      header.section-header
+        h1.heading What will you learn?
+
+        p Learn, train, compete, and win with the Apple Development Community.
+
+      a.btn(ui-sref="learn") Get Started
+
+
+
