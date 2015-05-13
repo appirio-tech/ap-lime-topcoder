@@ -16,6 +16,12 @@
   line-height: ($pt * 1px);
 }
 
+@mixin required-message {
+  color: red;
+  font-size: 18px;
+  font-family: MyriadPro-Light;
+}
+
 @mixin source-sans {
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   font-weight: 400;

@@ -51,10 +51,20 @@
     // script.
     //   MktoForms2.loadForm("//app-abc.marketo.com", "921-UOU-112", 1944);
 
-    form.newsletter-form Sign up to join the conversation.
-      input(type="email", placeholder="Your email please")
+    script(src='//app-abc.marketo.com/js/forms2/js/forms2.min.js')
+    form#mktoForm_1944.newsletter-form(name="subscribeForm", ng-submit="subscribeForm.$valid && postForm(email)", novalidate) Sign up to join the conversation.
+      input(ng-model="email", type="email", placeholder="Your email please", required)
+
+      p(ng-show="subscribeForm.$submitted && subscribeForm.$error.required") Please enter a valid email address.
 
       button.btn(type="submit") Submit
+    // script.
+    //   MktoForms2.loadForm("//app-abc.marketo.com", "921-UOU-112", 1944);
+
+    //- form.newsletter-form Sign up to join the conversation.
+      //- input(type="email", placeholder="Your email please")
+
+      //- button.btn(type="submit") Submit
 
 .challenges-section.landing-annon-page#challenges
   section.container

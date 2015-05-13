@@ -25,6 +25,7 @@
     background-size: cover;
     background-position: 50% 50%;
     padding: 40px 15px 46px 15px;
+    @include myriad-pro-light;
 
     .newsletter-form-section {
       font-size: 30px;
@@ -67,6 +68,10 @@
         .btn {
           width: 118px;
           margin-top: 28px;
+        }
+        p {
+          @include required-message;
+          margin-top: 26px;
         }
       }
     }
