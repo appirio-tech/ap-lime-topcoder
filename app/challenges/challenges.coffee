@@ -6,6 +6,8 @@ challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
   vm.loading = false
 
   vm.pageIndex = 1
+  vm.pageSize = 10
+  vm.hasMore = true
   vm.challenges = []
   vm.slides = []
 
@@ -16,14 +18,21 @@ challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
   getChallenges = () ->
     request =
       pageIndex: vm.pageIndex
+      pageSize: vm.pageSize
+    if vm.challengesType == 'peer'
+      request.review = 'PEER'
     vm.loading = true
     ChallengeService.getChallenges(request)
     .then (response) ->
       vm.loading = false
       Helpers.formatArray response.data.data
+      total = response.data.total
       processChallenge challenge  for challenge in response.data.data
       vm.challenges = vm.challenges.concat response.data.data
-      #console.log vm.challenges
+      if vm.challenges.length == total
+        vm.hasMore = false
+      else
+        vm.hasMore = true
       if vm.pageIndex == 1
         vm.slides = vm.challenges.slice 0, 3
     .catch (error) ->
@@ -32,9 +41,11 @@ challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
 
   processChallenge = (challenge) ->
     if challenge.reviewType && challenge.reviewType == 'PEER'
-      challenge.icon = ''
+      challenge.icon = 'peer'
+      challenge.thumb = 'content/images/peer-swift-challenge.png'
     else
       challenge.icon = 'swift'
+      challenge.thumb = 'content/images/swift-challenge-1.png'
 
   loadMore = () ->
     console.log vm.pageIndex

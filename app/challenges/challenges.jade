@@ -78,7 +78,7 @@ div(ng-controller="challenges as vm")
             .chrw.clearfix
               figure.col1.imgWrap.pull-left
                 a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop")
-                  img.challenge-image(ng-src="content/images/peer-swift-challenge.png", alt="challenge image")
+                  img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
               .chge.col2.pull-left
                 .inner
                   h4.chTitle
@@ -113,7 +113,7 @@ div(ng-controller="challenges as vm")
           section.challenge
             .challenge-type {{challenge.type}}
 
-            img.challenge-image(ng-src="content/images/peer-swift-challenge.png", alt="challenge image")
+            img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
 
             .challenge-details
               h2.challenge-header.ellipses
@@ -145,8 +145,8 @@ div(ng-controller="challenges as vm")
                 a.btn.secondary.btnSelect(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") Select
 
       ul.section-actions
-        li(ng-show="!vm.loading") #[a(ng-click="vm.loadMore()") Load more...]
-        li(ng-show="vm.loading") Loading...
+        li(ng-show="vm.hasMore && !vm.loading") #[a(ng-click="vm.loadMore()") Load more...]
+        li(ng-show="vm.hasMore && vm.loading") Loading...
 
   .learn-section.learn-page
     section.container

@@ -870,15 +870,19 @@
             }
             .ico {
                 display: inline-block;
-                height: 231px;
-                width: 253px;
                 position: absolute;
-                right: -150px;
+                right: 0px;
                 top: 70px;
             }
+            .ico.peer {
+                background: url('../images/sprite.png') 0 -81px no-repeat;
+                width: 68px;
+                height: 94px;
+            }
             .ico.swift {
-                background: url('../images/badge-big.png') 0 0 no-repeat;
-                background-size: contain;
+                background: url('../images/sprite.png') -186px -81px no-repeat;
+                height: 70px;
+                width: 68px;
             }
             .summary {
                 font-size: 18px;
