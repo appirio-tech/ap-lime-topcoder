@@ -1,10 +1,11 @@
 @import 'partials/combined';
-.ellipses{  
+
+.ellipses{
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.challengeListing {
+.challenges {
     // Common section styles
     .section-actions {
         margin-top: 42px;
@@ -85,27 +86,27 @@
             margin-top: 27px;
         }
 
-        li{    
+        li{
           display: block;
           float: none;
 
           .col1{
-            width: 15.5%; 
-          }    
+            width: 15.5%;
+          }
           .col2{
             width: 26.5%;
-          }    
+          }
           .col3{
-            width: 18.5%; 
-          }    
+            width: 18.5%;
+          }
           .col4{
-            width: 13.5%; 
-          }    
+            width: 13.5%;
+          }
           .col5{
-            width: 13%; 
-          }    
+            width: 13%;
+          }
           .col6{
-            width: 13%; 
+            width: 13%;
           }
 
         }
@@ -125,10 +126,10 @@
             box-shadow: 0 1px 4px rgba(58, 58, 58, 0.3);
             background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.05) 0%, rgba(135, 135, 135, 0.05) 100%);
             /* Chrome10+,Safari5.1+ */
-            
+
             background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.05) 0%, rgba(135, 135, 135, 0.05) 100%);
             /* IE10+ */
-            
+
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 0%, rgba(135, 135, 135, 0.05) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0dffffff', endColorstr='#0d878787', GradientType=0);
             margin-bottom: 10px;
@@ -242,9 +243,9 @@
                   background-position: -102px -175px;
                   background-repeat: no-repeat;
                   width: 34px;
-                  height: 29px;        
+                  height: 29px;
                   margin-right: 18px;
-                  vertical-align: top;          
+                  vertical-align: top;
                 }
             }
         }
@@ -276,10 +277,10 @@
                   background-position: -66px -175px;
                   background-repeat: no-repeat;
                   width: 34px;
-                  height: 30px;   
+                  height: 30px;
                   margin-right: 17px;
-                  vertical-align: top;   
-                  display: inline-block;      
+                  vertical-align: top;
+                  display: inline-block;
                 }
             }
         }
@@ -594,7 +595,7 @@
         line-height: 1.3em;
         position: relative;
         /*Top border*/
-        
+
         &:before {
             content: '';
             display: block;
@@ -892,7 +893,7 @@
                 word-spacing: 1px;
             }
             /* contestDetails */
-            
+
             .contestDetails {
                 margin-top: 40px;
                 .rw {
@@ -996,7 +997,7 @@
         }
 
         .badgeSlide.slide {
-            
+
             .bdgCon{
                 margin-left: 240px;
                 overflow: hidden;
@@ -1187,7 +1188,7 @@
     float: none;
   }
   .socialRw .twit-icon, .socialRw .fb-icon{
-    display: inline-block;    
+    display: inline-block;
     margin: 20px 9px 0;
   }
   .footerAlt .poweredBy{
@@ -1249,7 +1250,7 @@
 
 @media (max-width: 767px) {
     /* views */
-    
+
     .challengeListing .section-header .browse .viewType {
         display: block;
         position: relative;
@@ -1286,7 +1287,7 @@
 
                 .lnk, .lnk:hover{
                     font-size: 18px;
-                    margin-left: 4px;   
+                    margin-left: 4px;
                 }
             }
         }
@@ -1313,7 +1314,7 @@
 
             .cn{
                 font-size: 14px;
-                line-height: 16px;       
+                line-height: 16px;
             }
         }
     }
@@ -1364,7 +1365,7 @@
 
             .cn{
                 font-size: 14px;
-                line-height: 16px;       
+                line-height: 16px;
             }
         }
     }

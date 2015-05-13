@@ -22,7 +22,7 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider) ->
       url         : '/register/confirm'
       templateUrl : 'register/confirm.html'
       controller  : 'register'
-    challengeListing:
+    challenges:
       url         : '/challenges/type/:type'
       templateUrl : 'challenges/challenges.html'
       #binded controller in view as workaround to use controller as vm style

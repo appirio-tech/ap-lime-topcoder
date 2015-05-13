@@ -38,7 +38,7 @@ challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
       Helpers.formatArray response.data.data
 
       # process challenge for making info handy for the view
-      processChallenge challenge  for challenge in response.data.data
+      Helpers.processChallenge challenge for challenge in response.data.data
 
       # append the retrieved challenges into existing collection
       vm.challenges = vm.challenges.concat response.data.data
@@ -58,14 +58,6 @@ challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
     .catch (error) ->
       # TODO show error
       vm.loading = false
-
-  processChallenge = (challenge) ->
-    if challenge.reviewType && challenge.reviewType == 'PEER'
-      challenge.icon = 'peer'
-      challenge.thumb = 'content/images/peer-swift-challenge.png'
-    else
-      challenge.icon = 'swift'
-      challenge.thumb = 'content/images/swift-challenge-1.png'
 
   loadMore = () ->
     console.log vm.pageIndex

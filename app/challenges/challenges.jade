@@ -58,8 +58,8 @@ div(ng-controller="challenges as vm")
 
         div.browse Browse our available challenges and compete.
           .viewType.hidden-xs
-            a.lnk(ui-sref="challengeListing({type: 'all'})", ng-show="vm.challengesType == 'peer'") View All
-            a.lnk(ui-sref="challengeListing({type: 'peer'})", ng-show="vm.challengesType == 'all'") Peer
+            a.lnk(ui-sref="challenges({type: 'all'})", ng-show="vm.challengesType == 'peer'") View All
+            a.lnk(ui-sref="challenges({type: 'peer'})", ng-show="vm.challengesType == 'all'") Peer
             a.gridView(ng-click="isGrid=true")
             a.listView(ng-click="isGrid=false")
 
@@ -91,7 +91,7 @@ div(ng-controller="challenges as vm")
                     span.val {{challenge.platforms}}
               .pz.col3.pull-left
                 .inner
-                  .rw.prize(ng-bind="challenge.totalPrize | currency:undefined:0")
+                  .rw.prize(ng-bind="challenge.totalPrize || 0 | currency:undefined:0")
                   .rw.time(ng-bind="challenge.submissionEndDate | localTime")
               .regs.col4.pull-left
                 .inner
