@@ -18,6 +18,9 @@
     .btn {
         line-height: 34px;
     }
+    .btnSelect {
+        width: 113px;
+    }
     .section-actions li,
     .section-action {
         color: $light-blue;
@@ -78,6 +81,9 @@
     }
     .challengeList {
         margin-top: 62px;
+        .btnSelect {
+            margin-top: 27px;
+        }
 
         li{    
           display: block;
@@ -334,7 +340,16 @@
             right: 0;
             top: 9px;
 
-            a{
+            .lnk {
+                color: #009dce;
+                font-size: 22px;
+                height: 30px;
+                line-height: 28px;
+                vertical-align: top;
+                margin-right: 26px;
+            }
+            .gridView,
+            .listView {
               display: inline-block;
               width: 30px;
               height: 30px;
@@ -749,6 +764,13 @@
         margin: 6px 0 0 3px;
         line-height: 1.2em;
     }
+    .challenge-actns {
+        opacity: 1;
+        margin-top: 10px;
+        .btn {
+            width: 100%;
+        }
+    }
     .challenge-data .challenge-field {
         font-weight: 700;
     }
@@ -848,15 +870,19 @@
             }
             .ico {
                 display: inline-block;
-                height: 231px;
-                width: 253px;
                 position: absolute;
-                right: -50px;
+                right: 0px;
                 top: 70px;
             }
+            .ico.peer {
+                background: url('../images/sprite.png') 0 -81px no-repeat;
+                width: 68px;
+                height: 94px;
+            }
             .ico.swift {
-                background: url('../images/ch-swift.png') 0 0 no-repeat;
-                background-size: 100%;
+                background: url('../images/sprite.png') -186px -81px no-repeat;
+                height: 70px;
+                width: 68px;
             }
             .summary {
                 font-size: 18px;
@@ -968,6 +994,78 @@
                 max-width: 1020px;
             }
         }
+
+        .badgeSlide.slide {
+            
+            .bdgCon{
+                margin-left: 240px;
+                overflow: hidden;
+            }
+            .badgeWarp{
+                float: left;
+                padding-top: 94px;
+                max-width: 240px;
+
+
+                .bdg{
+                    display: inline-block;
+                    background: url(../images/badge-big.png) 0 0  no-repeat;
+                    width: 228px;
+                    height: 299px;
+                }
+            }
+
+            .summary {
+                width: auto;
+                color: #f9f9f9;
+                font-size: 18px;
+                line-height: 27px;
+                margin-top: 28px;
+                word-spacing: 1px;
+                .desc {
+                    font-size: 20px;
+                    margin-bottom: 53px;
+                }
+                .cn{
+                    color: #f9f9f9;
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+                ul.lst{
+                    li{
+                        display: block;
+                        float: none;
+                        padding-left: 13px;
+                    }
+                    li:before{
+                        content:'-';
+                        margin-left: -13px;
+                        margin-right: 6px;
+                    }
+                }
+
+            }
+            .learn {
+                color: #fcfcfc;
+                @include myriad-pro-light();
+                font-size: 20px;
+                margin-top: 43px;
+                .lnk {
+                    color: #fff;
+                    text-decoration: underline;
+                }
+            }
+            .actns {
+                margin-top: 41px;
+
+                .btnChallenges{
+                    width: 16px;
+                    height: 30px;
+                    line-height: 30px;
+                    width: 162px;
+                }
+            }
+        }
         .section-header {
             color: #fff;
             font-size: 73px;
@@ -1042,7 +1140,7 @@
         background-repeat: no-repeat;
     }
     .developer-slide-2 {
-        background-image: url('../images/bg-banner.jpg');
+        background-image: url('../images/bg-badge.jpg');
         background-size: cover;
         background-position: 50% 0;
         background-repeat: no-repeat;
@@ -1122,8 +1220,29 @@
             width: 140px;
             right: 0;
         }
+    }
+    .challengeListing .carousel-section .badgeSlide.slide {
+        .badgeWarp{
+            float: left;
+            padding-top: 94px;
+            max-width: 180x;
 
 
+            .bdg{
+                display: inline-block;
+                background: url(../images/badge-big.png) 0 0  no-repeat;
+                background-size: 100%;
+                width: 180px;
+                height: 299px;
+            }
+        }
+        .bdgCon{
+            margin-left: 180px;
+        }
+    }
+
+    .challengeListing .carousel-section .section-header{
+        padding-right: 110px;
     }
 }
 /* mobile screen layout */
@@ -1185,24 +1304,74 @@
             margin-top: 41px;
             padding-bottom: 30px;
         }
+        .summary {
+            .desc{
+                margin-bottom: 20px;
+                font-size: 16px;
+                line-height: 18px;
+            }
+
+            .cn{
+                font-size: 14px;
+                line-height: 16px;       
+            }
+        }
+    }
+    .challengeListing .carousel-section .badgeSlide.slide {
+        min-height: 400px;
+        padding-bottom: 20px;
+        .badgeWarp{
+            float: none;
+            padding-top: 10px;
+            max-width: 3000px;
+            display: block;
+
+
+            .bdg{
+                display: block;
+                background: url(../images/badge-big.png) 0 0  no-repeat;
+                background-size: 100%;
+                width: 60px;
+                height: 80px;
+                margin: 0 auto;
+            }
+        }
+        .bdgCon{
+            margin: 0;
+
+        }
+        .slide-title {
+            opacity: 0.6;
+            letter-spacing: 2px;
+            padding-top: 15px;
+        }
+        .learn{
+            margin-top: 15px;
+            font-size: 16px;
+            line-height: 18px;
+        }
+        .actn{
+            margin-top: 41px;
+            padding-bottom: 30px;
+        }
+        .summary{
+
+            .desc{
+                margin-bottom: 20px;
+                font-size: 16px;
+                line-height: 18px;
+            }
+
+            .cn{
+                font-size: 14px;
+                line-height: 16px;       
+            }
+        }
     }
     /* masthead section */
     .challengeListing .carousel-section .section-header{
         font-size: 40px;
         line-height: 42px;
         height: 42px;
-    }
-    .challengeListing .carousel-section .slide .summary{
-
-        .desc{
-            margin-bottom: 20px;
-            font-size: 16px;
-            line-height: 18px;
-        }
-
-        .cn{
-            font-size: 14px;
-            line-height: 16px;       
-        }
     }
 }
