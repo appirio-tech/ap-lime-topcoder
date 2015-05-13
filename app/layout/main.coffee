@@ -1,6 +1,6 @@
 'use strict'
 
-main = ($scope, ENV, AuthService, UserService) ->
+main = ($scope, $state, ENV, AuthService, UserService) ->
   vm = this
 
   vm.loggedInUser = null
@@ -20,6 +20,11 @@ main = ($scope, ENV, AuthService, UserService) ->
     AuthService.logout()
     vm.loggedInUser = null
 
+  vm.isActive = (state) ->
+    if $state.current.name == state
+      true
+    false
+
   vm.activate = () ->
     if AuthService.isAuthenticated()
       vm.loggingIn = true
@@ -35,12 +40,13 @@ main = ($scope, ENV, AuthService, UserService) ->
           vm.loggedInUser = {
             "handle": data.data.handle,
             "photo": "content/images/user.png"
-          }        
+          }
 
   vm.activate()
 
 angular.module('lime-topcoder').controller 'main', [
   '$scope'
+  '$state'
   'ENV'
   'Auth'
   'UserService'

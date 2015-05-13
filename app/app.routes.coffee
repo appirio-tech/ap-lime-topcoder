@@ -22,6 +22,13 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider) ->
       url         : '/register/confirm'
       templateUrl : 'register/confirm.html'
       controller  : 'register'
+    challenges:
+      url         : '/challenges/type/:type'
+      templateUrl : 'challenges/challenges.html'
+      #binded controller in view as workaround to use controller as vm style
+      #controllerAs property is working with coffee script
+      #more info: http://stackoverflow.com/questions/28953289/using-controller-as-with-the-ui-router-isnt-working-as-expected
+      #controller  : 'challenges'
 
   for name, state of states
     $stateProvider.state name, state

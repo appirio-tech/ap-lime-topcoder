@@ -5,7 +5,7 @@
   // Top banner
   .top-banner {
     color: $white;
-    background: url('../images/banner-background.png');
+    background: url('../images/learn-background.jpg');
     background-size: cover;
     background-position: 50% 50%;
 
@@ -359,6 +359,11 @@
       color: $light-gray;
       margin-bottom: 10px;
 
+    }
+    ul li {
+      @include myriad-pro;
+      font-size: 18px;
+      line-height: 1.4;
     }
   }
 

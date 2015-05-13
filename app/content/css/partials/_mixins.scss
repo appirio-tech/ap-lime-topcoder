@@ -16,6 +16,12 @@
   line-height: ($pt * 1px);
 }
 
+@mixin ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 @mixin source-sans {
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   font-weight: 400;
@@ -32,6 +38,10 @@
 
 @mixin myriad-pro-light {
   font-family: 'MyriadPro-Light', Calibri, sans-serif;
+}
+
+@mixin myriad-pro-sb() {
+  font-family: 'MyriadPro-Semibold', Calibri, sans-serif;
 }
 
 @mixin icon-sprite {
