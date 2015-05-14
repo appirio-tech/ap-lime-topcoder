@@ -460,10 +460,11 @@ module.exports = function (grunt) {
           ]
         }, {
           expand: true,
+          flatten: true,
           cwd   : '<%= yeoman.app %>',
           dest  : '<%= yeoman.dist %>',
           src   : [
-            'content/images/favicon.ico'
+            'content/icons/**/*'
           ]
         }, {
           expand: true,
