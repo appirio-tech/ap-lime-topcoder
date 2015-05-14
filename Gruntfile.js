@@ -1,4 +1,3 @@
-// Generated on 2015-03-12 using generator-angular 0.11.1
 'use strict';
 
 // # Globbing
@@ -20,12 +19,14 @@ module.exports = function (grunt) {
     app                   : require('./bower.json').appPath || 'app',
     dist                  : 'dist',
     cdnPath               : 's3.amazonaws.com/abc123',
-    API_URL               : 'https://api.topcoder-dev.com/v3',
-    API_URL_V2            : 'https://api.topcoder-dev.com/v2',
-    clientId              : 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT',
-    domain                : 'topcoder-dev.com',
-    auth0Domain           : 'topcoder-dev.auth0.com',
-    submissionDownloadPath: '/review/actions/DownloadContestSubmission?uid='
+    API_URL               : process.env.API_URL || 'https://api.topcoder-dev.com/v3',
+    API_URL_V2            : process.env.API_URL_V2 || 'https://api.topcoder-dev.com/v2',
+    clientId              : process.env.CLIENT_ID || 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT',
+    domain                : process.env.DOMAIN || 'topcoder-dev.com',
+    auth0Domain           : process.env.AUTH0_DOMAIN || 'topcoder-dev.auth0.com',
+    auth0Callback         : 'no-callback-needed-without-social-login',
+    submissionDownloadPath: '/review/actions/DownloadContestSubmission?uid=',
+    photoLinkLocation     : process.env.PHOTO_LINK_LOCATION || 'http://community.topcoder.com'
   };
 
   // Define the configuration for all the tasks
@@ -35,13 +36,11 @@ module.exports = function (grunt) {
     yeoman: appConfig,
 
     ngconstant: {
-      // Options for all targets
       options: {
         space: '  ',
         wrap : '"use strict";\n\n {%= __ngModule %}',
         name : 'app.config',
       },
-      // Environment targets
       development: {
         options: {
           dest: '<%= yeoman.app %>/app.constants.js'
@@ -49,12 +48,32 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name                  : 'development',
-            API_URL               : process.env.API_URL || appConfig.API_URL,
+            API_URL               : appConfig.API_URL,
             API_URL_V2            : appConfig.API_URL_V2,
             clientId              : appConfig.clientId,
             domain                : appConfig.domain,
             auth0Domain           : appConfig.auth0Domain,
-            submissionDownloadPath: appConfig.submissionDownloadPath
+            auth0Callback         : appConfig.auth0Callback,
+            submissionDownloadPath: appConfig.submissionDownloadPath,
+            photoLinkLocation     : appConfig.photoLinkLocation
+          }
+        }
+      },
+      qa: {
+        options: {
+          dest: '<%= yeoman.app %>/app.constants.js'
+        },
+        constants: {
+          ENV: {
+            name                  : 'qa',
+            API_URL               : 'https://api.topcoder-qa.com/v3',
+            API_URL_V2            : 'https://api.topcoder-qa.com/v2',
+            clientId              : 'EVOgWZlCtIFlbehkq02treuRRoJk12UR',
+            domain                : 'topcoder-qa.com',
+            auth0Domain           : 'topcoder-qa.auth0.com',
+            auth0Callback         : appConfig.auth0Callback,
+            submissionDownloadPath: appConfig.submissionDownloadPath,
+            photoLinkLocation     : appConfig.photoLinkLocation
           }
         }
       },
@@ -65,12 +84,14 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name                  : 'production',
-            API_URL               : process.env.API_URL || appConfig.API_URL,
-            API_URL_V2            : appConfig.API_URL_V2,
-            clientId              : appConfig.clientId,
-            domain                : appConfig.domain,
-            auth0Domain           : appConfig.auth0Domain,
-            submissionDownloadPath: appConfig.submissionDownloadPath
+            API_URL               : 'https://api.topcoder.com/v3',
+            API_URL_V2            : 'https://api.topcoder.com/v2',
+            clientId              : '6ZwZEUo2ZK4c50aLPpgupeg5v2Ffxp9P',
+            domain                : 'topcoder.com',
+            auth0Domain           : 'topcoder.auth0.com',
+            auth0Callback         : appConfig.auth0Callback,
+            submissionDownloadPath: appConfig.submissionDownloadPath,
+            photoLinkLocation     : appConfig.photoLinkLocation
           }
         }
       }
@@ -78,13 +99,9 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      bower: {
-        files: ['bower.json'],
-        tasks: ['wiredep']
-      },
       jade: {
         files: ['<%= yeoman.app %>/**/*.jade'],
-        tasks: ['newer:jade:compile']
+        tasks: ['newer:jade:compile', 'jade:index']
       },
       coffee: {
         files: ['<%= yeoman.app %>/**/*.coffee'],
@@ -95,7 +112,7 @@ module.exports = function (grunt) {
         tasks: ['newer:coffee:test', 'karma:unit']
       },
       sass: {
-        files: ['<%= yeoman.app %>/content/css/*.scss'],
+        files: ['<%= yeoman.app %>/content/css/**/*.scss'],
         tasks: ['sass']
       },
       gruntfile: {
@@ -116,7 +133,7 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9001,
+        port: 9002,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
         livereload: 35730
@@ -142,7 +159,7 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          port: 9001,
+          port: 9002,
           middleware: function (connect) {
             return [
               connect.static('.tmp'),
@@ -190,6 +207,23 @@ module.exports = function (grunt) {
             expand: true,
             cwd   : '<%= yeoman.app %>',
             src   : '**/*.jade',
+            dest  : '.tmp',
+            ext   : '.html'
+          }
+        ]
+      },
+      index: {
+        options: {
+          pretty: true,
+          data: {
+            debug: false
+          }
+        },
+        files: [
+          {
+            expand: true,
+            cwd   : '<%= yeoman.app %>',
+            src   : 'index.jade',
             dest  : '.tmp',
             ext   : '.html'
           }
@@ -273,21 +307,6 @@ module.exports = function (grunt) {
           src   : '{,*/}*.css',
           dest  : '.tmp/content/css/'
         }]
-      }
-    },
-
-    // Automatically inject Bower components into the app
-    wiredep: {
-      options: {
-        cwd: ''
-      },
-      app: {
-        src: ['.tmp/index.html'],
-        ignorePath:  /\.\.\//
-      },
-      sass: {
-        src: ['<%= yeoman.app %>/content/css/{,*/}*.{scss,sass}'],
-        ignorePath: /(\.\.\/){1,2}bower_components\//
       }
     },
 
@@ -434,16 +453,18 @@ module.exports = function (grunt) {
           cwd   : '<%= yeoman.app %>',
           dest  : '<%= yeoman.dist %>',
           src   : [
-            // 'content/images/**/*',
+            'content/images/**/*',
             'content/fonts/**/*',
-            'content/locales/**/*'
+            'content/locales/**/*',
+            'content/data/**/*'
           ]
         }, {
           expand: true,
+          flatten: true,
           cwd   : '<%= yeoman.app %>',
           dest  : '<%= yeoman.dist %>',
           src   : [
-            'content/images/favicon.ico'
+            'content/icons/**/*'
           ]
         }, {
           expand: true,
@@ -468,6 +489,12 @@ module.exports = function (grunt) {
         cwd   : '<%= yeoman.app %>/content/images',
         dest  : '.tmp/content/images/',
         src   : ['*.png', '*.ico', '*.gif']
+      },
+      scripts: {
+        expand: true,
+        cwd   : '<%= yeoman.app %>/content/scripts',
+        dest  : '.tmp/content/scripts/',
+        src   : '{,*/}*.js'
       }
     },
 
@@ -477,12 +504,13 @@ module.exports = function (grunt) {
         'sass',
         'coffee:dist',
         'jade:compile',
-        'copy:images'
+        'copy:images',
+        'copy:scripts'
       ],
       test: [
         'coffee',
         'sass',
-        'jade',
+        'jade:compile',
       ],
       dist: [
         'coffee',
@@ -508,8 +536,10 @@ module.exports = function (grunt) {
 
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
-    if (target === 'dist') {
+    if (target === 'prod') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
+    } else if (target === 'qa') {
+      return grunt.task.run(['build-qa', 'connect:dist:keepalive']);
     }
 
     grunt.task.run([
@@ -517,7 +547,6 @@ module.exports = function (grunt) {
       'ngconstant:development',
       'js2coffee',
       'clean:constants',
-      'wiredep',
       'concurrent:server',
       'autoprefixer:server',
       'connect:livereload',
@@ -537,14 +566,16 @@ module.exports = function (grunt) {
     'connect:test',
     'karma:unit'
   ]);
-
-  grunt.registerTask('build', [
-    'clean:dist',
-    'ngconstant:production',
+    
+  grunt.registerTask('build-release', [
     'js2coffee',
     'clean:constants',
-    'concurrent:dist',
-    'wiredep',
+    // 'concurrent:dist',
+    'coffee',
+    'sass',
+    'jade:compile',
+    // 'imagemin',
+    'svgmin',
     'useminPrepare',
     'autoprefixer',
     'concat:generated',
@@ -561,5 +592,23 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'build'
+  ]);
+  
+  grunt.registerTask('build-dev', [
+    'clean:dist',
+    'ngconstant:development',
+    'build-release'  
+  ]);
+  
+  grunt.registerTask('build-qa', [
+    'clean:dist',
+    'ngconstant:qa',
+    'build-release'  
+  ]);
+  
+  grunt.registerTask('build', [
+    'clean:dist',
+    'ngconstant:production',
+    'build-release'   
   ]);
 };

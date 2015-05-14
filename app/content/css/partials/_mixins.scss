@@ -1,0 +1,50 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin font-line($pt) {
+  font-size: ($pt * 1px);
+
+  @include line-height($pt * 1.20);
+}
+
+@mixin line-height($pt) {
+  line-height: ($pt * 1px);
+}
+
+@mixin ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin source-sans {
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+@mixin source-sans-bold {
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+@mixin myriad-pro {
+  font-family: 'MyriadPro-Regulars', Calibri, sans-serif;
+}
+
+@mixin myriad-pro-light {
+  font-family: 'MyriadPro-Light', Calibri, sans-serif;
+}
+
+@mixin myriad-pro-sb() {
+  font-family: 'MyriadPro-Semibold', Calibri, sans-serif;
+}
+
+@mixin icon-sprite {
+  background-image: url('../images/sprite.png');
+  background-repeat: no-repeat;
+}

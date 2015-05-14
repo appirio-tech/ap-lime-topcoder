@@ -1,60 +1,16 @@
-#footer * {
-  box-sizing: content-box;
-  line-height: 18px;
+@import 'partials/combined';
+
+footer {
+  background-color: $black;
+  color: $white;
 }
 
-#footer section {
-  display: block;
-}
-#footer {
-  background-color: #333;
-  color: #959595;
-  min-height: 150px;
-  z-index: 0;
-  position: relative;
-}
-#footer .container {
-  overflow: visible;
-  padding-top: 26px;
-  min-height: 100px;
-  width: 1010px;
-  margin: 0 auto;
-  position: relative;
-}
-#footer .connected {
-  float: right;
-}
-#footer .connected h4 {
-  padding-bottom: 16px;
-  margin-right: 20px;
-  float: left;
-  font-weight: 400;
-  font-family: lato, Arial, Helvetica, sans-serif;
-}
-#footer h4 {
-  display: block;
-  color: #D8D8D8;
-  text-indent: 2px;
-  font-size: 20px;
-}
-#footer .social ul {
-  overflow: hidden;
-  margin-top: 2px;
-  display: block;
-  float: left;
-  list-style: none;
-}
-#footer .social ul li:first-child {
-  margin-left: 0;
+footer nav.navbar {
+	background-color: inherit;
+	border: none;
 }
 
-#footer .social ul li {
-  float: left;
-  height: 35px;
-  width: 26px;
-  margin-right: 2px;
-}
-#footer .social ul li a {
+footer ul.social li a {
   display: block;
   text-align: left;
   text-indent: -100px;
@@ -64,130 +20,266 @@
   background: url('../images/ico-social.png') no-repeat;
   background-position: 0 0;
 }
-#footer .social ul li a:hover {
+footer ul.social li a:hover {
   background-position: -45px 0;
 }
-#footer .social ul li .tw {
+footer ul.social li .tw {
   background-position: 0 -29px;
 }
-#footer .social ul li .tw:hover {
+footer ul.social li .tw:hover {
   background-position: -45px -29px;
 }
-#footer .social ul li .gp {
-  background-position: 0 -57px;
-}
-#footer .social ul li .gp:hover {
-  background-position: -45px -57px;
-}
-#footer .social ul li .in {
-  background-position: 0 -86px;
-}
-#footer .social ul li .in:hover {
-  background-position: -45px -86px;
-}
-#footer .clear {
-  clear: both;
-}
 
-#footer .updates {
-  margin-bottom: 25px;
+/*** FOOTER STYLE ***/
+.footer{
+  background: #252525;
+  min-height: 99px;
 }
-#footer .row {
-  width: 349px;
-}
-#footer form {
-  display: block;
-}
-#footer .updates .email {
-  float: left;
-  border-radius: 4px 0 0 4px;
-  width: 233px;
-  vertical-align: top;
-  color: #a1a1a1;
-  font-size: 15px;
-  box-shadow: none;
-}
-
-#footer input {
-  font-family: lato, Arial, Helvetica, sans-serif;
-  outline: 0;
-}
-#footer input[type=email] {
-  border: none;
-  padding: 6px;
-  margin: 0;
-  height: 20px;
-  line-height: 20px;
-  background-color: #3f4143;
-}
-
-#footer .updates .btn {
-  float: left;
-  border-radius: 0 4px 4px 0;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  height: 16px;
-  width: 80px;
-}
-#footer .updates .btn:hover {
-  background-color: #ff7a00;
-}
-#footer .btnSubmitFooter {
-  font-size: 15px;
-}
-
-#footer .btn {
-  display: inline-block;
-  background-color: #f90;
-  color: #fff;
-  border-bottom: 4px solid #ff7a00;
-  text-align: center;
-  position: relative;
-}
-
-#footer .copyright {
-  float: left;
-  font-size: 15px;
-}
-#footer .copyright a {
-  color: #a1a1a1;
-  text-decoration: underline;
-  font-weight: 400;
-}
-#footer .privacyStmtLink {
-  padding-right: 5px;
-}
-#footer .legalDisclaimerLink {
-  padding-left: 5px;
-}
-
-@media screen and (max-width: 1010px){
-  #footer {
-    background-color: #333;
-    color: #959595;
-    position: relative;
-    min-height: 244px;
-    padding-bottom: 22px;
-  }
-
-  #footer .container {
-    min-height: 175px !important;
-    width: auto;
-    margin: 0 10px;
-    padding-top: 0;
-  }
-
-  #footer .connected {
-    margin-top: 20px;
-    width: 100%;
-    float: right;
-  }
-
-  #footer .connected h4 {
+  .footer .small-logo{
     display: block;
-    padding-bottom: 6px;
-    float: left;
-    line-height: 38px;
+    margin: 40px 0 0 44px;
   }
+  .footer .lbl{
+    color: #ffffff;
+    font-size: 18px;
+    margin: 0 0px 0 0;
+    line-height: 99px;
+    float: left;
+  }
+  .footer-mail .txtbox{
+    border: none;
+    outline: none;
+    background: #ffffff;
+    margin: 27px 0 0 0;
+    border-radius: 4px;
+    height: 41px;
+    text-indent: 12px;
+    float: left;
+    @include source-sans;
+    font-size: 14px;
+    color: rgba(102, 102, 102, 0.50);
+  }
+  .footer-mail .txtbox::-webkit-input-placeholder{
+    @include source-sans;
+    font-size: 14px;
+    color: rgba(102, 102, 102, 0.50);
+  }
+  .footer-mail .txtbox::-moz-placeholder{
+    @include source-sans;
+    font-size: 14px;
+    color: rgba(102, 102, 102, 0.50);
+  }
+    .footer-mail .txtbox::-ms-input-placeholder{
+    @include source-sans;
+    font-size: 14px;
+    color: rgba(102, 102, 102, 0.50);
+    }
+  .footer-mail .ok-btn{
+    width: 59px;
+    height: 36px;
+    background: #00a7f1;
+    border-radius: 4px;
+    margin: 30px 0 0 10px;
+    line-height: 36px;
+    @include source-sans;
+    float: left;
+  }
+    .twit-icon{
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: url('../images/icons.png') no-repeat 0 -16px;
+      margin: 38px 18px 0 0;
+    }
+    .fb-icon{
+      display: block;
+      width: 9px;
+      height: 18px;
+      background: url('../images/icons.png') no-repeat 0 -37px;
+      margin: 36px 0px 0 0;
+    }
+    .mob-email{
+      float: right;
+    }
+    .mobile.social-icons{
+      display: none;
+    }
+      /*** REGISTER PAGE FOOTER ****/
+      .register-footer.footer{
+        min-height: 81px;
+        border-top: 1px solid rgba(10, 106, 157, 0.10);
+      }
+      .register-footer.footer .small-logo{
+        margin-top: 25px;
+      }
+      .register-footer.footer .lbl{
+        line-height: 68px;
+      }
+      .register-footer.footer .footer-mail .txtbox{
+        margin-top: 13px;
+      }
+      .register-footer.footer .footer-mail .ok-btn{
+        margin: 16px 0 0 10px;
+      }
+      .register-footer.footer .twit-icon{
+        margin: 24px 18px 0 0;
+      }
+      .register-footer.footer .fb-icon{
+        margin: 22px 18px 0 0;
+      }
+@media(max-width: 992px){
+  .register-content {
+      padding: 22px 20px 144px 20px;
+  }
+  .register-content .big-logo {
+    margin: 0 0 15px -20px;
+    display: block;
+  }
+  .register-form .fields {
+    padding: 0 0px 20px 0;
+  }
+  .register-btn {
+    width: 100%;
+    margin: 18px 0 0;
+  }
+  .profile-middle{
+    padding: 40px 40px 140px 40px;
+  }
+  .profile-middle .column:first-child{
+    padding-right: 20px;
+  }
+  .learn-more{
+    padding: 0 20px 20px;
+  }
+}
+@media(min-width: 768px) and (max-width: 992px){
+  .social-icons {
+    margin: 0 18px 0 30px;
+  }
+}
+@media(max-width: 767px){
+  /*** MOBILE DROPDOWN ***/
+  .header-row .header-right {
+    width: 100%;
+    margin: -3px 0 0 0;
+    background: #2e2f32;
+    padding: 0 0 0 10px;
+  }
+  .header-row .navbar-collapse{
+    border: none;
+    box-shadow: none;
+  }
+  .main-nav ul li{
+    display: block;
+    float: none;
+  }
+  .navbar-inverse .navbar-collapse{
+    background: #2e2f32;
+  }
+  .navbar-inverse .main-nav ul li a{
+    font-size: 15px;
+    line-height: 48px;
+    color: #ffffff;
+    padding: 0 30px 0 0;
+  }
+  .main-nav ul li:nth-child(4) a{
+    line-height: 26px;
+    padding-right: 0;
+  }
+  .main-nav ul li:last-child a{
+    line-height: 53px;
+  }
+    .navbar-collapse.in{
+      overflow-y: inherit;
+    }
+    .header-row .header-right.menu-active {
+      min-height: 212px;
+    }
+    .header-row .header-right.menu-active.drop-open {
+      min-height: 380px;
+    }
+    .header-row .header-right.menu-active.drop-open .profile-data{
+      top: 50px;
+      left: 0;
+      min-height: 178px;
+    }
+  /*** LOGIN PAGE ***/
+  .login-content{
+      padding: 22px 20px 144px 30px;
+  }
+  .login-content .big-logo {
+    margin: 0 0 15px -20px;
+    display: block;
+  }
+    .login-form .row .txt-box,
+    .login-form .row:last-child{
+      width: 100%;
+    }
+    .mob-sign{
+      width: 100%;
+      margin: 10px 0 0;
+    }
+    .mob-sign .sign-in{
+      width: 100%;
+    }
+  /***  END LOGIN PAGE ***/
+  /*** PROFILE PAGE ***/
+  .profile-middle .column:first-child,
+  .profile-middle .column:nth-child(2),
+  .profile-middle .column:last-child{
+    padding: 0 0 20px 0;
+  }
+  .profile-middle {
+    padding: 20px 20px 140px 20px;
+  }
+  .banner {
+    padding-left: 20px;
+  }
+  /*** PROFILE PAGE ***/
+    /*** FOOTER ADJUSTMENTS ***/
+    .social-icons.desktop{
+      display: none;
+    }
+    .mobile.social-icons{
+      display: block;
+      margin: 0 0 0 30px;
+    }
+    .footer {
+        padding: 0 0 20px 0;
+    }
+    .footer .small-logo {
+      display: block;
+      margin: 38px 0 0 20px;
+    }
+    .mob-email{
+      width: 100%;
+      height: 120px;
+      margin: 20px 0 0 0;
+      float: left;
+      padding: 0 0 0 12px;
+    }
+    .footer-mail{
+      padding: 0 18px 0 18px;
+    }
+    .footer .lbl{
+      margin: 10px 0 0;
+      line-height: 18px;
+      float: none;
+      display: block;
+    }
+    .register-footer.footer .lbl{
+      line-height: 18px;
+    }
+    .footer-mail .txtbox{
+      margin: 5px 0 0 0;
+      float: none;
+      width: 100%;
+    }
+    .footer-mail .ok-btn,
+    .register-footer.footer .footer-mail .ok-btn{
+      margin: 8px 0 0 0;
+      width: 100%;
+      float: none;
+    }
+    /*** END FOOTER ADJUSTMENTS ***/
 }

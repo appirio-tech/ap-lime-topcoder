@@ -3,26 +3,27 @@
 dependencies = [
   'angular-jwt'
   'app.config'
+  'app.directives'
   'ui.router'
+  'ngCookies'
+  'ui.bootstrap'
+  'ngDropdowns'
+  'duScroll'
 ]
 
 run = ($rootScope, $state, AuthToken, Auth) ->
-
-  $rootScope.$on '$locationChangeStart', (event, newUrl, oldUrl) ->
-    # When the url changes, checks if userJWTToken is in the query string.
-    # If so, store it in local storage
-    if newUrl.indexOf('userJWTToken') > -1
-      console.log 'found JWT in url and storing it'
-      AuthToken.storeQueryStringToken newUrl
+  # Attaching $state to the $rootScope allows us to access the
+  # current state in index.html (see div with ui-view on the index page)
+  $rootScope.$state = $state
 
   # On each state change, Angular will check for authentication
   $rootScope.$on '$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) ->
     # Check if the user is authenticated when the state requires authentication
     if toState.authenticate && !Auth.isAuthenticated()
-      console.log 'state requires authentication and user is not logged in'
-      Auth.login()
+      console.log 'State requires authentication, and user is not logged in.'
+      # TODO Auth.login() should redirect to /login
 
-angular.module('peerReview', dependencies).run [
+angular.module('lime-topcoder', dependencies).run [
   '$rootScope'
   '$state'
   'AuthToken'

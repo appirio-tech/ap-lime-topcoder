@@ -1,0 +1,101 @@
+@import 'partials/combined';
+
+.login {
+  /*** LOGIN PAGE CONTENT ***/
+  .login-content{
+    background: #ffffff;
+    padding: 92px 0 144px 95px;
+  }
+  .big-logo{
+    margin: 0 0 65px -20px;
+    display: block;
+  }
+    .welcome{
+      @include myriad-pro-light();
+      font-size: 48px;
+      color: #565859;
+      margin-bottom: 12px;
+      line-height: 48px;
+    }
+    .login-form{
+      margin: 0 0 0 5px;
+
+      .form-control-feedback {
+        /* height and line-height are altered to match with .txt-box */
+        height: 53px;
+        line-height: 53px;
+      }
+    }
+    .login-form .form-msg{
+      @include myriad-pro-light();
+      font-size: 32px;
+      color: #333e48;
+      margin-bottom: 22px;
+      line-height: 32px;
+    }
+    .login-form .row{
+      margin-bottom: 18px;
+    }
+    .login-form .row:nth-child(2){
+      margin-bottom: 27px;
+    }
+    .login-form .row:nth-child(3),
+    .login-form .row:last-child{
+      margin-bottom: 0px;
+    }
+    .login-form .row .txt-box{
+      border: 1px solid #545555;
+      background: #f3f3f1;
+      outline: none;
+      border-radius: 5px;
+      height: 53px;
+      text-indent: 16px;
+      font-size: 20px;
+      color: rgba(51, 70, 81, 0.81);
+    }
+      .login-form .forget{
+        font-size: 24px;
+        color: #3a444c;
+        padding-bottom: 16px;
+        line-height: 24px;
+        display: block;
+      }
+      .login-form .reg-link{
+        font-size: 24px;
+        color: #27aae1;
+        text-decoration: underline;
+        line-height: 24px;
+      }
+      .sign-in{
+        width: 86px;
+        height: 29px;
+        line-height: 29px;
+        margin: 2px 0 0;
+        font-size: 16px;
+        border: none;
+        padding: 0px;
+      }
+      .help-inline{
+        color: #b94a48;
+        font-size: 14px;
+        display: block;
+        margin: 5px 0 0 0;
+      }
+      .fields label .help-inline{
+        color: #b94a48;
+        font-size: 14px;
+        display: block;
+        margin: 0;
+        position: absolute;
+        left: 16px;
+        top: 42px;
+      }
+      .register-form .wrap-dd-select.error,
+      .register-form .txt-box.error{
+        border: 2px solid #a94442;
+      }
+      .login-form .row .txt-box.error{
+        border: 2px solid #a94442;
+      }
+  /*** END LOGIN PAGE CONTENT ***/
+}

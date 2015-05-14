@@ -2,19 +2,28 @@
 
 'use strict'
 
-ApiService = ($http) ->
-  requestHandler: (method, url, data) ->
+ApiService = ($http, AuthToken) ->
+  requestHandler: (method, url, data, noAuth) ->
     options =
       method : method
       url    : url
-      headers: {}
+      headers: { } 
+      
+    token = AuthToken.getToken()
+    if token && !noAuth
+      options.headers = {
+        'Authorization' : 'Bearer ' + token
+      }
 
-    if data
+    if data && method != 'GET'
       options.data = data
+
+    if data && method == 'GET'
+      options.params = data
 
     if method == 'POST'
       options.headers['Content-Type'] = 'application/json'
 
     $http options
 
-angular.module('peerReview').factory 'ApiService',['$http', ApiService]
+angular.module('lime-topcoder').factory 'ApiService',['$http', 'AuthToken', ApiService]

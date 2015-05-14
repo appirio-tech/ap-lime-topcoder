@@ -1,0 +1,191 @@
+@import 'partials/combined';
+
+/*** PROFILE PAGE STYLE ***/
+.banner{
+  width: 100%;
+  min-height: 496px;
+  background: url('../img/profile-bg.jpg') no-repeat;
+  background-size: cover;
+  padding: 0 0 20px 100px;
+}
+.member-name{
+  @include myriad-pro-light();
+  font-size: 67px;
+  color: #333e48;
+  margin: 150px 0 10px 0;
+  line-height: 67px;
+}
+  .badge-container{
+    margin: 0 0 40px 0;
+  }
+  .badge-one{
+    display: block;
+    width: 35px;
+    height: 35px;
+    background: url('../img/icons.png') no-repeat 0 -124px;
+    margin-right: 22px;
+  }
+  .badge-two{
+    display: block;
+    width: 25px;
+    height: 34px;
+    background: url('../img/icons.png') no-repeat 0 -172px;
+    margin-right: 24px;
+  }
+  .badge-three{
+    display: block;
+    width: 34px;
+    height: 34px;
+    background: url('../img/icons.png') no-repeat 0 -221px;
+    margin-right: 23px;
+  }
+  .badge-four{
+    display: block;
+    width: 29px;
+    height: 34px;
+    background: url('../img/icons.png') no-repeat 0 -270px;
+  }
+    .member-det p{
+      font-size: 24px;
+      color: #3a444c;
+      margin: 0 0 18px;
+      line-height: 24px;
+    }
+    .edt-profile{
+      width: 162px;
+      height: 29px;
+      line-height: 29px;
+      margin: 27px 0 0 0;
+      font-size: 16px;
+    }
+    .learn-more{
+      min-height: 299px;
+      background: #eeeeee;
+    }
+    .learn-more .question{
+      @include myriad-pro-light();
+      margin: 70px 0 0 0;
+      text-align: center;
+      color: #323334;
+      font-size: 48px;
+    }
+    .learn-more .answer{
+      @include myriad-pro-light();
+      font-size: 30px;
+      color: #45474b;
+      text-align: center;
+      margin: 10px 0 10px 0;
+    }
+      .learn-more-btn{
+        width: 118px;
+        height: 29px;
+        margin: 54px auto 0;
+        line-height: 29px;
+        font-size: 16px;
+      }
+        .profile-middle{
+          padding: 56px 83px 140px 95px;
+        }
+        .profile-middle .column:first-child{
+          padding-right: 80px;
+        }
+        .profile-middle .column:nth-child(2){
+          padding: 50px 20px 0 0;
+        }
+        .profile-middle .column:last-child{
+          padding: 50px 0 0 20px;
+        }
+        .about-head{
+          @include myriad-pro-light();
+          font-size: 40px;
+          color: #020303;
+          margin-bottom: 18px;
+          line-height: 30px;
+        }
+        .sub-head{
+          font-size: 18px;
+          color: #242e37;
+          margin-bottom: 27px;
+          line-height: 18px;
+        }
+        .col-content{
+          color: #334651;
+          font-size: 14px;
+          line-height: 18px;
+        }
+          .challenge-detail{
+            margin: 32px 0 0 0;
+          }
+          .challenge-detail p{
+            @include myriad-pro-light();
+            font-size: 18px;
+            color: #3a444c;
+            margin-bottom: 10px;
+            line-height: 18px;
+            font-weight: bold;
+          }
+          .challenge-detail p .count{
+            font-weight: 400;
+          }
+          .badge-progress .row{
+            min-height: 58px;
+            background: #e2e2e2;
+            border-top: 1px solid #c9c9c9;
+            position: relative;
+          }
+          .badge-progress .row:nth-child(even){
+            background: #f0f0f0;
+            border-top: 1px solid #b6b6b6;
+          }
+          .bar-container{
+            padding: 0 20px 0 50px;
+          }
+          .badge-width{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+          }
+          .badge-width .badge-one{
+            margin: 8px auto 0;
+          }
+          .badge-width .badge-two{
+            margin: 12px auto 0;
+          }
+          .badge-width .badge-three{
+            margin: 12px auto 0;
+          }
+          .badge-width .badge-four{
+            margin: 12px auto 0;
+          }
+          .badge-name{
+            font-size: 16px;
+            color: #020303;
+            margin: 8px 0 0 7px;
+            line-height: 16px;
+          }
+/*** PROGRESS BAR ***/
+.progress {
+  height: 4px;
+  margin: 10px 0 0 0;
+  overflow: hidden;
+  background-color: rgba(6,6,4,0.10);
+  border-radius: 0;
+  box-shadow: none;
+  overflow: initial;
+}
+.progress-bar-success {
+  background-color: #22c064;
+  position: relative;
+}
+.pro-indicator{
+  width: 35px;
+  height: 34px;
+  background: url('../img/icons.png') no-repeat 0 -314px;
+  display: block;
+  position: absolute;
+  z-index: 2000;
+  right: -23px;
+  top: -9px;
+}
+/*** END PROFILE PAGE STYLE ***/
