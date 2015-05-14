@@ -74,7 +74,7 @@ html
   body(ng-app="lime-topcoder", ng-controller="main as main")
     header.header-row(ng-include="'layout/header.html'")
 
-    .view-container(ui-view, ng-class="$state.current.name")
+    .view-container(ui-view, ng-class="$state.current.name", autoscroll="true")
     .view-container-loading(ng-show="main.loggingIn")
 
     footer.login-footer.footer(ng-include="'layout/footer.html'")
