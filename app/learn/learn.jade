@@ -17,7 +17,7 @@
       ul.banner-actions
         li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn more]
 
-        li #[a.btn(ui-sref='register') Become a member]
+        li(ng-show="!main.loggedInUser") #[a.btn(ui-sref='register') Become a member]
 
 section.container.learn-badges-section#learn-more
   header.section-header
