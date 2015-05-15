@@ -5,6 +5,7 @@ dependencies = [
   'app.config'
   'app.directives'
   'ui.router'
+  'ngCookies'
   'ui.bootstrap'
   'ngDropdowns'
   'duScroll'

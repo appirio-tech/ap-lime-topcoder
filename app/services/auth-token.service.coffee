@@ -1,31 +1,25 @@
 'use strict'
 
-AuthToken = ($window, $location, Helpers, $http, ENV) ->
-  storage = $window.localStorage
-  userToken = 'tcjwt'
+AuthToken = (ENV, $window, $cookies) ->
+  tokenKey = 'tcjwt'
   cachedToken = null
 
   token =
     setToken: (token) ->
-      # CachedToken allows us to store jwt in variable
-      # instead of always having to access local storage
+      $window.document.cookie = tokenKey + '=' + token + '; path=/; domain=.' + ENV.domain + '; expires=' + new Date(new Date().getTime() + 12096e5);      
       cachedToken = token
-      storage.setItem userToken, token
-
     getToken: () ->
       if !cachedToken
-        cachedToken = storage.getItem userToken
+        cachedToken = $cookies[tokenKey]
       cachedToken
 
     removeToken: () ->
+      $window.document.cookie = tokenKey + '=; path=/; domain=.' + ENV.domain + '; expires=' + new Date(0).toUTCString();
       cachedToken = null
-      storage.removeItem userToken
 
 angular.module('lime-topcoder').factory 'AuthToken', [
-  '$window'
-  '$location'
-  'Helpers'
-  '$http',
   'ENV'
+  '$window'
+  '$cookies'
   AuthToken
 ]

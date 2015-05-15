@@ -11,7 +11,7 @@
     nav.main-nav.navbar-collapse.collapse(id="lime-nav-bar")
       ul.nav.navbar-nav
         li
-          a(ui-sref="challengeListing", ng-class="{activeTab: $state.current.name == 'challengeListing'}") Challenges
+          a(ui-sref="challenges({type: 'all'})", ng-class="{activeTab: $state.current.name == 'challenges'}") Challenges
         li
           a(ui-sref="learn", ng-class="{activeTab: $state.current.name == 'learn'}") Learn
         li

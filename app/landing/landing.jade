@@ -37,34 +37,16 @@
         p We want thinkers. The &ldquo;why not&ldquo; people. The ones who never met a problem they couldn&rsquo;t solve. Jowl sirloin brisket tri-tip tongue tenderloin shoulder salami strip steak pork belly hamburger filet mignon pork chop ball tip cupim. Pork belly beef ribs ribeye shoulder. Ribeye pork loin beef ribs landjaeger bacon. Short loin drumstick brisket, ribeye pork chop shoulder pork loin swine turkey. Sausage tenderloin prosciutto swine ball tip. Salami t-bone capicola doner bacon tongue pork filet mignon kevin shank sirloin drumstick boudin andouille.
 
         ul.section-actions
-          li #[a(ui-sref="challengeListing") View challenges &gt;]
+          li #[a(ui-sref="challenges({type: 'all'})") View challenges &gt;]
 
           li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a member]
 
 .newsletter-form-wrapper
   section.newsletter-form-section.container
     h1.heading iOS Developer Community.
+    p Sign up to join the conversation
 
-    // Marketo script & form:
-    // script(src="//app-abc.marketo.com/js/forms2/js/forms2.min.js")
-    // form#mktoForm_1944
-    // script.
-    //   MktoForms2.loadForm("//app-abc.marketo.com", "921-UOU-112", 1944);
-
-    script(src='//app-abc.marketo.com/js/forms2/js/forms2.min.js')
-    form#mktoForm_1944.newsletter-form(name="subscribeForm", ng-submit="subscribeForm.$valid && postForm(email)", novalidate) Sign up to join the conversation.
-      input(ng-model="email", type="email", placeholder="Your email please", required)
-
-      p(ng-show="subscribeForm.$submitted && subscribeForm.$error.required") Please enter a valid email address.
-
-      button.btn(type="submit") Submit
-    // script.
-    //   MktoForms2.loadForm("//app-abc.marketo.com", "921-UOU-112", 1944);
-
-    //- form.newsletter-form Sign up to join the conversation.
-      //- input(type="email", placeholder="Your email please")
-
-      //- button.btn(type="submit") Submit
+    form#mktoForm_1944.newsletter-form
 
 .challenges-section.landing-annon-page#challenges
   section.container
@@ -77,10 +59,10 @@
       li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in challenges")
         section.challenge
           a(ng-href="https://www.{{domain}}/challenge-details/{{challenge.challengeId}}/?type=develop")
-            img.challenge-image(src="content/images/swift-challenge.png", alt="challenge image")
+            img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
 
           .challenge-details
-            h2.challenge-header.truncate
+            h2.challenge-header
               a(ng-href="https://www.{{domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") {{challenge.challengeName}}
 
             .challenge-data
@@ -89,7 +71,7 @@
             .challenge-data
               p #[span.challenge-field Platform:] {{challenge.platforms}}
 
-            .challenge-prize {{challenge.totalPrize | currency:undefined:0}}
+            .challenge-prize {{challenge.totalPrize || 0 | currency:undefined:0}}
 
             .challenge-deadline {{challenge.submissionEndDate | localTime}}
 
@@ -109,7 +91,7 @@
     ul.section-actions
       li #[a(ui-sref="learn") Learn more about challenge types &gt;]
 
-      li #[a(ui-sref="challengeListing") View full challenge list &gt;]
+      li #[a(ui-sref="challenges({type: 'all'})") View full challenge list &gt;]
 
 section.learn-improve-section.landing-annon-page
   .container
@@ -140,7 +122,7 @@ section.learn-improve-section.landing-annon-page
           p Whether you are an experienced iOS developer or are just getting started, follow these steps to join and grow in the Apple Developer Community
 
           .link-row
-            a.btn(ui-sref="peerChallenge") Learn more
+            a.btn(ui-sref="challenges({type: 'peer'})") Learn more
 
         section.col-sm-12.col-md-4.info-col
           h2.subsection-header Train and improve
@@ -156,7 +138,7 @@ section.learn-improve-section.landing-annon-page
           p Ready to prove yourself on a global stage? Have what it takes to compete and win in the Apple Developer Community? Well step right up and find a challenge to test your merit on. Any and all are welcome...register for a challenge today!
 
           .link-row
-            a.btn(ui-sref="challengeListing") Learn more
+            a.btn(ui-sref="challenges({type: 'all'})") Learn more
 
 .learn-section.learn-page
   section.container

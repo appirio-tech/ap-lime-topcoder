@@ -16,10 +16,10 @@
   line-height: ($pt * 1px);
 }
 
-@mixin required-message {
-  color: red;
-  font-size: 18px;
-  font-family: MyriadPro-Light;
+@mixin ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @mixin source-sans {
