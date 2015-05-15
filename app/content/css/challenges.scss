@@ -1159,47 +1159,11 @@
 
 /* mobile screen layout */
 @media (max-width: 767px){
-  .footerAlt .footer-mail{
-    padding: 0;
-  }
-  .footerAlt .footer-mail .rwEmail{
-    width: 100%;
-    float: none;
-    margin: 10px 0;
-  }
-  .footerAlt .footer-mail .txtbox{
-    margin: 0;
-    float: none;
-  }
-  .footerAlt .footer-mail .rw{
-    float: none;
-  }
-  .footerAlt .footer-mail .ok-btn{
-    margin: 0;
-    width: 100%;
-    float: none;
-  }
-  .socialRw{
-    text-align: center;
-    margin: 0;
-  }
-  .socialRw a{
-    float: none;
-  }
-  .socialRw .twit-icon, .socialRw .fb-icon{
-    display: inline-block;
-    margin: 20px 9px 0;
-  }
-  .footerAlt .poweredBy{
-    text-align: center;
-    padding-bottom: 20px;
-  }
-
   /* views */
-  .challengeListing .section-header .browse .viewType{
+  .challenges .section-header .browse .viewType{
     display: none;
   }
-  .challengeListing .challenges-section.landing-annon-page .challenges{
+  .challenges .challenges-section.landing-annon-page .challenges{
     display: block !important;
   }
 }
@@ -1209,19 +1173,19 @@
 /* tablet */
 
 @media (max-width: 991px) {
-    .challengeListing .section-header .browse .viewType {
+    .challenges .section-header .browse .viewType {
         display: block;
         position: relative;
         height: 28px;
     }
-    .challengeListing .carousel-section .slide {
+    .challenges .carousel-section .slide {
         .ico{
             height: 140px;
             width: 140px;
             right: 0;
         }
     }
-    .challengeListing .carousel-section .badgeSlide.slide {
+    .challenges .carousel-section .badgeSlide.slide {
         .badgeWarp{
             float: left;
             padding-top: 94px;
@@ -1241,7 +1205,7 @@
         }
     }
 
-    .challengeListing .carousel-section .section-header{
+    .challenges .carousel-section .section-header{
         padding-right: 110px;
     }
 }
@@ -1250,16 +1214,16 @@
 @media (max-width: 767px) {
     /* views */
 
-    .challengeListing .section-header .browse .viewType {
+    .challenges .section-header .browse .viewType {
         display: block;
         position: relative;
         height: 28px;
     }
-    .challengeListing .challenges-section.landing-annon-page .challenges {
+    .challenges .challenges-section.landing-annon-page .challenges {
         display: block !important;
     }
 
-    .challengeListing .carousel-section .slide {
+    .challenges .carousel-section .slide {
         min-height: 400px;
         padding-bottom: 20px;
         .ico{
@@ -1317,7 +1281,7 @@
             }
         }
     }
-    .challengeListing .carousel-section .badgeSlide.slide {
+    .challenges .carousel-section .badgeSlide.slide {
         min-height: 400px;
         padding-bottom: 20px;
         .badgeWarp{
@@ -1369,7 +1333,7 @@
         }
     }
     /* masthead section */
-    .challengeListing .carousel-section .section-header{
+    .challenges .carousel-section .section-header{
         font-size: 40px;
         line-height: 42px;
         height: 42px;

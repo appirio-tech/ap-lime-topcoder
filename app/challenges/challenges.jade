@@ -108,45 +108,45 @@ div(ng-controller="challenges as vm")
                 .inner
                   a.btn.secondary.btnSelect(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") Select
 
-     ul.challenges.row(ng-show="isGrid")
-        li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in vm.challenges")
-          section.challenge
-            .challenge-type {{challenge.type}}
+    ul.challenges.row(ng-show="isGrid")
+      li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in vm.challenges")
+        section.challenge
+          .challenge-type {{challenge.type}}
 
-            img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
+          img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
 
-            .challenge-details
-              h2.challenge-header.ellipses
-                a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") {{challenge.challengeName}}
+          .challenge-details
+            h2.challenge-header.ellipses
+              a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") {{challenge.challengeName}}
 
-              .challenge-data
-                p.ellipses #[span.challenge-field Technologies:] {{challenge.technologies}}
+            .challenge-data
+              p.ellipses #[span.challenge-field Technologies:] {{challenge.technologies}}
 
-              .challenge-data
-                p.ellipses #[span.challenge-field Platform:] {{challenge.platforms}}
+            .challenge-data
+              p.ellipses #[span.challenge-field Platform:] {{challenge.platforms}}
 
-              .challenge-prize(ng-bind="challenge.totalPrize | currency:undefined:0")
+            .challenge-prize(ng-bind="challenge.totalPrize | currency:undefined:0")
 
-              .challenge-deadline(ng-bind="challenge.submissionEndDate | localTime")
+            .challenge-deadline(ng-bind="challenge.submissionEndDate | localTime")
 
-              .row.challenge-stats
-                .col-xs-6.challenge-registrants.challenge-stat
-                  .stats-type REGISTRANTS
+            .row.challenge-stats
+              .col-xs-6.challenge-registrants.challenge-stat
+                .stats-type REGISTRANTS
 
-                  .stats-value
-                    a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numRegistrants}}
+                .stats-value
+                  a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numRegistrants}}
 
-                .col-xs-6.challenge-submissions.challenge-stat
-                  .stats-type SUBMISSIONS
+              .col-xs-6.challenge-submissions.challenge-stat
+                .stats-type SUBMISSIONS
 
-                  .stats-value
-                    a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numSubmissions}}
-              .challenge-actns(ng-show="vm.challengesType == 'peer'")
-                a.btn.secondary.btnSelect(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") Select
+                .stats-value
+                  a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numSubmissions}}
+            .challenge-actns(ng-show="vm.challengesType == 'peer'")
+              a.btn.secondary.btnSelect(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") Select
 
-      ul.section-actions
-        li(ng-show="vm.hasMore && !vm.loading") #[a(ng-click="vm.loadMore()") Load more...]
-        li(ng-show="vm.hasMore && vm.loading") Loading...
+    ul.section-actions
+      li(ng-show="vm.hasMore && !vm.loading") #[a(ng-click="vm.loadMore()") Load more...]
+      li(ng-show="vm.hasMore && vm.loading") Loading...
 
   .learn-section.learn-page
     section.container
