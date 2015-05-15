@@ -97,6 +97,11 @@ html
 
     .view-container(ui-view, ng-class="$state.current.name", autoscroll="true")
     .view-container-loading(ng-show="main.loggingIn")
+      div.circle-3-loading
+        span.loading-wrapper
+          span.outer-circle
+          span.inner-circle
+            span.circle
 
     footer.login-footer.footer(ng-include="'layout/footer.html'")
 
