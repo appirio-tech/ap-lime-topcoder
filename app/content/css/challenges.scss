@@ -94,7 +94,7 @@
             width: 15.5%;
           }
           .col2{
-            width: 26.5%;
+            width: 39.5%;
           }
           .col3{
             width: 18.5%;
@@ -103,9 +103,6 @@
             width: 13.5%;
           }
           .col5{
-            width: 13%;
-          }
-          .col6{
             width: 13%;
           }
 
@@ -158,7 +155,7 @@
         }
         .chge {
             font-size: 16px;
-            width: 26.5%;
+            width: 39.5%;
             border-right: 1px solid #c3c3c3;
             text-align: center;
             height: 89px;
@@ -251,7 +248,6 @@
         .subs {
             text-align: center;
             width: 13%;
-            border-right: 1px solid #C3C3C3;
             .inner {
                 max-width: 100%;
                 overflow: hidden;
@@ -281,24 +277,6 @@
                   vertical-align: top;
                   display: inline-block;
                 }
-            }
-        }
-        .bdgPref {
-            text-align: center;
-            width: 13%;
-            .inner {
-                max-width: 100%;
-                overflow: hidden;
-                display: inline-block;
-                text-align: left;
-                height: 89px;
-            }
-            .bgd {
-              display: inline-block;
-              width: 46px;
-              height: 63px;
-              margin-top: 11px;
-              background: url('../images/ico-bdg.png') 0 0 no-repeat;
             }
         }
     }
@@ -760,13 +738,6 @@
         line-height: 20px;
         margin: 6px 0 0 3px;
         line-height: 1.2em;
-    }
-    .challenge-actns {
-        opacity: 1;
-        margin-top: 10px;
-        .btn {
-            width: 100%;
-        }
     }
     .challenge-data .challenge-field {
         font-weight: 700;
