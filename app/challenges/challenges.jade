@@ -68,11 +68,9 @@ div(ng-controller="challenges as vm")
           li.col-xs-12.header
             div.col1.pull-left &nbsp;
             div.col2.pull-left CHALLENGE
-            div.col3.pull-left PRIZE &amp;  DEADLINE
+            div.col3.pull-left PRIZE &amp; DEADLINE
             div.col4.pull-left REGISTRANTS
             div.col5.pull-left SUBMISSIONS
-            div.col6.pull-left(ng-show="vm.challengesType == 'all'") iOS Badged Preferred
-            div.col6.pull-left(ng-show="vm.challengesType == 'peer'") REGISTER
 
           li.liRw.col-xs-12(ng-repeat="challenge in vm.challenges")
             .chrw.clearfix
@@ -101,12 +99,6 @@ div(ng-controller="challenges as vm")
                 .inner
                   .sub
                     a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numSubmissions}}
-              .bdgPref.col6.pull-left(ng-show="vm.challengesType == 'all'")
-                .inner
-                  a.bgd(ng-if="challenge.isBadgePreferred")
-              .bdgPref.col6.pull-left(ng-show="vm.challengesType == 'peer'")
-                .inner
-                  a.btn.secondary.btnSelect(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") Select
 
     ul.challenges.row(ng-show="isGrid")
       li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in vm.challenges")
@@ -125,7 +117,7 @@ div(ng-controller="challenges as vm")
             .challenge-data
               p.ellipses #[span.challenge-field Platform:] {{challenge.platforms}}
 
-            .challenge-prize(ng-bind="challenge.totalPrize | currency:undefined:0")
+            .challenge-prize(ng-bind="challenge.totalPrize || 0 | currency:undefined:0")
 
             .challenge-deadline(ng-bind="challenge.submissionEndDate | localTime")
 
@@ -141,8 +133,6 @@ div(ng-controller="challenges as vm")
 
                 .stats-value
                   a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numSubmissions}}
-            .challenge-actns(ng-show="vm.challengesType == 'peer'")
-              a.btn.secondary.btnSelect(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") Select
 
     ul.section-actions
       li(ng-show="vm.hasMore && !vm.loading") #[a(ng-click="vm.loadMore()") Load more...]
