@@ -1,24 +1,7 @@
 'use strict'
 
-landing = ($scope, ChallengeService, MarketoService, Helpers, ENV) ->
+landing = ($scope, ChallengeService, Helpers, ENV) ->
   $scope.domain = ENV.domain
-  $scope.email = ''
-
-  $scope.postForm = (email) ->
-    console.log 'email ', email
-    console.log 'scope ', $scope.email
-    body =
-      formid    : 'FO1944A1ZN1972LA1'
-      munchkinId: '921-UOU-112'
-      Email     : email
-
-    MarketoService.sendEmail body
-    .then (result) ->
-      console.log 'result of send: ', result
-      # in success do this:
-      # $scope.email = '' - might not need this if doing below
-      # set form to pristine in success
-
 
   # Make sure there are 3 challenges showing.
   # The first challenge should be of type 'PEER'.
@@ -39,10 +22,11 @@ landing = ($scope, ChallengeService, MarketoService, Helpers, ENV) ->
       Helpers.formatArray $scope.challenges
       Helpers.processChallenge challenge for challenge in $scope.challenges
 
+  MktoForms2.loadForm '//app-abc.marketo.com', '921-UOU-112', 1944
+
 angular.module('lime-topcoder').controller 'landing', [
   '$scope'
   'ChallengeService'
-  'MarketoService'
   'Helpers'
   'ENV'
   landing
