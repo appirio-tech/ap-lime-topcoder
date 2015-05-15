@@ -14,11 +14,7 @@ body {
   top: 0;
   left: 0;
   z-index: 1000;
-  // TODO change loading image
-  background: rgba( 0, 0, 0, .8 )
-              url('http://i.stack.imgur.com/FhHRx.gif')
-              50% 50%
-              no-repeat;
+  background-color: rgba( 0, 0, 0, .8 );
 }
 
 .page-header {
