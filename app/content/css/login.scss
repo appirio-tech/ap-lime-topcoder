@@ -9,6 +9,10 @@
   .big-logo{
     margin: 0 0 65px -20px;
     display: block;
+
+    img {
+      width: 227px;
+    }
   }
     .welcome{
       @include myriad-pro-light();
