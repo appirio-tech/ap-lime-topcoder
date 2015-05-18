@@ -576,6 +576,26 @@
     margin: 3px 0 0 4px;
   }
 
+  .challenge-peer {
+      margin-left: 3px;
+      margin-top: 10px;
+      margin-bottom: -10px;
+
+      .timeHeader {
+          font-size: 17px;
+          margin-bottom: 3px;
+      }
+      .timeEnd {
+          margin-top: 3px;
+      }
+      .time {
+          @include myriad-pro-light;
+          opacity: 0.8;
+          color: #030304;
+          font-size: 18px;
+      }
+  }
+
   .challenge-stat {
     margin-top: 37px;
     padding-left: 19px;
