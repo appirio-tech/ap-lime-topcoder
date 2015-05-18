@@ -68,7 +68,8 @@ div(ng-controller="challenges as vm")
           li.col-xs-12.header
             div.col1.pull-left &nbsp;
             div.col2.pull-left CHALLENGE
-            div.col3.pull-left PRIZE &amp; DEADLINE
+            div.col3.pull-left(ng-show="vm.challengesType == 'all'") PRIZE &amp; DEADLINE
+            div.col3.pull-left(ng-show="vm.challengesType == 'peer'") START &amp; END TIMES
             div.col4.pull-left REGISTRANTS
             div.col5.pull-left SUBMISSIONS
 
@@ -82,15 +83,20 @@ div(ng-controller="challenges as vm")
                   h4.chTitle
                     a.ellipses(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") {{challenge.challengeName}}
                   .rw.ellipses
-                    span.lbl Technologies:
+                    span.lbl Technologies:&#32
                     span.val {{challenge.technologies}}
                   .rw.ellipses
-                    span.lbl Platform:
+                    span.lbl Platform:&#32
                     span.val {{challenge.platforms}}
               .pz.col3.pull-left
-                .inner
+                .inner(ng-hide="challenge.reviewType == 'PEER'")
                   .rw.prize(ng-bind="challenge.totalPrize || 0 | currency:undefined:0")
                   .rw.time(ng-bind="challenge.submissionEndDate | localTime")
+                .inner(ng-show="challenge.reviewType == 'PEER'")
+                  .timeHeader Challenge start
+                  .time(ng-bind="challenge.registrationStartDate | localTime")
+                  .timeHeader.timeEnd Challenge end
+                  .time(ng-bind="challenge.submissionEndDate | localTime")
               .regs.col4.pull-left
                 .inner
                   .reg
@@ -117,9 +123,15 @@ div(ng-controller="challenges as vm")
             .challenge-data
               p.ellipses #[span.challenge-field Platform:] {{challenge.platforms}}
 
-            .challenge-prize(ng-bind="challenge.totalPrize || 0 | currency:undefined:0")
+            .challenge-prize(ng-bind="challenge.totalPrize || 0 | currency:undefined:0", ng-hide="challenge.reviewType == 'PEER'")
 
-            .challenge-deadline(ng-bind="challenge.submissionEndDate | localTime")
+            .challenge-deadline(ng-bind="challenge.submissionEndDate | localTime", ng-hide="challenge.reviewType == 'PEER'")
+
+            .challenge-peer(ng-show="challenge.reviewType == 'PEER'")
+              .timeHeader Challenge start
+              .time(ng-bind="challenge.registrationStartDate | localTime")
+              .timeHeader.timeEnd Challenge end
+              .time(ng-bind="challenge.submissionEndDate | localTime")
 
             .row.challenge-stats
               .col-xs-6.challenge-registrants.challenge-stat
