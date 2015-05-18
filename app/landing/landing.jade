@@ -1,12 +1,12 @@
 .landing-banner
   section.container
     header.section-header
-      img(src="content/images/logo-landing.png", alt="TopCoder logo")
+      img(class="landing-logo", src="content/images/logo-landing.png", alt="TopCoder logo")
 
       h1.heading(ng-show="!main.loggedInUser") Dear Developers,
         strong We love you.
 
-      h1.heading(ng-show="main.loggedInUser") Welcome
+      h1.heading(ng-show="main.loggedInUser") Welcome&nbsp;
         span(ng-bind="main.loggedInUser.handle")
         span ,
         strong We especially love you.
@@ -44,11 +44,9 @@
 .newsletter-form-wrapper
   section.newsletter-form-section.container
     h1.heading iOS Developer Community.
+    p Sign up to join the conversation
 
-    form.newsletter-form Sign up to join the conversation.
-      input(type="email", placeholder="Your email please")
-
-      button.btn(type="submit") Submit
+    form#mktoForm_1944.newsletter-form
 
 .challenges-section.landing-annon-page#challenges
   section.container
@@ -113,7 +111,7 @@ section.learn-improve-section.landing-annon-page
 
           p Experienced and proven iOS developers are in high-demand.  Prove your skills by earning these iOS topcoder badges and gain exclusive access to iOS challenges and prize accelerators, special previews into Apple&rsquo;s content and releases, and special community-related events and info.
 
-          a.section-action(href="#") Learn more about the program. &gt;
+          a.section-action(ui-sref="learn") Learn more about the program. &gt;
 
   .subsections
     .container
@@ -124,7 +122,7 @@ section.learn-improve-section.landing-annon-page
           p Whether you are an experienced iOS developer or are just getting started, follow these steps to join and grow in the Apple Developer Community
 
           .link-row
-            a.btn(ui-sref="peerChallenge") Learn more
+            a.btn(ui-sref="challenges({type: 'peer'})") Learn more
 
         section.col-sm-12.col-md-4.info-col
           h2.subsection-header Train and improve

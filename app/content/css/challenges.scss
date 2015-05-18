@@ -94,7 +94,8 @@
             width: 15.5%;
           }
           .col2{
-            width: 26.5%;
+            width: 39.5%;
+            padding-left: 10px;
           }
           .col3{
             width: 18.5%;
@@ -103,9 +104,6 @@
             width: 13.5%;
           }
           .col5{
-            width: 13%;
-          }
-          .col6{
             width: 13%;
           }
 
@@ -158,7 +156,7 @@
         }
         .chge {
             font-size: 16px;
-            width: 26.5%;
+            width: 39.5%;
             border-right: 1px solid #c3c3c3;
             text-align: center;
             height: 89px;
@@ -167,7 +165,6 @@
                 max-width: 100%;
                 overflow: hidden;
                 padding-top: 4px;
-                display: inline-block;
                 text-align: left;
             }
             .chTitle {
@@ -252,7 +249,6 @@
         .subs {
             text-align: center;
             width: 13%;
-            border-right: 1px solid #C3C3C3;
             .inner {
                 max-width: 100%;
                 overflow: hidden;
@@ -282,24 +278,6 @@
                   vertical-align: top;
                   display: inline-block;
                 }
-            }
-        }
-        .bdgPref {
-            text-align: center;
-            width: 13%;
-            .inner {
-                max-width: 100%;
-                overflow: hidden;
-                display: inline-block;
-                text-align: left;
-                height: 89px;
-            }
-            .bgd {
-              display: inline-block;
-              width: 46px;
-              height: 63px;
-              margin-top: 11px;
-              background: url('../images/ico-bdg.png') 0 0 no-repeat;
             }
         }
     }
@@ -455,9 +433,6 @@
     @media only screen and (min-width: 992px) {
         .landing-banner {
             padding-left: 87px;
-            img {
-                margin-left: -28px;
-            }
             .section-header {
                 margin-left: 0;
             }
@@ -764,13 +739,6 @@
         line-height: 20px;
         margin: 6px 0 0 3px;
         line-height: 1.2em;
-    }
-    .challenge-actns {
-        opacity: 1;
-        margin-top: 10px;
-        .btn {
-            width: 100%;
-        }
     }
     .challenge-data .challenge-field {
         font-weight: 700;
@@ -1160,47 +1128,11 @@
 
 /* mobile screen layout */
 @media (max-width: 767px){
-  .footerAlt .footer-mail{
-    padding: 0;
-  }
-  .footerAlt .footer-mail .rwEmail{
-    width: 100%;
-    float: none;
-    margin: 10px 0;
-  }
-  .footerAlt .footer-mail .txtbox{
-    margin: 0;
-    float: none;
-  }
-  .footerAlt .footer-mail .rw{
-    float: none;
-  }
-  .footerAlt .footer-mail .ok-btn{
-    margin: 0;
-    width: 100%;
-    float: none;
-  }
-  .socialRw{
-    text-align: center;
-    margin: 0;
-  }
-  .socialRw a{
-    float: none;
-  }
-  .socialRw .twit-icon, .socialRw .fb-icon{
-    display: inline-block;
-    margin: 20px 9px 0;
-  }
-  .footerAlt .poweredBy{
-    text-align: center;
-    padding-bottom: 20px;
-  }
-
   /* views */
-  .challengeListing .section-header .browse .viewType{
+  .challenges .section-header .browse .viewType{
     display: none;
   }
-  .challengeListing .challenges-section.landing-annon-page .challenges{
+  .challenges .challenges-section.landing-annon-page .challenges{
     display: block !important;
   }
 }
@@ -1210,19 +1142,19 @@
 /* tablet */
 
 @media (max-width: 991px) {
-    .challengeListing .section-header .browse .viewType {
+    .challenges .section-header .browse .viewType {
         display: block;
         position: relative;
         height: 28px;
     }
-    .challengeListing .carousel-section .slide {
+    .challenges .carousel-section .slide {
         .ico{
             height: 140px;
             width: 140px;
             right: 0;
         }
     }
-    .challengeListing .carousel-section .badgeSlide.slide {
+    .challenges .carousel-section .badgeSlide.slide {
         .badgeWarp{
             float: left;
             padding-top: 94px;
@@ -1242,7 +1174,7 @@
         }
     }
 
-    .challengeListing .carousel-section .section-header{
+    .challenges .carousel-section .section-header{
         padding-right: 110px;
     }
 }
@@ -1251,16 +1183,16 @@
 @media (max-width: 767px) {
     /* views */
 
-    .challengeListing .section-header .browse .viewType {
+    .challenges .section-header .browse .viewType {
         display: block;
         position: relative;
         height: 28px;
     }
-    .challengeListing .challenges-section.landing-annon-page .challenges {
+    .challenges .challenges-section.landing-annon-page .challenges {
         display: block !important;
     }
 
-    .challengeListing .carousel-section .slide {
+    .challenges .carousel-section .slide {
         min-height: 400px;
         padding-bottom: 20px;
         .ico{
@@ -1318,7 +1250,7 @@
             }
         }
     }
-    .challengeListing .carousel-section .badgeSlide.slide {
+    .challenges .carousel-section .badgeSlide.slide {
         min-height: 400px;
         padding-bottom: 20px;
         .badgeWarp{
@@ -1370,7 +1302,7 @@
         }
     }
     /* masthead section */
-    .challengeListing .carousel-section .section-header{
+    .challenges .carousel-section .section-header{
         font-size: 40px;
         line-height: 42px;
         height: 42px;

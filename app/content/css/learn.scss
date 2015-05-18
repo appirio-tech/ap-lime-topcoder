@@ -246,52 +246,71 @@
     background-size: cover;
     background-position: 50% 50%;
     padding: 40px 15px 46px 15px;
-  }
-
-  .newsletter-form-section {
     @include myriad-pro-light;
-    font-size: 30px;
-    font-weight: 300;
-    color: $white;
-    text-align: center;
 
-    .heading {
-      font-size: 48px;
-      margin-top: 18px;
-    }
-    &:before {
-      @include icon-sprite;
-      background-position: 0px 0px;
-      width: 110px;
-      height: 81px;
-      display: block;
-      margin: 0 auto;
+    .newsletter-form-section {
+      color: $white;
+      text-align: center;
+
+      .heading {
+        font-size: 48px;
+        margin-top: 18px;
+      }
+      p {
+        margin-top: 13px;
+        font-size: 30px;
+      }
+      &:before {
+        @include icon-sprite;
+        background-position: 0px 0px;
+        width: 110px;
+        height: 81px;
+        display: block;
+        margin: 0 auto;
+      }
+      .newsletter-form {
+        margin: 0 auto;
+        width: 380px;
+
+        .mktoFormRow {
+          @include myriad-pro-light;
+          margin-bottom: 15px;
+
+          .mktoOffset {
+            display: none !important;
+          }
+        }
+        .mktoButtonRow {
+          margin: 0 auto;
+          width: 118px;
+          display: block;
+
+          .mktoButton {
+            @include myriad-pro-light;
+            font-size: 16px !important;
+            margin: 0 !important;
+          }
+        }
+      }
     }
   }
 
-  .newsletter-form {
-    margin-top: 13px;
+  @media only screen and (min-width: 320px) and (max-width: 568px) {
+    .newsletter-form-section {
+      font-size: 24px;
 
-    input, .btn {
-      display: block;
-      margin: 0 auto;
-    }
-    input {
-      border: 2px solid #404040;
-      height: 48px;
-      width: 100%;
-      max-width: 365px;
-      border-radius: 24px;
-      text-align: center;
-      color: #1c1c1c;
-      font-size: 18px;
-      font-weight: 300;
-      margin-top: 21px;
-      padding: 0 15px;
-    }
-    .btn {
-      width: 118px;
-      margin-top: 28px;
+      .newsletter-form {
+        color: red;
+
+        .mktoFormRow {
+          padding-left: 25px;
+          padding-right: 25px;
+
+          input {
+            width: 100% !important;
+          }
+        }
+      }
     }
   }
 
