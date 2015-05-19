@@ -34,12 +34,67 @@ footer ul.social li .tw:hover {
 .footer{
   background: #252525;
   min-height: 99px;
-}
-  .footer .small-logo{
-    display: block;
-    margin: 40px 0 0 44px;
-    width: 46px;
+
+  .copyright {
+    margin-top: 38px;
+    float: left;
+    width: 260px;
+    font-size: 16px;
+
+    p {
+      margin-bottom: 5px;
+    }
+
+    ul li {
+      display: inline-block;
+      margin-right: 5px;
+
+      a {
+        color: $white;
+      }
+    }
   }
+
+  .social {
+    float: right;
+    width: 50px;
+    margin-top: 38px;
+
+    a {
+      display: inline-block;
+    }
+    .twit-icon{
+      width: 16px;
+      height: 16px;
+      background: url('../images/icons.png') no-repeat 0 -16px;
+    }
+    .fb-icon{
+      margin-right: 20px;
+      width: 9px;
+      height: 18px;
+      background: url('../images/icons.png') no-repeat 0 -37px;
+    }
+  }
+
+  .powered {
+    float: right;
+    margin-top: 35px;
+    width: 300px;
+    text-align: right;
+
+    span {
+      display: inline-block;
+      margin-right: 20px;
+      @include myriad-pro;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 10.38px;
+    }
+    .small-logo{
+      display: inline-block;
+      width: 61px;
+    }
+  }
+}
   .footer .lbl{
     color: #ffffff;
     font-size: 18px;
@@ -85,20 +140,6 @@ footer ul.social li .tw:hover {
     @include source-sans;
     float: left;
   }
-    .twit-icon{
-      display: block;
-      width: 16px;
-      height: 16px;
-      background: url('../images/icons.png') no-repeat 0 -16px;
-      margin: 38px 18px 0 0;
-    }
-    .fb-icon{
-      display: block;
-      width: 9px;
-      height: 18px;
-      background: url('../images/icons.png') no-repeat 0 -37px;
-      margin: 36px 0px 0 0;
-    }
     .mob-email{
       float: right;
     }
@@ -129,7 +170,7 @@ footer ul.social li .tw:hover {
         margin: 22px 18px 0 0;
       }
 @media(max-width: 992px){
-  
+
   .profile-middle{
     padding: 40px 40px 140px 40px;
   }
@@ -191,7 +232,7 @@ footer ul.social li .tw:hover {
       left: 0;
       min-height: 178px;
     }
-  
+
   /*** PROFILE PAGE ***/
   .profile-middle .column:first-child,
   .profile-middle .column:nth-child(2),
