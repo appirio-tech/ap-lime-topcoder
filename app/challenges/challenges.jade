@@ -34,7 +34,7 @@ div(ng-controller="challenges as vm")
           .rw
             .lbl Platform:
             .val(ng-bind="challenge.platforms")
-          .rw.alt.prizeRw
+          .rw.alt.prizeRw(ng-show="challenge.reviewType != 'PEER'")
             .v $
               span(ng-bind="challenge.totalPrize")
           .rw.alt.time(ng-bind="challenge.submissionEndDate | localTime")
@@ -47,7 +47,7 @@ div(ng-controller="challenges as vm")
               .vl(ng-bind="challenge.numSubmissions")
           .actns
             a.btn.secondary.btnReg(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop", target="_blank") Register
-            a.lnkLiked
+            //a.lnkLiked
             a.lnk(href='#view-challenges', du-smooth-scroll) View all challenges
 
   .challenges-section.landing-annon-page#view-challenges
