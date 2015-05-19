@@ -1,10 +1,11 @@
 'use strict'
 
-login = ($scope, Auth, $state, $stateParams, $location) ->
+login = ($scope, Auth, $state, $stateParams, $location, ENV) ->
   DEFAULT_STATE = 'landing'
   vm = this
   vm.loggingIn = false
   vm.retState = DEFAULT_STATE
+  vm.domain = ENV.domain
 
   main = $scope.$parent.main;
 
@@ -65,5 +66,6 @@ angular.module('lime-topcoder').controller 'login', [
   '$state'
   '$stateParams'
   '$location'
+  'ENV'
   login
 ]

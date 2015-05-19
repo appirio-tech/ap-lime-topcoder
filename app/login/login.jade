@@ -24,7 +24,7 @@
           span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.frm.password.error")
           span#passwordErrorStatus.sr-only (error)
         .row(rel="submit")
-          a.col-xs-12.col-sm-9.pull-left.forget.padding-reset(href="#/forgotpassword") Forgot your password?
+          a.col-xs-12.col-sm-9.pull-left.forget.padding-reset(href="https://www.{{vm.domain}}/password-recovery/", target="_blank") Forgot your password?
           input.col-xs-12.col-sm-3.btns.glow-btn.sign-in.mob-sign.pull-right(type="submit", value="Sign In", ng-click="vm.doLogin()", ng-show="!vm.loggingIn")
           input.col-xs-12.col-sm-3.btns.glow-btn.sign-in.mob-sign.pull-right(type="button", value="Signing In", ng-show="vm.loggingIn")
           a.col-xs-12.padding-reset.mob-register.pull-left.reg-link(href="#/register") Register?
