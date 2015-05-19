@@ -883,11 +883,14 @@
                 width: 68px;
             }
             .summary {
+                @include myriad-pro-light;
                 font-size: 18px;
+                color: #f9f9f9;
                 line-height: 27px;
                 width: 460px;
                 margin-top: 28px;
                 word-spacing: 1px;
+                letter-spacing: .45px;
             }
             /* contestDetails */
 
@@ -895,14 +898,16 @@
                 margin-top: 40px;
                 .rw {
                     font-size: 19px;
-                    opacity: 0.7;
                     min-height: 26px;
                     line-height: 26px;
                     .lbl {
-                        font-weight: bold;
+                        @include myriad-pro-sb;
+                        color: rgba(255, 255, 255, 0.7);
                         display: inline-block;
                     }
                     .val {
+                        @include myriad-pro-light;
+                        color: rgba(255, 255, 255, 0.7);
                         display: inline-block;
                     }
                     .ca {
@@ -944,6 +949,20 @@
                         font-size: 49px;
                         line-height: 52px;
                         margin-top: 21px;
+                    }
+                }
+                .rw.challenge-peer {
+                    margin-top: 10px;
+                    margin-left: 0px;
+
+                    > div {
+                        display: block;
+                    }
+                    .timeEnd {
+                        margin-top: 3px;
+                    }
+                    .time {
+                        font-size: 18px;
                     }
                 }
                 .rw.reg {

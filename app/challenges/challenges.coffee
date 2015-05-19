@@ -55,6 +55,7 @@ challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
       # prepares challenges to be shown in carousel
       if vm.pageIndex == 1
         vm.slides = vm.challenges.slice 0, 3
+
     .catch (error) ->
       # TODO show error
       vm.loading = false

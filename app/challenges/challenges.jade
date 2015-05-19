@@ -23,7 +23,7 @@ div(ng-controller="challenges as vm")
   carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'all'")
     slide.developer-slide-1.slide(ng-repeat="challenge in vm.slides")
       section.container
-        h6.slide-title Feature challenge
+        h6.slide-title Featured Challenge
         h1.section-header.ellipses(ng-bind="challenge.challengeName")
         .summary(ng-bind="challenge.challengeName")
         span.ico(ng-class="challenge.icon")
@@ -34,10 +34,15 @@ div(ng-controller="challenges as vm")
           .rw
             .lbl Platform:
             .val(ng-bind="challenge.platforms")
-          .rw.alt.prizeRw(ng-show="challenge.reviewType != 'PEER'")
+          .rw.alt.prizeRw(ng-hide="challenge.reviewType == 'PEER'")
             .v $
               span(ng-bind="challenge.totalPrize")
-          .rw.alt.time(ng-bind="challenge.submissionEndDate | localTime")
+          .rw.alt.time(ng-bind="challenge.submissionEndDate | localTime", ng-hide="challenge.reviewType == 'PEER'")
+          .rw.challenge-peer(ng-show="challenge.reviewType == 'PEER'")
+            .lbl Challenge start
+            .val.time(ng-bind="challenge.registrationStartDate | localTime")
+            .lbl.timeEnd Challenge end
+            .val.time(ng-bind="challenge.submissionEndDate | localTime")
           .rw.reg
             .lt.fr
               .ca REGISTRANTS
