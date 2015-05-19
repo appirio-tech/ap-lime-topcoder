@@ -2,6 +2,7 @@
 
 main = ($scope, $state, ENV, AuthService, UserService) ->
   vm = this
+  vm.domain = ENV.domain
 
   vm.loggedInUser = null
   vm.loggingIn = false
