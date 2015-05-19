@@ -71,9 +71,15 @@
             .challenge-data
               p #[span.challenge-field Platform:] {{challenge.platforms}}
 
-            .challenge-prize {{challenge.totalPrize || 0 | currency:undefined:0}}
+            .challenge-prize(ng-hide="challenge.reviewType == 'PEER'") {{challenge.totalPrize || 0 | currency:undefined:0}}
 
-            .challenge-deadline {{challenge.submissionEndDate | localTime}}
+            .challenge-deadline(ng-hide="challenge.reviewType == 'PEER'") {{challenge.submissionEndDate | localTime}}
+
+            .challenge-peer(ng-show="challenge.reviewType == 'PEER'")
+              .timeHeader Challenge start
+              .time(ng-bind="challenge.registrationStartDate | localTime")
+              .timeHeader.timeEnd Challenge end
+              .time(ng-bind="challenge.submissionEndDate | localTime")
 
             .row.challenge-stats
               .col-sm-6.challenge-registrants.challenge-stat

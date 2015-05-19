@@ -111,7 +111,7 @@
 
         li.header{
           font-size: 11px;
-          @include myriad-pro-sb();
+          @include myriad-pro-sb;
           color: #030303;
           opacity: 0.8;
           text-align: center;
@@ -164,15 +164,16 @@
             .inner {
                 max-width: 100%;
                 overflow: hidden;
-                padding-top: 4px;
+                padding-top: 9px;
                 text-align: left;
             }
             .chTitle {
-                opacity: 0.9;
                 color: #030303;
                 width: 100%;
+                margin-bottom: 9px;
                 a {
-                    font-size: 20px;
+                    opacity: 0.9;
+                    font-size: 22px;
                     color: inherit;
                     display: block;
                 }
@@ -181,7 +182,7 @@
                 opacity: 0.7;
                 line-height: 22px;
                 .lbl {
-                    font-weight: bold;
+                    @include myriad-pro-sb;
                 }
                 .val {}
             }
@@ -193,7 +194,7 @@
             .inner {
                 max-width: 100%;
                 overflow: hidden;
-                padding-top: 15px;
+                padding-top: 6px;
                 display: inline-block;
                 text-align: left;
                 height: 89px;
@@ -202,13 +203,21 @@
                 opacity: 0.9;
                 color: #030304;
                 font-size: 36px;
+                margin-top: 14px;
+                margin-bottom: 6px;
+            }
+            .timeHeader {
+                font-size: 17px;
+                margin-bottom: 3px;
+            }
+            .timeEnd {
+                margin-top: 8px;
             }
             .time {
+                @include myriad-pro-light;
                 opacity: 0.8;
                 color: #030304;
-                font-size: 14px;
-                font-weight: 300;
-                margin: 3px 0 0 4px;
+                font-size: 18px;
             }
         }
         .regs {
@@ -239,7 +248,7 @@
                   background-image: url('../images/sprite.png');
                   background-position: -102px -175px;
                   background-repeat: no-repeat;
-                  width: 34px;
+                  width: 35px;
                   height: 29px;
                   margin-right: 18px;
                   vertical-align: top;
@@ -272,7 +281,7 @@
                   background-image: url('../images/sprite.png');
                   background-position: -66px -175px;
                   background-repeat: no-repeat;
-                  width: 34px;
+                  width: 35px;
                   height: 30px;
                   margin-right: 17px;
                   vertical-align: top;
@@ -705,6 +714,7 @@
     }
     .challenge {
         max-width: 256px;
+        height: 448px;
         margin: 0 auto;
         background-color: $white;
         margin-bottom: 37px;
@@ -752,12 +762,31 @@
     .challenge-deadline {
         opacity: 0.8;
         color: $challenge-black;
-        font-size: 14px;
-        font-weight: 300;
+        @include myriad-pro-light;
+        font-size: 18px;
         margin: 3px 0 0 4px;
     }
+    .challenge-peer {
+        margin-left: 3px;
+        margin-top: 10px;
+        margin-bottom: -10px;
+
+        .timeHeader {
+            font-size: 17px;
+            margin-bottom: 3px;
+        }
+        .timeEnd {
+            margin-top: 3px;
+        }
+        .time {
+            @include myriad-pro-light;
+            opacity: 0.8;
+            color: #030304;
+            font-size: 18px;
+        }
+    }
     .challenge-stat {
-        margin-top: 37px;
+        margin-top: 25px;
         padding-left: 19px;
         & + .challenge-stat {
             padding-left: 29px;
@@ -877,7 +906,7 @@
                         display: inline-block;
                     }
                     .ca {
-                        @include myriad-pro-sb();
+                        @include myriad-pro-sb;
                         font-size: 13px;
                     }
                     .fr .vl {
