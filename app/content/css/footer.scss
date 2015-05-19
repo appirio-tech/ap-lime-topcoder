@@ -129,20 +129,7 @@ footer ul.social li .tw:hover {
         margin: 22px 18px 0 0;
       }
 @media(max-width: 992px){
-  .register-content {
-      padding: 22px 20px 144px 20px;
-  }
-  .register-content .big-logo {
-    margin: 0 0 15px -20px;
-    display: block;
-  }
-  .register-form .fields {
-    padding: 0 0px 20px 0;
-  }
-  .register-btn {
-    width: 100%;
-    margin: 18px 0 0;
-  }
+  
   .profile-middle{
     padding: 40px 40px 140px 40px;
   }
@@ -204,26 +191,7 @@ footer ul.social li .tw:hover {
       left: 0;
       min-height: 178px;
     }
-  /*** LOGIN PAGE ***/
-  .login-content{
-      padding: 22px 20px 144px 30px;
-  }
-  .login-content .big-logo {
-    margin: 0 0 15px -20px;
-    display: block;
-  }
-    .login-form .row .txt-box,
-    .login-form .row:last-child{
-      width: 100%;
-    }
-    .mob-sign{
-      width: 100%;
-      margin: 10px 0 0;
-    }
-    .mob-sign .sign-in{
-      width: 100%;
-    }
-  /***  END LOGIN PAGE ***/
+  
   /*** PROFILE PAGE ***/
   .profile-middle .column:first-child,
   .profile-middle .column:nth-child(2),

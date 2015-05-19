@@ -1,5 +1,5 @@
-.container.login-content.row(ng-controller="login as vm")
-  .row
+.container.login-content(ng-controller="login as vm")
+  div.col-xs-12.col-sm-8.col-md-6.padding-reset
     a.big-logo
       img(src="content/images/logo-landing.png")
 
@@ -8,11 +8,11 @@
     .login-form
       p.form-msg Please sign in.
 
-      .alert.alert-danger.col-xs-6(ng-show="vm.frm.error", ng-bind="vm.frm.errorMessage")
+      .alert.alert-danger(ng-show="vm.frm.error", ng-bind="vm.frm.errorMessage")
 
       .clearfix
 
-      form.col-xs-6
+      form
         .row(ng-class="{'has-error has-feedback': vm.frm.username.error}")
           input.form-control.txt-box(type="text", placeholder="Username", ng-model="vm.frm.username.value", aria-describedby="usernameErrorStatus")
           // used ng-show workaround to hide in non error state
@@ -24,8 +24,7 @@
           span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.frm.password.error")
           span#passwordErrorStatus.sr-only (error)
         .row(rel="submit")
-          a.pull-left.forget(href="#/forgotpassword") Forgot your password?
-          input.btns.glow-btn.sign-in.pull-right(type="submit", value="Sign In", ng-click="vm.doLogin()", ng-show="!vm.loggingIn")
-          input.btns.glow-btn.sign-in.pull-right(type="button", value="Signing In", ng-show="vm.loggingIn")
-        .row
-          a.pull-left.reg-link(href="#/register") Register?
+          a.col-xs-12.col-sm-9.pull-left.forget.padding-reset(href="https://www.{{vm.domain}}/password-recovery/", target="_blank") Forgot your password?
+          input.col-xs-12.col-sm-3.btns.glow-btn.sign-in.mob-sign.pull-right(type="submit", value="Sign In", ng-click="vm.doLogin()", ng-show="!vm.loggingIn")
+          input.col-xs-12.col-sm-3.btns.glow-btn.sign-in.mob-sign.pull-right(type="button", value="Signing In", ng-show="vm.loggingIn")
+          a.col-xs-12.padding-reset.mob-register.pull-left.reg-link(href="#/register") Register?

@@ -1,13 +1,13 @@
 .register-bg(ng-controller="register as vm")
   .register-content
-    .col-xs-12
+    .col-xs-12.padding-reset
       a.big-logo
         img(src="content/images/logo-landing.png")
       p.welcome Welcome friend.
       .register-msg
         p We're happy to have you join our community.
         p Please tell us a little bit about yourself.
-    form.register-form.col-xs-12(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()")
+    form.register-form.col-xs-12.padding-reset(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()")
       .col-xs-12.fields(ng-show="vm.frm.error")
         .alert.alert-danger(ng-bind="vm.frm.errorMessage")
       .col-xs-12.col-md-6.padding-reset
@@ -54,12 +54,10 @@
         .checkbox.fields(ng-class="{'has-error has-feedback': vm.hasError('agree')}")
             label(ng-click="vm.handleAgree")
               input(name="agree", type="checkbox", ng-model="vm.frm.agree", aria-describedby="agreeErrorStatus", required, checkbox )
-              | Agree to 
-              a(href="http://www.topcoder.com/community/how-it-works/terms/", target="_blank") terms 
-              | and privacy 
-              a(href="http://www.topcoder.com/community/how-it-works/privacy-policy/", target="_blank") policy
+              span.agree-txt.pull-left Agree to #[a(href="http://www.topcoder.com/community/how-it-works/terms/", target="_blank") terms] and privacy #[a(href="http://www.topcoder.com/community/how-it-works/privacy-policy/", target="_blank") policy]
               span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('agree')")
             span#agreeErrorStatus.sr-only (error)
       .col-xs-12.fields(rel="submit")
         input.btns.glow-btn.register-btn.pull-right(type="submit", value="Register", ng-show="!vm.registering")
         input.btns.glow-btn.register-btn.pull-right(type="button", value="Registering", ng-show="vm.registering")
+    .clearfix
