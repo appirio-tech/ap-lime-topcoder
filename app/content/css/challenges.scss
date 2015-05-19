@@ -302,6 +302,18 @@
             }
         }
     }
+    @media only screen and (max-width: 1024px) {
+        .challengeList .pz .inner {
+            padding-top: 11px;
+
+            .timeHeader {
+                font-size: 14px;
+            }
+            .time {
+                font-size: 13px;
+            }
+        }
+    }
     // Badges section
     .section-header {
         max-width: 930px;
