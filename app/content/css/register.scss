@@ -176,3 +176,29 @@
     /*** END SELECT BOX RESET ***/
   /*** END REGISTER STYLE ***/
 }
+@media(max-width: 992px){
+  .register {
+    .register-content {
+      padding: 72px 20px 144px 20px;
+    }
+    .register-content .big-logo {
+      margin: 0 0 15px 0px;
+      display: block;
+    }
+    .register-form .fields {
+      padding: 0 0px 20px 0;
+    }
+    .register-btn {
+      width: 100%;
+      margin: 18px 0 0;
+    }
+  }
+}
+@media(max-width: 490px){
+  .fields label .agree-txt{
+    width: 275px;
+    display: block;
+    line-height: 24px;/*to match font size*/
+    margin: 10px 0 0 0;
+  }
+}
