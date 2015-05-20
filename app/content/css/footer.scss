@@ -35,11 +35,21 @@ footer ul.social li .tw:hover {
   background: #252525;
   min-height: 99px;
 
+  section {
+    display: inline-block;
+  }
+
   .copyright {
     margin-top: 38px;
-    float: left;
-    width: 260px;
+    width: 50%;
+    padding-right: 10px;
     font-size: 16px;
+    @media only screen and (max-width: 767px) {
+      display: block;
+      margin-top: 30px;
+      padding-right: 0;
+      width: 100%;
+    }
 
     p {
       margin-bottom: 5px;
@@ -56,9 +66,15 @@ footer ul.social li .tw:hover {
   }
 
   .social {
-    float: right;
-    width: 50px;
+    width: 15%;
     margin-top: 38px;
+    @media only screen and (max-width: 767px) {
+      display: block;
+      float: left;
+      margin-top: 25px;
+      padding-left: 5px;
+      width: 45%;
+    }
 
     a {
       display: inline-block;
@@ -77,10 +93,16 @@ footer ul.social li .tw:hover {
   }
 
   .powered {
-    float: right;
     margin-top: 35px;
-    width: 300px;
+    width: 34%;
     text-align: right;
+    @media only screen and (max-width: 767px) {
+      display: block;
+      margin-top: 10px;
+      padding-bottom: 15px;
+      width: 54%;
+      float: left;
+    }
 
     span {
       display: inline-block;
@@ -95,6 +117,7 @@ footer ul.social li .tw:hover {
     }
   }
 }
+
   .footer .lbl{
     color: #ffffff;
     font-size: 18px;
@@ -253,14 +276,6 @@ footer ul.social li .tw:hover {
     .mobile.social-icons{
       display: block;
       margin: 0 0 0 30px;
-    }
-    .footer {
-        padding: 0 0 20px 0;
-    }
-    .footer .small-logo {
-      display: block;
-      margin: 38px 0 0 20px;
-      width: 46px;
     }
     .mob-email{
       width: 100%;
