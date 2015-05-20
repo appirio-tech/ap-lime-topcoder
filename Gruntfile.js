@@ -390,9 +390,6 @@ module.exports = function (grunt) {
         assetsDirs: [
           '<%= yeoman.dist %>',
           '<%= yeoman.dist %>/content/css',
-          '<%= yeoman.dist %>/edit-review/',
-          '<%= yeoman.dist %>/review-status/',
-          '<%= yeoman.dist %>/completed-review/'
         ],
         patterns: {
           js: [
@@ -453,6 +450,7 @@ module.exports = function (grunt) {
           cwd   : '<%= yeoman.app %>',
           dest  : '<%= yeoman.dist %>',
           src   : [
+            // remove /images when putting back imagemin
             'content/images/**/*',
             'content/fonts/**/*',
             'content/locales/**/*',
@@ -566,7 +564,7 @@ module.exports = function (grunt) {
     'connect:test',
     'karma:unit'
   ]);
-    
+
   grunt.registerTask('build-release', [
     'js2coffee',
     'clean:constants',
@@ -574,6 +572,7 @@ module.exports = function (grunt) {
     'coffee',
     'sass',
     'jade:compile',
+    // remove /images in copy task when putting back imagemin
     // 'imagemin',
     'svgmin',
     'useminPrepare',
@@ -593,22 +592,22 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
-  
+
   grunt.registerTask('build-dev', [
     'clean:dist',
     'ngconstant:development',
-    'build-release'  
+    'build-release'
   ]);
-  
+
   grunt.registerTask('build-qa', [
     'clean:dist',
     'ngconstant:qa',
-    'build-release'  
+    'build-release'
   ]);
-  
+
   grunt.registerTask('build', [
     'clean:dist',
     'ngconstant:production',
-    'build-release'   
+    'build-release'
   ]);
 };
