@@ -16,6 +16,12 @@ Helpers = () ->
       challenge.icon = 'swift'
       challenge.thumb = 'content/images/swift-challenge-1.png'
 
+  filterStudioChallenge: (challenge) ->
+    if challenge?.challengeName.indexOf('ios') != -1
+      true
+    else
+      false
+
 angular.module('lime-topcoder').factory 'Helpers', [
   Helpers
 ]
