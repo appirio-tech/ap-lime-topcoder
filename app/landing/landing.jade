@@ -82,13 +82,13 @@
               .time(ng-bind="challenge.submissionEndDate | localTime")
 
             .row.challenge-stats
-              .col-sm-6.challenge-registrants.challenge-stat
+              .col-xs-6.challenge-registrants.challenge-stat
                 .stats-type REGISTRANTS
 
                 .stats-value
                   a(ng-href="https://www.{{domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numRegistrants}}
 
-              .col-sm-6.challenge-submissions.challenge-stat
+              .col-xs-6.challenge-submissions.challenge-stat
                 .stats-type SUBMISSIONS
 
                 .stats-value
