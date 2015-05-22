@@ -93,6 +93,27 @@
     }
   }
 
+  @media only screen and (max-width: 568px) {
+    .newsletter-form-wrapper {
+      .newsletter-form-section {
+
+        .newsletter-form {
+          width: auto;
+
+          .mktoFormRow {
+
+            .mktoFormCol {
+              width: 100%;
+            }
+            input {
+              width: 100% !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
   @media only screen and (max-width: 640px) {
     .newsletter-form-wrapper {
       padding-left: 0;
