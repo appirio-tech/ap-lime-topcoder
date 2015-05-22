@@ -6,7 +6,8 @@ register = ($scope, $state, Auth, Countries) ->
   vm.registering = false
 
   createDropdownModel = (country, index) ->
-    {text: country, value: index}
+    text: country
+    value: index
   
   vm.reg = {}
   vm.frm =
