@@ -11,6 +11,12 @@ autocollapseNavbar = ($window) ->
         # if target is link and does not have class 'dropdown-toggle', hide menu
         if(link && !link.hasClass('dropdown-toggle'))
           $(this).collapse('hide')
+
+      angular.element('body').on 'click', (e) ->
+        clickover = $(e.target)
+        _opened = $(".navbar-collapse").hasClass("in")
+        if (_opened == true && !clickover.hasClass("navbar-toggle"))
+            $("button.navbar-toggle").click();
   }
 
 angular.module('app.directives').directive 'autocollapseNavbar', [autocollapseNavbar]
