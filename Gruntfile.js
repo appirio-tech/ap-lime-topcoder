@@ -371,8 +371,7 @@ module.exports = function (grunt) {
         flow: {
           html: {
             steps: {
-              // js: ['concat', 'uglifyjs'],
-              js: ['concat'],
+              js: ['concat', 'uglifyjs'],
               css: ['cssmin']
             },
             post: {}
@@ -450,8 +449,6 @@ module.exports = function (grunt) {
           cwd   : '<%= yeoman.app %>',
           dest  : '<%= yeoman.dist %>',
           src   : [
-            // remove /images when putting back imagemin
-            'content/images/**/*',
             'content/fonts/**/*',
             'content/locales/**/*',
             'content/data/**/*'
@@ -538,6 +535,8 @@ module.exports = function (grunt) {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     } else if (target === 'qa') {
       return grunt.task.run(['build-qa', 'connect:dist:keepalive']);
+    } else if (target === 'dev') {
+      return grunt.task.run(['build-dev', 'connect:dist:keepalive']);
     }
 
     grunt.task.run([
@@ -568,22 +567,16 @@ module.exports = function (grunt) {
   grunt.registerTask('build-release', [
     'js2coffee',
     'clean:constants',
-    // 'concurrent:dist',
-    'coffee',
-    'sass',
-    'jade:compile',
-    // remove /images in copy task when putting back imagemin
-    // 'imagemin',
-    'svgmin',
+    'concurrent:dist',
     'useminPrepare',
     'autoprefixer',
     'concat:generated',
     'copy:dist',
     'cssmin:generated',
-    // 'uglify:generated',
+    'uglify:generated',
     // 'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
     // 'string-replace:cdnify'
   ]);
 
