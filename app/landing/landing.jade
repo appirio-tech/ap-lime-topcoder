@@ -12,7 +12,7 @@
         strong We especially love you.
 
     .banner-text(ng-show="!main.loggedInUser")
-      p Become part of the extensive, global Apple Developer Community powered by Appirio. Developers of all kinds join the community to raise their game&mdash;to find mentors, to collaborate and to learn from each other, but ultimately to stand out from the crowd, by submitting (and being paid for) your best ideas.
+      p Become part of the Apple Developer Community and raise your iOS app dev game. An exclusive segment of Appirio’s topcoder community, this is where you can find iOS development mentors, collaborate and learn from others, earn money and ultimately stand out from the crowd.
 
     .banner-text(ng-show="main.loggedInUser && !main.loggedInUser.memberSince")
       p Thanks for joining. Before you can compete, you'll need to confirm your email account with topcoder, so be sure to check your email for the activation link.
@@ -34,16 +34,18 @@
       .col-xs-12.col-md-6.col-md-push-6.content-col
         .section-subheader Compete and learn from the best.
 
-        p We want thinkers. The &ldquo;why not&ldquo; people. The ones who never met a problem they couldn&rsquo;t solve. Jowl sirloin brisket tri-tip tongue tenderloin shoulder salami strip steak pork belly hamburger filet mignon pork chop ball tip cupim. Pork belly beef ribs ribeye shoulder. Ribeye pork loin beef ribs landjaeger bacon. Short loin drumstick brisket, ribeye pork chop shoulder pork loin swine turkey. Sausage tenderloin prosciutto swine ball tip. Salami t-bone capicola doner bacon tongue pork filet mignon kevin shank sirloin drumstick boudin andouille.
+        p You are not a typical developer. You want to be the one who builds the winning solution for top companies - the companies who are looking for the best in iOS application development. You want to learn the latest mobile app languages like Swift to stand out from the crowd. And you want to prove it by showing what you can do and getting recognized for it.  Join and compete in the Apple Developer Community to connect and engage with your peers across the globe, receive feedback on your work from the most successful iOS developers and designers, and showcase your talent while building real-world applications to win cash along the way.
 
         ul.section-actions
-          li #[a(ui-sref="challenges({type: 'all'})") View challenges &gt;]
+          li
+            a(ui-sref="challenges({type: 'all'})") View challenges
 
-          li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a member]
+          li(ng-show="!main.loggedInUser")
+            a.btn(ui-sref="register") Become a member
 
 .newsletter-form-wrapper
   section.newsletter-form-section.container
-    h1.heading iOS Developer Community.
+    h1.heading Apple Developer Community.
     p Sign up to join the conversation
 
     form#mktoForm_1944.newsletter-form
@@ -95,9 +97,11 @@
                   a(ng-href="https://www.{{domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numSubmissions}}
 
     ul.section-actions
-      li #[a(ui-sref="learn") Learn more about challenge types &gt;]
+      li
+        a(ui-sref="learn") Learn more about challenge types
 
-      li #[a(ui-sref="challenges({type: 'all'})") View full challenge list &gt;]
+      li
+        a(ui-sref="challenges({type: 'all'})") View full challenge list
 
 section.learn-improve-section.landing-annon-page
   .container
@@ -115,15 +119,15 @@ section.learn-improve-section.landing-annon-page
         .section-content
           .section-subheader You're on the road to becoming a member of the Apple Developer Community.
 
-          p Experienced and proven iOS developers are in high-demand.  Prove your skills by earning these iOS topcoder badges and gain exclusive access to iOS challenges and prize accelerators, special previews into Apple&rsquo;s content and releases, and special community-related events and info.
+          p Experienced and proven iOS developers are in high-demand. Prove your skills by earning these iOS topcoder badges and gain exclusive access to iOS challenges and prize accelerators, special previews into Apple’s content and releases, and special community-related events and info.
 
-          a.section-action(ui-sref="learn") Learn more about the program. &gt;
+          a.section-action(ui-sref="learn") Learn more about the program
 
   .subsections
     .container
       .row
         section.col-sm-12.col-md-4.info-col
-          h2.subsection-header Learn from your peers
+          h2.subsection-header Get Started in the Community
 
           p Whether you are an experienced iOS developer or are just getting started, follow these steps to join and grow in the Apple Developer Community
 
@@ -131,7 +135,7 @@ section.learn-improve-section.landing-annon-page
             a.btn(ui-sref="challenges({type: 'peer'})") Learn more
 
         section.col-sm-12.col-md-4.info-col
-          h2.subsection-header Train and improve
+          h2.subsection-header Build the Skills You Need to Stand Out in the Crowd
 
           p New to the community? Want to improve your skills? Why not try one of our Challenges to sharpen and elevate your skill level. Choose from one of our many different challenges types and train your way into becoming an iOS champion!
 
@@ -139,9 +143,9 @@ section.learn-improve-section.landing-annon-page
             a.btn(ui-sref="learn") Learn more
 
         section.col-sm-12.col-md-4.info-col
-          h2.subsection-header Compete and win
+          h2.subsection-header Compete and Win
 
-          p Ready to prove yourself on a global stage? Have what it takes to compete and win in the Apple Developer Community? Well step right up and find a challenge to test your merit on. Any and all are welcome...register for a challenge today!
+          p Ready to prove yourself on a global stage? Do you have what it takes to compete and win in the Apple Developer Community? Jump into a challenge to show what you are capable of. Register for a customer challenge today!
 
           .link-row
             a.btn(ui-sref="challenges({type: 'all'})") Learn more
@@ -149,8 +153,8 @@ section.learn-improve-section.landing-annon-page
 .learn-section.learn-page
   section.container
     header.section-header
-      h1.heading What will you learn?
+      h1.heading Ready to Stand Out in the Crowd?
 
-      p Learn, train, compete, and win with the iOS Development Community.
+      p Learn, get badged, and compete as a member of the Apple Developer Community
 
     a.btn(ui-sref="learn") Get Started
