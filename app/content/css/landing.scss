@@ -424,12 +424,11 @@
     }
     .subsection-header {
       @include myriad-pro-light;
-      font-size: 30px;
+      font-size: 29px;
+      line-height: 29px;
+      min-height: 58px;
       color: $header-gray;
       margin-bottom: 24px;
-    }
-    .info-col:not(:first-child) .subsection-header {
-      text-align: center;
     }
     .link-row {
       text-align: center;
