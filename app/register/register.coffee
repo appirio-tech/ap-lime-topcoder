@@ -1,8 +1,9 @@
 'use strict'
 
-register = ($scope, $state, Auth, Countries) ->
+register = ($scope, $state, Auth, Countries, ENV) ->
   DEFAULT_STATE = 'landing'
   vm = this
+  vm.domain = ENV.domain
   vm.registering = false
 
   createDropdownModel = (country, index) ->
@@ -67,5 +68,6 @@ angular.module('lime-topcoder').controller 'register', [
   '$state'
   'Auth'
   'Countries'
+  'ENV'
   register
 ]
