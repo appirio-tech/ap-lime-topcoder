@@ -388,11 +388,19 @@ module.exports = function (grunt) {
       options: {
         assetsDirs: [
           '<%= yeoman.dist %>',
+          '<%= yeoman.dist %>/challenges',
           '<%= yeoman.dist %>/content/css',
+          '<%= yeoman.dist %>/content/images',
+          '<%= yeoman.dist %>/landing',
+          '<%= yeoman.dist %>/layout',
+          '<%= yeoman.dist %>/learn',
+          '<%= yeoman.dist %>/login',
+          '<%= yeoman.dist %>/register'
         ],
         patterns: {
           js: [
-            [/(\/[-\w]+\.html)/gm, 'Update JS files to reference revved html files.']
+            [/(\/[-\w]+\.html)/gm, 'Update JS files to reference revved html files.'],
+            [/(\/[-\w]+\.png)/gm, 'Update image files to reference revved html files.']
             // [/(locales\/\w+\.json)/gm, 'Update JS files to reference revved locale files.']
           ]
         }
@@ -574,9 +582,9 @@ module.exports = function (grunt) {
     'copy:dist',
     'cssmin:generated',
     'uglify:generated',
-    // 'filerev',
+    'filerev',
     'usemin',
-    'htmlmin',
+    'htmlmin'
     // 'string-replace:cdnify'
   ]);
 
