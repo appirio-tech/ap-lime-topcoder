@@ -6,15 +6,15 @@ AuthToken = (ENV, $window, $cookies) ->
 
   token =
     setToken: (token) ->
-      $window.document.cookie = tokenKey + '=' + token + '; path=/; domain=.' + ENV.domain + '; expires=' + new Date(new Date().getTime() + 12096e5);      
+      $window.document.cookie = tokenKey + '=' + token + '; path=/; domain=.' + ENV.domain + '; expires=' + new Date(new Date().getTime() + 12096e5)
       cachedToken = token
     getToken: () ->
-      if !cachedToken
+      if not cachedToken
         cachedToken = $cookies[tokenKey]
       cachedToken
 
     removeToken: () ->
-      $window.document.cookie = tokenKey + '=; path=/; domain=.' + ENV.domain + '; expires=' + new Date(0).toUTCString();
+      $window.document.cookie = tokenKey + '=; path=/; domain=.' + ENV.domain + '; expires=' + new Date(0).toUTCString()
       cachedToken = null
 
 angular.module('lime-topcoder').factory 'AuthToken', [

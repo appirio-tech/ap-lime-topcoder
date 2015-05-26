@@ -7,11 +7,11 @@ requiredDropdown = ($window) ->
       ngModel.$validators.requiredDropdown = (modelValue, viewValue) ->
         console.log 'validating' + JSON.stringify viewValue
         console.log 'validating' + JSON.stringify modelValue
-        if ngModel.$isEmpty(modelValue) 
+        if ngModel.$isEmpty(modelValue)
           # consider empty models to be valid
           true
 
-        if viewValue && viewValue.value >= 0 
+        if viewValue && viewValue.value >= 0
           # it is valid
           true
 

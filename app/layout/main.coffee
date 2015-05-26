@@ -38,10 +38,9 @@ main = ($scope, $state, ENV, AuthService, UserService) ->
         vm.loggingIn = false
         UserService.getUsername()
         .then (data) ->
-          vm.loggedInUser = {
-            "handle": data.data.handle,
-            "photo": "content/images/user.png"
-          }
+          vm.loggedInUser =
+            handle: data.data.handle
+            photo: 'content/images/user.png'
 
   vm.activate()
 

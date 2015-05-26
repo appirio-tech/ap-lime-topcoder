@@ -9,7 +9,7 @@ register = ($scope, $state, Auth, Countries, ENV) ->
   createDropdownModel = (country, index) ->
     text: country
     value: index
-  
+
   vm.reg = {}
   vm.frm =
     error: false
@@ -38,7 +38,7 @@ register = ($scope, $state, Auth, Countries, ENV) ->
     (form[field].$dirty || form.$submitted) && form[field].$invalid
 
   vm.handleAgree = () ->
-    console.log(vm.frm.agree);
+    console.log vm.frm.agree
     vm.frm.agree = !vm.frm.agree
 
   regSuccess = () ->
@@ -50,14 +50,14 @@ register = ($scope, $state, Auth, Countries, ENV) ->
       $state.go vm.retState
     else
       $state.go DEFAULT_STATE
-          
+
   # handles error event of the login action
   regError = (error) ->
     vm.registering = false
     # $scope.$apply () ->
     vm.frm.error = true
     vm.frm.errorMessage = 'Account could not be created. ' + error
-    
+
   loginError = (error) ->
     vm.registering = false
     vm.frm.error = true

@@ -9,7 +9,7 @@ Helpers = () ->
     formatField 'platforms' for challenge in data
 
   processChallenge: (challenge) ->
-    if challenge.reviewType && challenge.reviewType == 'PEER'
+    if challenge.reviewType and challenge.reviewType is 'PEER'
       challenge.icon = 'peer'
       challenge.thumb = 'content/images/peer-swift-challenge.png'
     else
