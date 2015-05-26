@@ -60,7 +60,7 @@ html
     meta(name='twitter:description', content='iOS/SWIFT challenges on topcoder.com, brought to you by Apple and Appirio. Now is the time to compete!')
     meta(name='twitter:creator', content='@topcoder')
     meta(name='twitter:image:src', content='/content/images/logo-landing.png')
-    
+
     meta(property='og:url', content='http://apple.topcoder.com')
     meta(property='og:title', content='topcoder iOS Member Program')
     meta(property='og:description', content='iOS/SWIFT challenges on topcoder.com, brought to you by Apple and Appirio. Now is the time to compete!')
@@ -111,7 +111,7 @@ html
     // endbuild
 
   body(ng-app="lime-topcoder", ng-controller="main as main")
-    header.header-row(ng-include="'layout/header.html'")
+    include layout/header.jade
 
     .view-container(ui-view, ng-class="$state.current.name", autoscroll="true")
     .view-container-loading(ng-show="main.loggingIn")
@@ -121,7 +121,7 @@ html
           span.inner-circle
             span.circle
 
-    footer.login-footer.footer(ng-include="'layout/footer.html'")
+    include layout/footer.jade
 
     script(src="https://cdn.auth0.com/w2/auth0-1.6.4.js", type="text/javascript")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js", type="text/javascript")
