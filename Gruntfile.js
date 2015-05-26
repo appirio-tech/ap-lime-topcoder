@@ -268,6 +268,34 @@ module.exports = function (grunt) {
       }
     },
 
+    coffeelint: {
+      app: {
+        files: {
+          src: ['<%= yeoman.app %>/**/*.coffee']
+        },
+        options: {
+          'max_line_length': {
+            'level': 'ignore'
+          },
+          'no_interpolation_in_single_quotes': {
+            'level': 'error'
+          },
+          'no_unnecessary_double_quotes': {
+            'level': 'error'
+          },
+          'prefer_english_operator': {
+            'level': 'warn'
+          },
+          'space_operators': {
+            'level': 'error'
+          },
+          'spacing_after_comma': {
+            'level': 'error'
+          }
+        }
+      }
+    },
+
     // Empties folders to start fresh
     clean: {
       dist: {
@@ -547,6 +575,7 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
+      'coffeelint:app',
       'clean:server',
       'ngconstant:development',
       'js2coffee',
@@ -594,18 +623,21 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build-dev', [
+    'coffeelint:app',
     'clean:dist',
     'ngconstant:development',
     'build-release'
   ]);
 
   grunt.registerTask('build-qa', [
+    'coffeelint:app',
     'clean:dist',
     'ngconstant:qa',
     'build-release'
   ]);
 
   grunt.registerTask('build', [
+    'coffeelint:app',
     'clean:dist',
     'ngconstant:production',
     'build-release'

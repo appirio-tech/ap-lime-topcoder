@@ -7,7 +7,7 @@ login = ($scope, Auth, $state, $stateParams, $location, ENV) ->
   vm.retState = DEFAULT_STATE
   vm.domain = ENV.domain
 
-  main = $scope.$parent.main;
+  main = $scope.$parent.main
 
   vm.frm =
     username:

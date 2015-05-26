@@ -10,19 +10,23 @@ ApiService = ($http, AuthToken) ->
       headers: {}
 
     token = AuthToken.getToken()
-    if token && !noAuth
+    if token and not noAuth
       options.headers =
         Authorization: 'Bearer ' + token
 
-    if data && method != 'GET'
+    if data and method isnt 'GET'
       options.data = data
 
-    if data && method == 'GET'
+    if data and method is 'GET'
       options.params = data
 
-    if method == 'POST'
+    if method is 'POST'
       options.headers['Content-Type'] = 'application/json'
 
     $http options
 
-angular.module('lime-topcoder').factory 'ApiService',['$http', 'AuthToken', ApiService]
+angular.module('lime-topcoder').factory 'ApiService', [
+  '$http'
+  'AuthToken'
+  ApiService
+]

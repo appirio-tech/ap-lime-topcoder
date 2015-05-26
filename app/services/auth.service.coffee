@@ -17,7 +17,7 @@ Auth = (ENV, $window, AuthToken, $state, $stateParams, $location, $timeout, ApiS
         errorCallback err
       else
         AuthToken.setToken id_token
-        successCallback profile, id_token,access_token, state
+        successCallback profile, id_token, access_token, state
 
   logout: () ->
     AuthToken.removeToken()
