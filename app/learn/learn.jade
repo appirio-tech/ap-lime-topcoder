@@ -3,21 +3,14 @@
     h1.banner-header Ready to join our #[strong Apple Developer Community?]
 
     .banner-text
-      p Experienced and proven iOS developers are in high-demand.  Prove your skills by earning these iOS topcoder badges and gain exclusive access to iOS challenges and prize accelerators, special previews into Apple&rsquo;s content and releases, and special community-related events and info.
-
-      h2.banner-subheader Benefits for joining the community
-
-      ul
-        li &bull; Members of the community will have opportunities to earn higher prizes.
-
-        li &bull; Exclusive access to additional challenges
-
-        li &bull; Earn more badges and prestige!
+      p Experienced and proven iOS developers are in high-demand. Prove your skills by earning these iOS topcoder badges and gain exclusive access to iOS challenges and prize accelerators, special previews into Apple’s content and releases, and special community-related events and info.
 
       ul.banner-actions
-        li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn more]
+        li
+          a.learn-link(href='#learn-more', du-smooth-scroll) Learn more
 
-        li(ng-show="!main.loggedInUser") #[a.btn(ui-sref='register') Become a member]
+        li(ng-show="!main.loggedInUser")
+          a.btn(ui-sref='register') Become a Member
 
 section.container.learn-badges-section#learn-more
   header.section-header
@@ -43,16 +36,16 @@ section.container.learn-badges-section#learn-more
         a.btn(ui-sref="challenges({type: 'peer'})", disabled) Coming Soon
 
     .badge-item.peer-badge.col-xs-12.col-md-4
-      .badge-header Peer Badges
+      .badge-header Show Your Skills Badges
 
-      p Pass a Peer-Review Challenge and get recognized as &ldquo;Swift/iOS Ready!&rdquo;
+      p Pass a Show-Your-Skills Challenge and get recognized as “Swift/iOS Ready!”
 
       .badge-link
         a.btn(ui-sref="challenges({type: 'peer'})") Select
 
   .badge-list.row
     .badge-item.challenger-badge.col-xs-12.col-md-4
-      .badge-header Challenger Badges
+      .badge-header Challenger Badge
 
       p Register/Submit for your first iOS Mobile App challenge
 
@@ -69,7 +62,7 @@ section.container.learn-badges-section#learn-more
 
 .newsletter-form-wrapper
   section.newsletter-form-section.container
-    h1.heading iOS Developer Community.
+    h1.heading Apple Developer Community.
     p Sign up to join the conversation
 
     form#mktoForm_1944.newsletter-form
@@ -112,8 +105,8 @@ section.resources-section
 .learn-section.learn-page
   section.container
     header.section-header
-      h1.heading What will you learn?
+      h1.heading Ready to Stand Out in the Crowd?
 
-      p Learn, train, compete, and win with the Apple Development Community.
+      p Learn, get badged, and compete as a member of the Apple Developer Community
 
-    a.btn(ui-sref="challenges({type: 'peer'})") Get Started
+    a.btn(ui-sref="challenges({type: 'peer'})") Become a Member
