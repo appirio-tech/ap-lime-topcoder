@@ -17,7 +17,7 @@ Helpers = () ->
       challenge.thumb = 'content/images/swift-challenge-1.png'
 
   filterStudioChallenge: (challenge) ->
-    if challenge?.challengeName.indexOf('ios') != -1
+    if challenge?.challengeName.toLowerCase().indexOf('ios') != -1
       true
     else
       false
