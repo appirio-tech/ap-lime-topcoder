@@ -7,17 +7,17 @@ div(ng-controller="challenges as vm")
             span.bdg
           .bdgCon
             h6.slide-title Badge Details
-            h1.section-header.ellipses Peer Badges
+            h1.section-header.ellipses Show Your Skills Badge
             .summary
              .row
-              .desc.col-xs-12 Ready to show your iOS mobile app development skills? The peer-review process is a great way to learn by doing, see how others approach the problem, and get feedback from your peers on your solution.  In fact at topcoder, we feel peer reviews are one of the most important activities you can do to improve your code and skills!
+              .desc.col-xs-12 Ready to show your iOS mobile app development skills? The “Show Your Skills” bages use a peer-review process where you submit a solution to a problem and get reviewed by other developers working on that same problem. It is a great way to learn by doing, see how others approach the problem, and get feedback on your solution. Peer reviews are one of the most important activities you can do to improve your code and skills!
               .col-xs-12.col-sm-6.cn Successful completion of the peer-review process results in a "iOS Proficient" badge that helps set you apart from other developers in the community.
               .col-xs-12.col-sm-6.cn Completion Includes:
                 ul.lst
-                  li Completing a peer-review challenge
-                  li Reviewing and scoring your peers' solutions
+                  li Completing a Show Your Skills challenge - choose one from the list below
+                  li Use an iOS-specific scorecard to review and score 5 solutions submitted by your peers
                   li Receiving feedback and a "pass" score from your peers
-            .learn To learn more about performing peer reviews at topcoder visit our #[a.lnk(href="#") help center].
+            .learn Visit our #[a.lnk(href="#") help center] to learn more about peer reviews.
             .actns
               a.btn.btnChallenges(href='#view-challenges', du-smooth-scroll) View Peer Challenges
   carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'all'")
@@ -59,10 +59,16 @@ div(ng-controller="challenges as vm")
     section.container
       header.section-header.fluid
         h1.heading(ng-show="vm.challengesType == 'all'") Current Challenges
-        h1.heading(ng-show="vm.challengesType == 'peer'") Current Peer Challenges
 
-        div.browse Browse our available challenges and compete.
+        div.browse(ng-show="vm.challengesType == 'all'") Browse our available challenges and compete.
           .viewType.hidden-xs
+            a.lnk(ui-sref="challenges({type: 'peer'})") Peer
+            a.gridView(ng-click="isGrid=true")
+            a.listView(ng-click="isGrid=false")
+
+        div.browse(ng-show="vm.challengesType == 'peer'") Show Your Skills Challenges - Register Today!
+          .viewType.hidden-xs
+            a.lnk(ui-sref="challenges({type: 'all'})") View All
             a.gridView(ng-click="isGrid=true")
             a.listView(ng-click="isGrid=false")
 
@@ -156,11 +162,11 @@ div(ng-controller="challenges as vm")
   .learn-section.learn-page
     section.container
       header.section-header
-        h1.heading What will you learn?
+        h1.heading Ready to Stand Out in the Crowd?
 
-        p Learn, train, compete, and win with the Apple Development Community.
+        p Learn, get badged, and compete as a member of the Apple Developer Community
 
-      a.btn(ui-sref="learn") Get Started
+      a.btn(ui-sref="learn") Become a Member
 
 
 
