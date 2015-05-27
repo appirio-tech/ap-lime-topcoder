@@ -1,0 +1,44 @@
+@import 'partials/combined';
+
+.confirmNewsletter {
+  .confirm-content{
+    background: #ffffff;
+    padding: 92px 0 144px 95px;
+
+    .big-logo {
+      margin: 0 0 20px 0px;
+      display: block;
+
+      img {
+        width: 227px;
+      }
+    }
+    p {
+      @include myriad-pro-light;
+      font-size: 32px;
+      color: #333E48;
+      margin-bottom: 32px;
+      line-height: 40px;
+      max-width: 501px;
+    }
+    .continue {
+      display: inline-block;
+      color: $white;
+      font-size: 16px;
+      padding: 6px 15px;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .confirmNewsletter {
+    .confirm-content {
+      padding: 92px 20px 144px 30px;
+
+      .big-logo {
+        margin: 0 0 15px 0px;
+        display: block;
+      }
+    }
+  }
+}

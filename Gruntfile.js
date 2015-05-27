@@ -417,6 +417,7 @@ module.exports = function (grunt) {
         assetsDirs: [
           '<%= yeoman.dist %>',
           '<%= yeoman.dist %>/challenges',
+          '<%= yeoman.dist %>/confirmNewsletter',
           '<%= yeoman.dist %>/content/css',
           '<%= yeoman.dist %>/content/images',
           '<%= yeoman.dist %>/landing',
