@@ -25,6 +25,9 @@ challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
     if vm.challengesType == 'peer'
       request.review = 'PEER'
 
+    if vm.challengesType == 'all'
+      request.review = 'COMMUNITY,INTERNAL'
+
     # set loading flag
     vm.loading = true
 

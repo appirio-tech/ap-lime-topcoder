@@ -1,3 +1,4 @@
+
 header.header-row
   .navbar.navbar-inverse.navbar-static-top.container(autocollapse-navbar)
     a.small-logo.pull-left(ui-sref="landing")
@@ -11,8 +12,15 @@ header.header-row
     .header-right.pull-right
       nav.main-nav.navbar-collapse.collapse(id="lime-nav-bar")
         ul.nav.navbar-nav
-          li
-            a(ui-sref="challenges({type: 'all'})", ng-class="{activeTab: $state.current.name == 'challenges'}") Challenges
+          li.dropdown
+            a.dropdown-toggle.dropdown-profile.pull-left(data-toggle="dropdown", aria-expanded="false", ng-class="{activeTab: $state.current.name == 'challenges'}")
+              span.pull-left Challenges
+              span.drop-arrow.pull-left
+            ul.profile-data.dropdown-menu.dropdown-menu-right
+              li
+                a(ui-sref="challenges({type: 'peer'})") Show Your Skills
+              li
+                a(ui-sref="challenges({type: 'all'})") iOS Challenges
           li
             a(ui-sref="learn", ng-class="{activeTab: $state.current.name == 'learn'}") Learn
           li
