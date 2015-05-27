@@ -5,7 +5,7 @@ main = ($scope, $state, ENV, AuthService, UserService) ->
   vm.domain = ENV.domain
 
   vm.loggedInUser = null
-  vm.loggingIn = false
+  vm.loading = false
 
   vm.updatePhotoLink = () ->
     user = vm.loggedInUser
@@ -26,16 +26,24 @@ main = ($scope, $state, ENV, AuthService, UserService) ->
       true
     false
 
+  loginHandlers = {}
+  vm.addLoginEventHandler = (name, handler) ->
+    loginHandlers[name] = handler
+
   vm.activate = () ->
     if AuthService.isAuthenticated()
-      vm.loggingIn = true
+      vm.loading = true
       UserService.getLoggedInUser()
       .then (data) ->
-        vm.loggingIn = false
+        vm.loading = false
         vm.loggedInUser = data.data
+        for name of loginHandlers
+          handler = loginHandlers[name]
+          if (handler && typeof handler == 'function')
+            handler vm.loggedInUser
         vm.updatePhotoLink()
       .catch (error) ->
-        vm.loggingIn = false
+        vm.loading = false
         UserService.getUsername()
         .then (data) ->
           vm.loggedInUser =

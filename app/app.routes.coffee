@@ -9,7 +9,10 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider) ->
     learn:
       url         : '/learn'
       templateUrl : 'learn/learn.html'
-      controller  : 'learn'
+      #binded controller in view as workaround to use controller as vm style
+      #controllerAs property is working with coffee script
+      #more info: http://stackoverflow.com/questions/28953289/using-controller-as-with-the-ui-router-isnt-working-as-expected
+      #controller  : 'learn'
     login:
       url         : '/login?retUrl&retState'
       templateUrl : 'login/login.html'

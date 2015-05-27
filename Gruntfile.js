@@ -26,7 +26,8 @@ module.exports = function (grunt) {
     auth0Domain           : process.env.AUTH0_DOMAIN || 'topcoder-dev.auth0.com',
     auth0Callback         : 'no-callback-needed-without-social-login',
     submissionDownloadPath: '/review/actions/DownloadContestSubmission?uid=',
-    photoLinkLocation     : process.env.PHOTO_LINK_LOCATION || 'http://community.topcoder.com'
+    photoLinkLocation     : process.env.PHOTO_LINK_LOCATION || 'http://community.topcoder.com',
+    LIME_PROGRAM_ID       : 3445
   };
 
   // Define the configuration for all the tasks
@@ -55,7 +56,8 @@ module.exports = function (grunt) {
             auth0Domain           : appConfig.auth0Domain,
             auth0Callback         : appConfig.auth0Callback,
             submissionDownloadPath: appConfig.submissionDownloadPath,
-            photoLinkLocation     : appConfig.photoLinkLocation
+            photoLinkLocation     : appConfig.photoLinkLocation,
+            LIME_PROGRAM_ID       : appConfig.LIME_PROGRAM_ID
           }
         }
       },
@@ -73,7 +75,8 @@ module.exports = function (grunt) {
             auth0Domain           : 'topcoder-qa.auth0.com',
             auth0Callback         : appConfig.auth0Callback,
             submissionDownloadPath: appConfig.submissionDownloadPath,
-            photoLinkLocation     : appConfig.photoLinkLocation
+            photoLinkLocation     : appConfig.photoLinkLocation,
+            LIME_PROGRAM_ID       : appConfig.LIME_PROGRAM_ID
           }
         }
       },
@@ -91,7 +94,8 @@ module.exports = function (grunt) {
             auth0Domain           : 'topcoder.auth0.com',
             auth0Callback         : appConfig.auth0Callback,
             submissionDownloadPath: appConfig.submissionDownloadPath,
-            photoLinkLocation     : appConfig.photoLinkLocation
+            photoLinkLocation     : appConfig.photoLinkLocation,
+            LIME_PROGRAM_ID       : appConfig.LIME_PROGRAM_ID
           }
         }
       }
