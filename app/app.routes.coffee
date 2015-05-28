@@ -1,6 +1,9 @@
 'use strict'
 
-routes = ($stateProvider, $urlRouterProvider, $httpProvider) ->
+routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) ->
+
+  $locationProvider.html5Mode true
+
   states =
     landing:
       url         : '/'
@@ -47,5 +50,6 @@ angular.module('lime-topcoder').config [
   '$stateProvider'
   '$urlRouterProvider'
   '$httpProvider'
+  '$locationProvider'
   routes
 ]
