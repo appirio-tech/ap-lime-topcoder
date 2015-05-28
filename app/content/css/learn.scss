@@ -139,6 +139,12 @@
       position: absolute;
       top: 0;
     }
+
+    .badge-desc {
+      img.achieved {
+        vertical-align: middle;
+      }
+    }
   }
 
   .participant-badge:before {
