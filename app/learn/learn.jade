@@ -32,6 +32,7 @@ div(ng-controller="learn as vm")
 
         .badge-link
           a.btn(ng-click="vm.registerForProgram()", ng-show="!vm.registered") Select
+          span.text-danger.margin-left-2x(ng-show="vm.registrationError", ng-bind="vm.registrationError")
 
       .badge-item.education-badge.col-xs-12.col-md-4
         .badge-header Education Badges

@@ -6,6 +6,7 @@ learn = ($scope, ENV, MemberCertService) ->
   vm = this
   vm.registered = false
   vm.registrationSuccess = false
+  vm.registrationError = null
   main = $scope.$parent.main
 
   vm.checkRegStatus = () ->
@@ -35,6 +36,10 @@ learn = ($scope, ENV, MemberCertService) ->
     
 
   vm.registerForProgram = () ->
+    vm.registrationError = null
+    if !main.loggedInUser
+      vm.registrationError = 'Please login to participate'
+      return
     main.loading = true
     request =
       userId: main.loggedInUser.uid
