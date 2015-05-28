@@ -104,6 +104,9 @@
 
             .mktoFormCol {
               width: 100%;
+              .mktoFieldWrap {
+                width: 100%;
+              }
             }
             input {
               width: 100% !important;
