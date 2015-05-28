@@ -25,6 +25,9 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider) ->
       url         : '/register/confirm'
       templateUrl : 'register/confirm.html'
       controller  : 'register'
+    confirmNewsletter:
+      url         : '/confirmation'
+      templateUrl : 'confirmNewsletter/confirmNewsletter.html'
     challenges:
       url         : '/challenges/type/:type'
       templateUrl : 'challenges/challenges.html'
