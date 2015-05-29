@@ -51,7 +51,7 @@ div(ng-controller="challenges as vm")
               .ca SUBMISSIONS
               .vl(ng-bind="challenge.numSubmissions")
           .actns
-            a.btn.secondary.btnReg(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop", target="_blank") View
+            a.btn.secondary.btnReg(ng-href="{{challenge.url}}", target="_blank") View
 
             a.lnk(href='#view-challenges', du-smooth-scroll) View all challenges
 
@@ -85,12 +85,12 @@ div(ng-controller="challenges as vm")
           li.liRw.col-xs-12(ng-repeat="challenge in vm.challenges")
             .chrw.clearfix
               figure.col1.imgWrap.pull-left
-                a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop")
+                a(ng-href="{{challenge.url}}")
                   img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
               .chge.col2.pull-left
                 .inner
                   h4.chTitle
-                    a.ellipses(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") {{challenge.challengeName}}
+                    a.ellipses(ng-href="{{challenge.url}}") {{challenge.challengeName}}
                   .rw.ellipses
                     span.lbl Technologies:&#32
                     span.val {{challenge.technologies}}
@@ -109,11 +109,11 @@ div(ng-controller="challenges as vm")
               .regs.col4.pull-left
                 .inner
                   .reg
-                    a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numRegistrants}}
+                    a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numRegistrants}}
               .subs.col5.pull-left
                 .inner
                   .sub
-                    a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numSubmissions}}
+                    a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numSubmissions}}
 
     ul.challenges.row(ng-show="isGrid")
       li.col-xs-12.col-sm-6.col-md-4.col-lg-3(ng-repeat="challenge in vm.challenges")
@@ -124,7 +124,7 @@ div(ng-controller="challenges as vm")
 
           .challenge-details
             h2.challenge-header.ellipses
-              a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") {{challenge.challengeName}}
+              a(ng-href="{{challenge.url}}") {{challenge.challengeName}}
 
             .challenge-data
               p.ellipses #[span.challenge-field Technologies:] {{challenge.technologies}}
@@ -147,13 +147,13 @@ div(ng-controller="challenges as vm")
                 .stats-type REGISTRANTS
 
                 .stats-value
-                  a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numRegistrants}}
+                  a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numRegistrants}}
 
               .col-xs-6.challenge-submissions.challenge-stat
                 .stats-type SUBMISSIONS
 
                 .stats-value
-                  a(ng-href="https://www.{{vm.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numSubmissions}}
+                  a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numSubmissions}}
 
     ul.section-actions
       li(ng-show="vm.hasMore && !vm.loading") #[a(ng-click="vm.loadMore()") Load more...]
