@@ -35,6 +35,7 @@
 - jsFiles.push('services/countries.service')
 - jsFiles.push('services/helpers.service')
 - jsFiles.push('services/challenge.service')
+- jsFiles.push('services/member-cert.service')
 - jsFiles.push('services/user.service')
 - jsFiles.push('directives/checkbox')
 - jsFiles.push('directives/requiredDropdown')
@@ -44,7 +45,9 @@
 doctype html
 html
   head
+    base(href="/")
     meta(charset="utf-8")
+    meta(name="fragment", content="!")
 
     title topcoder iOS Member Program
 
@@ -115,7 +118,7 @@ html
     include layout/header.jade
 
     .view-container(ui-view, ng-class="$state.current.name", autoscroll="true")
-    .view-container-loading(ng-show="main.loggingIn")
+    .view-container-loading(ng-show="main.loading")
       div.circle-3-loading
         span.loading-wrapper
           span.outer-circle

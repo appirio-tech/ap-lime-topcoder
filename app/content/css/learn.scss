@@ -139,6 +139,12 @@
       position: absolute;
       top: 0;
     }
+
+    .badge-desc {
+      img.achieved {
+        vertical-align: middle;
+      }
+    }
   }
 
   .participant-badge:before {
@@ -304,6 +310,24 @@
       }
     }
   }
+
+
+  @media only screen and (max-width: 568px) {
+    .newsletter-form {
+      width: auto;
+
+      .mktoFormRow .mktoFormCol {
+        width: 100%;
+
+        .mktoFieldWrap {
+          width: 100%;
+        }
+      }
+      input {
+        width: 100% !important;
+      }
+    }
+}
 
   @media only screen and (max-width: 640px) {
     .newsletter-form-wrapper {
