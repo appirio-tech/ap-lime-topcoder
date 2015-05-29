@@ -1,0 +1,160 @@
+.landing-banner
+  section.container
+    header.section-header
+      img(class="landing-logo", src="content/images/logo-landing.png", alt="TopCoder logo")
+
+      h1.heading(ng-show="!main.loggedInUser") Dear Developers,
+        strong We love you.
+
+      h1.heading(ng-show="main.loggedInUser") Welcome #{''}
+        span(ng-bind="main.loggedInUser.handle")
+        span ,
+        strong We especially love you.
+
+    .banner-text(ng-show="!main.loggedInUser")
+      p Become part of the Apple Developer Community and raise your iOS app dev game. An exclusive segment of Appirio’s topcoder community, this is where you can find iOS development mentors, collaborate and learn from others, earn money and ultimately stand out from the crowd.
+
+    .banner-text(ng-show="main.loggedInUser && !main.loggedInUser.memberSince")
+      p Thanks for joining. Before you can compete, you'll need to confirm your email account with topcoder, so be sure to check your email for the activation link.
+
+    .banner-text(ng-show="main.loggedInUser && main.loggedInUser.memberSince")
+      p I'm sure you're anxious to get started. Don't let us get in the way, we've got a bunch of new challenges lined up with Apple, lots of Swift challenges across the board, and a new model of competition based on peer reviews.
+
+    ul.banner-actions
+      li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn More]
+
+      li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a Member]
+      li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(href="#challenges", du-smooth-scroll) Get started competing]
+
+.get-training-section.learn-page#learn-more
+  section.container
+    h1.section-header Get iOS training and instruction
+
+    .row
+      .col-xs-12.col-md-6.col-md-push-6.content-col
+        .section-subheader Compete and learn from the best.
+
+        p You are not a typical developer. You want to be the one who builds the winning solution for top companies - the companies who are looking for the best in iOS application development. You want to learn the latest mobile app languages like Swift to stand out from the crowd. And you want to prove it by showing what you can do and getting recognized for it.  Join and compete in the Apple Developer Community to connect and engage with your peers across the globe, receive feedback on your work from the most successful iOS developers and designers, and showcase your talent while building real-world applications to win cash along the way.
+
+        ul.section-actions
+          li
+            a(ui-sref="challenges({type: 'all'})") View challenges
+
+          li(ng-show="!main.loggedInUser")
+            a.btn(ui-sref="register") Become a Member
+
+.newsletter-form-wrapper
+  section.newsletter-form-section.container
+    h1.heading Apple Developer Community.
+    p Sign up to join the conversation
+
+    form#mktoForm_1944.newsletter-form
+
+.challenges-section.landing-annon-page#challenges
+  section.container
+    header.section-header
+      h1.heading Current Challenges
+
+      p Browse our available challenges and compete.
+
+    ul.challenges.row
+      li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in challenges")
+        section.challenge
+          a(ng-href="https://www.{{domain}}/challenge-details/{{challenge.challengeId}}/?type=develop")
+            img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
+
+          .challenge-details
+            h2.challenge-header
+              a(ng-href="https://www.{{domain}}/challenge-details/{{challenge.challengeId}}/?type=develop") {{challenge.challengeName}}
+
+            .challenge-data
+              p #[span.challenge-field Technologies:] {{challenge.technologies}}
+
+            .challenge-data
+              p #[span.challenge-field Platform:] {{challenge.platforms}}
+
+            .challenge-prize(ng-hide="challenge.reviewType == 'PEER'") {{challenge.totalPrize || 0 | currency:undefined:0}}
+
+            .challenge-deadline(ng-hide="challenge.reviewType == 'PEER'") {{challenge.submissionEndDate | localTime}}
+
+            .challenge-peer(ng-show="challenge.reviewType == 'PEER'")
+              .timeHeader Challenge start
+              .time(ng-bind="challenge.registrationStartDate | localTime")
+              .timeHeader.timeEnd Challenge end
+              .time(ng-bind="challenge.submissionEndDate | localTime")
+
+            .row.challenge-stats
+              .col-xs-6.challenge-registrants.challenge-stat
+                .stats-type REGISTRANTS
+
+                .stats-value
+                  a(ng-href="https://www.{{domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numRegistrants}}
+
+              .col-xs-6.challenge-submissions.challenge-stat
+                .stats-type SUBMISSIONS
+
+                .stats-value
+                  a(ng-href="https://www.{{domain}}/challenge-details/{{challenge.challengeId}}/?type=develop#viewRegistrant") {{challenge.numSubmissions}}
+
+    ul.section-actions
+      li
+        a(ui-sref="learn") Learn more about challenge types
+
+      li
+        a(ui-sref="challenges({type: 'all'})") View full challenge list
+
+section.learn-improve-section.landing-annon-page
+  .container
+    header.section-header
+      h1.heading Learn and improve
+
+      p Participate in the Apple Developer Community program
+
+    section.row
+      .col-xs-12.col-md-6.col-md-push-6.logo-column
+        img(alt='Learn and Improve', src='content/images/learn-and-improve.png')
+
+      .col-xs-12.col-md-6.col-md-pull-6.content-col
+
+        .section-content
+          .section-subheader You're on the road to becoming a member of the Apple Developer Community.
+
+          p Experienced and proven iOS developers are in high-demand. Prove your skills by earning these iOS topcoder badges and gain exclusive access to iOS challenges and prize accelerators, special previews into Apple’s content and releases, and special community-related events and info.
+
+          a.section-action(ui-sref="learn") Learn more about the program
+
+  .subsections
+    .container
+      .row
+        section.col-sm-12.col-md-4.info-col
+          h2.subsection-header Get Started in the Community
+
+          p Whether you are an experienced iOS developer or are just getting started, follow these steps to join and grow in the Apple Developer Community
+
+          .link-row
+            a.btn(ui-sref="challenges({type: 'peer'})") Learn more
+
+        section.col-sm-12.col-md-4.info-col
+          h2.subsection-header Build the Skills You Need to Stand Out in the Crowd
+
+          p New to the community? Want to improve your skills? Why not try one of our Challenges to sharpen and elevate your skill level. Choose from one of our many different challenges types and train your way into becoming an iOS champion!
+
+          .link-row
+            a.btn(ui-sref="learn") Learn more
+
+        section.col-sm-12.col-md-4.info-col
+          h2.subsection-header Compete and Win
+
+          p Ready to prove yourself on a global stage? Do you have what it takes to compete and win in the Apple Developer Community? Jump into a challenge to show what you are capable of. Register for a customer challenge today!
+
+          .link-row
+            a.btn(ui-sref="challenges({type: 'all'})") Learn more
+
+.learn-section.learn-page
+  section.container
+    header.section-header
+      h1.heading Ready to Stand Out in the Crowd?
+
+      p Learn, get badged, and compete as a member of the Apple Developer Community
+
+    a.btn(ui-sref="learn") Become a Member

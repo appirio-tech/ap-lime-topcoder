@@ -1,131 +1,141 @@
 - bowerJsFiles = []
+- bowerJsFiles.push('jquery/dist/jquery.min')
+- bowerJsFiles.push('bootstrap/dist/js/bootstrap.min')
 - bowerJsFiles.push('angular/angular')
 - bowerJsFiles.push('angular-ui-router/release/angular-ui-router')
 - bowerJsFiles.push('angular-jwt/dist/angular-jwt')
+- bowerJsFiles.push('angular-scroll/angular-scroll.min')
+- bowerJsFiles.push('angular-dropdowns/dist/angular-dropdowns.min')
+- bowerJsFiles.push('angular-bootstrap/ui-bootstrap-tpls.min')
+- bowerJsFiles.push('angular-cookies/angular-cookies')
+- bowerJsFiles.push('iCheck/icheck.min')
+- bowerJsFiles.push('moment/moment')
+
+- nonBowerJsFiles = []
+- nonBowerJsFiles.push('moment-timezone-with-data-2010-2020')
 
 - bowerCssFiles = []
 - bowerCssFiles.push('bootstrap/dist/css/bootstrap')
+- bowerCssFiles.push('angular-dropdowns/dist/angular-dropdowns')
 
 - jsFiles = []
 - jsFiles.push('app')
 - jsFiles.push('app.constants')
 - jsFiles.push('app.interceptors')
 - jsFiles.push('app.routes')
-- jsFiles.push('review-status/review-status')
-- jsFiles.push('review-status/review-status.filter')
-- jsFiles.push('edit-review/edit-review')
-- jsFiles.push('layout/header')
-- jsFiles.push('completed-review/completed-review')
+- jsFiles.push('layout/main')
+- jsFiles.push('landing/landing')
+- jsFiles.push('learn/learn')
+- jsFiles.push('login/login')
+- jsFiles.push('register/register')
+- jsFiles.push('challenges/challenges')
 - jsFiles.push('services/api.service')
 - jsFiles.push('services/auth-token.service')
 - jsFiles.push('services/auth.service')
+- jsFiles.push('services/countries.service')
 - jsFiles.push('services/helpers.service')
-- jsFiles.push('services/review.service')
-- jsFiles.push('services/scorecard.service')
+- jsFiles.push('services/challenge.service')
+- jsFiles.push('services/member-cert.service')
 - jsFiles.push('services/user.service')
+- jsFiles.push('directives/checkbox')
+- jsFiles.push('directives/requiredDropdown')
+- jsFiles.push('directives/autocollapseNavbar')
+- jsFiles.push('filters/local-time.filter')
 
 doctype html
 html
   head
+    base(href="/")
     meta(charset="utf-8")
+    meta(name="fragment", content="!")
 
-    title App Review
+    title topcoder iOS Member Program
 
-    meta(name="description", content="")
+    meta(name='description', content='iOS/SWIFT challenges on topcoder.com, brought to you by Apple and Appirio. Now is the time to compete!')
 
-    meta(name="viewport", content="width=device-width")
+    meta(itemprop='name', content='topcoder iOS Member Program')
+    meta(itemprop='description', content='iOS/SWIFT challenges on topcoder.com, brought to you by Apple and Appirio. Now is the time to compete!')
+    meta(itemprop='image', content='http://apple.topcoder.com/content/images/logo-landing.png')
+
+    meta(name='twitter:card', content='iOS/SWIFT challenges on topcoder.com, brought to you by Apple and Appirio. Now is the time to compete!')
+    meta(name='twitter:site', content='@topcoder')
+    meta(name='twitter:title', content='topcoder iOS Member Program')
+    meta(name='twitter:description', content='iOS/SWIFT challenges on topcoder.com, brought to you by Apple and Appirio. Now is the time to compete!')
+    meta(name='twitter:creator', content='@topcoder')
+    meta(name='twitter:image:src', content='http://apple.topcoder.com/content/images/logo-landing.png')
+
+    meta(property='og:url', content='http://apple.topcoder.com')
+    meta(property='og:title', content='topcoder iOS Member Program')
+    meta(property='og:description', content='iOS/SWIFT challenges on topcoder.com, brought to you by Apple and Appirio. Now is the time to compete!')
+    meta(property='og:site_name', content='topcoder iOS Member Program')
+    meta(property='og:image', content='http://apple.topcoder.com/content/images/logo-landing.png')
+
+    meta(http-equiv="X-UA-Compatible", content="IE=edge, chrome=1")
+
+    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no")
+
+    link(rel="apple-touch-icon", sizes="57x57", href="/apple-touch-icon-57x57.png")
+    link(rel="apple-touch-icon", sizes="60x60", href="/apple-touch-icon-60x60.png")
+    link(rel="apple-touch-icon", sizes="72x72", href="/apple-touch-icon-72x72.png")
+    link(rel="apple-touch-icon", sizes="76x76", href="/apple-touch-icon-76x76.png")
+    link(rel="apple-touch-icon", sizes="114x114", href="/apple-touch-icon-114x114.png")
+    link(rel="apple-touch-icon", sizes="120x120", href="/apple-touch-icon-120x120.png")
+    link(rel="apple-touch-icon", sizes="144x144", href="/apple-touch-icon-144x144.png")
+    link(rel="apple-touch-icon", sizes="152x152", href="/apple-touch-icon-152x152.png")
+    link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon-180x180.png")
+    link(rel="icon", type="image/png", href="/favicon-32x32.png", sizes="32x32")
+    link(rel="icon", type="image/png", href="/favicon-194x194.png", sizes="194x194")
+    link(rel="icon", type="image/png", href="/favicon-96x96.png", sizes="96x96")
+    link(rel="icon", type="image/png", href="/android-chrome-192x192.png", sizes="192x192")
+    link(rel="icon", type="image/png", href="/favicon-16x16.png", sizes="16x16")
+    link(rel="manifest", href="/manifest.json")
+    meta(name="apple-mobile-web-app-title", content="topcoder")
+    meta(name="application-name", content="topcoder")
+    meta(name="msapplication-TileColor", content="#2e2f32")
+    meta(name="msapplication-TileImage", content="/mstile-144x144.png")
+    meta(name="theme-color", content="#2e2f32")
 
     // build:css(.) content/css/vendor.css
-    // bower:css
     each bowerCssFile in bowerCssFiles
       link(rel="stylesheet", href="bower_components/#{bowerCssFile}.css")
-
-    // endbower
     // endbuild
+
     // build:css(.tmp) content/css/app.css
-    link(rel="stylesheet", href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700', type='text/css')
+    link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700", type="text/css")
+    link(rel="stylesheet", href="content/css/reset.css", type="text/css")
     link(rel="stylesheet", href="content/css/app.css", type='text/css')
     link(rel="stylesheet", href="content/css/header.css", type='text/css')
     link(rel="stylesheet", href="content/css/footer.css", type='text/css')
+    link(rel="stylesheet", href="content/css/landing.css", type="text/css")
+    link(rel="stylesheet", href="content/css/learn.css", type="text/css")
+    link(rel="stylesheet", href="content/css/login.css", type='text/css')
+    link(rel="stylesheet", href="content/css/register.css", type='text/css')
+    link(rel="stylesheet", href="content/css/challenges.css", type='text/css')
+    link(rel="stylesheet", href="content/css/confirmNewsletter.css", type='text/css')
     // endbuild
 
-  body(ng-app="peerReview")
-    //- Header
-    nav.navbar.navbar-default(ng-controller="header")
-      .content
-        .navbar-header
-          button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          img#logo(src="content/images/logo.png")
-        ul#navbar-top.nav.navbar-nav.navbar-right
-          li#login(ng-hide="isAuth()") #[a(href="#", ng-click="login()") Log In]
-          li#logout(ng-show="isAuth()") #[a(href="#", ng-click="logout()") Log Out]
-          li #[a.separator |]
-          li #[a(href="#") Contact]
-          li #[a.separator |]
-          li #[a(href="#") Help Center]
-          li #[a.separator |]
-          li #[a(href="#") Search]
-        div#navbar.navbar-collapse.collapse
-          ul#navbar-bottom.nav.navbar-nav.navbar-right
-            li #[a(href="https://www.topcoder.com/challenges/") Challenges]
-            li #[a(href="https://www.topcoder.com/community/") Community]
-            li #[a(href="https://www.topcoder.com/about/") About]
-            li #[a.blog(href="https://www.topcoder.com/blog/") Blog]
-        a#signup(ng-hide="isAuth()", href="#") Sign Up
-        a#my-account(ng-show="isAuth()", href="#", ng-click="isActive = !isActive", ng-init="isActive = false") My Account
-          i(ng-class="{'active': isActive}")
-      ul#navbar-hidden
-        li#login-small(ng-hide="isAuth()") #[a(href="#") Log In]
-        li#logout-small(ng-show="isAuth()") #[a(href="#") Log Out]
-        li.signup #[a(href="#") Sign up]
-    //- End Header
+  body(ng-app="lime-topcoder", ng-controller="main as main")
+    include layout/header.jade
 
-    .view-container
-      div(ui-view)
+    .view-container(ui-view, ng-class="$state.current.name", autoscroll="true")
+    .view-container-loading(ng-show="main.loading")
+      div.circle-3-loading
+        span.loading-wrapper
+          span.outer-circle
+          span.inner-circle
+            span.circle
 
-    footer#footer
-      .container
-        .connected
-          section.social
-            h4 Get Connected
+    include layout/footer.jade
 
-            ul
-              li #[a.fb(href='https://www.facebook.com/topcoder') FB]
-              li #[a.tw(href='http://www.twitter.com/topcoder') TW]
-              li #[a.gp(href='https://plus.google.com/u/0/b/104268008777050019973/104268008777050019973/posts') GP]
-              li #[a.in(href='https://www.linkedin.com/company/topcoder') IN]
+    script(src="https://cdn.auth0.com/w2/auth0-1.6.4.js", type="text/javascript")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js", type="text/javascript")
+    script(src="//app-abc.marketo.com/js/forms2/js/forms2.min.js", type="text/javascript")
 
-            .clear
-          section.updates
-            .row
-              form#emailForm(style='display:block')
-                input.email.isBlured(type='email', name='EMAIL', placeholder='Your email address', maxlength='64', style='display: block;')
-
-                input.btn.btnSubmitFooter(type='button', value='Submit')
-
-        .copyright
-          section
-            br
-            |&copy; 2014 topcoder. All Rights Reserved.
-
-            br
-
-            a.privacyStmtLink(href='http://topcoder.com/community/how-it-works/privacy-policy/') Privacy Policy
-            |  |&#32;
-            a.legalDisclaimerLink(href='http://topcoder.com/community/how-it-works/terms/') Terms
-        .clear
-
-    script(src="https://cdn.auth0.com/js/lock-7.0.min.js", type="text/javascript")
-
-    // build:js(.) scripts/vendor.js
-    // bower:js
+    // build:js({.,app}) scripts/vendor.js
     each bowerJsFile in bowerJsFiles
       script(src="bower_components/#{bowerJsFile}.js", type="text/javascript")
-    // endbower
+    each nonBowerJsFile in nonBowerJsFiles
+      script(src="content/scripts/#{nonBowerJsFile}.js", type="text/javascript")
     // endbuild
 
     // build:js({.tmp,app}) scripts/app.js
@@ -133,3 +143,13 @@ html
       script(src="#{jsFile}.js", type="text/javascript")
     // endbuild
 
+    script(type="text/javascript").
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+      __gaTracker('create', 'UA-6340959-1', 'auto');
+      __gaTracker('set', 'forceSSL', true);
+      __gaTracker('require', 'displayfeatures');
+      __gaTracker('send','pageview');

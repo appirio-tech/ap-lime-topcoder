@@ -1,0 +1,204 @@
+@import 'partials/combined';
+
+.register {
+  /*** REGISTER PAGE STYLE ***/
+  .register-header.header-row{
+    background: #070808;
+    border-bottom: 1px solid #232a26;
+  }
+  .big-logo{
+    display: block;
+
+    img {
+      width: 227px;
+    }
+  }
+  .register-content{
+    padding: 92px 46px 144px 102px;
+  }
+    .register-bg{
+      width: 100%;
+      background: url('../images/register-bg.jpg') no-repeat;
+      background-size: cover;
+      min-height: 927px;
+    }
+    .register-content .welcome{
+      @include myriad-pro-light();
+      font-size: 48px;
+      color: #ffffff;
+      margin-bottom: 12px;
+      line-height: 48px;
+    }
+    .register-msg p{
+      @include myriad-pro-light();
+      font-size: 32px;
+      color: #ffffff;
+      line-height: 38px;
+    }
+      .register-form{
+        margin: 46px 0 0 0;
+      }
+      .register-form .fields {
+        padding: 0 20px 20px 0;
+        margin: 0px; /* reset bootstrap's margin on .checkbox etc classes */
+      }
+      .register-form .txt-box{
+        border: none;
+        background: #ffffff;
+        outline: none;
+        border-radius: 10px;
+        width: 100%;
+        height: 53px;
+        text-indent: 16px;
+        font-size: 20px;
+        color: rgba(51, 70, 81, 0.81);
+      }
+      .register-form .form-control-feedback {
+            /* height and line-height are altered to match with .txt-box */
+            height: 53px;
+            line-height: 53px;
+            /* right is altered to match with padding of .fileds */
+            right: 20px;
+      }
+      .fields label {
+        @include myriad-pro();
+          font-size: 24px;
+          color: #ffffff;
+          /*margin: 0 0 0 16px;*/
+          padding-left: 0px;/* reset boostrap's .radio label, .checkbox label */
+          line-height: 60px;
+          font-weight: 400;
+      }
+      .fields label .form-control-feedback {
+        font-size: 16px; /* to match the size of the alert icon with other fields*/
+      }
+      .register-btn{
+        width: 117px;
+        height: 40px;
+        line-height: 40px;
+        margin: 54px 0 0;
+        float: right;
+        font-size: 22px;
+        border: none;
+      }
+      .register-form .txt-box::-webkit-input-placeholder,
+      .login-form .txt-box::-webkit-input-placeholder{
+        @include myriad-pro();
+          font-size: 20px;
+          color: rgba(51, 70, 81, 0.81);
+      }
+          .register-form .txt-box::-moz-placeholder,
+          .login-form .txt-box::-moz-placeholder {
+            @include myriad-pro();
+            font-size: 20px;
+            color: rgba(51, 70, 81, 0.81);
+          }
+              .register-form .txt-box::-ms-input-placeholder,
+              .login-form .txt-box::-ms-input-placeholder {
+                @include myriad-pro();
+              font-size: 20px;
+              color: rgba(51, 70, 81, 0.81);
+              }
+  .fields .icheckbox{
+    width: 35px;
+    height: 31px;
+    background: url("../images/checkbox.png") no-repeat 0 0;
+    float: left;
+    margin: 12px 13px 0 0;
+  }
+  .icheckbox.checked{
+    background: url("../images/checkbox.png") no-repeat 0 -38px;
+  }
+    .dropdown-menu {
+      right: 20px; /* adjusts for the padding of the parent element .fields */
+    }
+
+    /*** SELECT BOX RESET ***/
+    .wrap-dd-select {
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+      padding: 10px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.15);
+      box-shadow: 0 1px 1px rgba(50,50,50,0.1);
+      cursor: pointer;
+      outline: none;
+      font-weight: 400;
+      height: 53px;
+      @include myriad-pro();
+        font-size: 20px;
+        color: rgba(51, 70, 81, 0.81);
+        line-height: 38px;
+    }
+    .wrap-dd-select.active{
+      border-radius: 10px 10px 0 0;
+      display: block;
+    }
+    .wrap-dd-select .dropdown {
+      position: absolute;
+      top: 100%;
+      left: -1px;
+      right: -1px;
+      background: white;
+      padding: 0;
+      border-radius: 0 0 10px 10px;
+      border: none;
+      box-shadow: none;
+      font-weight: normal;
+      list-style: none;
+      display: none;
+      z-index: 100;
+
+    }
+    .wrap-dd-select.active .dropdown {
+      max-height: 300px;
+      overflow: scroll;
+      display: block;
+    }
+    .wrap-dd-select .dropdown li a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: rgba(51, 70, 81, 0.81);
+      border-bottom: 1px solid #ccc;
+      box-shadow: none;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .wrap-dd-select .dropdown:before{
+      border: none;
+    }
+    /*** END SELECT BOX RESET ***/
+  /*** END REGISTER STYLE ***/
+}
+@media(max-width: 992px){
+  .register {
+    .register-content {
+      padding: 72px 20px 144px 20px;
+    }
+    .register-content .big-logo {
+      margin: 0 0 15px 0px;
+      display: block;
+    }
+    .register-form .fields {
+      padding: 0 0px 20px 0;
+    }
+    .register-btn {
+      width: 100%;
+      margin: 18px 0 0;
+    }
+  }
+}
+@media(max-width: 490px){
+  .fields label .agree-txt{
+    width: 275px;
+    display: block;
+    line-height: 24px;/*to match font size*/
+    margin: 10px 0 0 0;
+  }
+}

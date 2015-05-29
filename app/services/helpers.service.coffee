@@ -1,78 +1,38 @@
 'use strict'
 
-Helpers = ($window, $location) ->
-  storeById: (object, questions) ->
-    angular.forEach questions, (question) ->
-      object[question.id] = question
+Helpers = (ENV) ->
+  formatArray: (data) ->
+    formatField = (key) ->
+      challenge[key] = challenge[key].join ', '
 
-  parseQuestions: (questions) ->
-    angular.forEach questions, (question) ->
-      index = question.description.indexOf '-'
-      selectOne = index > -1
+    formatField 'technologies' for challenge in data
+    formatField 'platforms' for challenge in data
 
-      if selectOne
-        question.topic       = question.description.slice 0, index - 1
-        question.description = question.description.slice index + 2
-        question.guideline   = question.guideline.split '\n'
-      else
-        question.topic = 'Elaborate'
+  processChallenge: (challenge) ->
+    if (challenge.challengeCommunity == 'design')
+      if (!challenge.technologies)
+        challenge.technologies = 'iOS Design'
+        
+      if (!challenge.platforms)
+        challenge.platforms = 'iOS'
+    
+    id = challenge.challengeId
 
-      if question.guideline[0][0] == '0'
-        question.type = 'SELECT_ONE'
-      else
-        question.type = 'TEXT'
-
-  parseAnswers: (questions, answers) ->
-    saved = false
-    angular.forEach answers, (answerObject) ->
-      questionId = answerObject.scorecardQuestionId
-      questions[questionId].answer = answerObject.answer
-      questions[questionId].reviewItemId = answerObject.id
-      if answerObject.answer != ''
-        saved = true
-
-    saved
-
-  compileReviewItems: (questions, review, updating) ->
-    reviewItems = []
-
-    for qId, q of questions
-      reviewItem =
-        reviewId: review.id
-        answer  : '' + q.answer
-
-      if updating
-        reviewItem.id = q.reviewItemId
-      else
-        reviewItem.scorecardQuestionId = parseInt qId
-        reviewItem.uploadId = review.uploadId
-
-      reviewItems.push reviewItem
-
-    reviewItems
-
-  countCompleted: (reviews) ->
-    reviews.reduce((numCompleted, review) ->
-      if review.committed == 1
-        return numCompleted + 1
-      numCompleted
-    , 0)
-
-  # Gets a query string parameter by name
-  getParameterByName: (name, url) ->
-    name    = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]')
-    regex   = new RegExp('[\\?&]' + name + '=([^&#]*)')
-    results = regex.exec url
-
-    if results == null
-      results = ''
+    if challenge.challengeType == 'Assembly Competition'
+      type = ''
     else
-      results = $window.decodeURIComponent results[1].replace(/\+/g, ' ')
+      type = '/?type=develop'
 
-    results
+    challenge.url = "https://www.#{ ENV.domain }/challenge-details/#{ id }#{ type }"
 
-angular.module('peerReview').factory 'Helpers', [
-  '$window'
-  '$location'
+    if challenge.reviewType and challenge.reviewType is 'PEER'
+      challenge.icon = 'peer'
+      challenge.thumb = 'content/images/peer-swift-challenge.png'
+    else
+      challenge.icon = 'swift'
+      challenge.thumb = 'content/images/swift-challenge-1.png'
+
+angular.module('lime-topcoder').factory 'Helpers', [
+  'ENV'
   Helpers
 ]

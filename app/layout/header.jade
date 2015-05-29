@@ -1,0 +1,42 @@
+
+header.header-row
+  .navbar.navbar-inverse.navbar-static-top.container(autocollapse-navbar)
+    a.small-logo.pull-left(ui-sref="landing")
+      img(src="content/images/logo-landing.png")
+    .navbar-header
+      button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#lime-nav-bar")
+        span.sr-only Toggle Navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    .header-right.pull-right
+      nav.main-nav.navbar-collapse.collapse(id="lime-nav-bar")
+        ul.nav.navbar-nav
+          li.dropdown
+            a.dropdown-toggle.dropdown-profile.pull-left(data-toggle="dropdown", aria-expanded="false", ng-class="{activeTab: $state.current.name == 'challenges'}")
+              span.pull-left Challenges
+              span.drop-arrow.pull-left
+            ul.profile-data.dropdown-menu.dropdown-menu-right
+              li
+                a(ui-sref="challenges({type: 'peer'})") Show Your Skills
+              li
+                a(ui-sref="challenges({type: 'all'})") iOS Challenges
+          li
+            a(ui-sref="learn", ng-class="{activeTab: $state.current.name == 'learn'}") Learn
+          li
+            a(href="https://help.{{main.domain}}", target="_blank") Help
+          li(ng-show="!main.loggedInUser")
+            a.btns.glow-btn.become-member(ui-sref="register") Become a member
+          li(ng-show="!main.loggedInUser")
+            a.dropdown-profile.pull-left(ui-sref="login")
+              img.pull-left(src="content/images/user.png")
+              span.pull-left Log in
+              span.drop-arrow.pull-left
+          li.dropdown(ng-show="main.loggedInUser")
+            a.dropdown-toggle.dropdown-profile.pull-left(data-toggle="dropdown", aria-expanded="false")
+              img.pull-left(ng-src="{{main.loggedInUser.photo}}")
+              span.pull-left(ng-bind="main.loggedInUser.handle")
+              span.drop-arrow.pull-left
+            ul.profile-data.dropdown-menu.dropdown-menu-right
+              li
+                a(href="#", ng-click="main.logout()") Logout
