@@ -17,11 +17,7 @@ Helpers = (ENV) ->
         challenge.platforms = 'iOS'
     
     id = challenge.challengeId
-
-    if challenge.challengeType == 'Assembly Competition'
-      type = ''
-    else
-      type = '/?type=develop'
+    type = if challenge.challengeCommunity then '/?type=' + challenge.challengeCommunity else ''
 
     challenge.url = "https://www.#{ ENV.domain }/challenge-details/#{ id }#{ type }"
 
