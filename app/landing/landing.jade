@@ -18,22 +18,20 @@
       p Thanks for joining. Before you can compete, you'll need to confirm your email account with topcoder, so be sure to check your email for the activation link.
 
     .banner-text(ng-show="main.loggedInUser && main.loggedInUser.memberSince")
-      p I'm sure you're anxious to get started. Don't let us get in the way, we've got a bunch of new challenges lined up with Apple, lots of Swift challenges across the board, and a new model of competition based on peer reviews.
+      p I'm sure you're eager to start. Don't let us get in the way, we've got a bunch of new challenges lined up with Apple, lots of Swift challenges across the board, and a new model of competition based on peer reviews.
 
     ul.banner-actions
       li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn More]
 
       li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a Member]
-      li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(href="#challenges", du-smooth-scroll) Get started competing]
+      li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(href="#challenges", du-smooth-scroll) Start Competing]
 
 .get-training-section.learn-page#learn-more
   section.container
-    h1.section-header Get iOS training and instruction
+    h1.section-header Compete and learn from the best.
 
     .row
       .col-xs-12.col-md-6.col-md-push-6.content-col
-        .section-subheader Compete and learn from the best.
-
         p You are not a typical developer. You want to be the one who builds the winning solution for top companies - the companies who are looking for the best in iOS application development. You want to learn the latest mobile app languages like Swift to stand out from the crowd. And you want to prove it by showing what you can do and getting recognized for it.  Join and compete in the Apple Developer Community to connect and engage with your peers across the globe, receive feedback on your work from the most successful iOS developers and designers, and showcase your talent while building real-world applications to win cash along the way.
 
         ul.section-actions
@@ -106,13 +104,13 @@
 section.learn-improve-section.landing-annon-page
   .container
     header.section-header
-      h1.heading Learn and improve
+      h1.heading Up Your iOS App Dev Skills
 
-      p Participate in the Apple Developer Community program
+      p Take the first steps to stand out in the Community
 
     section.row
       .col-xs-12.col-md-6.col-md-push-6.logo-column
-        img(alt='Learn and Improve', src='content/images/learn-and-improve.png')
+        img(alt='Up Your iOS App Dev Skills', src='content/images/learn-and-improve.png')
 
       .col-xs-12.col-md-6.col-md-pull-6.content-col
 

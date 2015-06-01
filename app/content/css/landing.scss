@@ -281,22 +281,12 @@
     }
   }
 
-  .get-training-section .section-subheader {
-    margin-bottom: 20px;
-    font-size: 29px;
-    opacity: 0.9;
-    color: $header-gray;
-  }
-
   .get-training-section.learn-page {
     margin-bottom: 33px;
 
     .section-header {
-      font-weight: 400;
+      @include myriad-pro-light;
       margin-top: 51px;
-    }
-    .section-subheader {
-      margin-bottom: 15px;
     }
     .section-actions {
       margin-top: 54px;
@@ -316,6 +306,10 @@
         margin-left: -19px;
         max-width: 550px;
 
+        p {
+          margin-top: 75px;
+        }
+
         &:before {
           position: absolute;
           width: 669px;
@@ -324,9 +318,6 @@
           top: 57px;
           margin-right: -40px;
         }
-      }
-      .section-subheader {
-        margin-top: 75px;
       }
     }
 
@@ -346,7 +337,7 @@
         width: 500px;
         height: 385px;
       }
-      .section-subheader, a {
+      a {
         text-align: center;
       }
     }
