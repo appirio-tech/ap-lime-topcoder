@@ -5,8 +5,7 @@
         img(src="content/images/logo-landing.png")
       p.welcome Welcome friend.
       .register-msg
-        p We're happy to have you join our community.
-        p Please tell us a little bit about yourself.
+        p We're happy to have you join our community. Please tell us a little bit about yourself.
     form.register-form.col-xs-12.padding-reset(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()")
       .col-xs-12.fields(ng-show="vm.frm.error")
         .alert.alert-danger(ng-bind="vm.frm.errorMessage")

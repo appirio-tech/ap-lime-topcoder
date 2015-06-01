@@ -1,42 +1,54 @@
 @import 'partials/combined';
 
 .register {
-  /*** REGISTER PAGE STYLE ***/
-  .register-header.header-row{
-    background: #070808;
-    border-bottom: 1px solid #232a26;
-  }
-  .big-logo{
-    display: block;
-
-    img {
-      width: 227px;
-    }
+  .register-bg{
+    width: 100%;
+    background: url('../images/register-bg.jpg') no-repeat;
+    background-size: cover;
+    min-height: 927px;
   }
   .register-content{
     padding: 92px 46px 144px 102px;
-  }
-    .register-bg{
-      width: 100%;
-      background: url('../images/register-bg.jpg') no-repeat;
-      background-size: cover;
-      min-height: 927px;
+
+    .big-logo{
+      display: block;
+
+      img {
+        width: 227px;
+        @media only screen and (max-width: 767px) {
+          width: 175px;
+        }
+      }
     }
-    .register-content .welcome{
+    .welcome {
+      margin-bottom: 12px;
       @include myriad-pro-light();
       font-size: 48px;
-      color: #ffffff;
-      margin-bottom: 12px;
       line-height: 48px;
+      color: $white;
+      @media only screen and (max-width: 767px) {
+        font-size: 30px;
+        line-height: 40px;
+      }
     }
-    .register-msg p{
+    .register-msg p {
       @include myriad-pro-light();
       font-size: 32px;
-      color: #ffffff;
+      color: $white;
       line-height: 38px;
+      max-width: 650px;
+      @media only screen and (max-width: 767px) {
+        font-size: 18px;
+        line-height: 23px;
+        max-width: 365px;
+      }
     }
+  }
       .register-form{
         margin: 46px 0 0 0;
+        @media only screen and (max-width: 767px) {
+          margin-top: 35px;
+        }
       }
       .register-form .fields {
         padding: 0 20px 20px 0;
@@ -44,11 +56,12 @@
       }
       .register-form .txt-box{
         border: none;
-        background: #ffffff;
+        background: $white;
         outline: none;
         border-radius: 10px;
         width: 100%;
         height: 53px;
+        line-height: 53px;
         text-indent: 16px;
         font-size: 20px;
         color: rgba(51, 70, 81, 0.81);
@@ -63,7 +76,7 @@
       .fields label {
         @include myriad-pro();
           font-size: 24px;
-          color: #ffffff;
+          color: $white;
           /*margin: 0 0 0 16px;*/
           padding-left: 0px;/* reset boostrap's .radio label, .checkbox label */
           line-height: 60px;
@@ -174,7 +187,6 @@
       border: none;
     }
     /*** END SELECT BOX RESET ***/
-  /*** END REGISTER STYLE ***/
 }
 @media(max-width: 992px){
   .register {
