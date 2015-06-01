@@ -28,4 +28,4 @@
             a.forget(href="https://www.{{vm.domain}}/password-recovery/", target="_blank") Forgot your password?
           input.col-xs-12.col-sm-3.btns.glow-btn.sign-in.mob-sign.pull-right(type="submit", value="Sign In", ng-click="vm.doLogin()", ng-show="!vm.loggingIn")
           input.col-xs-12.col-sm-3.btns.glow-btn.sign-in.mob-sign.pull-right(type="button", value="Signing In", ng-show="vm.loggingIn")
-          a.col-xs-12.padding-reset.mob-register.pull-left.reg-link(href="#/register") Register?
+          a.col-xs-12.padding-reset.mob-register.pull-left.reg-link(ui-sref="register") Register
