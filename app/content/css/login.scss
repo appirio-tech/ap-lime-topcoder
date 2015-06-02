@@ -64,12 +64,17 @@
         color: #3a444c;
         line-height: 24px;
         display: inline-block;
+        text-align: left;
       }
       .login-form .reg-link{
         font-size: 24px;
         color: #27aae1;
         text-decoration: underline;
         line-height: 24px;
+
+        @media only screen and (max-width: 767px) {
+          text-align : right;
+        }
       }
       .sign-in{
         width: 86px;
@@ -79,6 +84,7 @@
         font-size: 16px;
         border: none;
         padding: 0px;
+        float: right;
       }
       .help-inline{
         color: #b94a48;
@@ -110,6 +116,7 @@
     /*** LOGIN PAGE ***/
     .login-content {
         padding: 92px 20px 144px 30px;
+        text-align: center;
     }
     .login-content .big-logo {
       margin: 0 0 15px 0px;
@@ -119,15 +126,10 @@
     .login-form .row:last-child {
       width: 100%;
     }
-    .mob-sign {
-      width: 100%;
-      margin: 10px 0 0;
-    }
-    .mob-sign.sign-in {
-      width: 100%;
-    }
-    .mob-register {
-      margin: 10px 0 0;
+    .sign-in {
+      clear: both;
+      float: none;
+      margin: 30px auto 0px auto;
     }
     /***  END LOGIN PAGE ***/
   }
