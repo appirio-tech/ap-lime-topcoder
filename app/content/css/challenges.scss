@@ -673,6 +673,28 @@
     .challenges-section {
         background-color: #f0f0f0;
         padding-bottom: 40px;
+
+        .badge-info {
+            width: 75%;
+            margin: 40px auto 0;
+            @include myriad-pro-light;
+            color: #383D43;
+
+            h1 {
+                font-size: 30px;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            p {
+                font-size: 20px;
+                line-height: 1.2;
+                @media only screen and (max-width: 767px) {
+                    font-size: 17px;
+                }
+            }
+
+        }
+
         .section-header {
             color: $header-gray;
             font-weight: 300;

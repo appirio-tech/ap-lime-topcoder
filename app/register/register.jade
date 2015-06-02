@@ -47,7 +47,7 @@
             span#emailErrorStatus.sr-only (error)
 
         .fields(ng-class="{'has-error has-feedback': vm.hasError('password')}")
-            input.txt-box(name="password", type="password", placeholder="password", ng-model="vm.reg.password", aria-describedby="passwordErrorStatus", required)
+            input.txt-box(name="password", type="password", placeholder="Password", ng-model="vm.reg.password", aria-describedby="passwordErrorStatus", required)
             // used ng-show workaround to hide in non error state
             span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('password')")
             span#passwordErrorStatus.sr-only (error)

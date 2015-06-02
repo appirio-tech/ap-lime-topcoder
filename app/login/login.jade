@@ -26,7 +26,7 @@
         .row(rel="submit")
           div.col-xs-12.col-sm-9.pull-left.padding-reset
             a.col-xs-9.col-sm-12.padding-reset.forget(href="https://www.{{vm.domain}}/password-recovery/", target="_blank") Forgot your password?
-            a.col-xs-3.col-sm-12.padding-reset.mob-register.reg-link(href="#/register") Register
+            a.col-xs-3.col-sm-12.padding-reset.mob-register.reg-link(ui-sref="register") Register
           div.center-align-text.col-xs-12.col-sm-3.padding-reset
             input.col-xs-12.col-sm-3.btns.glow-btn.sign-in(type="submit", value="Sign In", ng-click="vm.doLogin()", ng-show="!vm.loggingIn")
             input.col-xs-12.col-sm-3.btns.glow-btn.sign-in(type="button", value="Signing In", ng-show="vm.loggingIn")
