@@ -10,13 +10,13 @@ div(ng-controller="challenges as vm")
             h1.section-header.ellipses Show Your Skills Badge
             .summary
              .row
-              .desc.col-xs-12 Ready to show your iOS mobile app development skills? The “Show Your Skills” bages use a peer-review process where you submit a solution to a problem and get reviewed by other developers working on that same problem. It is a great way to learn by doing, see how others approach the problem, and get feedback on your solution. Peer reviews are one of the most important activities you can do to improve your code and skills!
-              .col-xs-12.col-sm-6.cn Successful completion of the peer-review process results in a "iOS Proficient" badge that helps set you apart from other developers in the community.
+              .desc.col-xs-12 Ready to show your iOS mobile app development skills? The “Show Your Skills” badges use a peer-review process where you submit a solution to a problem and get reviewed by other developers working on that same problem. It is a great way to learn by doing, see how others approach the problem, and get feedback on your solution. Peer reviews are one of the most important activities you can do to improve your code and skills!
+
               .col-xs-12.col-sm-6.cn Completion Includes:
                 ul.lst
-                  li Completing a Show Your Skills challenge - choose one from the list below
+                  li Complete a Show Your Skills challenge - choose one from the list below
                   li Use an iOS-specific scorecard to review and score 5 solutions submitted by your peers
-                  li Receiving feedback and a "pass" score from your peers
+                  li Receive feedback and a "pass" score from your peers
             .learn Visit our #[a.lnk(href="#") help center] to learn more about peer reviews.
             .actns
               a.btn.btnChallenges(href='#view-challenges', du-smooth-scroll) View Peer Challenges
@@ -57,30 +57,35 @@ div(ng-controller="challenges as vm")
 
   .challenges-section.landing-annon-page#view-challenges
     section.container
+      .badge-info(ng-show="vm.challengesType == 'peer'")
+        h1 Swift/iOS Ready! Show Your Skills Badge
+
+        p To start, complete a Swift/iOS Ready! challenge.  Successful completion of one of these challenges results in a "Swift/iOS Ready!" badge that helps set you apart from other developers in the community.  Each challenge asks you to complete part of an iOS mobile app by demonstrating you have the knowledge and capabilities to create high-quality iOS apps.  After you submit your solution, you will need to review 5 other submissions to complete the challenge and receive a score. If you pass, you receive the Swift/iOS Ready! badge.
+
       header.section-header.fluid
         h1.heading(ng-show="vm.challengesType == 'all'") Current Challenges
 
-        div.browse(ng-show="vm.challengesType == 'all'") Browse our available challenges and compete.
+        .browse(ng-show="vm.challengesType == 'all'") Browse our available challenges and compete.
           .viewType.hidden-xs
             a.lnk(ui-sref="challenges({type: 'peer'})") Peer
             a.gridView(ng-click="isGrid=true")
             a.listView(ng-click="isGrid=false")
 
-        div.browse(ng-show="vm.challengesType == 'peer'") Show Your Skills Challenges - Register Today!
+        .browse(ng-show="vm.challengesType == 'peer'") Show Your Skills Challenges - Register Today!
           .viewType.hidden-xs
             a.lnk(ui-sref="challenges({type: 'all'})") View All
             a.gridView(ng-click="isGrid=true")
             a.listView(ng-click="isGrid=false")
 
-      div.listView.hidden-xs(ng-show="!isGrid")
+      .listView.hidden-xs(ng-show="!isGrid")
         ul.challengeList
           li.col-xs-12.header
-            div.col1.pull-left &nbsp;
-            div.col2.pull-left CHALLENGE
-            div.col3.pull-left(ng-show="vm.challengesType == 'all'") PRIZE &amp; DEADLINE
-            div.col3.pull-left(ng-show="vm.challengesType == 'peer'") START &amp; END TIMES
-            div.col4.pull-left REGISTRANTS
-            div.col5.pull-left SUBMISSIONS
+            .col1.pull-left &nbsp;
+            .col2.pull-left CHALLENGE
+            .col3.pull-left(ng-show="vm.challengesType == 'all'") PRIZE &amp; DEADLINE
+            .col3.pull-left(ng-show="vm.challengesType == 'peer'") START &amp; END TIMES
+            .col4.pull-left REGISTRANTS
+            .col5.pull-left SUBMISSIONS
 
           li.liRw.col-xs-12(ng-repeat="challenge in vm.challenges")
             .chrw.clearfix
@@ -166,7 +171,7 @@ div(ng-controller="challenges as vm")
 
         p Learn, get badged, and compete as a member of the Apple Developer Community
 
-      a.btn(ui-sref="learn") Become a Member
+      a.btn(ui-sref="register") Become a Member
 
 
 

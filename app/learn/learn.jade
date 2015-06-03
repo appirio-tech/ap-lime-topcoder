@@ -15,15 +15,15 @@ div(ng-controller="learn as vm")
 
   section.container.learn-badges-section#learn-more
     header.section-header
-      h1.heading Get iOS training and instruction
+      h1.heading Stand Out in the Apple Developer Community
 
-      p Whether you are an experienced iOS developer or are just getting started, follow these steps to join and grow in the iOS Developer Community:
+      p Whether you are an experienced iOS developer or are just getting started, follow these steps to join and grow in the Apple Developer Community:
 
     .badge-list.row
       .badge-item.participant-badge.col-xs-12.col-md-4
         .badge-header Participant Badge
 
-        p.badge-desc(ng-show="!vm.registered") Sign up as an iOS Developer Community participant and earn a participant badge.
+        p.badge-desc(ng-show="!vm.registered") Sign up as an Apple Developer Community participant and earn a participant badge.
 
         p.badge-desc(ng-show="vm.registered")
           img.achieved(src="content/images/ico-okay-check.png")
@@ -116,4 +116,4 @@ div(ng-controller="learn as vm")
 
         p Learn, get badged, and compete as a member of the Apple Developer Community
 
-      a.btn(ui-sref="challenges({type: 'peer'})") Become a Member
+      a.btn(ui-sref="register") Become a Member
