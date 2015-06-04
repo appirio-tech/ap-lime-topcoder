@@ -36,7 +36,6 @@ learn = ($scope, ENV, MemberCertService, $state) ->
       # TODO show error
       main.loading = false
       vm.registered = false
-    
 
   vm.registerForProgram = () ->
     vm.registrationError = null

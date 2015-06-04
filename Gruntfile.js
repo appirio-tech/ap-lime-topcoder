@@ -291,9 +291,6 @@ module.exports = function (grunt) {
           'no_unnecessary_double_quotes': {
             'level': 'error'
           },
-          'prefer_english_operator': {
-            'level': 'warn'
-          },
           'space_operators': {
             'level': 'error'
           },
