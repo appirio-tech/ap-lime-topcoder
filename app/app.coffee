@@ -7,7 +7,6 @@ dependencies = [
   'ui.router'
   'ngCookies'
   'ui.bootstrap'
-  'ngDropdowns'
   'duScroll'
 ]
 
