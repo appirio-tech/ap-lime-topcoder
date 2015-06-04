@@ -1,136 +1,137 @@
 @import 'partials/combined';
 
 .login {
-  /*** LOGIN PAGE CONTENT ***/
-  .login-content{
+  .login-content {
     background: #ffffff;
     padding: 92px 0 144px 95px;
-  }
-  .big-logo{
-    margin: 0 0 20px 0px;
-    display: block;
-
-    img {
-      width: 227px;
+    @media only screen and (max-width: 768px) {
+      padding-right: 30px;
+      padding-left: 30px;
     }
-  }
-    .welcome{
+
+    .big-logo {
+      margin: 0 0 20px 0px;
+      display: block;
+      @media only screen and (max-width: 768px) {
+        margin: 0 0 15px 0px;
+        display: block;
+      }
+      img {
+        width: 227px;
+        @media only screen and (max-width: 400px) {
+          width: 180px;
+        }
+      }
+    }
+    .welcome {
       @include myriad-pro-light();
       font-size: 48px;
       color: #565859;
       margin-bottom: 12px;
       line-height: 48px;
+      @media only screen and (max-width: 400px) {
+        font-size: 34px;
+        line-height: 34px;
+      }
     }
-    .login-form{
+    .login-form {
       margin: 0 0 0 0px;
 
-      .form-control-feedback {
-        /* height and line-height are altered to match with .txt-box */
-        height: 53px;
-        line-height: 53px;
-      }
-    }
-    .login-form .form-msg{
-      @include myriad-pro-light();
-      font-size: 32px;
-      color: #333e48;
-      margin-bottom: 22px;
-      line-height: 32px;
-    }
-    .login-form .row{
-      margin-bottom: 18px;
-      margin-left: 0px;
-      margin-right: 0px;
-    }
-    .login-form .row:nth-child(2){
-      margin-bottom: 27px;
-    }
-    .login-form .row:nth-child(3),
-    .login-form .row:last-child{
-      margin-bottom: 0px;
-    }
-    .login-form .row .txt-box{
-      border: 1px solid #545555;
-      background: #f3f3f1;
-      outline: none;
-      border-radius: 5px;
-      height: 53px;
-      text-indent: 16px;
-      font-size: 20px;
-      color: rgba(51, 70, 81, 0.81);
-    }
-      .login-form .forget{
-        font-size: 24px;
-        color: #3a444c;
-        line-height: 24px;
-        display: inline-block;
-        text-align: left;
-      }
-      .login-form .reg-link{
-        font-size: 24px;
-        color: #27aae1;
-        text-decoration: underline;
-        line-height: 24px;
-
-        @media only screen and (max-width: 767px) {
-          text-align : right;
+      .form-msg {
+        @include myriad-pro-light();
+        font-size: 32px;
+        color: #333e48;
+        margin-bottom: 22px;
+        line-height: 32px;
+        @media only screen and (max-width: 400px) {
+          font-size: 26px;
+          line-height: 26px;
         }
       }
-      .sign-in{
-        width: 86px;
-        height: 29px;
-        line-height: 29px;
-        margin: 2px 0 0;
-        font-size: 16px;
-        border: none;
-        padding: 0px;
-        float: right;
-      }
-      .help-inline{
-        color: #b94a48;
-        font-size: 14px;
-        display: block;
-        margin: 5px 0 0 0;
-      }
-      .fields label .help-inline{
-        color: #b94a48;
-        font-size: 14px;
-        display: block;
-        margin: 0;
-        position: absolute;
-        left: 16px;
-        top: 42px;
-      }
-      .register-form .wrap-dd-select.error,
-      .register-form .txt-box.error{
-        border: 2px solid #a94442;
-      }
-      .login-form .row .txt-box.error{
-        border: 2px solid #a94442;
-      }
-  /*** END LOGIN PAGE CONTENT ***/
-}
+      .row {
+        margin-bottom: 18px;
+        margin-left: 0px;
+        margin-right: 0px;
 
-@media(max-width: 768px) {
-  .login {
-    /*** LOGIN PAGE ***/
-    .login-content {
-        padding: 92px 20px 144px 30px;
-        text-align: center;
+        &:nth-child(2) {
+          margin-bottom: 27px;
+        }
+        &:nth-child(3),
+        &:last-child {
+          margin-bottom: 0px;
+          @media only screen and (max-width: 768px) {
+            width: 100%;
+          }
+        }
+        .form-control-feedback {
+          /* height and line-height are altered to match with .txt-box */
+          height: 53px;
+          line-height: 53px;
+          @media only screen and (max-width: 400px) {
+            height: 43px;
+            line-height: 43px;
+          }
+        }
+        .txt-box {
+          border: 1px solid #545555;
+          background: #f3f3f1;
+          outline: none;
+          border-radius: 5px;
+          height: 53px;
+          text-indent: 16px;
+          font-size: 20px;
+          color: rgba(51, 70, 81, 0.81);
+          @media only screen and (max-width: 400px) {
+            height: 43px;
+            text-indent: 5px;
+            font-size: 16px;
+          }
+        }
+        .forget {
+          font-size: 24px;
+          color: #3a444c;
+          line-height: 24px;
+          display: inline-block;
+          text-align: left;
+          @media only screen and (max-width: 400px) {
+            font-size: 17px;
+            line-height: 17px;
+          }
+        }
+        .reg-link {
+          font-size: 24px;
+          color: #27aae1;
+          text-decoration: underline;
+          line-height: 24px;
+          margin-top: 10px;
+          @media only screen and (max-width: 767px) {
+            margin-top: 0;
+            text-align: right;
+          }
+          @media only screen and (max-width: 400px) {
+            font-size: 17px;
+            line-height: 17px;
+          }
+        }
+        .sign-in {
+          width: 86px;
+          height: 29px;
+          line-height: 29px;
+          margin: 2px 0 0;
+          font-size: 16px;
+          border: none;
+          padding: 0px;
+          float: right;
+          @media only screen and (max-width: 768px) {
+            float: left;
+            margin: 30px auto 0px auto;
+          }
+          @media only screen and (max-width: 400px) {
+            width: 80px;
+            font-size: 15px;
+          }
+        }
+      }
     }
-    .login-content .big-logo {
-      margin: 0 0 15px 0px;
-      display: block;
-    }
-    .login-form .row .txt-box,
-    .login-form .row:last-child {
-      width: 100%;
-    }
-    .sign-in {
-      clear: both;
-      float: none;
-      margin: 30px auto 0px auto;
-    }
-    /***  END LOGIN PAGE ***/
   }
 }
