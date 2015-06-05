@@ -26,7 +26,7 @@
       li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a Member]
       li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(href="#challenges", du-smooth-scroll) Start Competing]
 
-.get-training-section.learn-page#learn-more
+.get-training-section#learn-more
   section.container
     h1.section-header Compete and learn from the best.
 
@@ -48,7 +48,7 @@
 
     form#mktoForm_1944.newsletter-form
 
-.challenges-section.landing-annon-page#challenges
+.challenges-section#challenges
   section.container
     header.section-header
       h1.heading Current Challenges
@@ -101,7 +101,7 @@
       li
         a(ui-sref="challenges({type: 'all'})") View full challenge list
 
-section.learn-improve-section.landing-annon-page
+section.learn-improve-section
   .container
     header.section-header
       h1.heading Up Your iOS App Dev Skills
@@ -148,7 +148,7 @@ section.learn-improve-section.landing-annon-page
           .link-row
             a.btn(ui-sref="challenges({type: 'all'})") Learn more
 
-.learn-section.learn-page
+.learn-section
   section.container
     header.section-header
       h1.heading Ready to Stand Out in the Crowd?
