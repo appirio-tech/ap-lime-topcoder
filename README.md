@@ -1,7 +1,6 @@
 # Lime-Topcoder
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.11.1. This repository uses Jade, SCSS, CoffeeScript, Angular, and Grunt.
+This repository uses Jade, SCSS, CoffeeScript, Angular, and Grunt and was generated with [yo angular generator](https://github.com/yeoman/generator-angular) version 0.11.1.
 
 ## Installation
 
@@ -15,15 +14,27 @@ Install dependencies by running the following in the root of the project:
 
 ## Build & Development
 
-- To run locally: `grunt serve`
-- To build: `grunt`
-- To run build: `grunt serve:dist`
+- To run locally without minification: `grunt serve`
+
+- To build dist folder
+ - dev: `grunt build-dev`
+ - qa: `grunt build-qa`
+ - prod: `grunt build`
+
+- To serve builds
+ - dev: `grunt serve:dev`
+ - qa: `grunt serve:qa`
+ - prod: `grunt serve:prod`
 
 ## Testing
 
-Running `grunt test` will run the unit tests with karma. (There are currently no tests)
+Running `grunt test` will run the unit tests with karma.
 
 ## Contributing
+
+### Pull Requests
+
+To contribute to the repository, please create a feature branch off of the dev branch. Once you're finished working on the feature, make a pull request to merge it into dev. Then, delete the branch when it's no longer used.
 
 ### Quick Description of Key Files and Folders
 
@@ -31,7 +42,7 @@ Running `grunt test` will run the unit tests with karma. (There are currently no
  - app.constants.coffee - created from the Gruntfile's ngconstant task. Add constants to the Gruntfile.
  - app.routes.coffee - UI-Router states
  - index.jade - contains the header, content (ui-view), and footer
- - Content folder - contains CSS, Data, Fonts, Images, and Locales
+ - Content folder - contains CSS, Fonts, Images, and Locales, and Scripts (Non-Bower JavaScript files)
 
 ### Adding new content
 
@@ -46,7 +57,7 @@ SCSS Files
   - Add new files to index.jade
   - Use SCSS syntax (nesting)
   - Use variables and mixins as much as possible
-  - Store new variables and mixins in the appropriate file in the partials folder
+  - Store new variables and mixins in the appropriate file in `app/content/css/partials`
   - Use landing.scss as a guide
 
 CoffeeScript
