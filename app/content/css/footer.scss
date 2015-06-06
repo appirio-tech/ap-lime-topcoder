@@ -89,6 +89,9 @@ footer ul.social li .tw:hover {
       width: 9px;
       height: 18px;
       background: url('../images/icons.png') no-repeat 0 -37px;
+      @media only screen and (max-width: 767px) {
+        margin-right: 30px;
+      }
     }
   }
 
