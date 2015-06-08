@@ -746,8 +746,8 @@
         margin-top: 40px;
     }
     .challenge {
-        max-width: 256px;
-        height: 448px;
+        max-width: 290px;
+        height: 480px;
         margin: 0 auto;
         background-color: $white;
         margin-bottom: 37px;
@@ -771,9 +771,14 @@
         color: $challenge-black;
         font-size: 20px;
         margin: 3px 0 0 4px;
-    }
-    .challenge-header a {
-        color: inherit;
+        @include ellipsis;
+        @media only screen and (max-width: 415px) {
+            font-size: 16px;
+        }
+
+        a {
+            color: inherit;
+        }
     }
     .challenge-data {
         opacity: 0.7;
@@ -819,10 +824,12 @@
         }
     }
     .challenge-stat {
-        margin-top: 25px;
+        margin-top: 37px;
         padding-left: 19px;
+        padding-right: 0;
+
         & + .challenge-stat {
-            padding-left: 29px;
+            padding-left: 20px;
             border-left: 1px solid rgba(60, 61, 61, 0.3);
         }
     }

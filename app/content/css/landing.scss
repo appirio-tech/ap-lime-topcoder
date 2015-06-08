@@ -478,9 +478,10 @@
           .challenge-stat {
             margin-top: 37px;
             padding-left: 19px;
+            padding-right: 0;
 
             & + .challenge-stat {
-              padding-left: 29px;
+              padding-left: 20px;
               border-left: 1px solid rgba(60, 61, 61, 0.3);
             }
             .stats-type {
