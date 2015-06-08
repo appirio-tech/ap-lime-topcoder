@@ -673,6 +673,28 @@
     .challenges-section {
         background-color: #f0f0f0;
         padding-bottom: 40px;
+
+        .badge-info {
+            width: 75%;
+            margin: 40px auto 0;
+            @include myriad-pro-light;
+            color: #383D43;
+
+            h1 {
+                font-size: 30px;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            p {
+                font-size: 20px;
+                line-height: 1.2;
+                @media only screen and (max-width: 767px) {
+                    font-size: 17px;
+                }
+            }
+
+        }
+
         .section-header {
             color: $header-gray;
             font-weight: 300;
@@ -724,8 +746,8 @@
         margin-top: 40px;
     }
     .challenge {
-        max-width: 256px;
-        height: 448px;
+        max-width: 290px;
+        height: 480px;
         margin: 0 auto;
         background-color: $white;
         margin-bottom: 37px;
@@ -749,9 +771,14 @@
         color: $challenge-black;
         font-size: 20px;
         margin: 3px 0 0 4px;
-    }
-    .challenge-header a {
-        color: inherit;
+        @include ellipsis;
+        @media only screen and (max-width: 415px) {
+            font-size: 16px;
+        }
+
+        a {
+            color: inherit;
+        }
     }
     .challenge-data {
         opacity: 0.7;
@@ -797,10 +824,12 @@
         }
     }
     .challenge-stat {
-        margin-top: 25px;
+        margin-top: 37px;
         padding-left: 19px;
+        padding-right: 0;
+
         & + .challenge-stat {
-            padding-left: 29px;
+            padding-left: 20px;
             border-left: 1px solid rgba(60, 61, 61, 0.3);
         }
     }
@@ -1155,7 +1184,7 @@
         }
     }
     .developer-slide-1 {
-        background-image: url('../images/bg-banner.jpg');
+        background-image: url('../images/bg-banner.png');
         background-size: cover;
         background-position: 50% 0;
         background-repeat: no-repeat;

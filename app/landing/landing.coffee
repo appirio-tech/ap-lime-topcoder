@@ -11,12 +11,12 @@ landing = ($scope, $state, ChallengeService, Helpers, ENV) ->
     peerChallenges = response.data.data.slice 0, 1
     numPeerChallenges = peerChallenges.length
 
-    ChallengeService.getChallenges()
+    ChallengeService.getChallenges(review: 'COMMUNITY,INTERNAL')
     .then (response) ->
       nonPeerChallenges = response.data.data.slice 0, 3
-      if numPeerChallenges is 1
+      if numPeerChallenges == 1
         $scope.challenges = peerChallenges.concat(nonPeerChallenges.slice 0, 2)
-      else if numPeerChallenges is 0
+      else if numPeerChallenges == 0
         $scope.challenges = nonPeerChallenges
 
       Helpers.formatArray $scope.challenges

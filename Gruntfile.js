@@ -145,8 +145,12 @@ module.exports = function (grunt) {
       livereload: {
         options: {
           open: true,
-          middleware: function (connect) {
+          middleware: function (connect, options, middlewares) {
+            var modRewrite = require('connect-modrewrite');
+
             return [
+              // Support $locationProvider.html5Mode(true);
+              modRewrite(['!\\.html|\\.js|\\.svg|\\.css|\\.jpg|\\.jpeg|\\.gif|\\.webp|\\.woff|\\.png$ /index.html [L]']),
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
@@ -286,9 +290,6 @@ module.exports = function (grunt) {
           },
           'no_unnecessary_double_quotes': {
             'level': 'error'
-          },
-          'prefer_english_operator': {
-            'level': 'warn'
           },
           'space_operators': {
             'level': 'error'
