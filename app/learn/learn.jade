@@ -1,119 +1,118 @@
-div(ng-controller="learn as vm")
-  .top-banner
-    section.container
-      h1.banner-header Ready to join our #[strong Apple Developer Community?]
+.top-banner
+  section.container
+    h1.banner-header Ready to join our #[strong Apple Developer Community?]
 
-      .banner-text
-        p Experienced and proven iOS developers are in high-demand. Prove your skills by earning these iOS topcoder badges and gain exclusive access to iOS challenges and prize accelerators, special previews into Apple’s content and releases, and special community-related events and info.
+    .banner-text
+      p Experienced and proven iOS developers are in high-demand. Prove your skills by earning these iOS topcoder badges and gain exclusive access to iOS challenges and prize accelerators, special previews into Apple’s content and releases, and special community-related events and info.
 
-        ul.banner-actions
-          li
-            a.learn-link(href='#learn-more', du-smooth-scroll) Learn more
+      ul.banner-actions
+        li
+          a.learn-link(href='#learn-more', du-smooth-scroll) Learn more
 
-          li(ng-show="!main.loggedInUser")
-            a.btn(ui-sref='register') Become a Member
+        li(ng-show="!main.loggedInUser")
+          a.btn(ui-sref='register') Become a Member
 
-  section.container.learn-badges-section#learn-more
+section.container.learn-badges-section#learn-more
+  header.section-header
+    h1.heading Stand Out in the Apple Developer Community
+
+    p Whether you are an experienced iOS developer or are just getting started, follow these steps to join and grow in the Apple Developer Community:
+
+  .badge-list.row
+    .badge-item.participant-badge.col-xs-12.col-md-4
+      .badge-header Participant Badge
+
+      p.badge-desc(ng-show="!vm.registered") Sign up as an Apple Developer Community participant and earn a participant badge.
+
+      p.badge-desc(ng-show="vm.registered")
+        img.achieved(src="content/images/ico-okay-check.png")
+        span(ng-show="!vm.registrationSuccess") You have the participant badge
+        span(ng-show="vm.registrationSuccess") Congratulations!!! You just earned the particpant badge
+
+      .badge-link
+        a.btn(ng-click="vm.registerForProgram()", ng-show="!vm.registered") Select
+        span.text-danger.margin-left-2x(ng-show="vm.registrationError", ng-bind="vm.registrationError")
+
+    .badge-item.education-badge.col-xs-12.col-md-4
+      .badge-header Education Badges
+
+      p Take an Apple-certified training class to earn Education badges
+
+      .badge-link
+        a.btn(ui-sref="challenges({type: 'peer'})", disabled) Coming Soon
+
+    .badge-item.peer-badge.col-xs-12.col-md-4
+      .badge-header Show Your Skills Badges
+
+      p Pass a Show-Your-Skills Challenge and get recognized as “Swift/iOS Ready!”
+
+      .badge-link
+        a.btn(ui-sref="challenges({type: 'peer'})") Select
+
+  .badge-list.row
+    .badge-item.challenger-badge.col-xs-12.col-md-4
+      .badge-header Challenger Badge
+
+      p Register/Submit for your first iOS Mobile App challenge
+
+      .badge-link
+        a.btn(ui-sref="challenges({type: 'all'})", disabled) Coming Soon
+
+    .badge-item.performer-badge.col-xs-12.col-md-4
+      .badge-header High Performer Badges
+
+      p Demonstrate Customer-Ready Skills
+
+      .badge-link
+        a.btn(ui-sref="challenges({type: 'all'})", disabled) Coming Soon
+
+.newsletter-form-wrapper
+  section.newsletter-form-section.container
+    h1.heading Apple Developer Community.
+    p Sign up to join the conversation
+
+    form#mktoForm_1944.newsletter-form
+
+section.resources-section
+  header.section-header.container
+    h1.heading Resources to help you along the way
+
+    p Whether you are an experienced iOS developer or are just getting started, our community has resources that will help you become better.
+
+  .resource-subsection.odd
+    .container
+      section.row
+        .col-xs-12.col-md-6.col-md-push-6.logo-column
+          img(alt='design logo', src='content/images/developer-logo.png')
+
+        .col-xs-12.col-md-6.col-md-pull-6.content-col
+          header.section-subheader
+            h2.heading Just getting started with iOS?
+
+            p There are some great resources available
+
+          .resource-description
+            p Whether you're looking for formal training classes or the chance to learn-by-doing, there are some great resources available within the Topcoder community, from universities, and from Apple and Apple's training partner.
+
+          .resource-links
+            h2.heading Resource Links:
+
+            ul
+              li - First start with Apple's #[a(href="https://developer.apple.com/swift/") overview] and #[a(href="https://developer.apple.com/swift/resources/") resources]
+
+              li - iTunes has free classes from #[a(href="https://itunes.com/StanfordSwift") Stanford University] and #[a(href="https://itunes.com/PlymouthSwift") Plymouth University]
+
+              li - Complete an online iOS developer #[a(href="https://www.udacity.com/course/nd003") nanodegree] from Udacity
+
+              li - Review Topcoder's #[a(href="https://www.topcoder.com/tag/swift/") Swift Blog posts] and #[a(href="https://www.topcoder.com/challenges/develop/past/?startDate=2014-04-01&technologies=SWIFT&pageIndex=1") previous challenges]
+
+              li - Take an Apple-certified training class from #[a(href="https://www.bignerdranch.com/we-teach/", target="_blank") Big Nerd Ranch]
+
+.learn-section.learn-page
+  section.container
     header.section-header
-      h1.heading Stand Out in the Apple Developer Community
+      h1.heading Ready to Stand Out in the Crowd?
 
-      p Whether you are an experienced iOS developer or are just getting started, follow these steps to join and grow in the Apple Developer Community:
+      p Learn, get badged, and compete as a member of the Apple Developer Community
 
-    .badge-list.row
-      .badge-item.participant-badge.col-xs-12.col-md-4
-        .badge-header Participant Badge
-
-        p.badge-desc(ng-show="!vm.registered") Sign up as an Apple Developer Community participant and earn a participant badge.
-
-        p.badge-desc(ng-show="vm.registered")
-          img.achieved(src="content/images/ico-okay-check.png")
-          span(ng-show="!vm.registrationSuccess") You have the participant badge
-          span(ng-show="vm.registrationSuccess") Congratulations!!! You just earned the particpant badge
-
-        .badge-link
-          a.btn(ng-click="vm.registerForProgram()", ng-show="!vm.registered") Select
-          span.text-danger.margin-left-2x(ng-show="vm.registrationError", ng-bind="vm.registrationError")
-
-      .badge-item.education-badge.col-xs-12.col-md-4
-        .badge-header Education Badges
-
-        p Take an Apple-certified training class to earn Education badges
-
-        .badge-link
-          a.btn(ui-sref="challenges({type: 'peer'})", disabled) Coming Soon
-
-      .badge-item.peer-badge.col-xs-12.col-md-4
-        .badge-header Show Your Skills Badges
-
-        p Pass a Show-Your-Skills Challenge and get recognized as “Swift/iOS Ready!”
-
-        .badge-link
-          a.btn(ui-sref="challenges({type: 'peer'})") Select
-
-    .badge-list.row
-      .badge-item.challenger-badge.col-xs-12.col-md-4
-        .badge-header Challenger Badge
-
-        p Register/Submit for your first iOS Mobile App challenge
-
-        .badge-link
-          a.btn(ui-sref="challenges({type: 'all'})", disabled) Coming Soon
-
-      .badge-item.performer-badge.col-xs-12.col-md-4
-        .badge-header High Performer Badges
-
-        p Demonstrate Customer-Ready Skills
-
-        .badge-link
-          a.btn(ui-sref="challenges({type: 'all'})", disabled) Coming Soon
-
-  .newsletter-form-wrapper
-    section.newsletter-form-section.container
-      h1.heading Apple Developer Community.
-      p Sign up to join the conversation
-
-      form#mktoForm_1944.newsletter-form
-
-  section.resources-section
-    header.section-header.container
-      h1.heading Resources to help you along the way
-
-      p Whether you are an experienced iOS developer or are just getting started, our community has resources that will help you become better.
-
-    .resource-subsection.odd
-      .container
-        section.row
-          .col-xs-12.col-md-6.col-md-push-6.logo-column
-            img(alt='design logo', src='content/images/developer-logo.png')
-
-          .col-xs-12.col-md-6.col-md-pull-6.content-col
-            header.section-subheader
-              h2.heading Just getting started with iOS?
-
-              p There are some great resources available
-
-            .resource-description
-              p Whether you're looking for formal training classes or the chance to learn-by-doing, there are some great resources available within the Topcoder community, from universities, and from Apple and Apple's training partner.
-
-            .resource-links
-              h2.heading Resource Links:
-
-              ul
-                li - First start with Apple's #[a(href="https://developer.apple.com/swift/") overview] and #[a(href="https://developer.apple.com/swift/resources/") resources]
-
-                li - iTunes has free classes from #[a(href="https://itunes.com/StanfordSwift") Stanford University] and #[a(href="https://itunes.com/PlymouthSwift") Plymouth University]
-
-                li - Complete an online iOS developer #[a(href="https://www.udacity.com/course/nd003") nanodegree] from Udacity
-
-                li - Review Topcoder's #[a(href="https://www.topcoder.com/tag/swift/") Swift Blog posts] and #[a(href="https://www.topcoder.com/challenges/develop/past/?startDate=2014-04-01&technologies=SWIFT&pageIndex=1") previous challenges]
-
-                li - Take an Apple-certified training class from #[a(href="https://www.bignerdranch.com/we-teach/", target="_blank") Big Nerd Ranch]
-
-  .learn-section.learn-page
-    section.container
-      header.section-header
-        h1.heading Ready to Stand Out in the Crowd?
-
-        p Learn, get badged, and compete as a member of the Apple Developer Community
-
-      a.btn(ui-sref="register") Become a Member
+    a.btn(ui-sref="register") Become a Member

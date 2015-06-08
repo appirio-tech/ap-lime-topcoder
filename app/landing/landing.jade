@@ -24,7 +24,7 @@
       li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn More]
 
       li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a Member]
-      li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(href="#challenges", du-smooth-scroll) Start Competing]
+      li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(ui-sref="challenges({type: 'all'})", du-smooth-scroll) Start Competing]
 
 .get-training-section#learn-more
   section.container
@@ -56,7 +56,7 @@
       p Browse our available challenges and compete.
 
     ul.challenges.row
-      li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in challenges")
+      li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in vm.challenges")
         section.challenge
           a(ng-href="https://www.{{domain}}/challenge-details/{{challenge.challengeId}}/?type=develop")
             img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
