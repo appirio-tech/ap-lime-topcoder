@@ -1,177 +1,175 @@
-.pseudoHeader
-div(ng-controller="challenges as vm")
-  carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'peer'")
-    slide.developer-slide-2.badgeSlide.slide
-      section.container
-          figure.badgeWarp
-            span.bdg
-          .bdgCon
-            h6.slide-title Badge Details
-            h1.section-header.ellipses Show Your Skills Badge
-            .summary
-             .row
-              .desc.col-xs-12 Ready to show your iOS mobile app development skills? The “Show Your Skills” badges use a peer-review process where you submit a solution to a problem and get reviewed by other developers working on that same problem. It is a great way to learn by doing, see how others approach the problem, and get feedback on your solution. Peer reviews are one of the most important activities you can do to improve your code and skills!
-
-              .col-xs-12.col-sm-6.cn Completion Includes:
-                ul.lst
-                  li Complete a Show Your Skills challenge - choose one from the list below
-                  li Use an iOS-specific scorecard to review and score 5 solutions submitted by your peers
-                  li Receive feedback and a "pass" score from your peers
-            .learn Visit our #[a.lnk(href="#") help center] to learn more about peer reviews.
-            .actns
-              a.btn.btnChallenges(href='#view-challenges', du-smooth-scroll) View Peer Challenges
-  carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'all'")
-    slide.developer-slide-1.slide(ng-repeat="challenge in vm.slides")
-      section.container
-        h6.slide-title Featured Challenge
-        h1.section-header.ellipses(ng-bind="challenge.challengeName")
-        .summary(ng-bind="challenge.challengeName")
-        span.ico(ng-class="challenge.icon")
-        .contestDetails
-          .rw
-            .lbl Technologies:
-            .val(ng-bind="challenge.technologies")
-          .rw
-            .lbl Platform:
-            .val(ng-bind="challenge.platforms")
-          .rw.alt.prizeRw(ng-hide="challenge.reviewType == 'PEER'")
-            .v $
-              span(ng-bind="challenge.totalPrize")
-          .rw.alt.time(ng-bind="challenge.submissionEndDate | localTime", ng-hide="challenge.reviewType == 'PEER'")
-          .rw.challenge-peer(ng-show="challenge.reviewType == 'PEER'")
-            .lbl Challenge start
-            .val.time(ng-bind="challenge.registrationStartDate | localTime")
-            .lbl.timeEnd Challenge end
-            .val.time(ng-bind="challenge.submissionEndDate | localTime")
-          .rw.reg
-            .lt.fr
-              .ca REGISTRANTS
-              .vl(ng-bind="challenge.numRegistrants")
-            .rt.fs
-              .ca SUBMISSIONS
-              .vl(ng-bind="challenge.numSubmissions")
-          .actns
-            a.btn.secondary.btnReg(ng-href="{{challenge.url}}", target="_blank") View
-
-            a.lnk(href='#view-challenges', du-smooth-scroll) View all challenges
-
-  .challenges-section.landing-annon-page#view-challenges
+carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'all'")
+  slide.developer-slide-1.slide(ng-repeat="challenge in vm.slides")
     section.container
-      .badge-info(ng-show="vm.challengesType == 'peer'")
-        h1 Swift/iOS Ready! Show Your Skills Badge
+      h6.slide-title Featured Challenge
+      h1.section-header(ng-bind="challenge.challengeName")
+      span.ico(ng-class="challenge.icon")
+      .contestDetails
+        .rw
+          .lbl Technologies:
+          .val(ng-bind="challenge.technologies")
+        .rw
+          .lbl Platform:
+          .val(ng-bind="challenge.platforms")
+        .rw.alt.prizeRw(ng-hide="challenge.reviewType == 'PEER'")
+          .v $
+            span(ng-bind="challenge.totalPrize")
+        .rw.alt.time(ng-bind="challenge.submissionEndDate | localTime", ng-hide="challenge.reviewType == 'PEER'")
+        .rw.challenge-peer(ng-show="challenge.reviewType == 'PEER'")
+          .lbl Challenge start
+          .val.time(ng-bind="challenge.registrationStartDate | localTime")
+          .lbl.timeEnd Challenge end
+          .val.time(ng-bind="challenge.submissionEndDate | localTime")
+        .rw.reg
+          .lt.fr
+            .ca REGISTRANTS
+            .vl(ng-bind="challenge.numRegistrants")
+          .rt.fs
+            .ca SUBMISSIONS
+            .vl(ng-bind="challenge.numSubmissions")
+        .actns
+          a.btn.btnReg(ng-href="{{challenge.url}}", target="_blank") View
 
-        p To start, complete a Swift/iOS Ready! challenge.  Successful completion of one of these challenges results in a "Swift/iOS Ready!" badge that helps set you apart from other developers in the community.  Each challenge asks you to complete part of an iOS mobile app by demonstrating you have the knowledge and capabilities to create high-quality iOS apps.  After you submit your solution, you will need to review 5 other submissions to complete the challenge and receive a score. If you pass, you receive the Swift/iOS Ready! badge.
+          a.lnk(href='#view-challenges', du-smooth-scroll) View all challenges
 
-      header.section-header.fluid
-        h1.heading(ng-show="vm.challengesType == 'all'") Current Challenges
+carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'peer'")
+  slide.developer-slide-2.badgeSlide.slide
+    section.container
+        figure.badgeWarp
+          span.bdg
+        .bdgCon
+          h6.slide-title Badge Details
+          h1.section-header Show Your Skills Badge
+          .summary
+           .row
+            .desc.col-xs-12 Ready to show your iOS mobile app development skills? The “Show Your Skills” badges use a peer-review process where you submit a solution to a problem and get reviewed by other developers working on that same problem. It is a great way to learn by doing, see how others approach the problem, and get feedback on your solution. Peer reviews are one of the most important activities you can do to improve your code and skills!
 
-        .browse(ng-show="vm.challengesType == 'all'") Browse our available challenges and compete.
-          .viewType.hidden-xs
-            a.lnk(ui-sref="challenges({type: 'peer'})") Peer
-            a.gridView(ng-click="isGrid=true")
-            a.listView(ng-click="isGrid=false")
+            .col-xs-12.col-sm-8.cn Completion Includes:
+              ul.lst
+                li Complete a Show Your Skills challenge - choose one from the list below
+                li Use an iOS-specific scorecard to review and score 5 solutions submitted by your peers
+                li Receive feedback and a "pass" score from your peers
+          .learn Visit our #[a.lnk(href="https://help.{{main.domain}}", target="_blank") help center] to learn more about peer reviews.
+          .actns
+            a.btn.btnChallenges(href='#view-challenges', du-smooth-scroll) View Peer Challenges
 
-        .browse(ng-show="vm.challengesType == 'peer'") Show Your Skills Challenges - Register Today!
-          .viewType.hidden-xs
-            a.lnk(ui-sref="challenges({type: 'all'})") View All
-            a.gridView(ng-click="isGrid=true")
-            a.listView(ng-click="isGrid=false")
+.challenges-section#view-challenges
+  section.container
+    .badge-info(ng-show="vm.challengesType == 'peer'")
+      h1 Swift/iOS Ready! Show Your Skills Badge
 
-      .listView.hidden-xs(ng-show="!isGrid")
-        ul.challengeList
-          li.col-xs-12.header
-            .col1.pull-left &nbsp;
-            .col2.pull-left CHALLENGE
-            .col3.pull-left(ng-show="vm.challengesType == 'all'") PRIZE &amp; DEADLINE
-            .col3.pull-left(ng-show="vm.challengesType == 'peer'") START &amp; END TIMES
-            .col4.pull-left REGISTRANTS
-            .col5.pull-left SUBMISSIONS
+      p To start, complete a Swift/iOS Ready! challenge.  Successful completion of one of these challenges results in a "Swift/iOS Ready!" badge that helps set you apart from other developers in the community.  Each challenge asks you to complete part of an iOS mobile app by demonstrating you have the knowledge and capabilities to create high-quality iOS apps.  After you submit your solution, you will need to review 5 other submissions to complete the challenge and receive a score. If you pass, you receive the Swift/iOS Ready! badge.
 
-          li.liRw.col-xs-12(ng-repeat="challenge in vm.challenges")
-            .chrw.clearfix
-              figure.col1.imgWrap.pull-left
-                a(ng-href="{{challenge.url}}")
-                  img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
-              .chge.col2.pull-left
-                .inner
-                  h4.chTitle
-                    a.ellipses(ng-href="{{challenge.url}}") {{challenge.challengeName}}
-                  .rw.ellipses
-                    span.lbl Technologies:&#32
-                    span.val {{challenge.technologies}}
-                  .rw.ellipses
-                    span.lbl Platform:&#32
-                    span.val {{challenge.platforms}}
-              .pz.col3.pull-left
-                .inner(ng-hide="challenge.reviewType == 'PEER'")
-                  .rw.prize(ng-bind="challenge.totalPrize || 0 | currency:undefined:0")
-                  .rw.time(ng-bind="challenge.submissionEndDate | localTime")
-                .inner(ng-show="challenge.reviewType == 'PEER'")
-                  .timeHeader Challenge start
-                  .time(ng-bind="challenge.registrationStartDate | localTime")
-                  .timeHeader.timeEnd Challenge end
-                  .time(ng-bind="challenge.submissionEndDate | localTime")
-              .regs.col4.pull-left
-                .inner
-                  .reg
-                    a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numRegistrants}}
-              .subs.col5.pull-left
-                .inner
-                  .sub
-                    a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numSubmissions}}
+    header.section-header.fluid
+      h1.heading(ng-show="vm.challengesType == 'all'") Current Challenges
 
-    ul.challenges.row(ng-show="isGrid")
-      li.col-xs-12.col-sm-6.col-md-4.col-lg-3(ng-repeat="challenge in vm.challenges")
-        section.challenge
-          .challenge-type {{challenge.type}}
+      .browse(ng-show="vm.challengesType == 'all'") Browse our available challenges and compete.
+        .viewType.hidden-xs
+          a.lnk(ui-sref="challenges({type: 'peer'})") Peer
+          a.gridView(ng-click="isGrid=true")
+          a.listView(ng-click="isGrid=false")
 
-          img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
+      .browse(ng-show="vm.challengesType == 'peer'") Show Your Skills Challenges - Register Today!
+        .viewType.hidden-xs
+          a.lnk(ui-sref="challenges({type: 'all'})") View All
+          a.gridView(ng-click="isGrid=true")
+          a.listView(ng-click="isGrid=false")
 
-          .challenge-details
-            h2.challenge-header.ellipses
-              a(ng-href="{{challenge.url}}") {{challenge.challengeName}}
+    .listView.hidden-xs(ng-show="!isGrid")
+      ul.challengeList
+        li.col-xs-12.header
+          .col1.pull-left &nbsp;
+          .col2.pull-left CHALLENGE
+          .col3.pull-left(ng-show="vm.challengesType == 'all'") PRIZE &amp; DEADLINE
+          .col3.pull-left(ng-show="vm.challengesType == 'peer'") START &amp; END TIMES
+          .col4.pull-left REGISTRANTS
+          .col5.pull-left SUBMISSIONS
 
-            .challenge-data
-              p.ellipses #[span.challenge-field Technologies:] {{challenge.technologies}}
-
-            .challenge-data
-              p.ellipses #[span.challenge-field Platform:] {{challenge.platforms}}
-
-            .challenge-prize(ng-bind="challenge.totalPrize || 0 | currency:undefined:0", ng-hide="challenge.reviewType == 'PEER'")
-
-            .challenge-deadline(ng-bind="challenge.submissionEndDate | localTime", ng-hide="challenge.reviewType == 'PEER'")
-
-            .challenge-peer(ng-show="challenge.reviewType == 'PEER'")
-              .timeHeader Challenge start
-              .time(ng-bind="challenge.registrationStartDate | localTime")
-              .timeHeader.timeEnd Challenge end
-              .time(ng-bind="challenge.submissionEndDate | localTime")
-
-            .row.challenge-stats
-              .col-xs-6.challenge-registrants.challenge-stat
-                .stats-type REGISTRANTS
-
-                .stats-value
+        li.liRw.col-xs-12(ng-repeat="challenge in vm.challenges")
+          .chrw.clearfix
+            figure.col1.imgWrap.pull-left
+              a(ng-href="{{challenge.url}}")
+                img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
+            .chge.col2.pull-left
+              .inner
+                h4.chTitle
+                  a(ng-href="{{challenge.url}}") {{challenge.challengeName}}
+                .rw
+                  span.lbl Technologies:&#32
+                  span.val {{challenge.technologies}}
+                .rw
+                  span.lbl Platform:&#32
+                  span.val {{challenge.platforms}}
+            .pz.col3.pull-left
+              .inner(ng-hide="challenge.reviewType == 'PEER'")
+                .rw.prize(ng-bind="challenge.totalPrize || 0 | currency:undefined:0")
+                .rw.time(ng-bind="challenge.submissionEndDate | localTime")
+              .inner(ng-show="challenge.reviewType == 'PEER'")
+                .timeHeader Challenge start
+                .time(ng-bind="challenge.registrationStartDate | localTime")
+                .timeHeader.timeEnd Challenge end
+                .time(ng-bind="challenge.submissionEndDate | localTime")
+            .regs.col4.pull-left
+              .inner
+                .reg
                   a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numRegistrants}}
-
-              .col-xs-6.challenge-submissions.challenge-stat
-                .stats-type SUBMISSIONS
-
-                .stats-value
+            .subs.col5.pull-left
+              .inner
+                .sub
                   a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numSubmissions}}
 
-    ul.section-actions
-      li(ng-show="vm.hasMore && !vm.loading") #[a(ng-click="vm.loadMore()") Load more...]
-      li(ng-show="vm.hasMore && vm.loading") Loading...
+  ul.challengesGrid.row(ng-show="isGrid")
+    li.col-xs-12.col-sm-6.col-md-4.col-lg-3(ng-repeat="challenge in vm.challenges")
+      section.challenge
+        .challenge-type {{challenge.type}}
 
-  .learn-section.learn-page
-    section.container
-      header.section-header
-        h1.heading Ready to Stand Out in the Crowd?
+        img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
 
-        p Learn, get badged, and compete as a member of the Apple Developer Community
+        .challenge-details
+          h2.challenge-header
+            a(ng-href="{{challenge.url}}") {{challenge.challengeName}}
 
-      a.btn(ui-sref="register") Become a Member
+          .challenge-data
+            p #[span.challenge-field Technologies:] {{challenge.technologies}}
+
+          .challenge-data
+            p #[span.challenge-field Platform:] {{challenge.platforms}}
+
+          .challenge-prize(ng-bind="challenge.totalPrize || 0 | currency:undefined:0", ng-hide="challenge.reviewType == 'PEER'")
+
+          .challenge-deadline(ng-bind="challenge.submissionEndDate | localTime", ng-hide="challenge.reviewType == 'PEER'")
+
+          .challenge-peer(ng-show="challenge.reviewType == 'PEER'")
+            .timeHeader Challenge start
+            .time(ng-bind="challenge.registrationStartDate | localTime")
+            .timeHeader.timeEnd Challenge end
+            .time(ng-bind="challenge.submissionEndDate | localTime")
+
+          .row.challenge-stats
+            .col-xs-6.challenge-registrants.challenge-stat
+              .stats-type REGISTRANTS
+
+              .stats-value
+                a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numRegistrants}}
+
+            .col-xs-6.challenge-submissions.challenge-stat
+              .stats-type SUBMISSIONS
+
+              .stats-value
+                a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numSubmissions}}
+
+  ul.section-actions
+    li(ng-show="vm.hasMore && !vm.loading") #[a(ng-click="vm.loadMore()") Load more...]
+    li(ng-show="vm.hasMore && vm.loading") Loading...
+
+.learn-section
+  section.container
+    header.section-header
+      h1.heading Ready to Stand Out in the Crowd?
+
+      p Learn, get badged, and compete as a member of the Apple Developer Community
+
+    a.btn(ui-sref="register") Become a Member
 
 
 

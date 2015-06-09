@@ -714,47 +714,4 @@
       padding-right: 30px;
     }
   }
-
-  .learn-section {
-    background-color: #eee;
-    padding: 0 15px 42px;
-    margin-top: 44px;
-    text-align: center;
-
-    .section-header {
-      @include myriad-pro-light;
-      margin-top: 42px;
-      color: #45474b;
-
-      .heading {
-        margin-bottom: 13px;
-        color: #323334;
-        line-height: 48px;
-        @media only screen and (max-width: 800px) {
-          font-size: 32px;
-          line-height: 32px;
-        }
-        @media only screen and (max-width: 530px) {
-          font-size: 27px;
-          line-height: 27px;
-        }
-      }
-      p {
-        font-size: 29px;
-        @media only screen and (max-width: 800px) {
-          font-size: 20px;
-        }
-        @media only screen and (max-width: 530px) {
-          font-size: 16px;
-        }
-      }
-    }
-    .btn {
-      color: $white;
-      margin-top: 30px;
-      @media only screen and (max-width: 800px) {
-        margin-top: 20px;
-      }
-    }
-  }
 }
