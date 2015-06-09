@@ -6,6 +6,12 @@
   }
 }
 
+@mixin ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 @mixin font-line($pt) {
   font-size: ($pt * 1px);
 
@@ -14,12 +20,6 @@
 
 @mixin line-height($pt) {
   line-height: ($pt * 1px);
-}
-
-@mixin ellipsis {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 @mixin source-sans {
