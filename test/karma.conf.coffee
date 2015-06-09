@@ -17,19 +17,26 @@ module.exports = (config) ->
       # bower:js
       'bower_components/jquery/dist/jquery.js'
       'bower_components/angular/angular.js'
-      'bower_components/angular-animate/angular-animate.js'
       'bower_components/angular-cookies/angular-cookies.js'
-      'bower_components/angular-resource/angular-resource.js'
-      'bower_components/angular-route/angular-route.js'
+      'bower_components/angular-jwt/dist/angular-jwt.js'
       'bower_components/angular-sanitize/angular-sanitize.js'
-      'bower_components/angular-touch/angular-touch.js'
       'bower_components/angular-ui-router/release/angular-ui-router.js'
       'bower_components/bootstrap/dist/js/bootstrap.js'
+      'bower_components/angular-bootstrap/ui-bootstrap.js'
+      'bower_components/angular-dropdowns/angular-dropdowns.js'
+      'bower_components/angular-scroll/angular-scroll.js'
+      'https://cdn.auth0.com/w2/auth0-1.6.4.js'
+      'https://app-abc.marketo.com/js/forms2/js/forms2.min.js'
       'bower_components/angular-mocks/angular-mocks.js'
        # endbower
+      'app/app.coffee'
+      'app/directives/checkbox.coffee'
+      'app/directives/*.coffee'
+      'app/*.coffee'
       'app/**/*.coffee'
       'test/mock/**/*.coffee'
       'test/spec/**/*.coffee'
+      'test/spec/**/*.json'
     ]
 
     # list of files / patterns to exclude

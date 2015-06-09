@@ -59,6 +59,7 @@ login = ($scope, Auth, $state, $stateParams, $location, ENV) ->
     $scope.$apply () ->
       vm.frm.error = true
       vm.frm.errorMessage = 'Username or password is not correct'
+  vm
 
   return vm
 
