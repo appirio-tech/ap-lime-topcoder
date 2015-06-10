@@ -36,14 +36,14 @@ describe 'Controller: landing', () ->
 
   describe '$scope.domain', ->
     it 'should be initialized to default dev domain', ->
-      $scope = {}
+      $scope = $rootScope.$new()
       landing = $controller 'landing', {$scope: $scope, $state: ''}
       # default value for domain
       expect(landing.domain).to.be.equal 'topcoder-dev.com'
 
   describe '$scope.challenges', ->
     it 'should be initialized to array of length 2', ->
-      $scope = $rootScope.$new();
+      $scope = $rootScope.$new()
 
       landing = $controller 'landing', {$scope: $scope, $state: ''}
       $scope.$digest()
