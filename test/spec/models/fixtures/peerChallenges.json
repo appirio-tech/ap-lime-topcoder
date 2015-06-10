@@ -1,0 +1,42 @@
+var peerChallenges = { 
+  "data": {
+    "data": [
+      {
+        "submissionEndDate": "2015-04-10T03:05:34.546-0400",
+        "currentPhaseRemainingTime": -4766490,
+        "challengeName": "Peer Review - QA 1",
+        "eventId": 3445,
+        "platforms": [
+          "iOS"
+        ],
+        "registrationOpen": "Yes",
+        "totalPrize": 50,
+        "numRegistrants": 3,
+        "numberOfCheckpointsPrizes": 0,
+        "challengeId": 30047771,
+        "eventName": "swiftprogram",
+        "numSubmissions": 1,
+        "registrationStartDate": "2015-04-03T12:10:06.053-0400",
+        "reviewType": "PEER",
+        "status": "Active",
+        "registrationEndDate": "2015-04-10T03:04:37.456-0400",
+        "currentPhaseEndDate": "2015-04-10T03:04:37.456-0400",
+        "technologies": [
+          "SWIFT",
+          "iOS"
+        ],
+        "firstPlacePrize": 50,
+        "forumId": 27159,
+        "isPrivate": false,
+        "currentPhaseName": "Registration",
+        "challengeType": "Code",
+        "checkpointSubmissionEndDate": "",
+        "reliabilityBonus": 10,
+        "challengeCommunity": "develop"
+      }
+    ],
+    "total": 1,
+    "pageIndex": 1,
+    "pageSize": 10
+  }
+}
