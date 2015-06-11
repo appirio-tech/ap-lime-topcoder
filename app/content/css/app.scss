@@ -93,7 +93,8 @@ button {
 
 // Common Sections
 .challenges .learn-section,
-.landing .learn-section {
+.landing .learn-section,
+.learn .learn-section {
   background-color: #eee;
   padding: 0 15px 42px;
   margin-top: 44px;
@@ -108,6 +109,7 @@ button {
       margin-bottom: 13px;
       color: #323334;
       line-height: 48px;
+      font-size: 48px;
       @media only screen and (max-width: 800px) {
         font-size: 32px;
         line-height: 32px;
@@ -124,6 +126,7 @@ button {
       }
       @media only screen and (max-width: 530px) {
         font-size: 16px;
+        line-height: 1.2;
       }
     }
   }
@@ -132,6 +135,93 @@ button {
     margin-top: 30px;
     @media only screen and (max-width: 800px) {
       margin-top: 20px;
+    }
+  }
+}
+.landing .newsletter-form-wrapper,
+.learn .newsletter-form-wrapper {
+  background: url('../images/community-background.png');
+  background-size: cover;
+  background-position: 50% 50%;
+  padding: 40px 15px 46px 15px;
+  @include myriad-pro-light;
+  @media only screen and (max-width: 640px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .newsletter-form-section {
+    color: $white;
+    text-align: center;
+    @media only screen and (max-width: 568px) {
+      font-size: 24px;
+    }
+
+    .heading {
+      font-size: 48px;
+      margin-top: 18px;
+      @media only screen and (max-width: 415px) {
+        font-size: 24px;
+      }
+    }
+    p {
+      margin-top: 13px;
+      font-size: 30px;
+    }
+    &:before {
+      @include icon-sprite;
+      background-position: 0px 0px;
+      width: 110px;
+      height: 81px;
+      display: block;
+      margin: 0 auto;
+    }
+    .newsletter-form {
+      margin: 0 auto;
+      width: 380px;
+      @media only screen and (max-width: 568px) {
+        width: auto;
+        color: red;
+      }
+
+      .mktoFormRow {
+        @include myriad-pro-light;
+        margin-bottom: 15px;
+        @media only screen and (max-width: 568px) {
+          padding-left: 25px;
+          padding-right: 25px;
+        }
+
+        .mktoOffset {
+          display: none !important;
+        }
+        .mktoFormCol {
+          @media only screen and (max-width: 568px) {
+            width: 100%;
+          }
+          .mktoFieldWrap {
+            @media only screen and (max-width: 568px) {
+              width: 100%;
+            }
+          }
+        }
+        input {
+          @media only screen and (max-width: 568px) {
+            width: 100% !important;
+          }
+        }
+      }
+      .mktoButtonRow {
+        margin: 0 auto;
+        width: 118px;
+        display: block;
+
+        .mktoButton {
+          @include myriad-pro-light;
+          font-size: 16px !important;
+          margin: 0 !important;
+        }
+      }
     }
   }
 }
