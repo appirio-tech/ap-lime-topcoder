@@ -21,14 +21,18 @@ register = ($scope, $state, Auth, Countries, ENV) ->
     vm.frm.error = false
     vm.frm.errorMessage = ''
     vm.reg.regSource = 'apple'
+
     Auth.register vm.reg
     .then (data) ->
       vm.registering = false
+
       if data.data.error
         regError data.data.error
       else regSuccess()
+
     .catch (data) ->
       vm.registering = false
+
       if data.data && data.data.error
         regError data.data.error.details
       else regSuccess()
@@ -37,15 +41,12 @@ register = ($scope, $state, Auth, Countries, ENV) ->
     form = $scope.frm
     (form[field].$dirty || form.$submitted) && form[field].$invalid
 
-  vm.handleAgree = () ->
-    console.log vm.frm.agree
-    vm.frm.agree = !vm.frm.agree
-
   regSuccess = () ->
     Auth.login vm.reg.handle, vm.reg.password, loginSuccess, loginError
 
   loginSuccess = () ->
     $scope.$parent.main.activate()
+
     if $state.get vm.retState
       $state.go vm.retState
     else
