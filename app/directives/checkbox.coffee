@@ -4,16 +4,28 @@ dependencies = [
   'lime-topcoder'
 ]
 
-checkbox = ($window) ->
-  {
-    require: 'ngModel'
-    link : (scope, element, attrs, ngModel) ->
-      element.iCheck().on 'ifChecked', (event) ->
-        scope.$apply () ->
-          ngModel.$setViewValue event.target.checked
-      .on 'ifUnchecked', (event) ->
-        scope.$apply () ->
-          ngModel.$setViewValue event.target.checked
-  }
+# https://github.com/xialeistudio/angular-icheck
+
+checkbox = () ->
+  restrict: 'EA'
+  transclude: true
+  require: 'ngModel'
+  replace: true
+  template: '<div class="angular-icheck">\n    <div class="checkbox"></div>\n    <div class="label" ng-transclude></div>\n</div>'
+  link: (scope, ele, attrs, ctrl) ->
+    box = angular.element(ele[0].querySelector('.checkbox'))
+    ele.bind 'click', ->
+      box.toggleClass 'checked'
+      ctrl.$setViewValue box.hasClass('checked')
+      return
+
+    ctrl.$render = ->
+      if ctrl.$viewValue
+        box.addClass 'checked'
+      else
+        box.removeClass 'checked'
+      return
+
+    return
 
 angular.module('app.directives', dependencies).directive 'checkbox', [checkbox]
