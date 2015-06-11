@@ -60,6 +60,8 @@ login = ($scope, Auth, $state, $stateParams, $location, ENV) ->
       vm.frm.error = true
       vm.frm.errorMessage = 'Username or password is not correct'
 
+  return vm
+
 angular.module('lime-topcoder').controller 'login', [
   '$scope'
   'Auth'

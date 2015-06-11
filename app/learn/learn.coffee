@@ -36,7 +36,6 @@ learn = ($scope, ENV, MemberCertService, $state) ->
       # TODO show error
       main.loading = false
       vm.registered = false
-    
 
   vm.registerForProgram = () ->
     vm.registrationError = null
@@ -65,6 +64,8 @@ learn = ($scope, ENV, MemberCertService, $state) ->
   main.addLoginEventHandler('learn', vm.checkRegStatus)
   # check status on load
   vm.checkRegStatus()
+
+  return vm
 
 angular.module('lime-topcoder').controller 'learn', [
   '$scope'

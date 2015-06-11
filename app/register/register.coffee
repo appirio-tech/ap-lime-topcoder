@@ -63,6 +63,8 @@ register = ($scope, $state, Auth, Countries, ENV) ->
     vm.frm.error = true
     vm.frm.errorMessage = 'Your account was created, but we were unable to log you in. If this problem persists, please contact: support@topcoder.com'
 
+  return vm
+
 angular.module('lime-topcoder').controller 'register', [
   '$scope'
   '$state'

@@ -32,6 +32,10 @@ Running `grunt test` will run the unit tests with karma.
 
 ## Contributing
 
+### Pull Requests
+
+To contribute to the repository, please create a feature branch off of the dev branch. Once you're finished working on the feature, make a pull request to merge it into dev. Then, delete the branch when it's no longer used.
+
 ### Quick Description of Key Files and Folders
 
  - app.coffee - where our Angular app is created
