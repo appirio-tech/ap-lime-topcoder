@@ -84,7 +84,7 @@ describe 'Controller: challenges', () ->
       challenges = $controller 'challenges', {$scope: $scope, Auth: Auth, $stateParams: $stateParams}
       $scope.$digest()
 
-    it 'should redirect to specified state', ->
+    it 'should initialize the challenges with non peer reviewed ones', ->
       expect(challenges.challenges).to.be.exist
       expect(challenges.challenges).to.have.length 1
       expect(challenges.challenges[0].reviewType).to.be.equal 'COMMUNITY'
@@ -106,7 +106,7 @@ describe 'Controller: challenges', () ->
       challenges = $controller 'challenges', {$scope: $scope, Auth: Auth, $stateParams: $stateParams}
       $scope.$digest()
 
-    it 'should redirect to specified state', ->
+    it 'should initialize the challenges with peer reviewed ones', ->
       expect(challenges.challenges).to.be.exist
       expect(challenges.challenges).to.have.length 1
       expect(challenges.challenges[0].reviewType).to.be.equal 'PEER'
