@@ -67,50 +67,52 @@
         .dropdown-menu {
           right: 20px; /* adjusts for the padding of the parent element .fields */
         }
-        .icheckbox {
-          width: 35px;
-          height: 31px;
-          background: url("../images/checkbox.png") no-repeat 0 0;
-          float: left;
-          margin: 12px 13px 0 0;
-          @media only screen and (max-width: 475px) {
-            margin-top: 45px;
-          }
+        .angular-icheck {
+          display: inline-block;
 
-          &.checked{
-            background: url("../images/checkbox.png") no-repeat 0 -38px;
+          .checkbox {
+            width: 35px;
+            height: 31px;
+            display: inline-block;
+            vertical-align: middle;
+            background: url("../images/checkbox.png") no-repeat 0 0;
+            margin-right: 15px;
+            margin-left: 5px;
+            @media only screen and (max-width: 475px) {
+              margin-right: 0;
+              margin-left: 0;
+            }
+
+            &.checked{
+              background: url("../images/checkbox.png") no-repeat 0 -38px;
+            }
+          }
+          .label {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0;
           }
         }
-
-        label {
+        .agree-txt {
+          display: inline-block;
+          vertical-align: middle;
+          padding-left: 0px;
           @include myriad-pro();
           font-size: 24px;
           color: $white;
-          padding-left: 0px;/* reset boostrap's .radio label, .checkbox label */
-          line-height: 60px;
-
-          .form-control-feedback {
-            font-size: 16px; /* to match the size of the alert icon with other fields*/
+          @media only screen and (max-width: 1110px) {
+            font-size: 20px;
           }
-          .agree-txt {
-            font-size: 24px;
-            @media only screen and (max-width: 1110px) {
-              font-size: 20px;
-            }
-            @media only screen and (max-width: 475px) {
-              position: absolute;
-              top: 5px;
-              left: 5px;
-              font-size: 16px;
-              line-height: 16px;
-            }
+          @media only screen and (max-width: 475px) {
+            font-size: 14px;
           }
         }
-      }
-      .checkbox .form-control-feedback {
-        @media only screen and (max-width: 475px) {
-          top: 37px;
-          left: 50px;
+        #agreeError {
+          font-size: 14px;
+          @media only screen and (max-width: 475px) {
+            top: 0;
+            right: -10px;
+          }
         }
       }
       .txt-box{
