@@ -65,6 +65,8 @@ learn = ($scope, ENV, MemberCertService, $state) ->
   # check status on load
   vm.checkRegStatus()
 
+  return vm
+
 angular.module('lime-topcoder').controller 'learn', [
   '$scope'
   'ENV'

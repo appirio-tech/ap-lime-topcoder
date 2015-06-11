@@ -24,9 +24,9 @@
       li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn More]
 
       li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a Member]
-      li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(href="#challenges", du-smooth-scroll) Start Competing]
+      li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(ui-sref="challenges({type: 'all'})", du-smooth-scroll) Start Competing]
 
-.get-training-section.learn-page#learn-more
+.get-training-section#learn-more
   section.container
     h1.section-header Compete and learn from the best.
 
@@ -48,7 +48,7 @@
 
     form#mktoForm_1944.newsletter-form
 
-.challenges-section.landing-annon-page#challenges
+.challenges-section#challenges
   section.container
     header.section-header
       h1.heading Current Challenges
@@ -56,7 +56,7 @@
       p Browse our available challenges and compete.
 
     ul.challenges.row
-      li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in challenges")
+      li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in vm.challenges")
         section.challenge
           a(ng-href="https://www.{{domain}}/challenge-details/{{challenge.challengeId}}/?type=develop")
             img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
@@ -101,7 +101,7 @@
       li
         a(ui-sref="challenges({type: 'all'})") View full challenge list
 
-section.learn-improve-section.landing-annon-page
+section.learn-improve-section
   .container
     header.section-header
       h1.heading Up Your iOS App Dev Skills
@@ -109,10 +109,10 @@ section.learn-improve-section.landing-annon-page
       p Take the first steps to stand out in the Community
 
     section.row
-      .col-xs-12.col-md-6.col-md-push-6.logo-column
+      .col-xs-12.col-sm-6.col-sm-push-6.logo-column
         img(alt='Up Your iOS App Dev Skills', src='content/images/learn-and-improve.png')
 
-      .col-xs-12.col-md-6.col-md-pull-6.content-col
+      .col-xs-12.col-sm-6.col-sm-pull-6.content-col
 
         .section-content
           .section-subheader You're on the road to becoming a member of the Apple Developer Community.
@@ -148,7 +148,7 @@ section.learn-improve-section.landing-annon-page
           .link-row
             a.btn(ui-sref="challenges({type: 'all'})") Learn more
 
-.learn-section.learn-page
+.learn-section
   section.container
     header.section-header
       h1.heading Ready to Stand Out in the Crowd?

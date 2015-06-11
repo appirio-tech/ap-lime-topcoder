@@ -1,7 +1,8 @@
 'use strict'
 
-landing = ($scope, $state, ChallengeService, Helpers, ENV) ->
-  $scope.domain = ENV.domain
+landing = ($state, ChallengeService, Helpers, ENV) ->
+  vm        = this
+  vm.domain = ENV.domain
 
   # Make sure there are 3 challenges showing.
   # The first challenge should be of type 'PEER'.
@@ -15,20 +16,21 @@ landing = ($scope, $state, ChallengeService, Helpers, ENV) ->
     .then (response) ->
       nonPeerChallenges = response.data.data.slice 0, 3
       if numPeerChallenges == 1
-        $scope.challenges = peerChallenges.concat(nonPeerChallenges.slice 0, 2)
+        vm.challenges = peerChallenges.concat(nonPeerChallenges.slice 0, 2)
       else if numPeerChallenges == 0
-        $scope.challenges = nonPeerChallenges
+        vm.challenges = nonPeerChallenges
 
-      Helpers.formatArray $scope.challenges
-      Helpers.processChallenge challenge for challenge in $scope.challenges
+      Helpers.formatArray vm.challenges
+      Helpers.processChallenge challenge for challenge in vm.challenges
 
   MktoForms2.loadForm '//app-abc.marketo.com', '921-UOU-112', 1944, (form) ->
     form.onSuccess () ->
       $state.go 'confirmNewsletter'
       false
 
+  return vm
+
 angular.module('lime-topcoder').controller 'landing', [
-  '$scope'
   '$state'
   'ChallengeService'
   'Helpers'

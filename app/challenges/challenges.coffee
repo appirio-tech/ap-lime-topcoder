@@ -75,6 +75,8 @@ challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
   vm.loadMore = loadMore
   activate()
 
+  return vm
+
 
 angular.module('lime-topcoder').controller 'challenges', [
   '$scope'

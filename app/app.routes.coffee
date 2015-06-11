@@ -8,22 +8,19 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) 
     landing:
       url         : '/'
       templateUrl : 'landing/landing.html'
-      controller  : 'landing'
+      controller  : 'landing as vm'
     learn:
       url         : '/learn'
       templateUrl : 'learn/learn.html'
-      #binded controller in view as workaround to use controller as vm style
-      #controllerAs property is working with coffee script
-      #more info: http://stackoverflow.com/questions/28953289/using-controller-as-with-the-ui-router-isnt-working-as-expected
-      #controller  : 'learn'
+      controller  : 'learn as vm'
     login:
       url         : '/login?retUrl&retState'
       templateUrl : 'login/login.html'
-      controller  : 'login'
+      controller  : 'login as vm'
     register:
       url         : '/register'
       templateUrl : 'register/register.html'
-      controller  : 'register'
+      controller  : 'register as vm'
     confirmRegistration:
       url         : '/register/confirm'
       templateUrl : 'register/confirm.html'
@@ -34,10 +31,7 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) 
     challenges:
       url         : '/challenges/type/:type'
       templateUrl : 'challenges/challenges.html'
-      #binded controller in view as workaround to use controller as vm style
-      #controllerAs property is working with coffee script
-      #more info: http://stackoverflow.com/questions/28953289/using-controller-as-with-the-ui-router-isnt-working-as-expected
-      #controller  : 'challenges'
+      controller  : 'challenges as vm'
 
   for name, state of states
     $stateProvider.state name, state

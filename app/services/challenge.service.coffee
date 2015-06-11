@@ -14,7 +14,8 @@ ChallengeService = (ENV, ApiService) ->
       params.type = request.type
 
     url = ENV.API_URL_V2 + '/challenges/active'
-    ApiService.requestHandler 'GET', url, params, true
+    promise = ApiService.requestHandler 'GET', url, params, true
+    promise
 
 angular.module('lime-topcoder').factory 'ChallengeService', [
   'ENV'

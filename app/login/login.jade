@@ -1,4 +1,4 @@
-.container.login-content(ng-controller="login as vm")
+.container.login-content
   .col-xs-12.col-sm-8.col-md-6.padding-reset.center-aligned
     a.big-logo
       img(src="content/images/logo-landing.png")
@@ -33,7 +33,7 @@
 
             a.col-xs-3.col-sm-12.padding-reset.mob-register.reg-link(ui-sref="register") Register
 
-          .center-align-text.col-xs-12.col-sm-3.padding-reset
+          .col-xs-12.col-sm-3.padding-reset
             input.col-xs-12.col-sm-3.btns.glow-btn.sign-in(type="submit", value="Sign In", ng-click="vm.doLogin()", ng-show="!vm.loggingIn")
 
             input.col-xs-12.col-sm-3.btns.glow-btn.sign-in(type="button", value="Signing In", ng-show="vm.loggingIn")
