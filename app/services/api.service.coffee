@@ -10,17 +10,17 @@ ApiService = ($http, AuthToken) ->
       headers: {}
 
     token = AuthToken.getToken()
-    if token and not noAuth
+    if token && !noAuth
       options.headers =
         Authorization: 'Bearer ' + token
 
-    if data and method isnt 'GET'
+    if data && method != 'GET'
       options.data = data
 
-    if data and method is 'GET'
+    if data && method == 'GET'
       options.params = data
 
-    if method is 'POST'
+    if method == 'POST'
       options.headers['Content-Type'] = 'application/json'
 
     $http options

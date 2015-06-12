@@ -162,7 +162,7 @@ carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'peer'
     li(ng-show="vm.hasMore && !vm.loading") #[a(ng-click="vm.loadMore()") Load more...]
     li(ng-show="vm.hasMore && vm.loading") Loading...
 
-.learn-section
+.learn-section(ng-hide="main.loggedInUser")
   section.container
     header.section-header
       h1.heading Ready to Stand Out in the Crowd?
