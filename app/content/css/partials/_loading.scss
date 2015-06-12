@@ -32,19 +32,19 @@
   border-bottom:7px solid $glow-blue;
   border-left:7px solid transparent;
   border-right:7px solid transparent;
-  
+
   border-radius:80px;
   -moz-border-radius:80px;
   -webkit-border-radius:80px;
   -ms-border-radius:80px;
   -o-border-radius:80px;
-  
+
   box-shadow:0 0 20px $glow-blue;
-  -mozbox-shadow:0 0 20px $glow-blue;
+  -moz-box-shadow:0 0 20px $glow-blue;
   -ms-box-shadow:0 0 20px $glow-blue;
   -o-box-shadow:0 0 20px $glow-blue;
   -webkit-box-shadow:0 0 20px $glow-blue;
-  
+
   -webkit-animation: cwSpin 1s linear .2s infinite;
   -moz-animation: cwSpin .666s linear .2s infinite;
   -o-animation: cwSpin .666s linear .2s infinite;
@@ -57,26 +57,26 @@
   position:absolute;
   margin:20px 0 0 20px;
   box-sizing: initial;
-  
+
   width:40px;
   height:40px;
   border-top:7px solid $glow-blue;
   border-bottom:7px solid $glow-blue;
   border-left:7px solid transparent;
   border-right:7px solid transparent;
-  
+
   border-radius:40px;
   -moz-border-radius:40px;
   -webkit-border-radius:40px;
   -ms-border-radius:40px;
   -o-border-radius:40px;
-  
+
   box-shadow:0 0 20px $glow-blue;
   -webkit-box-shadow:0 0 20px $glow-blue;
   -moz-box-shadow:0 0 20px $glow-blue;
   -ms-box-shadow:0 0 20px $glow-blue;
   -o-box-shadow:0 0 20px $glow-blue;
-  
+
   -webkit-animation: ccwSpin .555s linear .2s infinite;
   -moz-animation: ccwSpin .555s linear .2s infinite;
   -o-animation: ccwSpin .555s linear .2s infinite;
@@ -88,12 +88,12 @@
   display:block;
   box-sizing: initial;
   margin:5px 0 0 5px;
-  
+
   width:30px;
   height:30px;
-  
+
   background-color:$glow-blue;
-  
+
   border-radius:30px;
   -moz-border-radius:30px;
   -webkit-border-radius:30px;
