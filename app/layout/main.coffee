@@ -51,6 +51,7 @@ main = ($scope, $state, ENV, AuthService, UserService) ->
             photo: 'content/images/user.png'
 
   vm.activate()
+  return vm
 
 angular.module('lime-topcoder').controller 'main', [
   '$scope'
