@@ -115,7 +115,7 @@ html
   body(ng-app="lime-topcoder", ng-controller="main as main")
     include layout/header.jade
 
-    .view-container(ui-view, ng-class="$state.current.name", autoscroll="true")
+    .view-container(ui-view, ng-class="$state.current.name")
     .view-container-loading(ng-show="main.loading")
       .circle-3-loading
         span.loading-wrapper
