@@ -123,7 +123,8 @@ carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'peer'
       section.challenge
         .challenge-type {{challenge.type}}
 
-        img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
+        a.challenge-image(ng-href="https://www.{{main.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop")
+          img(ng-src="{{challenge.thumb}}", alt="challenge image")
 
         .challenge-details
           h2.challenge-header
