@@ -183,7 +183,7 @@
       }
       &:before {
         content: '';
-        margin-left: -91px;
+        margin-left: -95px;
         position: absolute;
         top: 0;
       }
@@ -195,40 +195,19 @@
     }
   }
   .participant-badge:before {
-    @include icon-sprite;
-    background-position: -112px 0px;
-    width: 76px;
-    height: 76px;
+    @include badge('Member-06', 85px);
   }
   .education-badge:before {
-    @include icon-sprite;
-    background-position: -112px -78px;
-    width: 74px;
-    height: 74px;
+    @include badge('Education-06', 85px);
   }
   .peer-badge:before {
-    @include icon-sprite;
-    background-position: 0px -83px;
-    width: 66px;
-    height: 90px;
+    @include badge('Show-Your-Skills-06', 85px);
   }
   .challenger-badge:before {
-    @include icon-sprite;
-    background-position: -190px -76px;
-    width: 54px;
-    height: 74px;
+    @include badge('Challenger-06', 85px);
   }
   .performer-badge:before {
-    @include icon-sprite;
-    background-position: -190px 0px;
-    width: 63px;
-    height: 74px;
-  }
-  .custom-badge:before {
-    @include icon-sprite;
-    background-position: 0px -175px;
-    width: 64px;
-    height: 64px;
+    @include badge('High-Performer-06', 85px);
   }
 
   .resources-section {
