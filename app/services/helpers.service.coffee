@@ -23,10 +23,10 @@ Helpers = (ENV) ->
 
     if challenge.reviewType && challenge.reviewType == 'PEER'
       challenge.icon = 'peer'
-      challenge.thumb = 'content/images/peer-swift-challenge.png'
+      challenge.thumb = 'content/images/svg/SYS-IOS-Swift-Ready-06.svg'
     else
       challenge.icon = 'swift'
-      challenge.thumb = 'content/images/swift-challenge-1.png'
+      challenge.thumb = 'content/images/svg/Challenger-Developer-06.svg'
 
 angular.module('lime-topcoder').factory 'Helpers', [
   'ENV'

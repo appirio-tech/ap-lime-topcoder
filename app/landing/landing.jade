@@ -58,8 +58,8 @@
     ul.challenges.row
       li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in vm.challenges")
         section.challenge
-          a(ng-href="https://www.{{domain}}/challenge-details/{{challenge.challengeId}}/?type=develop")
-            img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
+          a.challenge-image(ng-href="https://www.{{domain}}/challenge-details/{{challenge.challengeId}}/?type=develop")
+            img(ng-src="{{challenge.thumb}}", alt="challenge image")
 
           .challenge-details
             h2.challenge-header
