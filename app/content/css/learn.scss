@@ -139,17 +139,21 @@
       }
     }
     .badge-item {
-      line-height: 26px;
+      line-height: 1.2;
       color: $blue-gray;
-      font-size: 18px;
+      font-size: 17px;
       position: static;
       padding-left: 105px;
       @media only screen and (max-width: 991px) {
         position: relative;
       }
+      @media only screen and (max-width: 415px) {
+        padding-left: 110px;
+        padding-right: 10px;
+      }
 
       .badge-header {
-        font-size: 24px;
+        font-size: 22px;
       }
       p {
         margin-top: 5px;
@@ -183,31 +187,40 @@
       }
       &:before {
         content: '';
-        margin-left: -95px;
         position: absolute;
-        top: 0;
       }
       .badge-desc {
         img.achieved {
           vertical-align: middle;
+          margin-right: 5px;
         }
       }
     }
   }
   .participant-badge:before {
-    @include badge('Member-06', 85px);
+    @include badge('Member-06', 95px);
+    top: 4px;
+    margin-left: -102px;
   }
   .education-badge:before {
-    @include badge('Education-06', 85px);
+    @include badge('Education-06', 100px);
+    top: 2px;
+    margin-left: -104px;
   }
   .peer-badge:before {
-    @include badge('Show-Your-Skills-06', 85px);
+    @include badge('Show-Your-Skills-06', 102px);
+    top: 4px;
+    margin-left: -102px;
   }
   .challenger-badge:before {
-    @include badge('Challenger-06', 85px);
+    @include badge('Challenger-06', 95px);
+    top: 4px;
+    margin-left: -102px;
   }
   .performer-badge:before {
-    @include badge('High-Performer-06', 85px);
+    @include badge('High-Performer-06', 100px);
+    top: 4px;
+    margin-left: -105px;
   }
 
   .resources-section {
