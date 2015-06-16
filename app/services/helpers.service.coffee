@@ -24,6 +24,9 @@ Helpers = (ENV) ->
     if challenge.reviewType && challenge.reviewType == 'PEER'
       challenge.icon = 'peer'
       challenge.thumb = 'content/images/svg/SYS-IOS-Swift-Ready-06.svg'
+    else if challenge.challengeCommunity == 'design'
+      challenge.icon = 'not sure'
+      challenge.thumb = 'content/images/svg/Challenger-Designer-06.svg'
     else
       challenge.icon = 'swift'
       challenge.thumb = 'content/images/svg/Challenger-Developer-06.svg'

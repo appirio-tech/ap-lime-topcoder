@@ -17,6 +17,10 @@ run = ($rootScope, $state, AuthToken, Auth) ->
 
   # On each state change, Angular will check for authentication
   $rootScope.$on '$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) ->
+    # Keeps ui-router from loading pages half way down the page
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+
     # Check if the user is authenticated when the state requires authentication
     if toState.authenticate && !Auth.isAuthenticated()
       console.log 'State requires authentication, and user is not logged in.'
