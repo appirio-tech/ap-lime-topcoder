@@ -30,7 +30,7 @@ section.container.learn-badges-section#learn-more
         span(ng-show="vm.registrationSuccess") Congratulations!!! You just earned the particpant badge
 
       .badge-link
-        a.btn(ng-click="vm.registerForProgram()", ng-show="!vm.registered") Select
+        a.btn(ng-click="vm.registerForProgram()", ng-class="{invisible: vm.registered}") Select
         span.text-danger.margin-left-2x(ng-show="vm.registrationError", ng-bind="vm.registrationError")
 
     .badge-item.education-badge.col-xs-12.col-md-4
