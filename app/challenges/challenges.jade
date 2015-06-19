@@ -49,7 +49,7 @@ carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'peer'
                 li Complete a Show Your Skills challenge - choose one from the list below
                 li Use an iOS-specific scorecard to review and score 5 solutions submitted by your peers
                 li Receive feedback and a "pass" score from your peers
-          .learn Visit our #[a.lnk(href="https://help.{{main.domain}}", target="_blank") help center] to learn more about peer reviews.
+          .learn Visit our #[a.lnk(ng-href="https://help.{{main.domain}}", target="_blank") help center] to learn more about peer reviews.
           .actns
             a.btn.btnChallenges(href='#view-challenges', du-smooth-scroll) View Peer Challenges
 
@@ -89,7 +89,9 @@ carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'peer'
           .chrw.clearfix
             figure.col1.imgWrap.pull-left
               a(ng-href="{{challenge.url}}")
-                img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
+                img.challenge-image(ng-show="challenge.reviewType == 'PEER'", src="content/images/svg/SYS-IOS-Swift-Ready-06.svg", alt="challenge image")
+                img.challenge-image(ng-show="challenge.challengeCommunity == 'design'", src="content/images/svg/Challenger-Designer-06.svg", alt="challenge image")
+                img.challenge-image(ng-show="challenge.reviewType != 'PEER' && challenge.challengeCommunity != 'design'", src="content/images/svg/Challenger-Developer-06.svg", alt="challenge image")
             .chge.col2.pull-left
               .inner
                 h4.chTitle
@@ -123,7 +125,10 @@ carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'peer'
       section.challenge
         .challenge-type {{challenge.type}}
 
-        img.challenge-image(ng-src="{{challenge.thumb}}", alt="challenge image")
+        a.challenge-image(ng-href="https://www.{{main.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop")
+          img(ng-show="challenge.reviewType == 'PEER'", src="content/images/svg/SYS-IOS-Swift-Ready-06.svg", alt="challenge image")
+          img(ng-show="challenge.challengeCommunity == 'design'", src="content/images/svg/Challenger-Designer-06.svg", alt="challenge image")
+          img(ng-show="challenge.reviewType != 'PEER' && challenge.challengeCommunity != 'design'", src="content/images/svg/Challenger-Developer-06.svg", alt="challenge image")          
 
         .challenge-details
           h2.challenge-header
@@ -162,7 +167,7 @@ carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'peer'
     li(ng-show="vm.hasMore && !vm.loading") #[a(ng-click="vm.loadMore()") Load more...]
     li(ng-show="vm.hasMore && vm.loading") Loading...
 
-.learn-section
+.learn-section(ng-hide="main.loggedInUser")
   section.container
     header.section-header
       h1.heading Ready to Stand Out in the Crowd?

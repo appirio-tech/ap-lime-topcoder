@@ -24,10 +24,10 @@ header.header-row
           li
             a(ui-sref="learn", ng-class="{activeTab: $state.current.name == 'learn'}") Learn
           li
-            a(href="https://help.{{main.domain}}", target="_blank") Help
-          li(ng-show="!main.loggedInUser")
+            a(ng-href="https://help.{{main.domain}}", target="_blank") Help
+          li(ng-hide="main.loggedInUser")
             a.btns.glow-btn.become-member(ui-sref="register") Become a member
-          li(ng-show="!main.loggedInUser")
+          li(ng-hide="main.loggedInUser")
             a.dropdown-profile.pull-left(ui-sref="login")
               img.pull-left(src="content/images/user.png")
               span.pull-left Log in

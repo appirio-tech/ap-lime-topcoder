@@ -30,7 +30,7 @@ section.container.learn-badges-section#learn-more
         span(ng-show="vm.registrationSuccess") Congratulations!!! You just earned the particpant badge
 
       .badge-link
-        a.btn(ng-click="vm.registerForProgram()", ng-show="!vm.registered") Select
+        a.btn(ng-click="vm.registerForProgram()", ng-class="{invisible: vm.registered}") Select
         span.text-danger.margin-left-2x(ng-show="vm.registrationError", ng-bind="vm.registrationError")
 
     .badge-item.education-badge.col-xs-12.col-md-4
@@ -108,7 +108,7 @@ section.resources-section
 
               li - Take an Apple-certified training class from #[a(href="https://www.bignerdranch.com/we-teach/", target="_blank") Big Nerd Ranch]
 
-.learn-section.learn-page
+.learn-section(ng-hide="main.loggedInUser")
   section.container
     header.section-header
       h1.heading Ready to Stand Out in the Crowd?

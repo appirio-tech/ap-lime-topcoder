@@ -12,21 +12,24 @@ Helpers = (ENV) ->
     if (challenge.challengeCommunity == 'design')
       if (!challenge.technologies)
         challenge.technologies = 'iOS Design'
-        
+
       if (!challenge.platforms)
         challenge.platforms = 'iOS'
-    
+
     id = challenge.challengeId
     type = if challenge.challengeCommunity then '/?type=' + challenge.challengeCommunity else ''
 
     challenge.url = "https://www.#{ ENV.domain }/challenge-details/#{ id }#{ type }"
 
-    if challenge.reviewType and challenge.reviewType is 'PEER'
+    if challenge.reviewType && challenge.reviewType == 'PEER'
       challenge.icon = 'peer'
-      challenge.thumb = 'content/images/peer-swift-challenge.png'
+      challenge.thumb = 'content/images/svg/SYS-IOS-Swift-Ready-06.svg'
+    else if challenge.challengeCommunity == 'design'
+      challenge.icon = 'not sure'
+      challenge.thumb = 'content/images/svg/Challenger-Designer-06.svg'
     else
       challenge.icon = 'swift'
-      challenge.thumb = 'content/images/swift-challenge-1.png'
+      challenge.thumb = 'content/images/svg/Challenger-Developer-06.svg'
 
 angular.module('lime-topcoder').factory 'Helpers', [
   'ENV'

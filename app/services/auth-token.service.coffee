@@ -2,20 +2,20 @@
 
 AuthToken = (ENV, $window, $cookies) ->
   tokenKey = 'tcjwt'
-  cachedToken = null
 
   token =
     setToken: (token) ->
-      $window.document.cookie = tokenKey + '=' + token + '; path=/; domain=.' + ENV.domain + '; expires=' + new Date(new Date().getTime() + 12096e5)
-      cachedToken = token
+      options =
+        domain: '.' + ENV.domain
+        expires: new Date(new Date().getTime() + 12096e5)
+
+      $cookies.put(tokenKey, token, JSON.stringify(options))
+
     getToken: () ->
-      if not cachedToken
-        cachedToken = $cookies[tokenKey]
-      cachedToken
+      $cookies.get(tokenKey)
 
     removeToken: () ->
-      $window.document.cookie = tokenKey + '=; path=/; domain=.' + ENV.domain + '; expires=' + new Date(0).toUTCString()
-      cachedToken = null
+      $cookies.remove(tokenKey)
 
 angular.module('lime-topcoder').factory 'AuthToken', [
   'ENV'
