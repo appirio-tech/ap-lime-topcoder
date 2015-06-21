@@ -124,6 +124,7 @@
           }
           .fr .vl {
             background: url(../images/ico-usr.png) 0 0 no-repeat;
+            @include retina { background-image: url(../images/ico-usr@2x.png); }
             padding-left: 58px;
             height: 42px;
             line-height: 42px;
@@ -133,6 +134,7 @@
           }
           .fs .vl {
             background: url(../images/ico-sub.png) 0 0 no-repeat;
+            @include retina { background-image: url(../images/ico-sub@2x.png); }            
             padding-left: 64px;
             height: 42px;
             line-height: 42px;
@@ -353,12 +355,18 @@
   }
   .developer-slide-1 {
     background-image: url('../images/bg-banner.png');
+    @include retina {
+        background-image: url('../images/bg-banner@2x.png');
+      }
     background-size: cover;
     background-position: 50% 0;
     background-repeat: no-repeat;
   }
   .developer-slide-2 {
     background-image: url('../images/bg-badge.jpg');
+    @include retina {
+        background-image: url('../images/bg-badge@2x.png');
+      }
     background-size: cover;
     background-position: 50% 0;
     background-repeat: no-repeat;
@@ -406,8 +414,10 @@
           display: inline-block;
           width: 30px;
           height: 30px;
-          background: url(../images/ico-view.png) no-repeat;
+          background-image: url(../images/ico-view.png);
+          @include retina { background-image: url(../images/ico-view@2x.png); }          
           background-position:  0 0;
+          background-repeat: no-repeat;
           margin-left: 11px;
           cursor: pointer;
         }

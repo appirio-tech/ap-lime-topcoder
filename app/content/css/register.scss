@@ -75,16 +75,23 @@
             height: 31px;
             display: inline-block;
             vertical-align: middle;
-            background: url("../images/checkbox.png") no-repeat 0 0;
+            background-image: url("../images/checkbox.png");
+            background-repeat: no-repeat;
+            background-position: 0 0;
             margin-right: 15px;
             margin-left: 5px;
             @media only screen and (max-width: 475px) {
               margin-right: 0;
               margin-left: 0;
             }
+            
+            @include retina {
+              background-image: url("../images/checkbox@2x.png");
+            }
 
             &.checked{
-              background: url("../images/checkbox.png") no-repeat 0 -38px;
+              background-position: 0 -38px;
+              @include retina { background-position: 0 -76px; }
             }
           }
           .label {

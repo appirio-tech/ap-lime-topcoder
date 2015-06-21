@@ -61,6 +61,9 @@
       padding-top: 0;
       padding-bottom: 0;
     }
+    @include retina {
+        background: url('../images/banner-landing@2x.jpg');
+    }
 
     .section-header {
       text-align: left;
