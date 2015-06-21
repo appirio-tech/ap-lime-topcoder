@@ -1,6 +1,6 @@
 # Lime-Topcoder
 
-This repository uses Jade, SCSS, CoffeeScript, Angular, and Grunt and was generated with [yo angular generator](https://github.com/yeoman/generator-angular) version 0.11.1.
+This repository uses Jade, SCSS, CoffeeScript, Angular, and Grunt.
 
 ## Installation
 
