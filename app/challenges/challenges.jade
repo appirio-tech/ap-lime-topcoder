@@ -121,7 +121,7 @@ carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'peer'
                   a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numSubmissions}}
 
   ul.challengesGrid.row(ng-show="isGrid")
-    li.col-xs-12.col-sm-6.col-md-4.col-lg-3(ng-repeat="challenge in vm.challenges")
+    li(ng-repeat="challenge in vm.challenges")
       section.challenge
         .challenge-type {{challenge.type}}
 
