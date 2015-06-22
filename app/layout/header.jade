@@ -24,7 +24,7 @@ header.header-row
           li
             a(ui-sref="learn", ng-class="{activeTab: $state.current.name == 'learn'}") Learn
           li
-            a(href="https://help.{{main.domain}}", target="_blank") Help
+            a(ng-href="https://help.{{main.domain}}", target="_blank") Help
           li(ng-hide="main.loggedInUser")
             a.btns.glow-btn.become-member(ui-sref="register") Become a member
           li(ng-hide="main.loggedInUser")

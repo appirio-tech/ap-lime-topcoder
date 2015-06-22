@@ -389,7 +389,7 @@ module.exports = function (grunt) {
           '<%= yeoman.dist %>/**/*.html',
           '!<%= yeoman.dist %>/index.html',
           '<%= yeoman.dist %>/content/images/**/*.{png,jpg,jpeg,gif,webp,svg,ico}',
-          '<%= yeoman.dist %>/contents/fonts/**/*.{eot,svg,ttf,woff,otf}'
+          '<%= yeoman.dist %>/content/fonts/**/*.{eot,svg,ttf,woff,otf}'
         ]
       }
     },

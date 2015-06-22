@@ -24,7 +24,6 @@ learn = ($scope, ENV, MemberCertService, $state) ->
     .then (response) ->
       # set off loading flag
       main.loading = false
-      console.log response
       registered = false
       if response.status == 200
         result = response.data.result
@@ -53,12 +52,15 @@ learn = ($scope, ENV, MemberCertService, $state) ->
       if response.status == 200
         vm.registrationSuccess = true
         vm.registered = true
+      else
+        vm.registrationError = 'Unable to register. Please try after some time.'
 
     .catch (error) ->
       # TODO show error
       main.loading = false
       vm.registered = false
       vm.registrationSuccess = false
+      vm.registrationError = 'Unable to register. Please try after some time.'
 
   # registers login even handler to handle timing of multiple ajax calls
   main.addLoginEventHandler('learn', vm.checkRegStatus)
