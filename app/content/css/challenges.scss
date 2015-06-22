@@ -263,20 +263,20 @@
 
         .bdg{
           display: inline-block;
-          background: url(../images/svg/SYS-IOS-Swift-Ready-06.svg) 0 0  no-repeat;
-          width: 228px;
-          height: 299px;
+          background: url(../images/svg/Show-Your-Skills-06.svg) 0 0  no-repeat;
+          width: 219px;
+          height: 255px;
           @media (max-width: 991px) {
             display: inline-block;
             background-size: 100%;
-            width: 180px;
-            height: 299px;
+            width: 150px;
+            height: 190px;
           }
           @media (max-width: 767px) {
             position: absolute;
             top: 25px;
             left: 245px;
-            width: 60px;
+            width: 70px;
             height: 80px;
           }
         }
