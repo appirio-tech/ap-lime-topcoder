@@ -53,20 +53,20 @@ html
 
     meta(itemprop='name', content='topcoder iOS Member Program')
     meta(itemprop='description', content='iOS/SWIFT challenges on topcoder.com, brought to you by Apple and Appirio. Now is the time to compete!')
-    meta(itemprop='image', content='http://apple.topcoder.com/content/images/logo-landing.png')
+    meta(itemprop='image', content='http://ios.topcoder.com/content/images/logo-landing.png')
 
     meta(name='twitter:card', content='iOS/SWIFT challenges on topcoder.com, brought to you by Apple and Appirio. Now is the time to compete!')
     meta(name='twitter:site', content='@topcoder')
     meta(name='twitter:title', content='topcoder iOS Member Program')
     meta(name='twitter:description', content='iOS/SWIFT challenges on topcoder.com, brought to you by Apple and Appirio. Now is the time to compete!')
     meta(name='twitter:creator', content='@topcoder')
-    meta(name='twitter:image:src', content='http://apple.topcoder.com/content/images/logo-landing.png')
+    meta(name='twitter:image:src', content='http://ios.topcoder.com/content/images/logo-landing.png')
 
-    meta(property='og:url', content='http://apple.topcoder.com')
+    meta(property='og:url', content='http://ios.topcoder.com')
     meta(property='og:title', content='topcoder iOS Member Program')
     meta(property='og:description', content='iOS/SWIFT challenges on topcoder.com, brought to you by Apple and Appirio. Now is the time to compete!')
     meta(property='og:site_name', content='topcoder iOS Member Program')
-    meta(property='og:image', content='http://apple.topcoder.com/content/images/logo-landing.png')
+    meta(property='og:image', content='http://ios.topcoder.com/content/images/logo-landing.png')
 
     meta(http-equiv="X-UA-Compatible", content="IE=edge, chrome=1")
 
@@ -115,7 +115,7 @@ html
   body(ng-app="lime-topcoder", ng-controller="main as main")
     include layout/header.jade
 
-    .view-container(ui-view, ng-class="$state.current.name", autoscroll="true")
+    .view-container(ui-view, ng-class="$state.current.name")
     .view-container-loading(ng-show="main.loading")
       .circle-3-loading
         span.loading-wrapper

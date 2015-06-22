@@ -139,17 +139,21 @@
       }
     }
     .badge-item {
-      line-height: 26px;
+      line-height: 1.2;
       color: $blue-gray;
-      font-size: 18px;
+      font-size: 17px;
       position: static;
       padding-left: 105px;
       @media only screen and (max-width: 991px) {
         position: relative;
       }
+      @media only screen and (max-width: 415px) {
+        padding-left: 110px;
+        padding-right: 10px;
+      }
 
       .badge-header {
-        font-size: 24px;
+        font-size: 22px;
       }
       p {
         margin-top: 5px;
@@ -183,52 +187,40 @@
       }
       &:before {
         content: '';
-        margin-left: -91px;
         position: absolute;
-        top: 0;
       }
       .badge-desc {
         img.achieved {
           vertical-align: middle;
+          margin-right: 5px;
         }
       }
     }
   }
   .participant-badge:before {
-    @include icon-sprite;
-    background-position: -112px 0px;
-    width: 76px;
-    height: 76px;
+    @include badge('Member-06', 95px);
+    top: 4px;
+    margin-left: -102px;
   }
   .education-badge:before {
-    @include icon-sprite;
-    background-position: -112px -78px;
-    width: 74px;
-    height: 74px;
+    @include badge('Education-06', 100px);
+    top: 2px;
+    margin-left: -104px;
   }
   .peer-badge:before {
-    @include icon-sprite;
-    background-position: 0px -83px;
-    width: 66px;
-    height: 90px;
+    @include badge('Show-Your-Skills-06', 102px);
+    top: 4px;
+    margin-left: -102px;
   }
   .challenger-badge:before {
-    @include icon-sprite;
-    background-position: -190px -76px;
-    width: 54px;
-    height: 74px;
+    @include badge('Challenger-06', 95px);
+    top: 4px;
+    margin-left: -102px;
   }
   .performer-badge:before {
-    @include icon-sprite;
-    background-position: -190px 0px;
-    width: 63px;
-    height: 74px;
-  }
-  .custom-badge:before {
-    @include icon-sprite;
-    background-position: 0px -175px;
-    width: 64px;
-    height: 64px;
+    @include badge('High-Performer-06', 100px);
+    top: 4px;
+    margin-left: -105px;
   }
 
   .resources-section {
