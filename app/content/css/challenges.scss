@@ -432,6 +432,11 @@
   .challenges-section {
     background-color: #f0f0f0;
     padding-bottom: 40px;
+    text-align: center;
+
+    & > section, & > ul {
+      text-align: initial;
+    }
 
     .badge-info {
       width: 75%;
@@ -715,13 +720,35 @@
     }
   }
   .challengesGrid {
-    margin-top: 40px;
+    display: inline-block;
+    max-width: 1286px;
+    margin: 40px auto 0;
+    padding-left: 25px;
+    @media only screen and (max-width: 1330px) {
+      max-width: 971px;
+    }
+    @media only screen and (max-width: 970px) {
+      max-width: 656px;
+    }
     @media (max-width: 767px) {
-      display: block !important;
+      display: inline-block !important;
+    }
+    @media only screen and (max-width: 655px) {
+      max-width: 290px;
+      padding-left: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: 25px;
+      @media only screen and (max-width: 655px) {
+        margin-right: 0;
+      }
     }
 
     .challenge {
-      max-width: 290px;
+      width: 290px;
+      display: inline-block;
       height: 480px;
       margin: 0 auto;
       background-color: $white;
