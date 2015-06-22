@@ -584,7 +584,6 @@ module.exports = function (grunt) {
   grunt.registerTask('build-release', function(env) {
     grunt.task.run([
       'coffeelint:app',
-      'karma:unit',
       'clean:dist',
       'ngconstant:' + env,
       'js2coffee',
