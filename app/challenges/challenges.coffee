@@ -24,6 +24,7 @@ challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
     # add review filter if required
     if vm.challengesType == 'peer'
       request.review = 'PEER'
+      request.event = ENV.LIME_PROGRAM_ID
 
     if vm.challengesType == 'all'
       request.review = 'COMMUNITY,INTERNAL'
