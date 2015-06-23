@@ -554,9 +554,9 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('default', [
-    'serve'
-  ]);
+  grunt.registerTask('default', ['serve']);
+
+  grunt.registerTask('test', ['karma:unit']);
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'prod') {
