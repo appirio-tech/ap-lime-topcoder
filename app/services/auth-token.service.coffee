@@ -6,7 +6,7 @@ AuthToken = (ENV, $window, $cookies) ->
   token =
     setToken: (token) ->
       options =
-        domain: '.' + ENV.domain
+        domain: ENV.domain
         expires: new Date(new Date().getTime() + 12096e5)
 
       $cookies.put(tokenKey, token, JSON.stringify(options))
