@@ -5,11 +5,12 @@ AuthToken = (ENV, $window, $cookies) ->
 
   token =
     setToken: (token) ->
-      options =
-        domain: ENV.domain
-        expires: new Date(new Date().getTime() + 12096e5)
+      $window.document.cookie = tokenKey + '=' + token + '; path=/; domain=.' + ENV.domain + '; expires=' + new Date((new Date()).getTime() + 12096e5);
+    #   options =
+    #     domain: ENV.domain
+    #     expires: new Date(new Date().getTime() + 12096e5)
 
-      $cookies.put(tokenKey, token, JSON.stringify(options))
+    #   $cookies.put(tokenKey, token, JSON.stringify(options))
 
     getToken: () ->
       $cookies.get(tokenKey)
