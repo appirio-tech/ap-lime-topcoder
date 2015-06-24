@@ -28,6 +28,15 @@ Helpers = (ENV) ->
     else
       challenge.icon = 'dev'
 
+  filterChallenges: (challenges) ->
+    filtered = []
+    for challenge in challenges
+      technologies = challenge.technologies
+      platforms = challenge.platforms
+      if ((!technologies || technologies.toLowerCase().indexOf('android') == -1) && (!platforms || platforms.toLowerCase().indexOf('android') == -1))
+        filtered.push(challenge)
+    filtered
+
 angular.module('lime-topcoder').factory 'Helpers', [
   'ENV'
   Helpers
