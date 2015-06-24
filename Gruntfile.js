@@ -109,7 +109,7 @@ module.exports = function (grunt) {
       },
       coffee: {
         files: ['<%= yeoman.app %>/**/*.coffee'],
-        tasks: ['newer:coffee:dist']
+        tasks: ['newer:coffee:dist', 'karma:unit']
       },
       coffeeTest: {
         files: ['test/spec/**/*.coffee'],
@@ -159,22 +159,6 @@ module.exports = function (grunt) {
               connect().use(
                 '/app/content/css',
                 connect.static('./app/content/css')
-              ),
-              connect.static(appConfig.app)
-            ];
-          }
-        }
-      },
-      test: {
-        options: {
-          port: 9002,
-          middleware: function (connect) {
-            return [
-              connect.static('.tmp'),
-              connect.static('test'),
-              connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
               ),
               connect.static(appConfig.app)
             ];
@@ -570,6 +554,9 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.registerTask('default', ['serve']);
+
+  grunt.registerTask('test', ['karma:unit']);
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'prod') {
@@ -582,6 +569,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'coffeelint:app',
+      'karma:unit',
       'clean:server',
       'ngconstant:development',
       'js2coffee',
@@ -593,59 +581,28 @@ module.exports = function (grunt) {
     ]);
   });
 
-  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve:' + target]);
+  grunt.registerTask('build-release', function(env) {
+    grunt.task.run([
+      'coffeelint:app',
+      'clean:dist',
+      'ngconstant:' + env,
+      'js2coffee',
+      'clean:constants',
+      'concurrent:dist',
+      'useminPrepare',
+      'autoprefixer:dist',
+      'concat:generated',
+      'copy:dist',
+      'cssmin:generated',
+      'uglify:generated',
+      'filerev',
+      'usemin',
+      'htmlmin'
+      // 'string-replace:cdnify'
+    ])
   });
 
-  grunt.registerTask('test', [
-    'clean:server',
-    'concurrent:test',
-    'autoprefixer',
-    'connect:test',
-    'karma:unit'
-  ]);
-
-  grunt.registerTask('build-release', [
-    'js2coffee',
-    'clean:constants',
-    'concurrent:dist',
-    'useminPrepare',
-    'autoprefixer',
-    'concat:generated',
-    'copy:dist',
-    'cssmin:generated',
-    'uglify:generated',
-    'filerev',
-    'usemin',
-    'htmlmin'
-    // 'string-replace:cdnify'
-  ]);
-
-  grunt.registerTask('default', [
-    'newer:jshint',
-    'test',
-    'build'
-  ]);
-
-  grunt.registerTask('build-dev', [
-    'coffeelint:app',
-    'clean:dist',
-    'ngconstant:development',
-    'build-release'
-  ]);
-
-  grunt.registerTask('build-qa', [
-    'coffeelint:app',
-    'clean:dist',
-    'ngconstant:qa',
-    'build-release'
-  ]);
-
-  grunt.registerTask('build', [
-    'coffeelint:app',
-    'clean:dist',
-    'ngconstant:production',
-    'build-release'
-  ]);
+  grunt.registerTask('build-dev', ['build-release:development']);
+  grunt.registerTask('build-qa', ['build-release:qa']);
+  grunt.registerTask('build', ['build-release:production']);
 };

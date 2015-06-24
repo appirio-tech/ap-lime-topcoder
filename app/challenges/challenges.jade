@@ -89,9 +89,9 @@ carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'peer'
           .chrw.clearfix
             figure.col1.imgWrap.pull-left
               a(ng-href="{{challenge.url}}")
-                img.challenge-image(ng-show="challenge.reviewType == 'PEER'", src="content/images/svg/SYS-IOS-Swift-Ready-06.svg", alt="challenge image")
-                img.challenge-image(ng-show="challenge.challengeCommunity == 'design'", src="content/images/svg/Challenger-Designer-06.svg", alt="challenge image")
-                img.challenge-image(ng-show="challenge.reviewType != 'PEER' && challenge.challengeCommunity != 'design'", src="content/images/svg/Challenger-Developer-06.svg", alt="challenge image")
+                img.challenge-image(ng-show="challenge.reviewType == 'PEER'", src="content/images/svg/Show-Your-Skills-06.svg", alt="challenge image")
+                img.challenge-image(ng-show="challenge.challengeCommunity == 'design'", src="content/images/svg/design-generic.svg", alt="challenge image")
+                img.challenge-image(ng-show="challenge.reviewType != 'PEER' && challenge.challengeCommunity != 'design'", src="content/images/svg/development-generic.svg", alt="challenge image")
             .chge.col2.pull-left
               .inner
                 h4.chTitle
@@ -121,14 +121,14 @@ carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'peer'
                   a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numSubmissions}}
 
   ul.challengesGrid.row(ng-show="isGrid")
-    li.col-xs-12.col-sm-6.col-md-4.col-lg-3(ng-repeat="challenge in vm.challenges")
+    li(ng-repeat="challenge in vm.challenges")
       section.challenge
         .challenge-type {{challenge.type}}
 
         a.challenge-image(ng-href="https://www.{{main.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop")
-          img(ng-show="challenge.reviewType == 'PEER'", src="content/images/svg/SYS-IOS-Swift-Ready-06.svg", alt="challenge image")
-          img(ng-show="challenge.challengeCommunity == 'design'", src="content/images/svg/Challenger-Designer-06.svg", alt="challenge image")
-          img(ng-show="challenge.reviewType != 'PEER' && challenge.challengeCommunity != 'design'", src="content/images/svg/Challenger-Developer-06.svg", alt="challenge image")
+          img(ng-show="challenge.reviewType == 'PEER'", src="content/images/svg/Show-Your-Skills-06.svg", alt="challenge image")
+          img(ng-show="challenge.challengeCommunity == 'design'", src="content/images/svg/design-generic.svg", alt="challenge image")
+          img(ng-show="challenge.reviewType != 'PEER' && challenge.challengeCommunity != 'design'", src="content/images/svg/development-generic.svg", alt="challenge image")
 
         .challenge-details
           h2.challenge-header

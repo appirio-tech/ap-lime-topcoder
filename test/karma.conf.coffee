@@ -23,7 +23,6 @@ module.exports = (config) ->
       'bower_components/angular-ui-router/release/angular-ui-router.js'
       'bower_components/bootstrap/dist/js/bootstrap.js'
       'bower_components/angular-bootstrap/ui-bootstrap.js'
-      'bower_components/angular-dropdowns/angular-dropdowns.js'
       'bower_components/angular-scroll/angular-scroll.js'
       'https://cdn.auth0.com/w2/auth0-1.6.4.js'
       'https://app-abc.marketo.com/js/forms2/js/forms2.min.js'
@@ -34,7 +33,6 @@ module.exports = (config) ->
       'app/directives/*.coffee'
       'app/*.coffee'
       'app/**/*.coffee'
-      'test/mock/**/*.coffee'
       'test/spec/**/*.coffee'
       'test/spec/**/*.json'
     ]
@@ -76,14 +74,13 @@ module.exports = (config) ->
       transformPath: (path) ->
         path.replace(/\.coffee$/, '.js')
 
-    # // Continuous Integration mode
-    # // if true, it capture browsers, run tests and exit
+    # Continuous Integration mode
+    # if true, it capture browsers, run tests and exit
     singleRun: true
 
     colors: true
 
-    # // level of logging
-    # // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
+    # Possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
     logLevel: config.LOG_INFO
 
     # Uncomment the following lines if you are using grunt's server to run the tests

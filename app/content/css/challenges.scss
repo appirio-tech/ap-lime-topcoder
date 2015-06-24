@@ -55,7 +55,7 @@
         margin: 0;
         margin-top: 20px;
         padding: 0;
-        padding-right: 60px;
+        padding-right: 80px;
         line-height: 67px;
         @media (max-width: 767px) {
           font-size: 40px;
@@ -69,12 +69,12 @@
       .ico {
         display: inline-block;
         position: absolute;
-        right: 0px;
+        right: 20px;
         top: 90px;
         @media (max-width: 991px) {
           height: 140px;
           width: 140px;
-          right: 0;
+          right: 20;
         }
         @media (max-width: 767px) {
           height: 100px;
@@ -83,12 +83,17 @@
         }
       }
       .ico.peer {
-        background: url('../images/sprite.png') 0 -81px no-repeat;
+        background: url('../images/svg/Show-Your_Skills-06.svg');
         width: 68px;
         height: 94px;
       }
-      .ico.swift {
-        background: url('../images/sprite.png') -186px -81px no-repeat;
+      .ico.design {
+        background: url('../images/svg/design-generic.svg');
+        height: 70px;
+        width: 68px;
+      }
+      .ico.dev {
+        background: url('../images/svg/development-generic.svg');
         height: 70px;
         width: 68px;
       }
@@ -261,7 +266,7 @@
           display: block;
         }
 
-        .bdg{
+        .bdg {
           display: inline-block;
           background: url(../images/svg/Show-Your-Skills-06.svg) 0 0  no-repeat;
           width: 219px;
@@ -437,6 +442,11 @@
   .challenges-section {
     background-color: #f0f0f0;
     padding-bottom: 40px;
+    text-align: center;
+
+    & > section, & > ul {
+      text-align: initial;
+    }
 
     .badge-info {
       width: 75%;
@@ -720,13 +730,35 @@
     }
   }
   .challengesGrid {
-    margin-top: 40px;
+    display: inline-block;
+    max-width: 1286px;
+    margin: 40px auto 0;
+    padding-left: 25px;
+    @media only screen and (max-width: 1330px) {
+      max-width: 971px;
+    }
+    @media only screen and (max-width: 970px) {
+      max-width: 656px;
+    }
     @media (max-width: 767px) {
-      display: block !important;
+      display: inline-block !important;
+    }
+    @media only screen and (max-width: 655px) {
+      max-width: 290px;
+      padding-left: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: 25px;
+      @media only screen and (max-width: 655px) {
+        margin-right: 0;
+      }
     }
 
     .challenge {
-      max-width: 290px;
+      width: 290px;
+      display: inline-block;
       height: 480px;
       margin: 0 auto;
       background-color: $white;

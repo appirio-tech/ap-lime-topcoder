@@ -7,6 +7,7 @@ Auth = (ENV, $window, AuthToken, $state, $stateParams, $location, $timeout, ApiS
     callbackURL: ENV.auth0Callback
 
   login: (username, password, successCallback, errorCallback) ->
+    console.log 'in login'
     auth0.signin
       connection: 'LDAP',
       scope: 'openid profile',
@@ -14,8 +15,10 @@ Auth = (ENV, $window, AuthToken, $state, $stateParams, $location, $timeout, ApiS
       password: password,
     , (err, profile, id_token, access_token, state) ->
       if (err)
+        console.log 'err', err
         errorCallback err
       else
+        console.log 'id token: ', id_token
         AuthToken.setToken id_token
         successCallback profile, id_token, access_token, state
 
