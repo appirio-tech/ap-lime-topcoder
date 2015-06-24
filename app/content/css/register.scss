@@ -78,6 +78,7 @@
             background-image: url("../images/checkbox.png");
             background-repeat: no-repeat;
             background-position: 0 0;
+            background-size: cover;
             margin-right: 15px;
             margin-left: 5px;
             @media only screen and (max-width: 475px) {
@@ -91,7 +92,6 @@
 
             &.checked{
               background-position: 0 -38px;
-              @include retina { background-position: 0 -76px; }
             }
           }
           .label {

@@ -62,7 +62,8 @@
       padding-bottom: 0;
     }
     @include retina {
-        background: url('../images/banner-landing@2x.jpg');
+        background: url('../images/banner-landing@2x.png');
+        background-size: cover;
     }
 
     .section-header {
