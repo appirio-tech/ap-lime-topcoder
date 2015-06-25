@@ -44,11 +44,14 @@ challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
       # process challenge for making info handy for the view
       Helpers.processChallenge challenge for challenge in response.data.data
 
+      # filter challenges
+      challenges = Helpers.filterChallenges response.data.data
+
       # append the retrieved challenges into existing collection
-      vm.challenges = vm.challenges.concat response.data.data
+      vm.challenges = vm.challenges.concat challenges
 
       # total challenges applicable for the given filter
-      total = response.data.total
+      total = challenges.length
 
       # detects if we need to show load more button
       if vm.challenges.length == total
