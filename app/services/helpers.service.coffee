@@ -33,7 +33,9 @@ Helpers = (ENV) ->
     for challenge in challenges
       technologies = challenge.technologies
       platforms = challenge.platforms
-      if ((!technologies || technologies.toLowerCase().indexOf('android') == -1) && (!platforms || platforms.toLowerCase().indexOf('android') == -1))
+      if (technologies && technologies.toLowerCase().indexOf('android') == -1 &&
+          platforms && platforms.toLowerCase().indexOf('android') == -1 &&
+          challenge.challengeName.toLowerCase().indexOf('android') == -1)
         filtered.push(challenge)
     filtered
 
