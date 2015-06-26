@@ -49,6 +49,18 @@
   background-repeat: no-repeat;
 }
 
+@mixin retina {
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+      @content
+  }
+}
+
 @mixin badge($name, $size) {
   background-image: url('../images/svg/' + $name + '.svg');
   background-size: $size $size;
