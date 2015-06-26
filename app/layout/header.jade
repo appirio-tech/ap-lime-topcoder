@@ -29,7 +29,7 @@ header.header-row
             a.btns.glow-btn.become-member(ui-sref="register") Become a member
           li(ng-hide="main.loggedInUser")
             a.dropdown-profile.pull-left(ui-sref="login")
-              img.pull-left(src="content/images/user.png")
+              img.pull-left(src="content/images/user.png", srcset="content/images/user@2x.png 2x")
               span.pull-left Log in
               span.drop-arrow.pull-left
           li.dropdown(ng-show="main.loggedInUser")

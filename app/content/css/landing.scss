@@ -61,6 +61,10 @@
       padding-top: 0;
       padding-bottom: 0;
     }
+    @include retina {
+        background: url('../images/banner-landing@2x.jpg');
+        background-size: cover;
+    }
 
     .section-header {
       text-align: left;
@@ -211,6 +215,10 @@
       &:before {
         content: '';
         background: url('../images/responsive.png');
+        @include retina {
+          background: url('../images/responsive@2x.png');
+          background-size: cover;
+        }
         background-size: auto 100%;
         background-position: 100% 50%;
         background-repeat: no-repeat;
@@ -220,7 +228,6 @@
           height: 521px;
           right: 100%;
           top: 57px;
-          margin-right: -40px;
         }
         @media only screen and (max-width: 991px) {
           display: block;

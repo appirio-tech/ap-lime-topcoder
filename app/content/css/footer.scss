@@ -17,7 +17,9 @@ footer ul.social li a {
   overflow: hidden;
   height: 27px;
   width: 27px;
-  background: url('../images/ico-social.png') no-repeat;
+  background-image: url('../images/ico-social.png');
+  @include retina { background-image: url('../images/ico-social@2x.png'); }
+  background-repeat: no-repeat;
   background-position: 0 0;
 }
 footer ul.social li a:hover {
@@ -82,13 +84,39 @@ footer ul.social li .tw:hover {
     .twit-icon{
       width: 16px;
       height: 16px;
-      background: url('../images/icons.png') no-repeat 0 -16px;
+      background-image: url('../images/icons.png');
+      background-position:  0 -16px;
+      background-repeat: no-repeat;
+      @include retina { 
+        background-image: -webkit-image-set(
+          url(../images/icons.png) 1x,
+          url(../images/icons@2x.png) 2x
+        );
+        background-image: image-set(
+          url(../images/icons.png) 1x,
+          url(../images/icons@2x.png) 2x
+        );
+      background-position:  -2px -16px;
+      }
     }
     .fb-icon{
       margin-right: 20px;
       width: 9px;
       height: 18px;
-      background: url('../images/icons.png') no-repeat 0 -37px;
+      background-image: url('../images/icons.png');
+      background-position:  0 -37px;
+      background-repeat: no-repeat;
+      @include retina { 
+        background-image: -webkit-image-set(
+          url(../images/icons.png) 1x,
+          url(../images/icons@2x.png) 2x
+        );
+        background-image: image-set(
+          url(../images/icons.png) 1x,
+          url(../images/icons@2x.png) 2x
+        );
+      background-position:  -2px -36px;
+      }
       @media only screen and (max-width: 767px) {
         margin-right: 30px;
       }
