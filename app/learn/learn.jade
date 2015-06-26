@@ -25,7 +25,7 @@ section.container.learn-badges-section#learn-more
       p.badge-desc(ng-show="!vm.registered") Sign up as an iOS Developer Community participant and earn a participant badge.
 
       p.badge-desc(ng-show="vm.registered")
-        img.achieved(src="content/images/ico-okay-check.png")
+        img.achieved(src="content/images/ico-okay-check.png", srcset="content/images/ico-okay-check@2x.png 2x")
         span(ng-show="!vm.registrationSuccess") You have the participant badge
         span(ng-show="vm.registrationSuccess") Congratulations!!! You just earned the particpant badge
 
@@ -83,7 +83,7 @@ section.resources-section
     .container
       section.row
         .col-xs-12.col-md-6.col-md-push-6.logo-column
-          img(alt='design logo', src='content/images/developer-logo.png')
+          img(alt='design logo', src='content/images/developer-logo.png', srcset='content/images/developer-logo@2x.png 2x')
 
         .col-xs-12.col-md-6.col-md-pull-6.content-col
           header.section-subheader

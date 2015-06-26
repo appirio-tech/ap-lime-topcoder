@@ -143,7 +143,7 @@ button {
 }
 .landing .newsletter-form-wrapper,
 .learn .newsletter-form-wrapper {
-  background: url('../images/community-background.png');
+  background-image: url('../images/community-background.png');
   background-size: cover;
   background-position: 50% 50%;
   padding: 40px 15px 46px 15px;
@@ -151,6 +151,10 @@ button {
   @media only screen and (max-width: 640px) {
     padding-left: 0;
     padding-right: 0;
+  }
+  
+  @include retina {
+      background-image: url('../images/community-background@2x.png');
   }
 
   .newsletter-form-section {
