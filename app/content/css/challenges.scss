@@ -427,14 +427,6 @@
           height: 28px;
         }
 
-        .lnk {
-          color: #009dce;
-          font-size: 22px;
-          height: 30px;
-          line-height: 28px;
-          vertical-align: top;
-          margin-right: 26px;
-        }
         .gridView,
         .listView {
           display: inline-block;
@@ -470,7 +462,7 @@
     }
 
     .badge-info {
-      width: 75%;
+      width: 85%;
       margin: 40px auto 0;
       @include myriad-pro-light;
       color: #383D43;
