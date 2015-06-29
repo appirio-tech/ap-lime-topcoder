@@ -83,7 +83,7 @@
         }
       }
       .ico.peer {
-        background: url('../images/svg/Show-Your_Skills-06.svg');
+        background: url('../images/svg/Show-Your-Skills-06.svg');
         width: 68px;
         height: 94px;
       }
@@ -152,8 +152,8 @@
           }
           .fs .vl {
             background: url(../images/ico-sub.png) 0 0 no-repeat;
-            
-            @include retina { 
+
+            @include retina {
               background-image: -webkit-image-set(
                 url(../images/ico-sub.png) 1x,
                 url(../images/../images/ico-sub@2x.png) 2x
@@ -163,7 +163,7 @@
                 url(../images/../images/ico-sub@2x.png) 2x
               );
             }
-                       
+
             padding-left: 64px;
             height: 42px;
             line-height: 42px;
@@ -441,7 +441,7 @@
           width: 30px;
           height: 30px;
           background-image: url(../images/ico-view.png);
-          @include retina { background-image: url(../images/ico-view@2x.png); }          
+          @include retina { background-image: url(../images/ico-view@2x.png); }
           background-position:  0 0;
           background-repeat: no-repeat;
           margin-left: 11px;
