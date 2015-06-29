@@ -83,7 +83,7 @@
         }
       }
       .ico.peer {
-        background: url('../images/svg/Show-Your_Skills-06.svg');
+        background: url('../images/svg/Show-Your-Skills-06.svg');
         width: 68px;
         height: 94px;
       }
@@ -152,8 +152,8 @@
           }
           .fs .vl {
             background: url(../images/ico-sub.png) 0 0 no-repeat;
-            
-            @include retina { 
+
+            @include retina {
               background-image: -webkit-image-set(
                 url(../images/ico-sub.png) 1x,
                 url(../images/../images/ico-sub@2x.png) 2x
@@ -163,7 +163,7 @@
                 url(../images/../images/ico-sub@2x.png) 2x
               );
             }
-                       
+
             padding-left: 64px;
             height: 42px;
             line-height: 42px;
@@ -427,21 +427,13 @@
           height: 28px;
         }
 
-        .lnk {
-          color: #009dce;
-          font-size: 22px;
-          height: 30px;
-          line-height: 28px;
-          vertical-align: top;
-          margin-right: 26px;
-        }
         .gridView,
         .listView {
           display: inline-block;
           width: 30px;
           height: 30px;
           background-image: url(../images/ico-view.png);
-          @include retina { background-image: url(../images/ico-view@2x.png); }          
+          @include retina { background-image: url(../images/ico-view@2x.png); }
           background-position:  0 0;
           background-repeat: no-repeat;
           margin-left: 11px;
@@ -470,7 +462,7 @@
     }
 
     .badge-info {
-      width: 75%;
+      width: 85%;
       margin: 40px auto 0;
       @include myriad-pro-light;
       color: #383D43;
