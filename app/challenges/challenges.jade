@@ -30,8 +30,6 @@ carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'all'"
         .actns
           a.btn.btnReg(ng-href="{{challenge.url}}", target="_blank") View
 
-          a.lnk(href='#view-challenges', du-smooth-scroll) View all challenges
-
 carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'peer'")
   slide.developer-slide-2.badgeSlide.slide
     section.container
@@ -50,8 +48,6 @@ carousel.carousel-section(interval="50000", ng-show="vm.challengesType == 'peer'
                 li Use an iOS-specific scorecard to review and score 5 solutions submitted by your peers
                 li Receive feedback and a "pass" score from your peers
           .learn Visit our #[a.lnk(ng-href="https://help.{{main.domain}}", target="_blank") help center] to learn more about peer reviews.
-          .actns
-            a.btn.btnChallenges(href='#view-challenges', du-smooth-scroll) View Peer Challenges
 
 .challenges-section#view-challenges
   section.container
