@@ -1,4 +1,4 @@
-carousel.carousel-section(interval="20000", ng-show="vm.challengesType == 'all'")
+carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'all'")
   slide.developer-slide-1.slide(ng-repeat="challenge in vm.slides")
     section.container
       h6.slide-title Featured Challenge
@@ -30,7 +30,7 @@ carousel.carousel-section(interval="20000", ng-show="vm.challengesType == 'all'"
         .actns
           a.btn.btnReg(ng-href="{{challenge.url}}", target="_blank") View
 
-carousel.carousel-section(interval="20000", ng-show="vm.challengesType == 'peer'")
+carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'")
   slide.developer-slide-2.badgeSlide.slide
     section.container
         figure.badgeWarp
