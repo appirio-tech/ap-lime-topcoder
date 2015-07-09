@@ -24,7 +24,8 @@ main = ($scope, $state, ENV, AuthService, UserService) ->
   vm.isActive = (state) ->
     if $state.current.name == state
       true
-    false
+    else
+      false
 
   loginHandlers = {}
   vm.addLoginEventHandler = (name, handler) ->
