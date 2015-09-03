@@ -18,7 +18,7 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) 
       templateUrl : 'login/login.html'
       controller  : 'login as vm'
     register:
-      url         : '/register'
+      url         : '/register?utm_campaign&utm_medium&utm_source'
       templateUrl : 'register/register.html'
       controller  : 'register as vm'
     confirmRegistration:
