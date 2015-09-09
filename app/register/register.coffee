@@ -1,6 +1,6 @@
 'use strict'
 
-register = ($scope, $state, Auth, Countries, ENV) ->
+register = ($scope, $state, $stateParams, Auth, Countries, ENV) ->
   DEFAULT_STATE = 'landing'
   vm = this
   vm.domain = ENV.domain
@@ -21,6 +21,9 @@ register = ($scope, $state, Auth, Countries, ENV) ->
     vm.frm.error = false
     vm.frm.errorMessage = ''
     vm.reg.regSource = 'apple'
+    vm.reg.utm_campaign = $stateParams.utm_campaign
+    vm.reg.utm_medium = $stateParams.utm_medium
+    vm.reg.utm_source = $stateParams.utm_source
 
     Auth.register vm.reg
     .then (data) ->
@@ -69,6 +72,7 @@ register = ($scope, $state, Auth, Countries, ENV) ->
 angular.module('lime-topcoder').controller 'register', [
   '$scope'
   '$state'
+  '$stateParams'
   'Auth'
   'Countries'
   'ENV'
