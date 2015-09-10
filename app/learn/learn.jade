@@ -1,83 +1,6 @@
-.top-banner
-  section.container
-    h1.banner-header Ready to join our #[strong iOS Developer Community?]
-
-    .banner-text
-      p Experienced and proven iOS developers are in high-demand. Prove your skills by earning these iOS topcoder badges and gain exclusive access to iOS challenges and prize accelerators, special previews into content and releases, and special community-related events and info.
-
-      ul.banner-actions
-        li
-          a.learn-link(href='#learn-more', du-smooth-scroll) Learn more
-
-        li(ng-show="!main.loggedInUser")
-          a.btn(ui-sref='register') Become a Member
-
-section.container.learn-badges-section#learn-more
-  header.section-header
-    h1.heading Stand Out in the iOS Developer Community
-
-    p Whether you are an experienced iOS developer or are just getting started, follow these steps to join and grow in the iOS Developer Community:
-
-  .badge-list.row
-    .badge-item.participant-badge.col-xs-12.col-md-4
-      .badge-header Participant Badge
-
-      p.badge-desc(ng-show="!vm.registered") Sign up as an iOS Developer Community participant and earn a participant badge.
-
-      p.badge-desc(ng-show="vm.registered")
-        img.achieved(src="content/images/ico-okay-check.png", srcset="content/images/ico-okay-check@2x.png 2x")
-        span(ng-show="!vm.registrationSuccess") You have the participant badge
-        span(ng-show="vm.registrationSuccess") Congratulations!!! You just earned the particpant badge
-
-      .badge-link
-        a.btn(ng-click="vm.registerForProgram()", ng-class="{invisible: vm.registered}") Select
-        span.text-danger.margin-left-2x(ng-show="vm.registrationError", ng-bind="vm.registrationError")
-
-    .badge-item.education-badge.col-xs-12.col-md-4
-      .badge-header Education Badges
-
-      p Take an iOS training class to earn Education badges
-
-      .badge-link
-        a.btn(ui-sref="challenges({type: 'peer'})", disabled) Coming Soon
-
-    .badge-item.peer-badge.col-xs-12.col-md-4
-      .badge-header Show Your Skills Badges
-
-      p Pass a Show-Your-Skills Challenge and get recognized as “Swift/iOS Ready!”
-
-      .badge-link
-        a.btn(ui-sref="challenges({type: 'peer'})") Select
-
-  .badge-list.row
-    .badge-item.challenger-badge.col-xs-12.col-md-4
-      .badge-header Challenger Badge
-
-      p Register/Submit for your first iOS Mobile App challenge
-
-      .badge-link
-        a.btn(ui-sref="challenges({type: 'all'})", disabled) Coming Soon
-
-    .badge-item.performer-badge.col-xs-12.col-md-4
-      .badge-header High Performer Badges
-
-      p Demonstrate Customer-Ready Skills
-
-      .badge-link
-        a.btn(ui-sref="challenges({type: 'all'})", disabled) Coming Soon
-
-.newsletter-form-wrapper
-  section.newsletter-form-section.container
-    h1.heading iOS Developer Community
-    p Sign up to join the conversation
-
-    form#mktoForm_1944.newsletter-form
-
 section.resources-section
   header.section-header.container
-    h1.heading Resources to help you along the way
-
-    p Whether you are an experienced iOS developer or are just getting started, our community has resources that will help you become better.
+    h1.heading iOS and Swift Development Resources
 
   .resource-subsection.odd
     .container
@@ -87,12 +10,11 @@ section.resources-section
 
         .col-xs-12.col-md-6.col-md-pull-6.content-col
           header.section-subheader
-            h2.heading Just getting started with iOS?
+            p Whether you’re an experienced iOS/Swift developer or just getting started, there are tons of great resources available to help you along the way -- from the topcoder blog and community to free university courses to iOS training providers.
 
-            p There are some great resources available
+            br
 
-          .resource-description
-            p Whether you're looking for formal training classes or the chance to learn-by-doing, there are some great resources available within the Topcoder community, from universities, and from iOS training providers.
+            p Have a helpful resource to add to the list? Please send it in so we can share with the community!
 
           .resource-links
             h2.heading Resource Links:
@@ -107,12 +29,3 @@ section.resources-section
               li - Review Topcoder's #[a(href="https://www.topcoder.com/tag/swift/") Swift Blog posts] and #[a(href="https://www.topcoder.com/challenges/develop/past/?startDate=2014-04-01&technologies=SWIFT&pageIndex=1") previous challenges]
 
               li - Take an iOS developer training class from #[a(href="https://www.bignerdranch.com/we-teach/", target="_blank") Big Nerd Ranch]
-
-.learn-section(ng-hide="main.loggedInUser")
-  section.container
-    header.section-header
-      h1.heading Ready to Stand Out in the Crowd?
-
-      p Learn, get badged, and compete as a member of the iOS Developer Community
-
-    a.btn(ui-sref="register") Become a Member
