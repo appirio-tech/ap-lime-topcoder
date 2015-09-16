@@ -29,6 +29,7 @@ run = ($rootScope, $state, AuthToken, Auth) ->
 angular.module('lime-topcoder', dependencies).run [
   '$rootScope'
   '$state'
+  '$stateParams'
   'AuthToken'
   'Auth'
   run
