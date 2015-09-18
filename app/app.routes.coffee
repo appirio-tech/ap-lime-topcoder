@@ -9,6 +9,10 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) 
       url         : '/'
       templateUrl : 'landing/landing.html'
       controller  : 'landing as vm'
+    badges:
+      url         : '/badges'
+      templateUrl : 'badges/badges.html'
+      controller  : 'badges as vm'
     learn:
       url         : '/learn'
       templateUrl : 'learn/learn.html'

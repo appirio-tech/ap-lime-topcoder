@@ -18,7 +18,7 @@
       p Thanks for joining. Before you can compete, you'll need to confirm your email account with topcoder, so be sure to check your email for the activation link.
 
     .banner-text(ng-show="main.loggedInUser && main.loggedInUser.memberSince")
-      p You’re eager to get started, and we’ve got a bunch of new challenges lined up with Apple, lots of Swift challenges across the board, and a new model of competition based on peer reviews. Plus, during Swiftoberfest you’ll be eligible to win great prizes by participating in and completing challenges.
+      p You’re eager to get started, and we’ve got a bunch of iOS/Swift challenges lined up to give you new opportunities to earn cash. We’ve also rolled out a new badging program to prove your app development expertise, and during Swiftoberfest you’ll have a chance to win great prizes by competing in challenges.
 
     ul.banner-actions
       li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn More]
@@ -97,23 +97,6 @@
         a(ui-sref="challenges({type: 'all'})") View full challenge list
 
 section.learn-improve-section
-  .container
-    header.section-header
-      h1.heading Up Your iOS App Dev Skills
-
-      p Ready to Stand Out in the Crowd?
-
-    section.description-wrapper
-      .section-content
-        .section-subheader Learn, compete, and earn cash as a member of the topcoder iOS Developer Community
-
-        p Experienced and proven iOS developers are in high-demand. Prove your skills by earning these iOS topcoder badges and gain exclusive access to iOS challenges and prize accelerators, special previews into content and releases, and special community-related events and info.
-
-        a.section-action(ui-sref="learn") Learn more about the program
-
-      img.logo-column(alt='Up Your iOS App Dev Skills', src='content/images/learn-and-improve.png', srcset='content/images/learn-and-improve2x.png')
-
-
   .subsections
     .container
       .row
@@ -140,3 +123,12 @@ section.learn-improve-section
 
           .link-row
             a.btn(ui-sref="challenges({type: 'all'})") Learn more
+
+.learn-section(ng-hide="main.loggedInUser")
+  section.container
+    header.section-header
+      h1.heading Ready to Stand Out in the Crowd?
+
+      p Learn, get badged, and compete as a member of the iOS Developer Community
+
+    a.btn(ui-sref="register") Become a Member

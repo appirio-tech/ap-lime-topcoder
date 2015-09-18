@@ -25,11 +25,16 @@ header.header-row
                 a(ui-sref="challenges({type: 'peer'})") Show Your Skills
 
               li
-                a(ui-sref="challenges({type: 'all'})") iOS Challenges
+                a(ui-sref="challenges({type: 'all'})") All iOS Challenges
+
+              li
+                a(ui-sref="challenges({type: 'swiftoberfest'})") #swiftoberfest Challenges
 
           li
             a(ui-sref="learn", ng-class="{activeTab: $state.current.name == 'learn'}") Learn
 
+          li
+            a(ui-sref="badges", ng-class="{activeTab: $state.current.name == 'badge'}") Badges
           li
             a(ng-href="http://help.{{main.domain}}", target="_blank") Help
 
