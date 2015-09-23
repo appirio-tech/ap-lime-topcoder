@@ -1,34 +1,36 @@
-carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'all'")
-  slide.developer-slide-1.slide(ng-repeat="challenge in vm.slides")
-    section.container
-      h6.slide-title Featured Challenge
-      h1.section-header(ng-bind="challenge.challengeName")
-      span.ico(ng-class="challenge.icon")
-      .contestDetails
-        .rw
-          .lbl Technologies:
-          .val(ng-bind="challenge.technologies")
-        .rw
-          .lbl Platform:
-          .val(ng-bind="challenge.platforms")
-        .rw.alt.prizeRw(ng-hide="challenge.reviewType == 'PEER'")
-          .v $
-            span(ng-bind="challenge.totalPrize")
-        .rw.alt.time(ng-bind="challenge.submissionEndDate | localTime", ng-hide="challenge.reviewType == 'PEER'")
-        .rw.challenge-peer(ng-show="challenge.reviewType == 'PEER'")
-          .lbl Challenge start
-          .val.time(ng-bind="challenge.registrationStartDate | localTime")
-          .lbl.timeEnd Challenge end
-          .val.time(ng-bind="challenge.submissionEndDate | localTime")
-        .rw.reg
-          .lt.fr
-            .ca REGISTRANTS
-            .vl(ng-bind="challenge.numRegistrants")
-          .rt.fs
-            .ca SUBMISSIONS
-            .vl(ng-bind="challenge.numSubmissions")
-        .actns
-          a.btn.btnReg(ng-href="{{challenge.url}}", target="_blank") View
+div(ng-class="{'developer-slide-1': vm.challengesType != 'swiftoberfest', 'developer-slide-3': vm.challengesType == 'swiftoberfest'}")
+  carousel.carousel-section(interval="5000", ng-show="vm.challengesType != 'peer'")
+    slide.slide(ng-repeat="challenge in vm.slides")
+      section.container
+        h6.slide-title(ng-show="vm.challengesType == 'all'") Featured Challenge
+        h6.slide-title(ng-show="vm.challengesType == 'swiftoberfest'") Featured Swiftoberfest Challenge
+        h1.section-header(ng-bind="challenge.challengeName")
+        span.ico(ng-class="challenge.icon")
+        .contestDetails
+          .rw
+            .lbl Technologies:
+            .val(ng-bind="challenge.technologies")
+          .rw
+            .lbl Platform:
+            .val(ng-bind="challenge.platforms")
+          .rw.alt.prizeRw(ng-hide="challenge.reviewType == 'PEER'")
+            .v $
+              span(ng-bind="challenge.totalPrize")
+          .rw.alt.time(ng-bind="challenge.submissionEndDate | localTime", ng-hide="challenge.reviewType == 'PEER'")
+          .rw.challenge-peer(ng-show="challenge.reviewType == 'PEER'")
+            .lbl Challenge start
+            .val.time(ng-bind="challenge.registrationStartDate | localTime")
+            .lbl.timeEnd Challenge end
+            .val.time(ng-bind="challenge.submissionEndDate | localTime")
+          .rw.reg
+            .lt.fr
+              .ca REGISTRANTS
+              .vl(ng-bind="challenge.numRegistrants")
+            .rt.fs
+              .ca SUBMISSIONS
+              .vl(ng-bind="challenge.numSubmissions")
+          .actns
+            a.btn.btnReg(ng-href="{{challenge.url}}", target="_blank") View
 
 carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'")
   slide.developer-slide-2.badgeSlide.slide
@@ -36,18 +38,12 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
         figure.badgeWarp
           span.bdg
         .bdgCon
-          h6.slide-title Badge Details
-          h1.section-header Show Your Skills Badge
+          h1.section-header Show Your Skills Challenges
           .summary
            .row
-            .desc.col-xs-12 Ready to show your iOS mobile app development skills? The “Show Your Skills” badges use a peer-review process where you submit a solution to a problem and get reviewed by other developers working on that same problem. It is a great way to learn by doing, see how others approach the problem, and get feedback on your solution. Peer reviews are one of the most important activities you can do to improve your code and skills!
+            .desc.col-xs-12 Ready to show your iOS mobile app development skills? Show Your Skills challenges include a peer-review process where you submit a solution to a problem and get reviewed by other developers working on that same problem.
 
-            .col-xs-12.col-sm-8.cn Completion Includes:
-              ul.lst
-                li Complete a Show Your Skills challenge - choose one from the list below
-                li Use an iOS-specific scorecard to review and score 5 solutions submitted by your peers
-                li Receive feedback and a "pass" score from your peers
-          .learn Visit our #[a.lnk(ng-href="https://help.{{main.domain}}", target="_blank") help center] to learn more about peer reviews.
+            .desc.col-xs-12 Peer reviews are one of the most important activities you can do to improve your code and skills. It’s a great way to learn by doing, see how others approach the problem, and get feedback on your solution. Plus, once you complete a Show Your Skills challenge you’ll earn the Show Your Skills badge and be eligible for great Swiftoberfest prizes!
 
 .challenges-section#view-challenges
   section.container
@@ -58,8 +54,14 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
 
     header.section-header.fluid
       h1.heading(ng-show="vm.challengesType == 'all'") Current Challenges
+      h1.heading(ng-show="vm.challengesType == 'swiftoberfest'") Current #swiftoberfest Challenges
 
       .browse(ng-show="vm.challengesType == 'all'") Browse our available challenges and compete.
+        .viewType.hidden-xs
+          a.gridView(ng-click="isGrid=true")
+          a.listView(ng-click="isGrid=false")
+
+      .browse(ng-show="vm.challengesType == 'swiftoberfest'") Browse our available #swiftoberfest challenges and compete.
         .viewType.hidden-xs
           a.gridView(ng-click="isGrid=true")
           a.listView(ng-click="isGrid=false")
@@ -169,6 +171,3 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
       p Learn, get badged, and compete as a member of the iOS Developer Community
 
     a.btn(ui-sref="register") Become a Member
-
-
-

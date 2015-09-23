@@ -9,6 +9,10 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) 
       url         : '/'
       templateUrl : 'landing/landing.html'
       controller  : 'landing as vm'
+    badges:
+      url         : '/badges'
+      templateUrl : 'badges/badges.html'
+      controller  : 'badges as vm'
     learn:
       url         : '/learn'
       templateUrl : 'learn/learn.html'
@@ -32,6 +36,14 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) 
       url         : '/challenges/type/:type'
       templateUrl : 'challenges/challenges.html'
       controller  : 'challenges as vm'
+    swifttoberfest:
+      url         : '/swifttoberfest'
+      templateUrl : 'challenges/swifttoberfest/info.html'
+      controller  : 'swiftoberfestInfo as vm'
+    faq:
+      url         : '/swifttoberfest/faq/:question'
+      templateUrl : 'challenges/swifttoberfest/faq.html'
+      controller  : 'swiftoberfestFaq as vm'
 
   for name, state of states
     $stateProvider.state name, state
