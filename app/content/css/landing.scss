@@ -604,6 +604,9 @@
       }
       .link-row {
         text-align: center;
+        margin-top: 20px;
+        font-size: 22px;
+        color: #009dce;
       }
     }
   }
@@ -618,10 +621,6 @@
         margin-left: 80px;
       }
       .info-col {
-        min-height: 204px;
-        padding-bottom: 54px;
-        position: static;
-
         &:first-child .btn {
           margin-left: 31px;
         }
@@ -643,9 +642,6 @@
       }
       &:not(:first-child) {
         margin-top: 40px;
-      }
-      .link-row {
-        margin-top: 20px;
       }
     }
   }
