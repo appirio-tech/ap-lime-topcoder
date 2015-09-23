@@ -6,6 +6,7 @@ dependencies = [
   'app.directives'
   'ui.router'
   'ngCookies'
+  'ngSanitize'
   'ui.bootstrap'
   'duScroll'
 ]
