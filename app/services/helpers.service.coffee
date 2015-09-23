@@ -40,7 +40,7 @@ Helpers = (ENV) ->
 
         if(type == 'swiftoberfest')
 
-          if(challenge.challengeName.toLowerCase().indexOf('#swiftoberfest') != -1 )
+          if(challenge.challengeName.toLowerCase().indexOf('bughunt') != -1 )
 
             filtered.push(challenge)
 
