@@ -569,6 +569,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'coffeelint:app',
+      'karma:unit',
       'clean:server',
       'ngconstant:development',
       'js2coffee',
