@@ -7,12 +7,13 @@
 
       ul.banner-actions
         li
-          a.learn-link(href='#learn-more', du-smooth-scroll) Learni2 more
-
-        li(ng-show="!main.loggedInUser")
-          a.btn(ui-sref='register') Become a Member
+          a.learn-link(href='#learn-more', du-smooth-scroll) Learn more
 
 section.container.learn-badges-section#learn-more
+  header.section-header
+    h1.heading Ready to Stand Out in the Crowd?
+
+    p Learn, get badged, and compete as a member of the iOS Developer Community
   .badge-list.row
     .badge-item.participant-badge.col-xs-12.col-md-4
       .badge-header Participant Badge
@@ -60,12 +61,3 @@ section.container.learn-badges-section#learn-more
 
       .badge-link
         a.btn(ui-sref="challenges({type: 'all'})", disabled) Coming Soon
-
-.learn-section(ng-hide="main.loggedInUser")
-  section.container
-    header.section-header
-      h1.heading Ready to Stand Out in the Crowd?
-
-      p Learn, get badged, and compete as a member of the iOS Developer Community
-
-    a.btn(ui-sref="register") Become a Member

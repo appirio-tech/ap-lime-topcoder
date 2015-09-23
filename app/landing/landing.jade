@@ -99,14 +99,47 @@
 section.learn-improve-section
   .subsections
     .container
-      .row
+      .row.visible-md-block.visible-lg-block
+        section.col-sm-12.col-md-4.info-col
+          h2.subsection-header Up Your iOS and Swift Development Skills
+
+        section.col-sm-12.col-md-4.info-col
+          h2.subsection-header Take the First Steps to Stand Out in the Community
+
+        section.col-sm-12.col-md-4.info-col
+          h2.subsection-header Compete in Challenges and Win Cash
+
+      .row.visible-md-block.visible-lg-block
+        section.col-sm-12.col-md-4.info-col
+          p Just getting started with iOS or Swift? Check out our community resources to jumpstart your learning.
+
+        section.col-sm-12.col-md-4.info-col
+          p Prove your skills by competing in skills-based challenges with your peers and earning topcoder iOS badges.
+
+        section.col-sm-12.col-md-4.info-col
+          p Ready to compete in real-world challenges? Jump into a challenge and work on apps for some of the world’s top brands.
+
+      .row.visible-md-block.visible-lg-block
+        section.col-sm-12.col-md-4.info-col
+          .link-row
+            a(ui-sref="challenges({type: 'peer'})") Browse Resources
+
+        section.col-sm-12.col-md-4.info-col
+          .link-row
+            a(ui-sref="badges") Learn about badges
+
+        section.col-sm-12.col-md-4.info-col
+          .link-row
+            a(ui-sref="challenges({type: 'all'})") See current challenges
+
+      .row.visible-xs-block.visible-sm-block
         section.col-sm-12.col-md-4.info-col
           h2.subsection-header Up Your iOS and Swift Development Skills
 
           p Just getting started with iOS or Swift? Check out our community resources to jumpstart your learning.
 
           .link-row
-            a.btn(ui-sref="challenges({type: 'peer'})") Learn more
+            a(ui-sref="challenges({type: 'peer'})") Browse Resources
 
         section.col-sm-12.col-md-4.info-col
           h2.subsection-header Take the First Steps to Stand Out in the Community
@@ -114,15 +147,15 @@ section.learn-improve-section
           p Prove your skills by competing in skills-based challenges with your peers and earning topcoder iOS badges.
 
           .link-row
-            a.btn(ui-sref="learn") Learn more
+            a(ui-sref="badges") Learn about badges
 
         section.col-sm-12.col-md-4.info-col
           h2.subsection-header Compete in Challenges and Win Cash
 
-          p Ready to compete in real-world challenges? Jump into a challenge and work on apps for some of the world’s top brands.j
+          p Ready to compete in real-world challenges? Jump into a challenge and work on apps for some of the world’s top brands.
 
           .link-row
-            a.btn(ui-sref="challenges({type: 'all'})") Learn more
+            a(ui-sref="challenges({type: 'all'})") See current challenges
 
 .learn-section(ng-hide="main.loggedInUser")
   section.container

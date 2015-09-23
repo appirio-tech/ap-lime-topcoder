@@ -50,6 +50,15 @@ Helpers = (ENV) ->
 
     filtered
 
+  filterQuestion: (questions, slug) ->
+    question = {}
+    for q in questions
+      if (q.slug == slug)
+
+        question = q
+
+    question
+
 angular.module('lime-topcoder').factory 'Helpers', [
   'ENV'
   Helpers

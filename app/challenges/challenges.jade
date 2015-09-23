@@ -1,35 +1,36 @@
-carousel.carousel-section(interval="5000", ng-show="vm.challengesType != 'peer'")
-  slide.developer-slide-1.slide(ng-repeat="challenge in vm.slides")
-    section.container
-      h6.slide-title(ng-show="vm.challengesType == 'all'") Featured Challenge
-      h6.slide-title(ng-show="vm.challengesType == 'swiftoberfest'") Featured Swiftoberfest Challenge
-      h1.section-header(ng-bind="challenge.challengeName")
-      span.ico(ng-class="challenge.icon")
-      .contestDetails
-        .rw
-          .lbl Technologies:
-          .val(ng-bind="challenge.technologies")
-        .rw
-          .lbl Platform:
-          .val(ng-bind="challenge.platforms")
-        .rw.alt.prizeRw(ng-hide="challenge.reviewType == 'PEER'")
-          .v $
-            span(ng-bind="challenge.totalPrize")
-        .rw.alt.time(ng-bind="challenge.submissionEndDate | localTime", ng-hide="challenge.reviewType == 'PEER'")
-        .rw.challenge-peer(ng-show="challenge.reviewType == 'PEER'")
-          .lbl Challenge start
-          .val.time(ng-bind="challenge.registrationStartDate | localTime")
-          .lbl.timeEnd Challenge end
-          .val.time(ng-bind="challenge.submissionEndDate | localTime")
-        .rw.reg
-          .lt.fr
-            .ca REGISTRANTS
-            .vl(ng-bind="challenge.numRegistrants")
-          .rt.fs
-            .ca SUBMISSIONS
-            .vl(ng-bind="challenge.numSubmissions")
-        .actns
-          a.btn.btnReg(ng-href="{{challenge.url}}", target="_blank") View
+div(ng-class="{'developer-slide-1': vm.challengesType != 'swiftoberfest', 'developer-slide-3': vm.challengesType == 'swiftoberfest'}")
+  carousel.carousel-section(interval="5000", ng-show="vm.challengesType != 'peer'")
+    slide.slide(ng-repeat="challenge in vm.slides")
+      section.container
+        h6.slide-title(ng-show="vm.challengesType == 'all'") Featured Challenge
+        h6.slide-title(ng-show="vm.challengesType == 'swiftoberfest'") Featured Swiftoberfest Challenge
+        h1.section-header(ng-bind="challenge.challengeName")
+        span.ico(ng-class="challenge.icon")
+        .contestDetails
+          .rw
+            .lbl Technologies:
+            .val(ng-bind="challenge.technologies")
+          .rw
+            .lbl Platform:
+            .val(ng-bind="challenge.platforms")
+          .rw.alt.prizeRw(ng-hide="challenge.reviewType == 'PEER'")
+            .v $
+              span(ng-bind="challenge.totalPrize")
+          .rw.alt.time(ng-bind="challenge.submissionEndDate | localTime", ng-hide="challenge.reviewType == 'PEER'")
+          .rw.challenge-peer(ng-show="challenge.reviewType == 'PEER'")
+            .lbl Challenge start
+            .val.time(ng-bind="challenge.registrationStartDate | localTime")
+            .lbl.timeEnd Challenge end
+            .val.time(ng-bind="challenge.submissionEndDate | localTime")
+          .rw.reg
+            .lt.fr
+              .ca REGISTRANTS
+              .vl(ng-bind="challenge.numRegistrants")
+            .rt.fs
+              .ca SUBMISSIONS
+              .vl(ng-bind="challenge.numSubmissions")
+          .actns
+            a.btn.btnReg(ng-href="{{challenge.url}}", target="_blank") View
 
 carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'")
   slide.developer-slide-2.badgeSlide.slide
