@@ -52,7 +52,9 @@
 
       ul.banner-actions
         li
-          a.learn-link(href='#leaderboard', du-smooth-scroll) See the leaderboard
+          //
+            a.learn-link(href='#leaderboard', du-smooth-scroll) See the leaderboard
+          a(ui-sref="challenges({type: 'swiftoberfest'})") View challenges
 
         li(ng-show="!main.loggedInUser")
           a.btn(ui-sref='register') Become a Member
