@@ -411,6 +411,8 @@ module.exports = function (grunt) {
           '<%= yeoman.dist %>/content/images',
           '<%= yeoman.dist %>/landing',
           '<%= yeoman.dist %>/learn',
+          '<%= yeoman.dist %>/badges',
+          '<%= yeoman.dist %>/swiftoberfest',
           '<%= yeoman.dist %>/login',
           '<%= yeoman.dist %>/register'
         ],
