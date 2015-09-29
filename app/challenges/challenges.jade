@@ -43,14 +43,14 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
            .row
             .desc.col-xs-12 Ready to show your iOS mobile app development skills? Show Your Skills challenges include a peer-review process where you submit a solution to a problem and get reviewed by other developers working on that same problem.
 
-            .desc.col-xs-12 Peer reviews are one of the most important activities you can do to improve your code and skills. It’s a great way to learn by doing, see how others approach the problem, and get feedback on your solution. Plus, once you complete a Show Your Skills challenge you’ll earn the Show Your Skills badge and be eligible for great Swiftoberfest prizes!
+            .desc.col-xs-12 Peer reviews are one of the most important activities you can do to improve your code and skills. It’s a great way to learn by doing, see how others approach the problem, and get feedback on your solution. Plus, once you pass a Show Your Skills challenge you’ll earn the Show Your Skills badge and be eligible for great Swiftoberfest prizes!
 
 .challenges-section#view-challenges
   section.container
     .badge-info(ng-show="vm.challengesType == 'peer'")
       h1 Swift/iOS Ready! Show Your Skills Badge
 
-      p To start, complete a Swift/iOS Ready! challenge.  Successful completion of one of these challenges results in a "Swift/iOS Ready!" badge that helps set you apart from other developers in the community.  Each challenge asks you to complete part of an iOS mobile app by demonstrating you have the knowledge and capabilities to create high-quality iOS apps.  After you submit your solution, you will need to review 5 other submissions to complete the challenge and receive a score. If you pass, you receive the Swift/iOS Ready! badge.
+      p To start, register for a Swift/iOS Ready! challenge.  Successful completion of one of these challenges results in a Swift/iOS Ready! badge that helps set you apart from other developers in the community.  Each challenge asks you to complete part of an iOS mobile app by demonstrating you have the Swift knowledge and capabilities to create high-quality iOS apps.  After you submit your solution, you will need to review 5 other submissions to complete the challenge and receive a score. If you pass, you receive the Swift/iOS Ready! badge.
 
     header.section-header.fluid
       h1.heading(ng-show="vm.challengesType == 'all'") Current Challenges
@@ -66,7 +66,7 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
           a.gridView(ng-click="isGrid=true")
           a.listView(ng-click="isGrid=false")
 
-      .browse(ng-show="vm.challengesType == 'peer'") Show Your Skills Challenges - Register Today!
+      .browse(ng-show="vm.challengesType == 'peer'") Show Your Skills Challenges: Register Today!
         .viewType.hidden-xs
           a.gridView(ng-click="isGrid=true")
           a.listView(ng-click="isGrid=false")
