@@ -3,7 +3,7 @@
     header.section-header
       img(class="landing-logo", src="content/images/logo-landing.png", alt="TopCoder logo")
 
-      h1.heading(ng-show="!main.loggedInUser") Dear Developers,
+      h1.heading(ng-show="!main.loggedInUser") Dear Developers & Designers,
         strong We love you.
 
       h1.heading(ng-show="main.loggedInUser") Welcome #{''}
@@ -21,9 +21,7 @@
       p You’re eager to get started, and we’ve got a bunch of iOS/Swift challenges lined up to give you new opportunities to earn cash. We’ve also rolled out a new badging program to prove your app development expertise, and during Swiftoberfest you’ll have a chance to win great prizes by competing in challenges.
 
     ul.banner-actions
-      li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn More]
-      //
-        li #[a.btn(ui-sref="learn") Learn More]
+      li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn more]
 
       li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a member]
       li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(ui-sref="challenges({type: 'all'})", du-smooth-scroll) Start Competing]
@@ -38,7 +36,7 @@
 
         ul.section-actions
           li
-            a(ui-sref="challenges({type: 'all'})") View challenges
+            a(ui-sref="challenges({type: 'swiftoberfest'})") View Swiftoberfest challenges
 
           li(ng-show="!main.loggedInUser")
             a.btn(ui-sref="register") Become a member
@@ -113,7 +111,7 @@ section.learn-improve-section
           p Just getting started with iOS or Swift? Check out our community resources to jumpstart your learning.
 
         section.col-sm-12.col-md-4.info-col
-          p Prove your skills by competing in skills-based challenges with your peers and earning topcoder iOS badges.
+          p Prove your skills by competing in challenges with your peers and earning topcoder iOS badges.
 
         section.col-sm-12.col-md-4.info-col
           p Ready to compete in real-world challenges? Jump into a challenge and work on apps for some of the world’s top brands.
