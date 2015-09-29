@@ -14,6 +14,8 @@ header.header-row
     .header-right.pull-right
       nav.main-nav.navbar-collapse.collapse(id="lime-nav-bar")
         ul.nav.navbar-nav
+          li
+            a(ui-sref="swifttoberfest", ng-class="{activeTab: $state.current.name == 'swifttoberfest'}") Swifttoberfest
           li.dropdown.clearfix
             a.dropdown-toggle.dropdown-profile.pull-left(data-toggle="dropdown", aria-expanded="false", ng-class="{activeTab: $state.current.name == 'challenges'}")
               span.pull-left Challenges
@@ -25,15 +27,26 @@ header.header-row
                 a(ui-sref="challenges({type: 'peer'})") Show Your Skills
 
               li
-                a(ui-sref="challenges({type: 'all'})") iOS Challenges
+                a(ui-sref="challenges({type: 'all'})") All iOS Challenges
+
+              li
+                a(ui-sref="challenges({type: 'swiftoberfest'})") Swiftoberfest Challenges
+
+              li
+                a(ui-sref="toc") Swiftoberfest TOC
+
+              li
+                a(ui-sref="rules") Swiftoberfest Rules
 
           li
             a(ui-sref="learn", ng-class="{activeTab: $state.current.name == 'learn'}") Learn
 
           li
+            a(ui-sref="badges", ng-class="{activeTab: $state.current.name == 'badges'}") Badges
+          li
             a(ng-href="http://help.{{main.domain}}", target="_blank") Help
 
-          li(ng-hide="main.loggedInUser")
+          li.membership(ng-hide="main.loggedInUser")
             a.btns.glow-btn.become-member(ui-sref="register") Become a member
 
           li(ng-hide="main.loggedInUser")
