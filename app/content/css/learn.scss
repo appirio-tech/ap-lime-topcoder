@@ -297,7 +297,8 @@
     .section-subheader {
       @include myriad-pro-light;
       color: #333;
-      font-size: 20px;
+      font-size: 18px;
+      line-height: 23.4px;
       @media only screen and (max-width: 640px) {
         text-align: center;
       }
