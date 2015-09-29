@@ -22,8 +22,10 @@
 
     ul.banner-actions
       li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn More]
+      //
+        li #[a.btn(ui-sref="learn") Learn More]
 
-      li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a Member]
+      li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a member]
       li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(ui-sref="challenges({type: 'all'})", du-smooth-scroll) Start Competing]
 
 .get-training-section#learn-more
@@ -119,7 +121,7 @@ section.learn-improve-section
       .row.visible-md-block.visible-lg-block
         section.col-sm-12.col-md-4.info-col
           .link-row
-            a(ui-sref="challenges({type: 'peer'})") Browse resources
+            a(ui-sref="learn") Browse resources
 
         section.col-sm-12.col-md-4.info-col
           .link-row
@@ -136,7 +138,7 @@ section.learn-improve-section
           p Just getting started with iOS or Swift? Check out our community resources to jumpstart your learning.
 
           .link-row
-            a(ui-sref="challenges({type: 'peer'})") Browse Resources
+            a(ui-sref="learn") Browse Resources
 
         section.col-sm-12.col-md-4.info-col
           h2.subsection-header Take the First Steps to Stand Out in the Community
@@ -161,4 +163,4 @@ section.learn-improve-section
 
       p Learn, get badged, and compete as a member of the iOS Community
 
-    a.btn(ui-sref="register") Become a Member
+    a.btn(ui-sref="register") Become a member
