@@ -406,6 +406,7 @@ module.exports = function (grunt) {
         assetsDirs: [
           '<%= yeoman.dist %>',
           '<%= yeoman.dist %>/challenges',
+          '<%= yeoman.dist %>/challenges/swifttoberfest',
           '<%= yeoman.dist %>/confirmNewsletter',
           '<%= yeoman.dist %>/content/css',
           '<%= yeoman.dist %>/content/images',
@@ -414,7 +415,8 @@ module.exports = function (grunt) {
           '<%= yeoman.dist %>/badges',
           '<%= yeoman.dist %>/swifttoberfest',
           '<%= yeoman.dist %>/login',
-          '<%= yeoman.dist %>/register'
+          '<%= yeoman.dist %>/register',
+          '<%= yeoman.dist %>/badges',
         ],
         patterns: {
           js: [
