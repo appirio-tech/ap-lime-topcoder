@@ -933,10 +933,10 @@
       @media only screen and (max-width: 640px) {
         padding-top: 45px;
       }
-      @media only screen and (min-width: 1350px) {
+      @media only screen and (min-width: 850px) {
         background-image: url('../images/topcoder-swift-tree.png');
         background-repeat: no-repeat;
-        background-position: top 110px left 910px;
+        background-position: top 110px left 850px;
         background-size: 237px 300px;
       }
 
@@ -990,7 +990,7 @@
         li {
           display: inline-block;
           vertical-align: middle;
-
+          font-size: 18px;
           & + li {
             margin-left: 40px;
           }
@@ -1039,6 +1039,7 @@
     li {
       display: inline-block;
 
+
       & + li {
         margin-left: 40px;
       }
@@ -1048,7 +1049,7 @@
   .section-actions li,
   .section-action {
     color: $light-blue;
-    font-size: 22px;
+    font-size: 18px;
     @media only screen and (max-width: 415px) {
       font-size: 18px;
     }
@@ -1392,8 +1393,8 @@
     }
     h3 {
       font-weight: normal;
-      font-size: 64px;
-      color: $black;
+      font-size: 48px;
+      color: $header-gray;
     }
     .btn {
       margin-top: 30px;
