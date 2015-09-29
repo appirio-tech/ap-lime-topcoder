@@ -38,11 +38,11 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) 
       controller  : 'challenges as vm'
     swifttoberfest:
       url         : '/swifttoberfest'
-      templateUrl : 'swifttoberfest/info.html'
+      templateUrl : 'swifttoberfest/swifttoberfest.html'
       controller  : 'swiftoberfestInfo as vm'
     faq:
       url         : '/swifttoberfest/faq/:question'
-      templateUrl : 'swifttoberfest/faq.html'
+      templateUrl : 'swifttoberfestfaq/swifttoberfestfaq.html'
       controller  : 'swiftoberfestFaq as vm'
 
   for name, state of states
