@@ -1,6 +1,6 @@
 @import 'partials/combined';
 
-.learn {
+.badges {
   .top-banner {
     color: $white;
     background: url('../images/learn-background.jpg');
@@ -274,7 +274,6 @@
       }
 
       img {
-        max-width: 180px;
         @media only screen and (max-width: 991px) {
           max-width: 35%;
         }
@@ -296,8 +295,8 @@
     }
     .section-subheader {
       @include myriad-pro-light;
-      color: #333;
-      font-size: 20px;
+      color: $light-gray;
+      font-size: 22px;
       @media only screen and (max-width: 640px) {
         text-align: center;
       }
@@ -322,10 +321,9 @@
       margin-top: 30px;
 
       .heading {
-        font-size: 20px;
+        font-size: 22px;
         color: $light-gray;
         margin-bottom: 10px;
-        font-weight: bolder;
         @media only screen and (max-width: 415px) {
           font-size: 20px;
         }
@@ -335,13 +333,8 @@
         @include myriad-pro;
         font-size: 18px;
         line-height: 1.4;
-        color: $light-gray;
-        font-family: MyriadPro-Light,Calibri,sans-serif;
         @media only screen and (max-width: 415px) {
           font-size: 16px;
-        }
-        em {
-          font-style: italic;
         }
       }
     }

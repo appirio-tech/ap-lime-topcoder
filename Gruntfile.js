@@ -411,8 +411,10 @@ module.exports = function (grunt) {
           '<%= yeoman.dist %>/content/images',
           '<%= yeoman.dist %>/landing',
           '<%= yeoman.dist %>/learn',
+          '<%= yeoman.dist %>/badges',
+          '<%= yeoman.dist %>/swifttoberfest',
           '<%= yeoman.dist %>/login',
-          '<%= yeoman.dist %>/register'
+          '<%= yeoman.dist %>/register',
         ],
         patterns: {
           js: [

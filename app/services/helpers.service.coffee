@@ -28,7 +28,8 @@ Helpers = (ENV) ->
     else
       challenge.icon = 'dev'
 
-  filterChallenges: (challenges) ->
+  filterChallenges: (challenges, type) ->
+    console.log 'made it!' + type
     filtered = []
     for challenge in challenges
       technologies = challenge.technologies
@@ -36,8 +37,27 @@ Helpers = (ENV) ->
       if (technologies && technologies.toLowerCase().indexOf('android') == -1 &&
           platforms && platforms.toLowerCase().indexOf('android') == -1 &&
           challenge.challengeName.toLowerCase().indexOf('android') == -1)
-        filtered.push(challenge)
+
+        if(type == 'swiftoberfest')
+
+          if(challenge.challengeName.toLowerCase().indexOf('swiftoberfest') != -1 )
+
+            filtered.push(challenge)
+
+        else
+
+          filtered.push(challenge)
+
     filtered
+
+  filterQuestion: (questions, slug) ->
+    question = {}
+    for q in questions
+      if (q.slug == slug)
+
+        question = q
+
+    question
 
 angular.module('lime-topcoder').factory 'Helpers', [
   'ENV'
