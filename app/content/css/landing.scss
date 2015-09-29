@@ -16,7 +16,7 @@
 
   .section-actions li, .section-action {
     color: $light-blue;
-    font-size: 22px;
+    font-size: 18px;
     @media only screen and (max-width: 415px) {
       font-size: 18px;
     }
@@ -154,7 +154,7 @@
       .learn-link {
         @include myriad-pro-light;
         line-height: 1;
-        font-size: 22px;
+        font-size: 18px;
         @media only screen and (max-width: 415px) {
           font-size: 16px;
         }
@@ -605,7 +605,7 @@
       .link-row {
         text-align: center;
         margin-top: 20px;
-        font-size: 22px;
+        font-size: 18px;
         color: #009dce;
       }
     }
