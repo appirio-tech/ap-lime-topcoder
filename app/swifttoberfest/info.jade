@@ -3,7 +3,7 @@
     h1.banner-header Earn badges. Develop apps. Win cash and prizes.
 
     .banner-text
-      p Swiftoberfest is the perfect time of year to join topcoder’s iOS development community. Build your Swift skills and earn cash and great prizes by competing in real-world mobile app challenges for some of the world’s top brands.
+      p Swiftoberfest is the perfect time of year to join topcoder’s iOS Community. Build your Swift skills and earn cash and great prizes by competing in real-world mobile app challenges for some of the world’s top brands.
 
       ul.banner-actions
         li
@@ -14,17 +14,15 @@
 
 .get-training-section#learn-more
   section.container
-    h1.section-header What is Swiftoberfest?
-
     .row
       .col-xs-12.col-md-6.col-md-push-6.content-col
-        h2.content-question So what exactly is Swiftoberfest?
+        h1.content-question So what exactly is Swiftoberfest?
 
         p Swiftoberfest is an initiative to engage and grow the topcoder iOS Community with dozens of new iOS/Swift challenges. We’ve identified 10 key enterprises that want to design, prototype, and build apps before the end of the year, and by participating in these challenges over the next few months you can earn cash as well as win great prizes like an Apple TV or MacBook Pro!
 
         h2.content-question How long does it last?
 
-        p While Oktoberfest lasts for just 16 days, Swiftoberfest will continue until we complete all challenges necessary to build the 10 enterprise apps. We want Swiftoberfest to be fun and rewarding, and also provide you with lots of chances to improve - and get recognized for - your Swift skills. So whether you’re new to topcoder or a long-time member interested in trying new types of challenges, we hope you’ll join us in raising a stein to great challenges, a vibrant and growing community, and many months of Swift awesomeness!
+        p While Oktoberfest lasts for just 16 days, Swiftoberfest will continue until we complete all challenges necessary to build the 10 enterprise apps. We want Swiftoberfest to be fun and rewarding, and also provide you with lots of chances to improve and get recognized for - your Swift skills. So whether you’re new to topcoder or a long-time member interested in trying new types of challenges, we hope you’ll join us in raising a stein to great challenges, a vibrant and growing community, and many months of Swift awesomeness!
 
         ul.section-actions
           li
@@ -35,20 +33,20 @@
 
 .prize-section
   section.container
-    h1.banner-header Swiftoberfest Cast and Prizes
+    h1.banner-header Swiftoberfest cash and prizes
 
     .banner-text
       p Just like any other challenge on topcoder, if you win a Swiftoberfest challenge you’ll earn cash. But during Swiftoberfest you can also win cool prizes simply by competing!
 
-    h1.banner-header Show Your Skills Challenges
+    h1.banner-header Show your skills challenges
 
     .banner-text
-      p Participate in a Show Your Skills challenge to earn the Swift/iOS Ready! badge. If you’re one of the first 200 members to earn the badge you’ll be the proud owner of our hottest new t-shirt, which was designed by a community member just like you! Plus, every week starting on October 9 we’re raffling off ____. With drawings every week throughout Swiftoberfest, the sooner you earn your badge the greater your chances of winning.
+      p Participate in a Show Your Skills challenge to earn the Swift/iOS Ready! badge. If you’re one of the first 200 members to earn the badge you’ll be the proud owner of our hottest new t-shirt, which was designed by a community member just like you! Note that during Swiftoberfest, you can also earn your Swift/iOS Ready! badge by earning a passing score on submissions for select real-world challenges. These challenges are marked with [swiftiosready] in the title.
 
-    h1.banner-header Real-World Challenges
+    h1.banner-header Real-world challenges
 
     .banner-text
-      p Compete against other iOS developers in real-world challenges for your chance to earn cash as well as great prizes. We’re giving away five Apple TVs to the top five members on the leaderboard at the end of October, and a MacBook Pro to the top member on the leaderboard when the final Swiftoberfest challenge is completed (likely in December). Check back for additional leaderboard prizes in November, and see below for additional details on the leaderboard and prize eligibility.
+      p Compete against other iOS designers and developers in real-world challenges for your chance to earn cash as well as great prizes. We’re giving away Apple TVs in October, Apple Watches in November, and iPads and a MacBook Pro in December. See below for additional details on the leaderboard and prize eligibility.
 
       ul.banner-actions
         li
@@ -58,22 +56,22 @@
 
         li(ng-show="!main.loggedInUser")
           a.btn(ui-sref='register') Become a Member
-//
-  .know-standings#leaderboard
-    section.container
-      h1.section-header Swiftoberfest Leaderboard
 
-      .row
-        .col-xs-12.col-md-6.col-md-push-6.content-col
+.know-standings#leaderboard
+  section.container
+    h1.section-header Swiftoberfest Leaderboard
 
-          p Compete in real-world Swiftoberfest challenges for your chance to earn Swiftoberfest leaderboard points. In addition to any cash earnings, members who pass review and finish in the top 10 places for any given challenge will earn leaderboard points. The first place finisher receives 10 points, second place receives 9 points, and so on down to 1 point for 10th place. The more challenges you compete in, and the more top 10 finishes you earn, the more leaderboard points you’ll receive and the better your chances for winning Swiftoberfest prizes!
+    .row
+      .col-xs-12.col-md-6.col-md-push-6.content-col
 
-          ul.section-actions
-            li
-              a(ui-sref="challenges({type: 'swiftoberfest'})") View challenges
+        p Compete in real-world Swiftoberfest challenges for your chance to earn Swiftoberfest leaderboard points. In addition to any cash earnings, members who pass review and finish in the top 10 places for any given challenge will earn leaderboard points. The first place finisher receives 10 points, second place receives 9 points, and so on down to 1 point for 10th place. The more challenges you compete in, and the more top 10 finishes you earn, the more leaderboard points you’ll receive and the better your chances for winning Swiftoberfest prizes!
 
-            li(ng-show="!main.loggedInUser")
-              a.btn(ui-sref="register") Become a Member
+        ul.section-actions
+          li
+            a(ui-sref="challenges({type: 'swiftoberfest'})") View challenges
+
+          li(ng-show="!main.loggedInUser")
+            a.btn(ui-sref="register") Become a Member
 
 .faq
   .container.visible-md-block.visible-lg-block

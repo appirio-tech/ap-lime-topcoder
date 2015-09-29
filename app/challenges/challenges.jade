@@ -54,14 +54,14 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
 
     header.section-header.fluid
       h1.heading(ng-show="vm.challengesType == 'all'") Current Challenges
-      h1.heading(ng-show="vm.challengesType == 'swiftoberfest'") Current swiftoberfest Challenges
+      h1.heading(ng-show="vm.challengesType == 'swiftoberfest'") Current Swiftoberfest Challenges
 
       .browse(ng-show="vm.challengesType == 'all'") Browse our available challenges and compete.
         .viewType.hidden-xs
           a.gridView(ng-click="isGrid=true")
           a.listView(ng-click="isGrid=false")
 
-      .browse(ng-show="vm.challengesType == 'swiftoberfest'") Browse our available swiftoberfest challenges and compete.
+      .browse(ng-show="vm.challengesType == 'swiftoberfest'") Browse our available Swiftoberfest challenges and compete.
         .viewType.hidden-xs
           a.gridView(ng-click="isGrid=true")
           a.listView(ng-click="isGrid=false")
