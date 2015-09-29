@@ -49,10 +49,11 @@
 		color: #ffffff;
 		padding: 0 15px 0 15px;
 	}
-	.main-nav ul li:nth-child(4) {
+	.main-nav ul li.membership {
 		margin-left: 15px;
 	}
-	.main-nav ul li:nth-child(4) a{
+	.main-nav ul li.membership a,
+	.navbar-inverse .main-nav ul li.membership a {
 		line-height: 26px;
 		padding-right: 0;
 		padding-left: 0;
@@ -79,7 +80,6 @@
 	.become-member{
 		width: 147px;
 		height: 26px;
-		float: left;
 		margin: 11px 15px 0 0;
 		line-height: 26px;
 	}
@@ -134,7 +134,7 @@
 		}
 		.main-nav ul li .profile-data li a{
 			color: #ffffff;
-			padding: 0 0 0 20px;
+			padding: 0 0 2px 20px;
 		}
 
 /*** END HEADER STYLE ***/

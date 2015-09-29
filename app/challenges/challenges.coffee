@@ -29,6 +29,9 @@ challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
     if vm.challengesType == 'all'
       request.review = 'COMMUNITY,INTERNAL'
 
+    if vm.challengesType == 'swiftoberfest'
+      request.review = 'COMMUNITY,INTERNAL'
+
     # set loading flag
     vm.loading = true
 
@@ -45,7 +48,7 @@ challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
       Helpers.processChallenge challenge for challenge in response.data.data
 
       # filter challenges
-      challenges = Helpers.filterChallenges response.data.data
+      challenges = Helpers.filterChallenges response.data.data, vm.challengesType
 
       # append the retrieved challenges into existing collection
       vm.challenges = vm.challenges.concat challenges
