@@ -297,7 +297,7 @@
     .section-subheader {
       @include myriad-pro-light;
       color: #333;
-      font-size: 22px;
+      font-size: 20px;
       @media only screen and (max-width: 640px) {
         text-align: center;
       }
@@ -322,7 +322,7 @@
       margin-top: 30px;
 
       .heading {
-        font-size: 22px;
+        font-size: 20px;
         color: $light-gray;
         margin-bottom: 10px;
         font-weight: bold;
