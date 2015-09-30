@@ -1152,10 +1152,15 @@
         margin-top: 56px;
       }
       .content-question {
-        font-weight: bold;
-        margin-top: 20px;
-        @media only screen and (min-width: 992px) {
-          margin-top: 75px;
+        color: $header-gray;
+        @include myriad-pro-light;
+        font-size: 48px;
+        opacity: 1;
+        margin-top: 51px;
+        line-height: 1.2;
+        @media only screen and (max-width: 415px) {
+          margin-top: 25px;
+          font-size: 30px;
         }
       }
     }
