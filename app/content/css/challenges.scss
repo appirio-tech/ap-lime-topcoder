@@ -933,12 +933,6 @@
       @media only screen and (max-width: 640px) {
         padding-top: 45px;
       }
-      @media only screen and (min-width: 1350px) {
-        background-image: url('../images/topcoder-swift-tree.png');
-        background-repeat: no-repeat;
-        background-position: top 110px left 910px;
-        background-size: 237px 300px;
-      }
 
       .banner-header {
         @include myriad-pro-light;
@@ -1005,6 +999,17 @@
           height: 34px;
           line-height: 34px;
         }
+      }
+    }
+  }
+
+  .top-banner {
+    .container {
+      @media only screen and (min-width: 992px) {
+        background-image: url('../images/topcoder-swift-tree.png');
+        background-repeat: no-repeat;
+        background-position: right 24px center;
+        background-size: 237px 300px;
       }
     }
   }
