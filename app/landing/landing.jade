@@ -1,9 +1,9 @@
 .landing-banner
   section.container
     header.section-header
-      img(class="landing-logo", src="content/images/logo-landing.png", alt="TopCoder logo")
+      img(class="landing-logo", src="content/images/logo-landing.png", alt="TopCoders logo")
 
-      h1.heading(ng-show="!main.loggedInUser") Dear Developers,
+      h1.heading(ng-show="!main.loggedInUser") Dear Developers & Designers,
         strong We love you.
 
       h1.heading(ng-show="main.loggedInUser") Welcome #{''}
@@ -12,41 +12,34 @@
         strong We especially love you.
 
     .banner-text(ng-show="!main.loggedInUser")
-      p Become part of the iOS Developer Community and raise your mobile app dev game. An exclusive segment of Appirio’s topcoder community, this is where you can find iOS development mentors, earn iOS badges, collaborate and learn from others, earn money, and ultimately stand out from the crowd.
+      p You continually push yourself to learn the latest mobile app technologies life Swift in order to stand out from the crowd and deliver innovative solutions for top companies. And we want to help you prove what you can do, hone your skills, earn cash, and get recognized for your amazing work. Become part of the topcoder iOS Community and raise your mobile app dev game by earning badges and competing in real-world app development challenges.
 
     .banner-text(ng-show="main.loggedInUser && !main.loggedInUser.memberSince")
       p Thanks for joining. Before you can compete, you'll need to confirm your email account with topcoder, so be sure to check your email for the activation link.
 
     .banner-text(ng-show="main.loggedInUser && main.loggedInUser.memberSince")
-      p I'm sure you're eager to start. Don't let us get in the way, we've got a bunch of new challenges lined up with Apple, lots of Swift challenges across the board, and a new model of competition based on peer reviews.
+      p You’re eager to get started, and we’ve got a bunch of iOS/Swift challenges lined up to give you new opportunities to earn cash. We’ve also rolled out a new badging program to prove your app development expertise, and during Swiftoberfest you’ll have a chance to win great prizes by competing in challenges.
 
     ul.banner-actions
-      li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn More]
+      li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn more]
 
-      li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a Member]
-      li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(ui-sref="challenges({type: 'all'})", du-smooth-scroll) Start Competing]
+      li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a member]
+      li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(ng-click="vm.registerForProgram()", du-smooth-scroll) Start Competing]
 
 .get-training-section#learn-more
   section.container
-    h1.section-header Compete and learn from the best.
+    h1.section-header Complete badges. Develop apps.  Earn cash.
 
     .row
       .col-xs-12.col-md-6.col-md-push-6.content-col
-        p You are not a typical developer. You want to be the one who builds the winning solution for top companies - the companies who are looking for the best in iOS application development. You want to learn the latest mobile app languages like Swift to stand out from the crowd. And you want to prove it by showing what you can do and getting recognized for it.  Join and compete in the iOS Developer Community to connect and engage with your peers across the globe, receive feedback on your work from the most successful iOS developers and designers, and showcase your talent while building real-world applications to win cash along the way.
+        p There’s never been a better time to join topcoder and begin honing your iOS design and development skills, because starting in October we’re kicking off Swiftoberfest: a three-month program during which we’re giving away cash and tons of great prizes for completing challenges, earning Swift badges, and competing in iOS design and Swift development challenges for 10 select enterprise customers.
 
         ul.section-actions
           li
-            a(ui-sref="challenges({type: 'all'})") View challenges
+            a(ui-sref="challenges({type: 'swiftoberfest'})") View Swiftoberfest challenges
 
           li(ng-show="!main.loggedInUser")
-            a.btn(ui-sref="register") Become a Member
-
-.newsletter-form-wrapper
-  section.newsletter-form-section.container
-    h1.heading iOS Developer Community
-    p Sign up to join the conversation
-
-    form#mktoForm_1944.newsletter-form
+            a.btn(ui-sref="register") Become a member
 
 .challenges-section#challenges
   section.container
@@ -98,61 +91,74 @@
 
     ul.section-actions
       li
-        a(ui-sref="learn") Learn more about challenge types
-
-      li
         a(ui-sref="challenges({type: 'all'})") View full challenge list
 
 section.learn-improve-section
-  .container
-    header.section-header
-      h1.heading Up Your iOS App Dev Skills
-
-      p Take the first steps to stand out in the Community
-
-    section.description-wrapper
-      .section-content
-        .section-subheader You're on the road to becoming a member of the iOS Developer Community.
-
-        p Experienced and proven iOS developers are in high-demand. Prove your skills by earning these iOS topcoder badges and gain exclusive access to iOS challenges and prize accelerators, special previews into content and releases, and special community-related events and info.
-
-        a.section-action(ui-sref="learn") Learn more about the program
-
-      img.logo-column(alt='Up Your iOS App Dev Skills', src='content/images/learn-and-improve.png', srcset='content/images/learn-and-improve2x.png')
-
-
   .subsections
     .container
-      .row
+      .row.visible-md-block.visible-lg-block
         section.col-sm-12.col-md-4.info-col
-          h2.subsection-header Get Started in the Community
-
-          p Whether you are an experienced iOS developer or are just getting started, follow these steps to join and grow in the iOS Developer Community.
-
-          .link-row
-            a.btn(ui-sref="challenges({type: 'peer'})") Learn more
+          h2.subsection-header Up Your iOS and Swift Development Skills
 
         section.col-sm-12.col-md-4.info-col
-          h2.subsection-header Build the Skills You Need to Stand Out in the Crowd
-
-          p New to the community? Want to improve your skills? Why not try one of our Challenges to sharpen and elevate your skill level. Choose from one of our many different challenges types and train your way into becoming an iOS champion!
-
-          .link-row
-            a.btn(ui-sref="learn") Learn more
+          h2.subsection-header Take the First Steps to Stand Out in the Community
 
         section.col-sm-12.col-md-4.info-col
-          h2.subsection-header Compete and Win
+          h2.subsection-header Compete in Challenges and Win Cash
 
-          p Ready to prove yourself on a global stage? Do you have what it takes to compete and win in the iOS Developer Community? Jump into a challenge to show what you are capable of. Register for a customer challenge today!
+      .row.visible-md-block.visible-lg-block
+        section.col-sm-12.col-md-4.info-col
+          p Just getting started with iOS or Swift? Check out our community resources to jumpstart your learning.
+
+        section.col-sm-12.col-md-4.info-col
+          p Prove your skills by competing in challenges with your peers and earning topcoder iOS badges.
+
+        section.col-sm-12.col-md-4.info-col
+          p Ready to compete in real-world challenges? Jump into a challenge and work on apps for some of the world’s top brands.
+
+      .row.visible-md-block.visible-lg-block
+        section.col-sm-12.col-md-4.info-col
+          .link-row
+            a(ui-sref="learn") Browse resources
+
+        section.col-sm-12.col-md-4.info-col
+          .link-row
+            a(ui-sref="badges") Learn about badges
+
+        section.col-sm-12.col-md-4.info-col
+          .link-row
+            a(ui-sref="challenges({type: 'all'})") See current challenges
+
+      .row.visible-xs-block.visible-sm-block
+        section.col-sm-12.col-md-4.info-col
+          h2.subsection-header Up Your iOS and Swift Development Skills
+
+          p Just getting started with iOS or Swift? Check out our community resources to jumpstart your learning.
 
           .link-row
-            a.btn(ui-sref="challenges({type: 'all'})") Learn more
+            a(ui-sref="learn") Browse Resources
+
+        section.col-sm-12.col-md-4.info-col
+          h2.subsection-header Take the First Steps to Stand Out in the Community
+
+          p Prove your skills by competing in challenges with your peers and earning topcoder iOS badges.
+
+          .link-row
+            a(ui-sref="badges") Learn about badges
+
+        section.col-sm-12.col-md-4.info-col
+          h2.subsection-header Compete in Challenges and Win Cash
+
+          p Ready to compete in real-world challenges? Jump into a challenge and work on apps for some of the world’s top brands.
+
+          .link-row
+            a(ui-sref="challenges({type: 'all'})") See current challenges
 
 .learn-section(ng-hide="main.loggedInUser")
   section.container
     header.section-header
       h1.heading Ready to Stand Out in the Crowd?
 
-      p Learn, get badged, and compete as a member of the iOS Developer Community
+      p Learn, get badged, and compete as a member of the iOS Community
 
-    a.btn(ui-sref="register") Become a Member
+    a.btn(ui-sref="register") Become a member

@@ -266,7 +266,7 @@
       }
       .badgeWarp {
         float: left;
-        padding-top: 94px;
+        padding-top: 45px;
         max-width: 240px;
         @media (max-width: 991px) {
           float: left;
@@ -377,6 +377,12 @@
     background-size: cover;
     background-position: 50% 0;
     background-repeat: no-repeat;
+  }
+  .developer-slide-3 {
+    background-image: url('../images/orange_bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% 100%;
   }
   .section-header {
     max-width: 930px;
@@ -903,5 +909,593 @@
 
   .learn-section {
     background-color: $white;
+  }
+}
+
+.swifttoberfest {
+  .top-banner,
+  .prize-section {
+    color: $white;
+    background-image: url('../images/orange_bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% 100%;
+    @media only screen and (min-width: 992px) {
+      padding: 29px 102px 98px 86px;
+    }
+    @media only screen and (max-width: 991px) {
+      padding: 29px 0 20px 0;
+    }
+
+    .container {
+      position: relative;
+      padding-top: 132px;
+      @media only screen and (max-width: 640px) {
+        padding-top: 45px;
+      }
+
+      .banner-header {
+        @include myriad-pro-light;
+        font-size: 42px;
+        line-height: 1.6;
+        @media only screen and (max-width: 1030px) {
+          font-size: 35px;
+        }
+        @media only screen and (max-width: 640px) {
+          font-size: 28px;
+          line-height: 1.1;
+        }
+
+        strong {
+          font-size: 67px;
+          display: block;
+          margin-top: 12px;
+          @media only screen and (max-width: 1030px) {
+            font-size: 39px;
+            margin-top: 0;
+          }
+          @media only screen and (max-width: 640px) {
+            font-size: 30px;
+            margin-top: 5px;
+          }
+        }
+      }
+      .banner-text {
+        @include myriad-pro-light;
+        font-size: 20px;
+        margin-top: 27px;
+        margin-left: 6px;
+        line-height: 1.3;
+        max-width: 640px;
+        @media only screen and (max-width: 640px) {
+          font-size: 16px;
+          max-width: 450px;
+        }
+      }
+      .banner-actions {
+        margin-top: 60px;
+        margin-left: 25px;
+        line-height: 30px;
+        @media only screen and (max-width: 640px) {
+          margin-left: 0;
+          margin-top: 35px;
+        }
+
+        li {
+          display: inline-block;
+          vertical-align: middle;
+
+          & + li {
+            margin-left: 40px;
+          }
+        }
+        .learn-link {
+          @include myriad-pro-light;
+          line-height: 1;
+          font-size: 16px;
+        }
+        a {
+          color: $white;
+          height: 34px;
+          line-height: 34px;
+        }
+      }
+    }
+  }
+
+  .top-banner {
+    .container {
+      @media only screen and (min-width: 992px) {
+        background-image: url('../images/topcoder-swift-tree.png');
+        background-repeat: no-repeat;
+        background-position: right 24px center;
+        background-size: 237px 300px;
+      }
+    }
+  }
+
+  .prize-section {
+    color: $white;
+    background: url('../images/learn-background.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    @media only screen and (min-width: 992px) {
+      padding: 29px 102px 98px 86px;
+    }
+    @media only screen and (max-width: 991px) {
+      padding: 29px 0 20px 0;
+    }
+    .container {
+      @media only screen and (min-width: 1350px) {
+        background: none;
+      }
+      .banner-header {
+        margin-top: 27px;
+      }
+      .banner-text {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .section-actions {
+    margin-top: 42px;
+
+    li {
+      display: inline-block;
+
+      & + li {
+        margin-left: 40px;
+      }
+    }
+  }
+
+  .section-actions li,
+  .section-action {
+    color: $light-blue;
+    font-size: 22px;
+    @media only screen and (max-width: 415px) {
+      font-size: 18px;
+    }
+  }
+
+  .section-header {
+    max-width: 930px;
+    margin: 0 auto;
+    padding: 0 15px;
+    text-align: center;
+    opacity: 0.9;
+    color: #242f2d;
+    font-size: 29px;
+    margin-top: 69px;
+    line-height: 1.3;
+    @media only screen and (max-width: 415px) {
+      margin-top: 59px;
+    }
+
+    .heading {
+      color: $header-gray;
+      font-size: 48px;
+      margin-bottom: 20px;
+      @media only screen and (max-width: 415px) {
+        font-size: 18px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .get-training-section,
+  .know-standings {
+    margin-bottom: 33px;
+    @media only screen and (min-width: 992px) {
+      position: relative;
+      min-height: 714px;
+    }
+    @media only screen and (max-width: 991px) {
+      padding-bottom: 20px;
+    }
+    @media only screen and (max-width: 415px) {
+      margin-bottom: 18px;
+    }
+
+    .section-header {
+      color: $header-gray;
+      @include myriad-pro-light;
+      font-size: 48px;
+      opacity: 1;
+      margin-top: 51px;
+      @media only screen and (max-width: 415px) {
+        margin-top: 25px;
+        font-size: 30px;
+      }
+    }
+    .content-col {
+      color: $blue-gray;
+      font-size: 18px;
+      line-height: 26px;
+      @media only screen and (min-width: 992px) {
+        margin-left: -19px;
+        max-width: 550px;
+      }
+      @media only screen and (max-width: 415px) {
+        font-size: 15px;
+        line-height: 23px;
+      }
+
+      &:before {
+        content: '';
+        background: url('../images/responsive.png');
+        @include retina {
+          background: url('../images/responsive@2x.png');
+          background-size: cover;
+        }
+        background-size: auto 100%;
+        background-position: 100% 50%;
+        background-repeat: no-repeat;
+        @media only screen and (min-width: 992px) {
+          position: absolute;
+          width: 669px;
+          height: 521px;
+          right: 100%;
+          top: 57px;
+        }
+        @media only screen and (max-width: 991px) {
+          display: block;
+          margin: 20px auto;
+          width: 500px;
+          height: 385px;
+        }
+        @media only screen and (max-width: 640px) {
+          height: 231px;
+          width: 314px;
+        }
+      }
+      & > a {
+        display: block;
+        color: $light-blue;
+        font-size: 22px;
+        margin-top: 56px;
+      }
+      .content-question {
+        color: $header-gray;
+        @include myriad-pro-light;
+        font-size: 48px;
+        opacity: 1;
+        margin-top: 51px;
+        line-height: 1.2;
+        @media only screen and (max-width: 415px) {
+          margin-top: 25px;
+          font-size: 30px;
+        }
+      }
+    }
+    .section-actions {
+      margin-top: 54px;
+      @media only screen and (max-width: 991px) {
+        text-align: center
+      }
+      @media only screen and (max-width: 415px) {
+        margin-top: 32px;
+      }
+
+      a:not(.btn) {
+        color: $light-blue;
+        @media only screen and (max-width: 415px) {
+          font-size: 16px;
+        }
+      }
+      a {
+        @media only screen and (max-width: 991px) {
+          text-align: center;
+        }
+      }
+      .btn {
+        @media only screen and (max-width: 415px) {
+          padding: 0 8px;
+          font-size: 13px;
+          line-height: 29px;
+          height: 29px;
+        }
+      }
+    }
+  }
+
+  .know-standings {
+    background-image: url('../images/bg-badge.jpg');
+    @include retina {
+      background-image: url('../images/bg-badge@2x.png');
+    }
+    background-size: cover;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    .section-header {
+      color: $white;
+    }
+    .content-col {
+      color: #f9f9f9;
+      &:before {
+        content: '';
+        background: url('../images/coming-soon.png');
+        background-size: 325px auto;
+        background-position: 37px 0;
+        background-repeat: no-repeat;
+        @media only screen and (min-width: 992px) {
+          position: absolute;
+          width: 494px;
+          height: 524px;
+          right: 100%;
+          top: 57px;
+        }
+        @media only screen and (max-width: 991px) {
+          width: 494px;
+          height: 524px;
+          background-size: auto 100%;
+          background-position: 100% 50%;
+        }
+        @media only screen and (max-width: 640px) {
+          height: 245px;
+          width: 314px;
+          background-size: 230px auto;
+          background-position: 42px 0;
+        }
+      }
+      p {
+        margin-top: 75px;
+      }
+    }
+  }
+
+  .faq {
+    margin-bottom: 30px;
+    .heading {
+      margin-top: 30px;
+      font-size: 22px;
+      color: $light-gray;
+      margin-bottom: 10px;
+    }
+    p {
+      font-family: MyriadPro-Light,Calibri,sans-serif;
+      color: $light-gray;
+      font-size:18px;
+      line-height: 1.4;
+      margin-top: 20px;
+    }
+    .faqItem {
+      margin-top: 30px;
+      display: block;
+      .faqContent {
+        transition: background 0.5s ease;
+        display: block;
+        background-color: #f8f8f8;
+        border: 1px transparent solid;
+        border-radius: 8px;
+      }
+      .faqTitleBox {
+        display: block;
+        height: 320px;
+        padding: 20px;
+        position: relative;
+      }
+      .faqTitle {
+        font-family: 'Myriad-Apple-Text',arial;
+        color: #2181ae;
+        font-size: 38px;
+      }
+      .faqPlus {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: url(../images/faq-plus.png) no-repeat;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+      }
+      .faqExcerptBox {
+        height: 320px;
+        padding: 20px;
+        position: relative;
+        display: none;
+      }
+      .faqExcerpt {
+        color: $white;
+        font-family: 'Myriad-Apple-Text',arial;
+        font-size: 22px;
+        line-height: 32px;
+        display: block;
+        height: 230px;
+        overflow: hidden;
+      }
+      .readMore {
+        color: $white;
+        display: block;
+        font-size: 18px;
+        position: absolute;
+        bottom: 15px;
+        left: 20px;
+      }
+      &:hover {
+        text-decoration: none;
+        .faqContent {
+          background-color: #2181ae;
+          border: 1px transparent solid;
+          border-radius: 8px;
+        }
+        .faqTitleBox {
+          display: none;
+        }
+        .faqPlus {
+          background: url(../images/faq-plus-hover.png) no-repeat;
+        }
+        .faqExcerptBox {
+          display: block;
+        }
+      }
+    }
+    .faqMobile {
+      padding: 50px;
+      .faqMobileItem {
+        padding: 20px 0px;
+        border-bottom: 1px $bootstrap-well solid;
+        &:first-child {
+          border-top: 1px $bootstrap-well solid;
+        }
+        .faqMobileTitle {
+          display: block;
+          font-family: 'Myriad-Apple-Text',arial;
+          font-size: 24px;
+          color: #2181ae;
+          position: relative;
+          padding-right: 30px;
+          cursor: pointer;
+          &:hover {
+            text-decoration: none;
+          }
+          span {
+            display: block;
+            width: 24px;
+            height: 24px;
+            background: url(../images/faq-plus.png) no-repeat;
+            position: absolute;
+            top: 20px;
+            right: 0px;
+          }
+          &.expand {
+            span {
+              background: url(../images/faq-minus.png) no-repeat;
+            }
+          }
+        }
+        .faqMobileContent {
+          padding: 20px 0px;
+          font-size: 16px;
+          line-height: 1.42;
+        }
+      }
+    }
+  }
+}
+
+.faq {
+  .inner-wrapper {
+    margin: 0px auto;
+    padding: 0px 20px;
+    max-width: 1300px;
+    margin-top: 90px;
+  }
+  .faqDetails {
+    margin-top: 40px;
+    padding: 0px 0px;
+    clear: both;
+    overflow: hidden;
+    .faqDetailsTitle {
+      font-size: 60px;
+      color: #025f89;
+      line-height: 68px;
+      font-weight: normal;
+    }
+    .faqDetailsMainContent {
+      margin-bottom: 30px;
+      p {
+        font-size: 17px;
+        color: #333e48;
+        line-height: 26px;
+      }
+    }
+    .faqPostList {
+      padding-top: 30px;
+      .faqLink {
+        display: block;
+        clear: both;
+        color: #636363;
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+.rules,
+.toc {
+  .inner-wrapper {
+    padding-bottom: 70px;
+    max-width: 930px;
+    margin: 0 auto 70px;
+    padding: 0 15px;
+
+    strong {
+      font-weight: bold;
+    }
+
+    .section-header {
+      margin-top: 69px;
+      text-align: center;
+      opacity: 0.9;
+      color: #242f2d;
+      font-size: 29px;
+      line-height: 1.3;
+      @media only screen and (max-width: 640px) {
+        font-size: 20px;
+        padding: 0;
+      }
+
+      .heading {
+        color: $header-gray;
+        font-size: 48px;
+        margin-bottom: 20px;
+        @media only screen and (max-width: 640px) {
+          font-size: 36px;
+          line-height: 1;
+        }
+        @media only screen and (max-width: 415px) {
+          font-size: 30px;
+        }
+      }
+    }
+    p {
+      @include myriad-pro-light;
+      font-size: 20px;
+    }
+    ol {
+      list-style-type: decimal;
+      margin-top: 20px;
+      li {
+        margin-left: 20px;
+        p {
+          font-size: 18px;
+          line-height: 1.4;
+          color: $light-gray;
+          font-family: MyriadPro-Light,Calibri,sans-serif;
+          margin-bottom: 15px;
+
+          .title {
+            text-transform: uppercase;
+            font-weight: bolder;
+            display: inline-block;
+            margin-right: 10px;
+          }
+        }
+      }
+      ol {
+        list-style-type: lower-roman;
+      }
+    }
+    table {
+      width: 100%;
+      border: 1px solid $black;
+      margin-bottom: 20px;
+      th,
+      td {
+        padding: 15px;
+        color: $light-gray;
+        border: 1px solid $light-gray;
+        font-family: MyriadPro-Light,Calibri,sans-serif;
+        font-size: 18px;
+      }
+      th {
+        font-weight: bold;
+        text-align: center;
+      }
+    }
   }
 }

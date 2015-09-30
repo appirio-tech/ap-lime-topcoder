@@ -1,0 +1,18 @@
+.inner-wrapper
+  .faqDetails.row
+    .col-sm-8
+      .faqDetailsContentWrapper
+        h3.faqDetailsTitle(ng-bind="vm.question.title")
+
+      .faqDetailsMainContent
+        p(ng-bind-html="vm.question.answer")
+
+    .col-sm-4.faqPostList
+      span(ng-repeat="q in vm.questions")
+        a.faqLink(ng-href="/swifttoberfest/faq/{{q.slug}}") {{q.title}}
+
+.view-challenges(ng-hide="main.loggedInUser")
+  section.container
+    header.section-header
+      h1.heading Are you ready to participate?
+    a.btn(ui-sref="register") Become a member

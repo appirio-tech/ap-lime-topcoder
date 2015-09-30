@@ -98,7 +98,9 @@ button {
 // Common Sections
 .challenges .learn-section,
 .landing .learn-section,
-.learn .learn-section {
+.learn .learn-section,
+.badges .learn-section,
+.faq .view-challenges { 
   background-color: #eee;
   padding: 0 15px 42px;
   text-align: center;
@@ -152,7 +154,7 @@ button {
     padding-left: 0;
     padding-right: 0;
   }
-  
+
   @include retina {
       background-image: url('../images/community-background@2x.png');
   }

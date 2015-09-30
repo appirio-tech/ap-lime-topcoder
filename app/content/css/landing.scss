@@ -16,7 +16,7 @@
 
   .section-actions li, .section-action {
     color: $light-blue;
-    font-size: 22px;
+    font-size: 18px;
     @media only screen and (max-width: 415px) {
       font-size: 18px;
     }
@@ -39,7 +39,7 @@
 
     .heading {
       color: $header-gray;
-      font-size: 48px;
+      font-size: 36x;
       margin-bottom: 20px;
       @media only screen and (max-width: 415px) {
         font-size: 18px;
@@ -75,7 +75,7 @@
       }
 
       .heading {
-        margin-top: 45px;
+        margin-top: 32px;
         color: #565859;
         @media only screen and (max-width: 675px) {
           font-size: 29px;
@@ -154,7 +154,7 @@
       .learn-link {
         @include myriad-pro-light;
         line-height: 1;
-        font-size: 22px;
+        font-size: 18px;
         @media only screen and (max-width: 415px) {
           font-size: 16px;
         }
@@ -572,7 +572,7 @@
     .subsections {
       padding-top: 41px;
       color: $blue-gray;
-      font-size: 14px;
+      font-size: 18px;
       font-weight: 300;
       line-height: 1.3;
       position: relative;
@@ -603,7 +603,10 @@
         margin-bottom: 24px;
       }
       .link-row {
-        text-align: center;
+        text-align: left;
+        margin-top: 20px;
+        font-size: 18px;
+        color: #009dce;
       }
     }
   }
@@ -618,10 +621,6 @@
         margin-left: 80px;
       }
       .info-col {
-        min-height: 204px;
-        padding-bottom: 54px;
-        position: static;
-
         &:first-child .btn {
           margin-left: 31px;
         }
@@ -643,9 +642,6 @@
       }
       &:not(:first-child) {
         margin-top: 40px;
-      }
-      .link-row {
-        margin-top: 20px;
       }
     }
   }

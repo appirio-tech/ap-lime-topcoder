@@ -1,8 +1,9 @@
 'use strict'
 
-landing = ($state, ChallengeService, Helpers, ENV) ->
+landing = ($scope, $state, ChallengeService, MemberCertService, Helpers, ENV) ->
   vm        = this
   vm.domain = ENV.domain
+  main = $scope.$parent.main
 
   # Make sure there are 3 challenges showing.
   # The first challenge should be of type 'PEER'.
@@ -28,11 +29,37 @@ landing = ($state, ChallengeService, Helpers, ENV) ->
       $state.go 'confirmNewsletter'
       false
 
+  vm.registerForProgram = () ->
+    if !main.loggedInUser
+      return
+    main.loading = true
+    request =
+      userId: main.loggedInUser.uid
+      programId: ENV.LIME_PROGRAM_ID
+    MemberCertService.registerForProgram(request)
+    .then (response) ->
+      # set off loading flag
+      main.loading = false
+      if response.status == 200
+        $state.go(
+          'challenges'
+          {type: 'all'}
+        )
+      else
+        console.log('An error occurred attempting to set the Participation Badge')
+
+    .catch (error) ->
+      # TODO show error
+      main.loading = false
+      console.log(error)
+
   return vm
 
 angular.module('lime-topcoder').controller 'landing', [
+  '$scope'
   '$state'
   'ChallengeService'
+  'MemberCertService'
   'Helpers'
   'ENV'
   landing
