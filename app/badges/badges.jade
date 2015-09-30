@@ -12,7 +12,7 @@ section.container.learn-badges-section#learn-more
       p.badge-desc(ng-show="vm.registered")
         img.achieved(src="content/images/ico-okay-check.png", srcset="content/images/ico-okay-check@2x.png 2x")
         span(ng-show="!vm.registrationSuccess") You have the participant badge
-        span(ng-show="vm.registrationSuccess") Congratulations!!! You just earned the particpant badge
+        span(ng-show="vm.registrationSuccess") Congratulations!!! You just earned the participant badge
 
       .badge-link
         a.btn(ng-click="vm.registerForProgram()", ng-class="{invisible: vm.registered}") Select

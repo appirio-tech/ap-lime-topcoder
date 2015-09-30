@@ -24,7 +24,7 @@
       li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn more]
 
       li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a member]
-      li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(ui-sref="challenges({type: 'all'})", du-smooth-scroll) Start Competing]
+      li #[a.btn(ng-click="vm.registerForProgram()", du-smooth-scroll) Start Competing]
 
 .get-training-section#learn-more
   section.container
