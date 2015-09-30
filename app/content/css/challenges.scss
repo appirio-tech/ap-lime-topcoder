@@ -1394,7 +1394,7 @@
       font-weight: normal;
     }
     .faqDetailsMainContent {
-      min-height: 300px;
+      margin-bottom: 30px;
       p {
         font-size: 17px;
         color: #333e48;
@@ -1411,35 +1411,6 @@
         line-height: 24px;
         margin-bottom: 15px;
       }
-    }
-  }
-  .view-challenges {
-    margin-bottom: 80px;
-    margin-top: 50px;
-    background-color: #f2f2f2;
-    height: 320px;
-    clear: both;
-    div {
-      padding-top: 70px;
-      padding-bottom: 90px;
-    }
-    h3 {
-      font-weight: normal;
-      font-size: 64px;
-      color: $black;
-    }
-    .btn {
-      margin-top: 30px;
-      font-family: 'Myriad-Apple-Text',arial;
-      font-size: 16px;
-      color: $white;
-      display: inline-block;
-      height: 35px;
-      line-height: 35px;
-      text-align: center;
-      position: relative;
-      padding-left: 23px;
-      padding-right: 20px;
     }
   }
 }
