@@ -266,7 +266,7 @@
       }
       .badgeWarp {
         float: left;
-        padding-top: 94px;
+        padding-top: 45px;
         max-width: 240px;
         @media (max-width: 991px) {
           float: left;
@@ -1207,7 +1207,30 @@
     .content-col {
       color: #f9f9f9;
       &:before {
-        background: none;
+        content: '';
+        background: url('../images/coming-soon.png');
+        background-size: 325px auto;
+        background-position: 37px 0;
+        background-repeat: no-repeat;
+        @media only screen and (min-width: 992px) {
+          position: absolute;
+          width: 494px;
+          height: 524px;
+          right: 100%;
+          top: 57px;
+        }
+        @media only screen and (max-width: 991px) {
+          width: 494px;
+          height: 524px;
+          background-size: auto 100%;
+          background-position: 100% 50%;
+        }
+        @media only screen and (max-width: 640px) {
+          height: 245px;
+          width: 314px;
+          background-size: 230px auto;
+          background-position: 42px 0;
+        }
       }
       p {
         margin-top: 75px;
