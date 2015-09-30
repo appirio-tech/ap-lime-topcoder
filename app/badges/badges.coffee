@@ -52,6 +52,10 @@ badges = ($scope, ENV, MemberCertService, $state) ->
       if response.status == 200
         vm.registrationSuccess = true
         vm.registered = true
+        $state.go(
+          'challenges'
+          {type: 'all'}
+        )
       else
         vm.registrationError = 'Unable to register. Please try after some time.'
 
