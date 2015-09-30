@@ -11,8 +11,8 @@
       span(ng-repeat="q in vm.questions")
         a.faqLink(ng-href="/swifttoberfest/faq/{{q.slug}}") {{q.title}}
 
-.row.view-challenges
-  .col-xs-12.text-center
-    h3 Are you ready to participate?
-
+.view-challenges
+  section.container
+    header.section-header
+      h1.heading Are you ready to participate?
     a.btn(ui-sref="challenges({type: 'swiftoberfest'})") View challenges

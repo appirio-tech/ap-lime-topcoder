@@ -14,6 +14,8 @@ header.header-row
     .header-right.pull-right
       nav.main-nav.navbar-collapse.collapse(id="lime-nav-bar")
         ul.nav.navbar-nav
+          li
+            a(ui-sref="landing") Home 
           li.dropdown.clearfix
             a.dropdown-toggle.dropdown-profile.pull-left(data-toggle="dropdown", aria-expanded="false", ng-class="{activeTab: $state.current.name == 'swiftoberfest'}")
               span.pull-left Swiftoberfest

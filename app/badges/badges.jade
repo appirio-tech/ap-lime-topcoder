@@ -12,7 +12,7 @@ section.container.learn-badges-section#learn-more
       p.badge-desc(ng-show="vm.registered")
         img.achieved(src="content/images/ico-okay-check.png", srcset="content/images/ico-okay-check@2x.png 2x")
         span(ng-show="!vm.registrationSuccess") You have the participant badge
-        span(ng-show="vm.registrationSuccess") Congratulations!!! You just earned the particpant badge
+        span(ng-show="vm.registrationSuccess") Congratulations!!! You just earned the participant badge
 
       .badge-link
         a.btn(ng-click="vm.registerForProgram()", ng-class="{invisible: vm.registered}") Select
@@ -38,7 +38,7 @@ section.container.learn-badges-section#learn-more
     .badge-item.challenger-badge.col-xs-12.col-md-4
       .badge-header Challenger Badge
 
-      p Register, submit, pass review for your first iOS challenge
+      p Register, submit, and pass review for your first iOS challenge
 
       .badge-link
         a.btn(ui-sref="challenges({type: 'all'})", disabled) Coming Soon
@@ -50,3 +50,11 @@ section.container.learn-badges-section#learn-more
 
       .badge-link
         a.btn(ui-sref="challenges({type: 'all'})", disabled) Coming Soon
+.learn-section(ng-hide="main.loggedInUser")
+  section.container
+    header.section-header
+      h1.heading Ready to Stand Out in the Crowd?
+
+      p Learn, get badged, and compete as a member of the iOS Community
+
+    a.btn(ui-sref="register") Become a member
