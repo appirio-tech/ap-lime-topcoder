@@ -1,7 +1,7 @@
 .landing-banner
   section.container
     header.section-header
-      img(class="landing-logo", src="content/images/logo-landing.png", alt="TopCoder logo")
+      img(class="landing-logo", src="content/images/logo-landing.png", alt="TopCoders logo")
 
       h1.heading(ng-show="!main.loggedInUser") Dear Developers & Designers,
         strong We love you.
@@ -24,7 +24,7 @@
       li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn more]
 
       li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a member]
-      li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(ui-sref="challenges({type: 'all'})", du-smooth-scroll) Start Competing]
+      li #[a.btn(ng-click="vm.registerForProgram()", du-smooth-scroll) Start Competing]
 
 .get-training-section#learn-more
   section.container
