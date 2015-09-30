@@ -11,8 +11,8 @@
       span(ng-repeat="q in vm.questions")
         a.faqLink(ng-href="/swifttoberfest/faq/{{q.slug}}") {{q.title}}
 
-.view-challenges
+.view-challenges(ng-hide="main.loggedInUser")
   section.container
     header.section-header
       h1.heading Are you ready to participate?
-    a.btn(ui-sref="challenges({type: 'swiftoberfest'})") View challenges
+    a.btn(ui-sref="register") Become a member
