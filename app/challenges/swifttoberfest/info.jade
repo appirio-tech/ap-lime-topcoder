@@ -58,22 +58,22 @@
 
         li(ng-show="!main.loggedInUser")
           a.btn(ui-sref='register') Become a Member
-//
-  .know-standings#leaderboard
-    section.container
-      h1.section-header Swiftoberfest Leaderboard
 
-      .row
-        .col-xs-12.col-md-6.col-md-push-6.content-col
+.know-standings#leaderboard
+  section.container
+    h1.section-header Swiftoberfest Leaderboard
 
-          p Compete in real-world Swiftoberfest challenges for your chance to earn Swiftoberfest leaderboard points. In addition to any cash earnings, members who pass review and finish in the top 10 places for any given challenge will earn leaderboard points. The first place finisher receives 10 points, second place receives 9 points, and so on down to 1 point for 10th place. The more challenges you compete in, and the more top 10 finishes you earn, the more leaderboard points you’ll receive and the better your chances for winning Swiftoberfest prizes!
+    .row
+      .col-xs-12.col-md-6.col-md-push-6.content-col.coming-soon
 
-          ul.section-actions
-            li
-              a(ui-sref="challenges({type: 'swiftoberfest'})") View challenges
+        p Compete in real-world Swiftoberfest challenges for your chance to earn Swiftoberfest leaderboard points. In addition to any cash earnings, members who pass review and finish in the top 10 places for any given challenge will earn leaderboard points. The first place finisher receives 10 points, second place receives 9 points, and so on down to 1 point for 10th place. The more challenges you compete in, and the more top 10 finishes you earn, the more leaderboard points you’ll receive and the better your chances for winning Swiftoberfest prizes!
 
-            li(ng-show="!main.loggedInUser")
-              a.btn(ui-sref="register") Become a Member
+        ul.section-actions
+          li
+            a(ui-sref="challenges({type: 'swiftoberfest'})") View challenges
+
+          li(ng-show="!main.loggedInUser")
+            a.btn(ui-sref="register") Become a Member
 
 .faq
   .container.visible-md-block.visible-lg-block
