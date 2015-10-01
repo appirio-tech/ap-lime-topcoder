@@ -47,11 +47,19 @@ landing = ($scope, $state, ChallengeService, MemberCertService, Helpers, ENV) ->
         )
       else
         console.log('An error occurred attempting to set the Participation Badge')
+        $state.go(
+          'challenges'
+          {type: 'all'}
+        )
 
     .catch (error) ->
       # TODO show error
       main.loading = false
       console.log(error)
+      $state.go(
+        'challenges'
+        {type: 'all'}
+      )
 
   return vm
 
