@@ -56,6 +56,10 @@ landing = ($scope, $state, ChallengeService, MemberCertService, Helpers, ENV) ->
       # TODO show error
       main.loading = false
       console.log(error)
+      $state.go(
+        'challenges'
+        {type: 'all'}
+      )
 
   return vm
 
