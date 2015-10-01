@@ -50,6 +50,10 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) 
     rules:
       url         : '/swifttoberfest/rules'
       templateUrl : 'swifttoberfest/rules.html'
+    swiftoberfest:
+      url         : '/swiftoberfest'
+      templateUrl : 'swiftoberfest/info.html'
+      controller  : 'swiftoberfestInfo as vm'
 
   for name, state of states
     $stateProvider.state name, state
