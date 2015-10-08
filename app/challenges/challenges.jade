@@ -24,7 +24,7 @@ div(ng-class="{'developer-slide-1': vm.challengesType != 'swiftoberfest', 'devel
             .val.time(ng-bind="challenge.submissionEndDate | localTime")
           .rw.reg
             .lt.fr
-              .ca REGISTRANTS
+              .ca PRIZE AND DEADLINE
               .vl(ng-bind="challenge.numRegistrants")
             .rt.fs
               .ca SUBMISSIONS
@@ -77,6 +77,7 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
           .col1.pull-left &nbsp;
           .col2.pull-left CHALLENGE
           .col3.pull-left(ng-show="vm.challengesType == 'all'") PRIZE &amp; DEADLINE
+          .col3.pull-left(ng-show="vm.challengesType == 'swiftoberfest'") PRIZE &amp; DEADLINE
           .col3.pull-left(ng-show="vm.challengesType == 'peer'") START &amp; END TIMES
           .col4.pull-left REGISTRANTS
           .col5.pull-left SUBMISSIONS
@@ -148,7 +149,7 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
 
           .row.challenge-stats
             .col-xs-6.challenge-registrants.challenge-stat
-              .stats-type REGISTRANTS
+              .stats-type PRIZE & DEADLINE
 
               .stats-value
                 a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numRegistrants}}
