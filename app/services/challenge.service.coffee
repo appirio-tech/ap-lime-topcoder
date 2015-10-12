@@ -3,7 +3,7 @@
 ChallengeService = (ENV, ApiService) ->
   getChallenges: (request) ->
     params =
-      technologies: if request?.technologies then request.technologies else 'iOS,SWIFT'
+      technologies: if request?.technologies then request.technologies else 'iOS,SWIFT,tvOS'
       review      : if request?.review then request.review else 'PEER,COMMUNITY,INTERNAL'
       pageIndex   : if request?.pageIndex then request.pageIndex else 1
       pageSize    : if request?.pageSize then request.pageSize else 15
