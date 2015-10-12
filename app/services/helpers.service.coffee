@@ -29,7 +29,6 @@ Helpers = (ENV) ->
       challenge.icon = 'dev'
 
   filterChallenges: (challenges, type) ->
-    console.log 'made it!' + type
     filtered = []
     for challenge in challenges
       technologies = challenge.technologies
