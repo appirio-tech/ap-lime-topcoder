@@ -6,7 +6,7 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) 
 
   states =
     landing:
-      url         : '/'
+      url         : '/?regsuccess'
       templateUrl : 'landing/landing.html'
       controller  : 'landing as vm'
     badges:
