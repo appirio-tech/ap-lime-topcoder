@@ -6,7 +6,7 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) 
 
   states =
     landing:
-      url         : '/'
+      url         : '/?regsuccess'
       templateUrl : 'landing/landing.html'
       controller  : 'landing as vm'
     badges:
@@ -50,6 +50,10 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) 
     rules:
       url         : '/swiftoberfest/rules'
       templateUrl : 'swiftoberfest/rules.html'
+    signup:
+      url         : '/signup'
+      templateUrl : 'register/signup.html'
+      controller  : 'register as vm'
 
   for name, state of states
     $stateProvider.state name, state

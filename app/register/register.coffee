@@ -53,7 +53,7 @@ register = ($scope, $state, $stateParams, Auth, Countries, ENV) ->
     if $state.get vm.retState
       $state.go vm.retState
     else
-      $state.go DEFAULT_STATE
+      $state.go DEFAULT_STATE, {regsuccess: true}
 
   # handles error event of the login action
   regError = (error) ->
