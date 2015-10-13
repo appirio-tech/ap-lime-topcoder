@@ -50,9 +50,9 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) 
     rules:
       url         : '/swiftoberfest/rules'
       templateUrl : 'swiftoberfest/rules.html'
-    altRegister:
-      url         : '/alt-register'
-      templateUrl : 'register/alt-register.html'
+    signup:
+      url         : '/signup'
+      templateUrl : 'register/signup.html'
       controller  : 'register as vm'
 
   for name, state of states

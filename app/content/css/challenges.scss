@@ -1265,6 +1265,11 @@
         }
       }
     }
+    .section-actions {
+      a:not(.btn) {
+        color: $white;
+      }
+    }
   }
 
   .faq {
