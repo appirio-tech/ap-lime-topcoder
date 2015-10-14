@@ -46,7 +46,7 @@
 - jsFiles.push('filters/local-time.filter')
 
 doctype html
-html
+html(ng-app="lime-topcoder", ng-controller="main as main")
   head
     base(href="/")
     meta(charset="utf-8")
@@ -58,25 +58,22 @@ html
 
     meta(itemprop='name', content='topcoder iOS Member Program')
     meta(itemprop='description', content='iOS/SWIFT challenges on topcoder.com, brought to you by Apple and Appirio. Now is the time to compete!')
-    meta(itemprop='image', content='http://ios.topcoder.com/content/images/logo-landing.png')
+    meta(itemprop='image', content='{{main.socialImg}}')
 
-    meta(name='twitter:card', content='http://ios.topcoder.com/content/images/learn-and-improve2x.adb23e17.png')
+    meta(name='twitter:card', content='summary')
     meta(name='twitter:site', content='@topcoder')
     meta(name='twitter:title', content='Topcoder for iOS and Swift Challenges')
     meta(name='twitter:description', content='Become part of the exclusive iOS Community where you use your skills to win cash prizes, build real world apps, find iOS development mentors in languages like Swift and ultimately get badged as an expert to stand out from the crowd.')
     meta(name='twitter:creator', content='@topcoder')
-    meta(name='twitter:image:src', content='http://ios.topcoder.com/content/images/learn-and-improve2x.adb23e17.png')
-    meta(name="twitter:domain" content="topcoder.com")
+    meta(name='twitter:image:src', content='{{main.socialImg}}')
+    meta(name="twitter:domain" content="{{main.domain}}")
 
     meta(property='og:type', content='website')
-    meta(property='og:url', content='http://ios.topcoder.com')
+    meta(property='og:url', content='http://ios.{{main.domain}}')
     meta(property='og:title', content='Topcoder challenges for iOS and Swift')
     meta(property='og:description', content='Become part of the exclusive iOS Community where you use your skills to win cash prizes, build real world apps, find iOS development mentors in languages like Swift and ultimately get badged as an expert to stand out from the crowd.')
     meta(property='og:site_name', content='Topcoder iOS Community')
-    meta(property='og:image', content='http://ios.topcoder.com/content/images/logo-landing.png')
-    meta(property='article:author' content='http://ios.topcoder.com')
-    meta(property='article:publisher' content='http://ios.topcoder.com')
-    meta(property='og:image' content='http://ios.topcoder.com/content/images/learn-and-improve2x.adb23e17.png')
+    meta(property='og:image', content='{{main.socialImg}}')
 
     meta(http-equiv="X-UA-Compatible", content="IE=edge, chrome=1")
 
@@ -123,7 +120,7 @@ html
     link(rel="stylesheet", href="content/css/confirmNewsletter.css", type='text/css')
     // endbuild
 
-  body(ng-app="lime-topcoder", ng-controller="main as main")
+  body
     include layout/header.jade
 
     .view-container(ui-view, ng-class="$state.current.name")
