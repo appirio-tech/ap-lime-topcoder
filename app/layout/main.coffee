@@ -3,6 +3,7 @@
 main = ($scope, $state, ENV, AuthService, UserService) ->
   vm = this
   vm.domain = ENV.domain
+  vm.socialImg = 'https://ios.' + vm.domain + '/content/images/Swiftoberfest-program-icon.png'
 
   vm.loggedInUser = null
   vm.loading = false
