@@ -1209,6 +1209,8 @@
     .section-header {
       color: $white;
       font-size: 32px;
+      text-align: left;
+      padding: 0 0px;
       @media only screen and (max-width: 415px) {
         font-size: 30px;
       }
