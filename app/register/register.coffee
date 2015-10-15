@@ -1,6 +1,6 @@
 'use strict'
 
-register = ($scope, $state, $stateParams, Auth, Countries, ENV) ->
+register = ($scope, $state, Auth, Countries, ENV, $location) ->
   DEFAULT_STATE = 'landing'
   vm = this
   vm.domain = ENV.domain
@@ -17,13 +17,15 @@ register = ($scope, $state, $stateParams, Auth, Countries, ENV) ->
     countries: Countries.all.map createDropdownModel
 
   vm.doRegister = () ->
+    query_params = $location.search()
     vm.registering = true
     vm.frm.error = false
     vm.frm.errorMessage = ''
     vm.reg.regSource = 'apple'
-    vm.reg.utm_campaign = $stateParams.utm_campaign
-    vm.reg.utm_medium = $stateParams.utm_medium
-    vm.reg.utm_source = $stateParams.utm_source
+
+    vm.reg.utm_campaign = query_params.utm_campaign
+    vm.reg.utm_medium = query_params.utm_medium
+    vm.reg.utm_source = query_params.utm_source
 
     Auth.register vm.reg
     .then (data) ->
@@ -50,10 +52,11 @@ register = ($scope, $state, $stateParams, Auth, Countries, ENV) ->
   loginSuccess = () ->
     $scope.$parent.main.activate()
 
-    if $state.get vm.retState
-      $state.go vm.retState
-    else
-      $state.go DEFAULT_STATE, {regsuccess: true}
+    GO_TO_STATE = if ($state.get vm.retState) then ($state.get vm.retState).url else ($state.get DEFAULT_STATE).url
+
+    if (!$scope.$$phase)
+      $scope.$apply () ->
+        ($location.path GO_TO_STATE) .search('regsuccess', 'true')
 
   # handles error event of the login action
   regError = (error) ->
@@ -72,9 +75,9 @@ register = ($scope, $state, $stateParams, Auth, Countries, ENV) ->
 angular.module('lime-topcoder').controller 'register', [
   '$scope'
   '$state'
-  '$stateParams'
   'Auth'
   'Countries'
   'ENV'
+  '$location'
   register
 ]

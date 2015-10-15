@@ -21,6 +21,14 @@ run = ($rootScope, $state, $location, Auth) ->
   $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
     originalQuery.params = $location.search()
 
+    if (originalQuery.params.regsuccess)
+      if (toState.name != 'landing')
+        delete originalQuery.params.regsuccess
+
+    if (originalQuery.params.type)
+      if (toState.name != 'challenges')
+        delete originalQuery.params.type
+
   # On each state change, Angular will check for authentication
   $rootScope.$on '$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) ->
     # Keeps ui-router from loading pages half way down the page
