@@ -1,6 +1,6 @@
 'use strict'
 
-register = ($scope, $state, $stateParams, Auth, Countries, ENV) ->
+register = ($scope, $state, $stateParams, Auth, Countries, ENV, $location) ->
   DEFAULT_STATE = 'landing'
   vm = this
   vm.domain = ENV.domain
@@ -50,10 +50,10 @@ register = ($scope, $state, $stateParams, Auth, Countries, ENV) ->
   loginSuccess = () ->
     $scope.$parent.main.activate()
 
-    if $state.get vm.retState
-      $state.go vm.retState
-    else
-      $state.go DEFAULT_STATE, {regsuccess: true}
+    GO_TO_STATE = if ($state.get vm.retState) then ($state.get vm.retState).url else ($state.get DEFAULT_STATE).url
+
+    $scope.$apply () ->
+      ($location.path GO_TO_STATE) .search('regsuccess', 'true')
 
   # handles error event of the login action
   regError = (error) ->
@@ -76,5 +76,6 @@ angular.module('lime-topcoder').controller 'register', [
   'Auth'
   'Countries'
   'ENV'
+  '$location'
   register
 ]
