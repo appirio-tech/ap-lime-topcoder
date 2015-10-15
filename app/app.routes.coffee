@@ -6,7 +6,7 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) 
 
   states =
     landing:
-      url         : '/?regsuccess'
+      url         : '/'
       templateUrl : 'landing/landing.html'
       controller  : 'landing as vm'
     badges:
@@ -18,11 +18,11 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) 
       templateUrl : 'learn/learn.html'
       controller  : 'learn as vm'
     login:
-      url         : '/login?retUrl&retState'
+      url         : '/login'
       templateUrl : 'login/login.html'
       controller  : 'login as vm'
     register:
-      url         : '/register?utm_campaign&utm_medium&utm_source'
+      url         : '/register'
       templateUrl : 'register/register.html'
       controller  : 'register as vm'
     confirmRegistration:
