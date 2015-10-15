@@ -54,8 +54,9 @@ register = ($scope, $state, Auth, Countries, ENV, $location) ->
 
     GO_TO_STATE = if ($state.get vm.retState) then ($state.get vm.retState).url else ($state.get DEFAULT_STATE).url
 
-    $scope.$apply () ->
-      ($location.path GO_TO_STATE) .search('regsuccess', 'true')
+    if (!$scope.$$phase)
+      $scope.$apply () ->
+        ($location.path GO_TO_STATE) .search('regsuccess', 'true')
 
   # handles error event of the login action
   regError = (error) ->
