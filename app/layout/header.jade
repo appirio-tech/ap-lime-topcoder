@@ -1,5 +1,5 @@
 
-header.header-row
+header.header-row(ng-hide="$state.current.name === 'signup'")
   .navbar.navbar-inverse.navbar-static-top.container(autocollapse-navbar)
     a.small-logo.pull-left(ui-sref="landing")
       img(src="content/images/logo-landing.png")
