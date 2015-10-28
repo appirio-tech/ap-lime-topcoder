@@ -10,8 +10,8 @@ FaqService = () ->
     {
       slug: 'am-i-required-to-earn-badges-to-participate-in-ios-challenges',
       title: 'Am I required to earn badges to participate in iOS challenges?',
-      answer: 'No, you only need to be a topcoder member to participate in any of the iOS challenges. However, the first 200 members who earn the Swift/iOS Ready! badge will win an exclusive Swiftoberfest 2015 t-shirt, which was designed by a topcoder member.',
-      overflowedAnswer: 'No, you only need to be a topcoder member to participate in any of the iOS challenges. However, the first 200 members...'
+      answer: 'No, you only need to be a Topcoder member to participate in any of the iOS challenges. However, the first 200 members who earn the Swift/iOS Ready! badge will win an exclusive Swiftoberfest 2015 t-shirt, which was designed by a Topcoder member.',
+      overflowedAnswer: 'No, you only need to be a Topcoder member to participate in any of the iOS challenges. However, the first 200 members...'
     },
     {
       slug: 'how-do-swiftoberfest-challenges-differ-from-other-ios-challenges',
@@ -27,15 +27,15 @@ FaqService = () ->
     },
     {
       slug: 'if-i-signup-at-ios-topcoder-com-will-i-be-a-full-topcoder-member',
-      title: 'If I signup at ios.topcoder.com will I be a full topcoder member?',
-      answer: 'Yes! By registering here, you’ll automatically be a member of the 850,000+ topcoder community and can participate in any other design, development, or data science challenges that interest you. But you’ll also be a member of topcoder’s exclusive iOS Community and eligible to earn badges and compete for Swiftoberfest prizes.',
-      overflowedAnswer: 'Yes! By registering here, you’ll automatically be a member of the 850,000+ topcoder community and can participate in any other design, development, or data science challenges ...'
+      title: 'If I signup at ios.topcoder.com will I be a full Topcoder member?',
+      answer: 'Yes! By registering here, you’ll automatically be a member of the 850,000+ Topcoder community and can participate in any other design, development, or data science challenges that interest you. But you’ll also be a member of topcoder’s exclusive iOS Community and eligible to earn badges and compete for Swiftoberfest prizes.',
+      overflowedAnswer: 'Yes! By registering here, you’ll automatically be a member of the 850,000+ Topcoder community and can participate in any other design, development, or data science challenges ...'
     },
     {
       slug: 'i-am-already-a-topcoder-member-am-i-eligible-to-participate-in-swiftoberfest-and-the-ios-developer-community',
-      title: 'I’m already a topcoder member. Am I eligible to participate in Swiftoberfest and the iOS Community?',
-      answer: 'Absolutely! Simply login to ios.topcoder.com with your topcoder account and click the Start Competing button to earn your iOS Community Participant badge. Visit the <a href="/badges">Badges</a> page to track your progress across all available badges. Note that you must earn the Participant badge to be eligible to win any Swiftoberfest prizes.',
-      overflowedAnswer: 'Absolutely! Simply login to ios.topcoder.com with your topcoder account and click the Start Competing button to earn your iOS Community Participant badge. Visit the Badges page...'
+      title: 'I’m already a Topcoder member. Am I eligible to participate in Swiftoberfest and the iOS Community?',
+      answer: 'Absolutely! Simply login to ios.topcoder.com with your Topcoder account and click the Start Competing button to earn your iOS Community Participant badge. Visit the <a href="/badges">Badges</a> page to track your progress across all available badges. Note that you must earn the Participant badge to be eligible to win any Swiftoberfest prizes.',
+      overflowedAnswer: 'Absolutely! Simply login to ios.topcoder.com with your Topcoder account and click the Start Competing button to earn your iOS Community Participant badge. Visit the Badges page...'
     },
     {
       slug: 'how-do-the-prize-drawings-work',
