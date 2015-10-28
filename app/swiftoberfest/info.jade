@@ -74,25 +74,8 @@
           li
             a.btn(ui-sref="toc") Contest Rules
 
-    .row.leaderboard-container
-      .col-xs-12.col-md-6.content-col.no-image.leaderboard-table(ng-hide="vm.loadingLeaderboard")
-        .row.section-header
-          .col-xs-6.col-md-3.leaderboard-months(ng-class="{'active': vm.isLeaderboardMonth('october')}",ng-click="vm.changeLeaderboardMonth('october')") October
-          .col-xs-6.col-md-3.leaderboard-months(ng-class="{'active': vm.isLeaderboardMonth('november')}",ng-click="vm.changeLeaderboardMonth('november')") November
-          .col-xs-6.col-md-3.leaderboard-months(ng-class="{'active': vm.isLeaderboardMonth('december')}",ng-click="vm.changeLeaderboardMonth('december')") December
-          .col-xs-6.col-md-3.leaderboard-months(ng-class="{'active': vm.isLeaderboardMonth('overall')}",ng-click="vm.changeLeaderboardMonth('overall')") Overall
-
-        table.table
-          tr
-            th Handle
-            th Score
-          tr(ng-repeat="entry in vm.scores | limitTo:6 | orderBy:'score':true")
-            td {{entry.handle}}
-            td {{entry.score}}
-          tr(ng-show="vm.scores.length === 0")
-            td(colspan="2") No scores available
-
-      .col-xs-12.col-md-6.col-md-push-6.content-col.no-image
+    .row
+      .col-xs-12.col-md-6.col-md-push-6.content-col.coming-soon
 
         h1.section-header#leaderboard Swiftoberfest Leaderboard
 

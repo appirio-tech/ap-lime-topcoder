@@ -1215,9 +1215,6 @@
         font-size: 30px;
       }
     }
-    .leaderboard-container {
-      position: relative;
-    }
     .content-col {
       color: #f9f9f9;
       &:before {
@@ -1244,32 +1241,6 @@
           width: 314px;
           background-size: 230px auto;
           background-position: 42px 0;
-        }
-      }
-      &.no-image {
-        &:before {
-          background: none;
-          width: 0!important;
-          height: 0!important;
-        }
-      }
-      &.leaderboard-table {
-        @media only screen and (min-width: 992px) {
-          position: absolute;
-          top: 32px;
-          left: 0;
-        }
-      }
-      .leaderboard-months {
-        border: 1px solid $white;
-        font-size: 24px;
-        text-align: center;
-        padding: 5px;
-        &:hover,
-        &.active {
-          background: $white;
-          color: $light-blue;
-          cursor: pointer;
         }
       }
       p {
