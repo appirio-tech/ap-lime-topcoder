@@ -1256,7 +1256,7 @@
       &.leaderboard-table {
         @media only screen and (min-width: 992px) {
           position: absolute;
-          top: 32px;
+          top: -100px;
           left: 0;
         }
       }
@@ -1279,8 +1279,8 @@
         &:before {
           background: url('../images/svg/SYS-IOS-Swift-Ready-06.svg');
           background-repeat: no-repeat;
-          background-size: 325px auto;
-          background-position: 35px 0;
+          background-size: 220px auto;
+          background-position: 65px 0;
           @media only screen and (max-width: 991px) {
             width: 494px;
             height: 524px;

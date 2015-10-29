@@ -4,7 +4,7 @@ swiftoberfestInfo = ($scope, $stateParams, FaqService, LeaderboardService) ->
   vm = this
   vm.shown = []
   vm.questions = FaqService.getQuestions()
-  vm.leaderboardMonth = 'october'
+  vm.leaderboardMonth = 'overall'
   vm.loadingLeaderboard = true
 
   getScores = () ->
