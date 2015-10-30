@@ -1215,6 +1215,9 @@
         font-size: 30px;
       }
     }
+    .leaderboard-container {
+      position: relative;
+    }
     .content-col {
       color: #f9f9f9;
       &:before {
@@ -1243,6 +1246,32 @@
           background-position: 42px 0;
         }
       }
+      &.no-image {
+        &:before {
+          background: none;
+          width: 0!important;
+          height: 0!important;
+        }
+      }
+      &.leaderboard-table {
+        @media only screen and (min-width: 992px) {
+          position: absolute;
+          top: -100px;
+          left: 0;
+        }
+      }
+      .leaderboard-months {
+        border: 1px solid $white;
+        font-size: 24px;
+        text-align: center;
+        padding: 5px;
+        &:hover,
+        &.active {
+          background: $white;
+          color: $light-blue;
+          cursor: pointer;
+        }
+      }
       p {
         margin-top: 24px;
       }
@@ -1250,8 +1279,8 @@
         &:before {
           background: url('../images/svg/SYS-IOS-Swift-Ready-06.svg');
           background-repeat: no-repeat;
-          background-size: 325px auto;
-          background-position: 35px 0;
+          background-size: 220px auto;
+          background-position: 65px 0;
           @media only screen and (max-width: 991px) {
             width: 494px;
             height: 524px;
