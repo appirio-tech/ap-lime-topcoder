@@ -1,10 +1,36 @@
 'use strict'
 
-register = ($scope, $state, Auth, Countries, ENV, $location) ->
+register = ($scope, $state, Auth, Countries, ENV, $location, $cookies) ->
   DEFAULT_STATE = 'landing'
+  COOKIE_NAME = 'topcoder_utm'
+  current_date = new Date()
+  COOKIE_EXPIRATION = new Date(current_date.getFullYear(), current_date.getMonth() + 1, current_date.getDate())
+
   vm = this
   vm.domain = ENV.domain
   vm.registering = false
+
+  query_params = $location.search()
+  utm = {}
+
+  # Get the utm query parameters from the URL
+  utm.utm_campaign = query_params.utm_campaign
+  utm.utm_medium = query_params.utm_medium
+  utm.utm_source = query_params.utm_source
+
+  # Check if we have utm values - if not read from the cookie
+  if !utm.utm_campaign || !utm.utm_medium || !utm.utm_source
+    cookieValue = $cookies.getObject(COOKIE_NAME) || {}
+
+    # Give preference to the values retrieved from the URL
+    utm.utm_campaign = utm.utm_campaign || cookieValue.utm_campaign
+    utm.utm_medium = utm.utm_medium || cookieValue.utm_medium
+    utm.utm_source = utm.utm_source || cookieValue.utm_source
+
+    #Store the values back in the cookie in case the URL query params have new values
+    $cookies.putObject(COOKIE_NAME, utm, {expires:COOKIE_EXPIRATION})
+  else
+    $cookies.putObject(COOKIE_NAME, utm, {expires:COOKIE_EXPIRATION})
 
   createDropdownModel = (country, index) ->
     text: country
@@ -17,15 +43,14 @@ register = ($scope, $state, Auth, Countries, ENV, $location) ->
     countries: Countries.all.map createDropdownModel
 
   vm.doRegister = () ->
-    query_params = $location.search()
     vm.registering = true
     vm.frm.error = false
     vm.frm.errorMessage = ''
     vm.reg.regSource = 'apple'
 
-    vm.reg.utm_campaign = query_params.utm_campaign
-    vm.reg.utm_medium = query_params.utm_medium
-    vm.reg.utm_source = query_params.utm_source
+    vm.reg.utm_campaign = utm.utm_campaign
+    vm.reg.utm_medium = utm.utm_medium
+    vm.reg.utm_source = utm.utm_source
 
     Auth.register vm.reg
     .then (data) ->
@@ -79,5 +104,6 @@ angular.module('lime-topcoder').controller 'register', [
   'Countries'
   'ENV'
   '$location'
+  '$cookies'
   register
 ]
