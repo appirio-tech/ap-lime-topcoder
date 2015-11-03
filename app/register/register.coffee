@@ -1,36 +1,11 @@
 'use strict'
 
-register = ($scope, $state, Auth, Countries, ENV, $location, $cookies) ->
+register = ($scope, $state, Auth, Countries, ENV, $location, UtmCookieService) ->
   DEFAULT_STATE = 'landing'
-  COOKIE_NAME = 'topcoder_utm'
-  current_date = new Date()
-  COOKIE_EXPIRATION = new Date(current_date.getFullYear(), current_date.getMonth() + 1, current_date.getDate())
 
   vm = this
   vm.domain = ENV.domain
   vm.registering = false
-
-  query_params = $location.search()
-  utm = {}
-
-  # Get the utm query parameters from the URL
-  utm.utm_campaign = query_params.utm_campaign
-  utm.utm_medium = query_params.utm_medium
-  utm.utm_source = query_params.utm_source
-
-  # Check if we have utm values - if not read from the cookie
-  if !utm.utm_campaign || !utm.utm_medium || !utm.utm_source
-    cookieValue = $cookies.getObject(COOKIE_NAME) || {}
-
-    # Give preference to the values retrieved from the URL
-    utm.utm_campaign = utm.utm_campaign || cookieValue.utm_campaign
-    utm.utm_medium = utm.utm_medium || cookieValue.utm_medium
-    utm.utm_source = utm.utm_source || cookieValue.utm_source
-
-    #Store the values back in the cookie in case the URL query params have new values
-    $cookies.putObject(COOKIE_NAME, utm, {expires:COOKIE_EXPIRATION})
-  else
-    $cookies.putObject(COOKIE_NAME, utm, {expires:COOKIE_EXPIRATION})
 
   createDropdownModel = (country, index) ->
     text: country
@@ -47,6 +22,8 @@ register = ($scope, $state, Auth, Countries, ENV, $location, $cookies) ->
     vm.frm.error = false
     vm.frm.errorMessage = ''
     vm.reg.regSource = 'apple'
+
+    utm = UtmCookieService.getFromCookie()
 
     vm.reg.utm_campaign = utm.utm_campaign
     vm.reg.utm_medium = utm.utm_medium
@@ -104,6 +81,6 @@ angular.module('lime-topcoder').controller 'register', [
   'Countries'
   'ENV'
   '$location'
-  '$cookies'
+  'UtmCookieService'
   register
 ]
