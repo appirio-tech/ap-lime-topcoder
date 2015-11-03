@@ -86,7 +86,7 @@
           tr
             th Handle
             th.text-center Score
-          tr(ng-repeat="entry in vm.scores | limitTo:10 | orderBy:'score':true")
+          tr(ng-repeat="entry in vm.scores | orderBy:'score':true | limitTo:10")
             td {{entry.handle}}
             td.text-center {{entry.score}}
           tr(ng-show="vm.scores.length === 0")
