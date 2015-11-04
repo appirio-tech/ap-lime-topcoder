@@ -11,7 +11,7 @@ dependencies = [
   'duScroll'
 ]
 
-run = ($rootScope, $state, $location, Auth) ->
+run = ($rootScope, $state, $location, Auth, UtmCookieService) ->
   # Attaching $state to the $rootScope allows us to access the
   # current state in index.html (see div with ui-view on the index page)
   $rootScope.$state = $state
@@ -37,6 +37,8 @@ run = ($rootScope, $state, $location, Auth) ->
 
     $location.search angular.extend {}, originalQuery.params, toParams
 
+    UtmCookieService.setFromUrl $location.search()
+
     # Check if the user is authenticated when the state requires authentication
     if toState.authenticate && !Auth.isAuthenticated()
       console.log 'State requires authentication, and user is not logged in.'
@@ -47,5 +49,6 @@ angular.module('lime-topcoder', dependencies).run [
   '$state'
   '$location'
   'Auth'
+  'UtmCookieService'
   run
 ]

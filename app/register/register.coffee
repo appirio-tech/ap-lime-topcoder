@@ -1,7 +1,8 @@
 'use strict'
 
-register = ($scope, $state, Auth, Countries, ENV, $location) ->
+register = ($scope, $state, Auth, Countries, ENV, $location, UtmCookieService) ->
   DEFAULT_STATE = 'landing'
+
   vm = this
   vm.domain = ENV.domain
   vm.registering = false
@@ -17,15 +18,16 @@ register = ($scope, $state, Auth, Countries, ENV, $location) ->
     countries: Countries.all.map createDropdownModel
 
   vm.doRegister = () ->
-    query_params = $location.search()
     vm.registering = true
     vm.frm.error = false
     vm.frm.errorMessage = ''
     vm.reg.regSource = 'apple'
 
-    vm.reg.utm_campaign = query_params.utm_campaign
-    vm.reg.utm_medium = query_params.utm_medium
-    vm.reg.utm_source = query_params.utm_source
+    utm = UtmCookieService.getFromCookie()
+
+    vm.reg.utm_campaign = utm.utm_campaign
+    vm.reg.utm_medium = utm.utm_medium
+    vm.reg.utm_source = utm.utm_source
 
     Auth.register vm.reg
     .then (data) ->
@@ -79,5 +81,6 @@ angular.module('lime-topcoder').controller 'register', [
   'Countries'
   'ENV'
   '$location'
+  'UtmCookieService'
   register
 ]
