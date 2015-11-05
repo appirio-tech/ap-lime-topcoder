@@ -31,8 +31,25 @@ Auth = (ENV, $window, AuthToken, $state, $stateParams, $location, $timeout, ApiS
     # api params
     # required: ["firstName", "lastName", "handle", "country", "email"],
     # optional: ["password", "socialProviderId", "socialUserName", "socialEmail", "socialEmailVerified", "regSource", "socialUserId", "utm_source", "utm_medium", "utm_campaign"]
-    url = ENV.API_URL_V2 + '/users/'
-    ApiService.requestHandler 'POST', url, JSON.stringify reg, true
+    url = ENV.API_URL + '/users/'
+    body =
+      options:
+        afterActivationURL: 'https://ios.' + ENV.domain
+      param:
+        handle: reg.handle
+        firstName: reg.firstName
+        lastName: reg.lastName
+        country:
+          isoAlpha3Code: reg.country.value
+        email: reg.email
+        age: reg.age
+        utmSource: reg.utm_source
+        utmMedium: reg.utm_medium
+        utmCampaign: reg.utm_campaign
+        regSource: reg.regSource
+        credential:
+          password: reg.password
+    ApiService.requestHandler 'POST', url, JSON.stringify body, true
 
   isAuthenticated: () ->
     !!AuthToken.getToken()
