@@ -14,7 +14,9 @@
         p As a member of the iOS Community you can compete in app design and development challenges on your own schedule as well as earn badges to show off your skills. Plus, during Swiftoberfest you can win cool prizes like an Apple Watch or Macbook Pro!
 
       .col-xs-12.col-md-6
-        form.register-form(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()")
+        form.register-form(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()", autocomplete="off")
+          // Stops Chrome from autofilling and autocompleting (along with autocomplete="off" on the form)
+          input(autocomplete="false", name="hidden", type="text", style="display:none;")
           .row
             .col-xs-12.fields(ng-show="vm.frm.error")
               .alert.alert-danger(ng-bind="vm.frm.errorMessage")
@@ -45,7 +47,7 @@
                 span#ageErrorStatus.sr-only (error)
 
               .fields(ng-class="{'has-error has-feedback': vm.hasError('country')}")
-                input.txt-box(type="text", placeholder="Select Country", ng-model="vm.reg.country", name="country", typeahead="country.text for country in vm.frm.countries | filter:$viewValue | limitTo:8", required)
+                input.txt-box(type="text", placeholder="Select Country", ng-model="vm.reg.country", name="country", typeahead="country as country.text for country in vm.frm.countries | filter:$viewValue | limitTo:8", required)
 
                 span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('country')")
                 span#ageErrorStatus.sr-only (error)

@@ -1,45 +1,49 @@
 'use strict'
 
-register = ($scope, $state, Auth, Countries, ENV, $location) ->
+register = ($scope, $state, Auth, Countries, ENV, $location, UtmCookieService, ISO3166) ->
   DEFAULT_STATE = 'landing'
+
   vm = this
   vm.domain = ENV.domain
   vm.registering = false
 
   createDropdownModel = (country, index) ->
-    text: country
-    value: index
+    text: country.name
+    value: country.alpha3
 
   vm.reg = {}
   vm.frm =
     error: false
     errorMessage: ''
-    countries: Countries.all.map createDropdownModel
+    countries: ISO3166.getAllCountryObjects().map createDropdownModel
 
   vm.doRegister = () ->
-    query_params = $location.search()
     vm.registering = true
     vm.frm.error = false
     vm.frm.errorMessage = ''
     vm.reg.regSource = 'apple'
 
-    vm.reg.utm_campaign = query_params.utm_campaign
-    vm.reg.utm_medium = query_params.utm_medium
-    vm.reg.utm_source = query_params.utm_source
+    utm = UtmCookieService.getFromCookie()
+
+    vm.reg.utm_campaign = utm.utm_campaign
+    vm.reg.utm_medium = utm.utm_medium
+    vm.reg.utm_source = utm.utm_source
 
     Auth.register vm.reg
     .then (data) ->
+      console.log('Success')
+      console.log data
       vm.registering = false
 
-      if data.data.error
-        regError data.data.error
+      if data.data.result.status != 200
+        regError data.data.result.content
       else regSuccess()
 
     .catch (data) ->
       vm.registering = false
 
-      if data.data && data.data.error
-        regError data.data.error.details
+      if data.data.result && data.data.result.content
+        regError data.data.result.content
       else regSuccess()
 
   vm.hasError = (field) ->
@@ -79,5 +83,7 @@ angular.module('lime-topcoder').controller 'register', [
   'Countries'
   'ENV'
   '$location'
+  'UtmCookieService'
+  'ISO3166'
   register
 ]

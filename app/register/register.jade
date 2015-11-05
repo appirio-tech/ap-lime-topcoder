@@ -9,7 +9,9 @@
       .register-msg
         p We're happy to have you join our community. Please tell us a little bit about yourself.
 
-    form.register-form.col-xs-12(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()")
+    form.register-form.col-xs-12(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()", autocomplete="off")
+      // Stops Chrome from autofilling and autocompleting (along with autocomplete="off" on the form)
+      input(autocomplete="false", name="hidden", type="text", style="display:none;")
       .col-xs-12.fields(ng-show="vm.frm.error")
         .alert.alert-danger(ng-bind="vm.frm.errorMessage")
 
@@ -39,7 +41,7 @@
           span#ageErrorStatus.sr-only (error)
       .col-xs-12.col-md-6.padding-reset
         .fields(ng-class="{'has-error has-feedback': vm.hasError('country')}")
-          input.txt-box(type="text", placeholder="Select Country", ng-model="vm.reg.country", name="country", typeahead="country.text for country in vm.frm.countries | filter:$viewValue | limitTo:8", required)
+          input.txt-box(type="text", placeholder="Select Country", ng-model="vm.reg.country", name="country", typeahead="country as country.text for country in vm.frm.countries | filter:$viewValue | limitTo:8", required)
 
           span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('country')")
           span#ageErrorStatus.sr-only (error)
