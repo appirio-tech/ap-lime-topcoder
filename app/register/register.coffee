@@ -1,6 +1,6 @@
 'use strict'
 
-register = ($scope, $state, Auth, Countries, ENV, $location, UtmCookieService) ->
+register = ($scope, $state, Auth, Countries, ENV, $location, UtmCookieService, ISO3166) ->
   DEFAULT_STATE = 'landing'
 
   vm = this
@@ -8,14 +8,14 @@ register = ($scope, $state, Auth, Countries, ENV, $location, UtmCookieService) -
   vm.registering = false
 
   createDropdownModel = (country, index) ->
-    text: country
-    value: index
+    text: country.name
+    value: country.alpha3
 
   vm.reg = {}
   vm.frm =
     error: false
     errorMessage: ''
-    countries: Countries.all.map createDropdownModel
+    countries: ISO3166.getAllCountryObjects().map createDropdownModel
 
   vm.doRegister = () ->
     vm.registering = true
@@ -31,17 +31,19 @@ register = ($scope, $state, Auth, Countries, ENV, $location, UtmCookieService) -
 
     Auth.register vm.reg
     .then (data) ->
+      console.log('Success')
+      console.log data
       vm.registering = false
 
-      if data.data.error
-        regError data.data.error
+      if data.data.result.status != 200
+        regError data.data.result.content
       else regSuccess()
 
     .catch (data) ->
       vm.registering = false
 
-      if data.data && data.data.error
-        regError data.data.error.details
+      if data.data.result && data.data.result.content
+        regError data.data.result.content
       else regSuccess()
 
   vm.hasError = (field) ->
@@ -82,5 +84,6 @@ angular.module('lime-topcoder').controller 'register', [
   'ENV'
   '$location'
   'UtmCookieService'
+  'ISO3166'
   register
 ]
