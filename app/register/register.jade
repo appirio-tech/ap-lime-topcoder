@@ -9,7 +9,9 @@
       .register-msg
         p We're happy to have you join our community. Please tell us a little bit about yourself.
 
-    form.register-form.col-xs-12(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()")
+    form.register-form.col-xs-12(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()", autocomplete="off")
+      // Stops Chrome from autofilling and autocompleting (along with autocomplete="off" on the form)
+      input(autocomplete="false", name="hidden", type="text", style="display:none;")
       .col-xs-12.fields(ng-show="vm.frm.error")
         .alert.alert-danger(ng-bind="vm.frm.errorMessage")
 
