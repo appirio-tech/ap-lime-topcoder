@@ -8,7 +8,8 @@ dependencies = [
   'ngCookies'
   'ngSanitize'
   'ui.bootstrap'
-  'duScroll'
+  'duScroll',
+  'ngIsoConstants'
 ]
 
 run = ($rootScope, $state, $location, Auth, UtmCookieService) ->
