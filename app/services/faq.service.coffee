@@ -22,7 +22,7 @@ FaqService = () ->
     {
       slug: 'i-am-new-to-topcoder-what-is-it-all-about',
       title: 'I’m new to Topcoder. What’s it all about?',
-      answer: 'Topcoder gathers the world’s experts in design, development and data science to work on interesting and challenging problems. Members are provided with opportunities to demonstrate their expertise, improve their skills, and win cash, while helping real world organizations solve real world problems. For more information, check out the <a href="https://www.topcoder.com/community/how-it-works/">How it Works</a> page on topcoder.',
+      answer: 'Topcoder gathers the world’s experts in design, development and data science to work on interesting and challenging problems. Members are provided with opportunities to demonstrate their expertise, improve their skills, and win cash, while helping real world organizations solve real world problems. For more information, check out the <a href="https://www.topcoder.com/community/how-it-works/">How it Works</a> page on Topcoder.',
       overflowedAnswer: 'Topcoder gathers the world’s experts in design, development and data science to work on interesting and challenging problems. Members are provided with opportunities to demonstrate their expertise...'
     },
     {
