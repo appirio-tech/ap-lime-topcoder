@@ -21,14 +21,14 @@ FaqService = () ->
     },
     {
       slug: 'i-am-new-to-topcoder-what-is-it-all-about',
-      title: 'I’m new to topcoder. What’s it all about?',
-      answer: 'Topcoder gathers the world’s experts in design, development and data science to work on interesting and challenging problems. Members are provided with opportunities to demonstrate their expertise, improve their skills, and win cash, while helping real world organizations solve real world problems. For more information, check out the <a href="https://www.topcoder.com/community/how-it-works/">How it Works</a> page on topcoder.',
+      title: 'I’m new to Topcoder. What’s it all about?',
+      answer: 'Topcoder gathers the world’s experts in design, development and data science to work on interesting and challenging problems. Members are provided with opportunities to demonstrate their expertise, improve their skills, and win cash, while helping real world organizations solve real world problems. For more information, check out the <a href="https://www.topcoder.com/community/how-it-works/">How it Works</a> page on Topcoder.',
       overflowedAnswer: 'Topcoder gathers the world’s experts in design, development and data science to work on interesting and challenging problems. Members are provided with opportunities to demonstrate their expertise...'
     },
     {
       slug: 'if-i-signup-at-ios-topcoder-com-will-i-be-a-full-topcoder-member',
       title: 'If I signup at ios.topcoder.com will I be a full Topcoder member?',
-      answer: 'Yes! By registering here, you’ll automatically be a member of the 850,000+ Topcoder community and can participate in any other design, development, or data science challenges that interest you. But you’ll also be a member of topcoder’s exclusive iOS Community and eligible to earn badges and compete for Swiftoberfest prizes.',
+      answer: 'Yes! By registering here, you’ll automatically be a member of the 850,000+ Topcoder community and can participate in any other design, development, or data science challenges that interest you. But you’ll also be a member of Topcoder’s exclusive iOS Community and eligible to earn badges and compete for Swiftoberfest prizes.',
       overflowedAnswer: 'Yes! By registering here, you’ll automatically be a member of the 850,000+ Topcoder community and can participate in any other design, development, or data science challenges ...'
     },
     {
