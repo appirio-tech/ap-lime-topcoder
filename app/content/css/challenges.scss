@@ -262,6 +262,9 @@
         .section-header {
           font-size: 24px;
           line-height: 24px;
+          &.bigger {
+            font-size: 30px;
+          }
         }
       }
       .badgeWarp {
