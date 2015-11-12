@@ -913,6 +913,50 @@
   .learn-section {
     background-color: $white;
   }
+
+  .t-shirt-section {
+    background-image: url('../images/bg-badge.jpg');
+    @include retina {
+        background-image: url('../images/bg-badge@2x.png');
+      }
+    background-size: cover;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    @media (max-width: 900px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    padding: 30px 0;
+    .shirt {
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      img {
+      }
+    }
+    .main {
+      width: 60%;
+      max-width: 780px;
+      font-family: MyriadPro-Light,Calibri,sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 20px;
+      h1 {
+        font-size: 24px;
+        line-height: 24px;
+      }
+      .desc {
+        font-size: 20px;
+        margin-top: 20px;
+        font-weight: 500;
+      }
+    }
+  }
 }
 
 .swiftoberfest {
@@ -1560,3 +1604,4 @@
     }
   }
 }
+
