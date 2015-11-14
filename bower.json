@@ -17,5 +17,8 @@
     "angular-mocks": "1.4.x"
   },
   "appPath": "app",
-  "moduleName": "lime-topcoder"
+  "moduleName": "lime-topcoder",
+  "resolutions": {
+    "angular": "1.4.7"
+  }
 }
