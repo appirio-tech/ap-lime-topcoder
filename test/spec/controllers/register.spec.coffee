@@ -26,7 +26,7 @@ describe 'Controller: register', () ->
     sinon.stub(ApiService, 'requestHandler', (method, url, params) ->
       deferred = $q.defer()
       if (url.indexOf('/users') != -1)
-        response = 
+        response =
           status: 200
           data:
               content: ''
@@ -41,7 +41,16 @@ describe 'Controller: register', () ->
     sinon.stub(Auth, 'login', (username, password, successCallback, errorCallback) ->
       successCallback {uid: 1234567890, name: 'ut'}
     )
-    
+
+    sinon.stub(Auth, 'register', (reg) ->
+      data =
+        data:
+          result:
+            status: 200
+
+      $q.when data
+    )
+
     $httpBackend.whenGET('landing/landing.html').respond(200, "")
     $httpBackend.whenGET('register/register.html').respond(200, "")
     $httpBackend.flush()
@@ -67,7 +76,7 @@ describe 'Controller: register', () ->
       expect(register.frm.error).to.be.equal false
       expect(register.frm.errorMessage).to.be.empty
       expect(register.frm.countries).to.not.be.null
-      expect(register.frm.countries.length).to.be.equal 243
+      expect(register.frm.countries.length).to.be.equal 249
 
     it 'reg should be empty by default', ->
       # default value for reg
@@ -77,6 +86,15 @@ describe 'Controller: register', () ->
     register = null
     main = null
     beforeEach () ->
+      Auth.register.restore()
+      sinon.stub(Auth, 'register', (reg) ->
+        data =
+          data:
+            result:
+              status: 200
+
+        $q.when data
+      )
       $mainScope = $rootScope.$new()
       main = $controller 'main', {$scope: $mainScope}
       main.loggedInUser = {uid: 1234567}
@@ -95,6 +113,7 @@ describe 'Controller: register', () ->
       expect(register.frm.errorMessage).to.be.empty
       expect(register.reg).to.not.be.empty
       expect(register.reg.regSource).to.be.equal 'apple'
+      expect(Auth.register.callCount).to.be.equal 1
       expect(Auth.login.callCount).to.be.equal 1
 
   describe 'doRegister for failure', ->
@@ -105,10 +124,10 @@ describe 'Controller: register', () ->
       sinon.stub(ApiService, 'requestHandler', (method, url, params) ->
         deferred = $q.defer()
         if (url.indexOf('/users') != -1)
-          response = 
+          response =
             status: 500
             data:
-                error: 'Username already taken'
+              error: 'Username already taken'
           deferred.resolve(response)
         deferred.promise
       )
@@ -121,6 +140,15 @@ describe 'Controller: register', () ->
       $scope.$digest()
 
     it 'should register the user for topcoder', ->
+      Auth.register.restore()
+      sinon.stub(Auth, 'register', (reg) ->
+        data =
+          data:
+            result:
+              status: 500
+
+        $q.when data
+      )
       register.doRegister()
       $rootScope.$digest()
       # loading flag should be off
