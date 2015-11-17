@@ -1249,6 +1249,11 @@
     background-size: cover;
     background-position: 50% 0;
     background-repeat: no-repeat;
+
+    > section {
+      padding-bottom: 75px;
+    }
+
     .section-header {
       color: $white;
       font-size: 32px;
