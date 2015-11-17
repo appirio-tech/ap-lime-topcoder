@@ -32,6 +32,7 @@ Auth = (ENV, $window, AuthToken, $state, $stateParams, $location, $timeout, ApiS
     # required: ["firstName", "lastName", "handle", "country", "email"],
     # optional: ["password", "socialProviderId", "socialUserName", "socialEmail", "socialEmailVerified", "regSource", "socialUserId", "utm_source", "utm_medium", "utm_campaign"]
     url = ENV.API_URL + '/users/'
+
     body =
       options:
         afterActivationURL: 'https://ios.' + ENV.domain
