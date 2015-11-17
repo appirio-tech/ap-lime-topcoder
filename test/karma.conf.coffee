@@ -27,6 +27,7 @@ module.exports = (config) ->
       'https://cdn.auth0.com/w2/auth0-1.6.4.js'
       'https://app-abc.marketo.com/js/forms2/js/forms2.min.js'
       'bower_components/angular-mocks/angular-mocks.js'
+      'bower_components/appirio-tech-ng-iso-constants/dist/ng-iso-constants.js'
        # endbower
       'app/app.coffee'
       'app/directives/checkbox.coffee'
