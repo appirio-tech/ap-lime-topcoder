@@ -40,6 +40,10 @@ routes = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) 
       url         : '/swiftoberfest'
       templateUrl : 'swiftoberfest/info.html'
       controller  : 'swiftoberfestInfo as vm'
+    swiftoberfestLeaderboard:
+      url         : '/swiftoberfest/leaderboard'
+      templateUrl : 'swiftoberfest/leaderboard.html'
+      controller  : 'swiftoberfestInfo as vm'
     faq:
       url         : '/swiftoberfest/faq/:question'
       templateUrl : 'swiftoberfest/faq.html'
