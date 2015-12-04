@@ -956,7 +956,7 @@
   }
 }
 
-.swiftoberfest {
+.swiftoberfest, .swiftoberfest-leaderboard {
   .top-banner,
   .prize-section {
     color: $white;
@@ -1348,6 +1348,25 @@
     .section-actions {
       a:not(.btn) {
         color: $white;
+      }
+    }
+    &.leaderboard {
+      .row.leaderboard-top {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 100px;
+        .col-md-push-6 {
+          left: 0;
+        }
+      }
+      margin-bottom: 0px;
+      .leaderboard-container {
+        display: flex;
+        justify-content: center;
+        .leaderboard-table {
+          position: relative;
+        }
       }
     }
   }
