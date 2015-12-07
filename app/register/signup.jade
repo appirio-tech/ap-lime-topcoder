@@ -7,73 +7,70 @@
 
         p.welcome Develop Apps. Earn Cash. Get Swifter.
 
-    .row
-      .col-xs-12.col-md-6.register-msg
-        p Experienced iOS designers and developers are in high demand. The Topcoder iOS Community helps you sharpen your skills and earn cash by working on real-world Swift / iOS apps for some of the world's top brands.
+        .register-msg
+          p Experienced iOS designers and developers are in high demand. The Topcoder iOS Community helps you sharpen your skills and earn cash by working on real-world Swift/iOS apps for some of the world's top brands. Plus, as a member you can compete in challenges on your own schedule, earn badges to show off your skills, and win great prizes like an iPad or MacBook Pro!
 
-        p As a member of the iOS Community you can compete in app design and development challenges on your own schedule as well as earn badges to show off your skills. Plus, during Swiftoberfest you can win cool prizes like an Apple Watch or Macbook Pro!
 
-      .col-xs-12.col-md-6
         form.register-form(name="frm", novalidate, ng-submit="frm.$valid && vm.doRegister()", autocomplete="off")
+
           // Stops Chrome from autofilling and autocompleting (along with autocomplete="off" on the form)
           input(autocomplete="false", name="hidden", type="text", style="display:none;")
-          .row
-            .col-xs-12.fields(ng-show="vm.frm.error")
-              .alert.alert-danger(ng-bind="vm.frm.errorMessage")
+          .col-xs-12.fields(ng-show="vm.frm.error")
+            .alert.alert-danger(ng-bind="vm.frm.errorMessage")
 
-            .col-xs-12.padding-reset
-              .fields(ng-class="{'has-error has-feedback': vm.hasError('firstName')}")
-                input.txt-box(name="firstName", type="text", placeholder="First Name", ng-model="vm.reg.firstName", aria-describedby="firstNameErrorStatus", required)
+          .col-xs-12.col-md-6.padding-reset
+            .fields(ng-class="{'has-error has-feedback': vm.hasError('firstName')}")
+              input.txt-box(name="firstName", type="text", placeholder="First Name", ng-model="vm.reg.firstName", aria-describedby="firstNameErrorStatus", required)
 
-                span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('firstName')")
-                span#firstNameErrorStatus.sr-only (error)
+              span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('firstName')")
+              span#firstNameErrorStatus.sr-only (error)
 
-              .fields(ng-class="{'has-error has-feedback': vm.hasError('lastName')}")
-                input.txt-box(name="lastName", type="text", placeholder="Last Name", ng-model="vm.reg.lastName", aria-describedby="lastNameErrorStatus", required)
+            .fields(ng-class="{'has-error has-feedback': vm.hasError('lastName')}")
+              input.txt-box(name="lastName", type="text", placeholder="Last Name", ng-model="vm.reg.lastName", aria-describedby="lastNameErrorStatus", required)
 
-                span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('lastName')")
-                span#lastNameErrorStatus.sr-only (error)
+              span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('lastName')")
+              span#lastNameErrorStatus.sr-only (error)
 
-              .fields(ng-class="{'has-error has-feedback': vm.hasError('handle')}")
-                input.txt-box(name="handle", type="text", placeholder="Username", ng-model="vm.reg.handle", aria-describedby="usernameErrorStatus", required)
+            .fields(ng-class="{'has-error has-feedback': vm.hasError('handle')}")
+              input.txt-box(name="handle", type="text", placeholder="Username", ng-model="vm.reg.handle", aria-describedby="usernameErrorStatus", required)
 
-                span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('handle')")
-                span#usernameErrorStatus.sr-only (error)
+              span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('handle')")
+              span#usernameErrorStatus.sr-only (error)
 
-              .fields(ng-class="{'has-error has-feedback': vm.hasError('age')}")
-                input.txt-box(name="age", type="number", placeholder="Age", ng-model="vm.frm.age", aria-describedby="ageErrorStatus", required, min="10", max="100")
+            .fields(ng-class="{'has-error has-feedback': vm.hasError('age')}")
+              input.txt-box(name="age", type="number", placeholder="Age", ng-model="vm.frm.age", aria-describedby="ageErrorStatus", required, min="10", max="100")
 
-                span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('age')")
-                span#ageErrorStatus.sr-only (error)
+              span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('age')")
+              span#ageErrorStatus.sr-only (error)
+          .col-xs-12.col-md-6.padding-reset
+            .fields(ng-class="{'has-error has-feedback': vm.hasError('country')}")
+              input.txt-box(type="text", placeholder="Select Country", ng-model="vm.reg.country", name="country", typeahead="country as country.text for country in vm.frm.countries | filter:$viewValue | limitTo:8", required)
 
-              .fields(ng-class="{'has-error has-feedback': vm.hasError('country')}")
-                input.txt-box(type="text", placeholder="Select Country", ng-model="vm.reg.country", name="country", typeahead="country as country.text for country in vm.frm.countries | filter:$viewValue | limitTo:8", required)
+              span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('country')")
+              span#ageErrorStatus.sr-only (error)
 
-                span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('country')")
-                span#ageErrorStatus.sr-only (error)
+            .fields(ng-class="{'has-error has-feedback': vm.hasError('email')}")
+              input.txt-box(name="email", type="email", placeholder="Email", ng-model="vm.reg.email", aria-describedby="emailErrorStatus", required)
 
-              .fields(ng-class="{'has-error has-feedback': vm.hasError('email')}")
-                input.txt-box(name="email", type="email", placeholder="Email", ng-model="vm.reg.email", aria-describedby="emailErrorStatus", required)
+              span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('email')")
+              span#emailErrorStatus.sr-only (error)
 
-                span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('email')")
-                span#emailErrorStatus.sr-only (error)
+            .fields(ng-class="{'has-error has-feedback': vm.hasError('password')}")
+              input.txt-box(name="password", type="password", placeholder="Password", ng-model="vm.reg.password", aria-describedby="passwordErrorStatus", required)
 
-              .fields(ng-class="{'has-error has-feedback': vm.hasError('password')}")
-                input.txt-box(name="password", type="password", placeholder="Password", ng-model="vm.reg.password", aria-describedby="passwordErrorStatus", required)
+              span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('password')")
+              span#passwordErrorStatus.sr-only (error)
 
-                span.glyphicon.glyphicon-warning-sign.form-control-feedback(aria-hidden="true", ng-show="vm.hasError('password')")
-                span#passwordErrorStatus.sr-only (error)
+            .checkbox.fields(ng-class="{'has-error has-feedback': vm.hasError('agree')}")
+              input(name="agree", type="checkbox", ng-model="vm.frm.agree", aria-describedby="agreeErrorStatus", required, checkbox)
 
-              .checkbox.fields(ng-class="{'has-error has-feedback': vm.hasError('agree')}")
-                input(name="agree", type="checkbox", ng-model="vm.frm.agree", aria-describedby="agreeErrorStatus", required, checkbox)
+              .agree-txt Agree to #[a(ng-href="http://www.{{vm.domain}}/community/how-it-works/terms/", target="_blank") terms] and #[a(ng-href="http://www.{{vm.domain}}/community/how-it-works/privacy-policy/", target="_blank") privacy policy]
 
-                .agree-txt Agree to #[a(ng-href="http://www.{{vm.domain}}/community/how-it-works/terms/", target="_blank") terms] and #[a(ng-href="http://www.{{vm.domain}}/community/how-it-works/privacy-policy/", target="_blank") privacy policy]
+              span.glyphicon.glyphicon-warning-sign.form-control-feedback#agreeError(aria-hidden="true", ng-show="vm.hasError('agree')")
+              span#agreeErrorStatus.sr-only (error)
+          .col-xs-12.fields(rel="submit")
+            input.btns.glow-btn.register-btn.pull-right(type="submit", value="Register", ng-show="!vm.registering")
 
-                span.glyphicon.glyphicon-warning-sign.form-control-feedback#agreeError(aria-hidden="true", ng-show="vm.hasError('agree')")
-                span#agreeErrorStatus.sr-only (error)
-            .col-xs-12.fields(rel="submit")
-              input.btns.glow-btn.register-btn.pull-right(type="submit", value="Register", ng-show="!vm.registering")
+            input.btns.glow-btn.register-btn.pull-right(type="button", value="Registering", ng-show="vm.registering")
 
-              input.btns.glow-btn.register-btn.pull-right(type="button", value="Registering", ng-show="vm.registering")
-
-          .clearfix
+        .clearfix
