@@ -51,6 +51,9 @@
         line-height: 23px;
         max-width: 365px;
       }
+      &.wide {
+        max-width: none;
+      }
     }
     .register-form{
       margin: 46px 0 0 0;
