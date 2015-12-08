@@ -21,10 +21,10 @@ badges = ($scope, ENV, MemberCertService, $state, UserService) ->
         vm.achievements = response.data.Achievements
         vm.developerBadge = (vm.achievements.filter (achievement) ->
           achievement.description == 'Received Developer Badge'
-        ).length > 1
+        ).length > 0
         vm.designerBadge = (vm.achievements.filter (achievement) ->
           achievement.description == 'Received Designer Badge'
-        ).length > 1
+        ).length > 0
 
   vm.checkRegStatus = () ->
     if !main.loggedInUser
