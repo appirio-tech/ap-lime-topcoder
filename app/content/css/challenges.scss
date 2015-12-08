@@ -1131,7 +1131,6 @@
     margin-bottom: 33px;
     @media only screen and (min-width: 992px) {
       position: relative;
-      min-height: 714px;
     }
     @media only screen and (max-width: 991px) {
       padding-bottom: 20px;
@@ -1240,9 +1239,6 @@
   }
 
   .know-standings {
-    @media only screen and (min-width: 992px) {
-      min-height: 855px;
-    }
     background-image: url('../images/bg-badge.jpg');
     @include retina {
       background-image: url('../images/bg-badge@2x.png');
