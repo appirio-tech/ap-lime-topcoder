@@ -1,6 +1,6 @@
 'use strict'
 
-badges = ($scope, ENV, MemberCertService, $state) ->
+badges = ($scope, ENV, MemberCertService, $state, UserService) ->
   MktoForms2.loadForm '//app-abc.marketo.com', '921-UOU-112', 1944, (form) ->
     form.onSuccess () ->
       $state.go 'confirmNewsletter'
@@ -9,8 +9,22 @@ badges = ($scope, ENV, MemberCertService, $state) ->
   vm = this
   vm.registered = false
   vm.registrationSuccess = false
+  vm.achievements = {}
+  vm.developerBadge = false
+  vm.designerBadge = false
   vm.registrationError = null
   main = $scope.$parent.main
+
+  vm.getProfile = () ->
+    if main.loggedInUser
+      UserService.getLoggedInUser().then (response) ->
+        vm.achievements = response.data.Achievements
+        vm.developerBadge = (vm.achievements.filter (achievement) ->
+          achievement.description == 'Received Developer Badge'
+        ).length > 1
+        vm.designerBadge = (vm.achievements.filter (achievement) ->
+          achievement.description == 'Received Designer Badge'
+        ).length > 1
 
   vm.checkRegStatus = () ->
     if !main.loggedInUser
@@ -64,8 +78,10 @@ badges = ($scope, ENV, MemberCertService, $state) ->
 
   # registers login even handler to handle timing of multiple ajax calls
   main.addLoginEventHandler('badges', vm.checkRegStatus)
+  main.addLoginEventHandler('badges', vm.getProfile)
   # check status on load
   vm.checkRegStatus()
+  vm.getProfile()
 
   return vm
 
@@ -74,5 +90,6 @@ angular.module('lime-topcoder').controller 'badges', [
   'ENV'
   'MemberCertService'
   '$state'
+  'UserService'
   badges
 ]
