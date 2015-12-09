@@ -12,6 +12,7 @@ badges = ($scope, ENV, MemberCertService, $state, UserService) ->
   vm.achievements = {}
   vm.hasDeveloperBadge = false
   vm.hasDesignerBadge = false
+  vm.hasSYSBadge = false
   vm.registrationError = null
   main = $scope.$parent.main
 
@@ -24,6 +25,9 @@ badges = ($scope, ENV, MemberCertService, $state, UserService) ->
 
         vm.hasDesignerBadge = vm.achievements.some (achievement) ->
           achievement.description == 'Received Designer Badge'
+
+        vm.hasSYSBadge = vm.achievements.some (achievement) ->
+          achievement.description == 'Received SYS Badge'
 
   vm.checkRegStatus = () ->
     if !main.loggedInUser
