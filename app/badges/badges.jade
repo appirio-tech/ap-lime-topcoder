@@ -29,10 +29,15 @@ section.container.learn-badges-section#learn-more
     .badge-item.peer-badge.col-xs-12.col-md-4
       .badge-header Show Your Skills Badges
 
-      p Pass a Show-Your-Skills Challenge and get recognized as “Swift/iOS Ready!”
+      p.badge-desc(ng-show="vm.hasSYSBadge")
+        img.achieved(src="content/images/ico-okay-check.png", srcset="content/images/ico-okay-check@2x.png 2x")
+        span You have the developer badge
 
-      .badge-link
-        a.btn(ui-sref="challenges({type: 'peer'})") View Challenges
+      .no-badge(ng-show="!vm.hasSYSBadge")
+        p Pass a Show-Your-Skills Challenge and get recognized as “Swift/iOS Ready!”
+
+        .badge-link
+          a.btn(ui-sref="challenges({type: 'peer'})") View Challenges
 
   .badge-list.row
     .badge-item.develop-challenger-badge.col-xs-12.col-md-4
