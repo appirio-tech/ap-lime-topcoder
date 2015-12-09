@@ -23,6 +23,16 @@
 
           p Compete in real-world Swiftoberfest challenges for your chance to earn Swiftoberfest leaderboard points. In addition to any cash earnings, members who pass review and finish in the top 10 places for any given challenge will earn leaderboard points. The first place finisher receives 100 points, second place receives 90 points, and so on down to 10 points for 10th place and beyond. The more challenges you compete in, and the more entries you have that pass review, the more leaderboard points you’ll receive and the better your chances of winning Swiftoberfest prizes!
 
+          ul.section-actions
+            li
+              a(ui-sref="challenges({type: 'swiftoberfest'})") View challenges
+
+            li(ng-show="!main.loggedInUser")
+              a.btn(ui-sref="register") Become a Member
+
+            li
+              a.btn(ui-sref="toc") Contest Rules
+
       .row.leaderboard-container
         .col-xs-12.col-md-6.content-col.no-image.leaderboard-table(ng-hide="vm.loadingLeaderboard")
           .row.section-header
@@ -41,12 +51,4 @@
             tr(ng-show="vm.scores.length === 0")
               td(colspan="2") No scores available
 
-          ul.section-actions
-            li
-              a(ui-sref="challenges({type: 'swiftoberfest'})") View challenges
 
-            li(ng-show="!main.loggedInUser")
-              a.btn(ui-sref="register") Become a Member
-
-            li
-              a.btn(ui-sref="toc") Contest Rules
