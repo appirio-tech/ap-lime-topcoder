@@ -38,11 +38,11 @@ section.container.learn-badges-section#learn-more
     .badge-item.develop-challenger-badge.col-xs-12.col-md-4
       .badge-header Developer Challenger Badge
 
-      p.badge-desc(ng-show="vm.developerBadge")
+      p.badge-desc(ng-show="vm.hasDeveloperBadge")
         img.achieved(src="content/images/ico-okay-check.png", srcset="content/images/ico-okay-check@2x.png 2x")
         span You have the developer badge
 
-      .no-badge(ng-show="!vm.developerBadge")
+      .no-badge(ng-show="!vm.hasDeveloperBadge")
         p Register, submit, and pass review for your first iOS developer challenge
 
         .badge-link
@@ -51,11 +51,11 @@ section.container.learn-badges-section#learn-more
     .badge-item.design-challenger-badge.col-xs-12.col-md-4
       .badge-header Design Challenger Badge
 
-      p.badge-desc.has(ng-show="vm.designerBadge")
+      p.badge-desc.has(ng-show="vm.hasDesignerBadge")
         img.achieved(src="content/images/ico-okay-check.png", srcset="content/images/ico-okay-check@2x.png 2x")
         span You have the designer badge
 
-      .no-badge(ng-show="!vm.designerBadge")
+      .no-badge(ng-show="!vm.hasDesignerBadge")
         p Register, submit, and pass checkpoint for your first iOS design challenge
 
         .badge-link

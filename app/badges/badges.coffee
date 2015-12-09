@@ -10,8 +10,8 @@ badges = ($scope, ENV, MemberCertService, $state, UserService) ->
   vm.registered = false
   vm.registrationSuccess = false
   vm.achievements = {}
-  vm.developerBadge = false
-  vm.designerBadge = false
+  vm.hasDeveloperBadge = false
+  vm.hasDesignerBadge = false
   vm.registrationError = null
   main = $scope.$parent.main
 
@@ -19,12 +19,11 @@ badges = ($scope, ENV, MemberCertService, $state, UserService) ->
     if main.loggedInUser
       UserService.getLoggedInUser().then (response) ->
         vm.achievements = response.data.Achievements
-        vm.developerBadge = (vm.achievements.filter (achievement) ->
+        vm.hasDeveloperBadge = vm.achievements.some (achievement) ->
           achievement.description == 'Received Developer Badge'
-        ).length > 0
-        vm.designerBadge = (vm.achievements.filter (achievement) ->
+
+        vm.hasDesignerBadge = vm.achievements.some (achievement) ->
           achievement.description == 'Received Designer Badge'
-        ).length > 0
 
   vm.checkRegStatus = () ->
     if !main.loggedInUser
