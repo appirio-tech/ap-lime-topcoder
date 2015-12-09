@@ -217,6 +217,16 @@
     top: 4px;
     margin-left: -102px;
   }
+  .develop-challenger-badge:before {
+    @include badge('Challenger-Developer-06', 95px);
+    top: 4px;
+    margin-left: -102px;
+  }
+  .design-challenger-badge:before {
+    @include badge('Challenger-Designer-06', 95px);
+    top: 4px;
+    margin-left: -102px;
+  }
   .performer-badge:before {
     @include badge('High-Performer-06', 100px);
     top: 4px;
