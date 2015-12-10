@@ -173,7 +173,7 @@
           font-size: 16px;
           height: 34px;
           line-height: 34px;
-          width: 120px;
+          min-width: 120px;
           @media only screen and (max-width: 991px) {
             margin-top: 10px;
             position: static;
@@ -214,6 +214,16 @@
   }
   .challenger-badge:before {
     @include badge('Challenger-06', 95px);
+    top: 4px;
+    margin-left: -102px;
+  }
+  .develop-challenger-badge:before {
+    @include badge('Challenger-Developer-06', 95px);
+    top: 4px;
+    margin-left: -102px;
+  }
+  .design-challenger-badge:before {
+    @include badge('Challenger-Designer-06', 95px);
     top: 4px;
     margin-left: -102px;
   }

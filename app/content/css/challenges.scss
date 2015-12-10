@@ -956,7 +956,10 @@
   }
 }
 
-.swiftoberfest {
+
+
+
+.swiftoberfest, .swiftoberfest-leaderboard {
   .top-banner,
   .prize-section {
     color: $white;
@@ -1131,7 +1134,6 @@
     margin-bottom: 33px;
     @media only screen and (min-width: 992px) {
       position: relative;
-      min-height: 714px;
     }
     @media only screen and (max-width: 991px) {
       padding-bottom: 20px;
@@ -1240,9 +1242,7 @@
   }
 
   .know-standings {
-    @media only screen and (min-width: 992px) {
-      min-height: 855px;
-    }
+    margin-bottom: 0;
     background-image: url('../images/bg-badge.jpg');
     @include retina {
       background-image: url('../images/bg-badge@2x.png');
@@ -1305,7 +1305,7 @@
       &.leaderboard-table {
         @media only screen and (min-width: 992px) {
           position: absolute;
-          top: -100px;
+          top: -430px;
           left: 0;
         }
       }
@@ -1348,6 +1348,14 @@
     .section-actions {
       a:not(.btn) {
         color: $white;
+      }
+    }
+    .row.leaderboard-top {
+      margin-top: 20px;
+    }
+    .leaderboard-container {
+      .leaderboard-table {
+        position: relative;
       }
     }
   }
@@ -1480,6 +1488,11 @@
       }
     }
   }
+}
+
+.swiftoberfest-leaderboard {
+  margin-top: 30px;
+  margin-bottom: 0;
 }
 
 .faq {

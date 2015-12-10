@@ -29,19 +29,43 @@ section.container.learn-badges-section#learn-more
     .badge-item.peer-badge.col-xs-12.col-md-4
       .badge-header Show Your Skills Badges
 
-      p Pass a Show-Your-Skills Challenge and get recognized as “Swift/iOS Ready!”
+      p.badge-desc(ng-show="vm.hasSYSBadge")
+        img.achieved(src="content/images/ico-okay-check.png", srcset="content/images/ico-okay-check@2x.png 2x")
+        span You have the developer badge
 
-      .badge-link
-        a.btn(ui-sref="challenges({type: 'peer'})") Select
+      .no-badge(ng-show="!vm.hasSYSBadge")
+        p Pass a Show-Your-Skills Challenge and get recognized as “Swift/iOS Ready!”
+
+        .badge-link
+          a.btn(ui-sref="challenges({type: 'peer'})") View Challenges
 
   .badge-list.row
-    .badge-item.challenger-badge.col-xs-12.col-md-4
-      .badge-header Challenger Badge
+    .badge-item.develop-challenger-badge.col-xs-12.col-md-4
+      .badge-header Developer Challenger Badge
 
-      p Register, submit, and pass review for your first iOS challenge
+      p.badge-desc(ng-show="vm.hasDeveloperBadge")
+        img.achieved(src="content/images/ico-okay-check.png", srcset="content/images/ico-okay-check@2x.png 2x")
+        span You have the developer badge
 
-      .badge-link
-        a.btn(ui-sref="challenges({type: 'all'})", disabled) Coming Soon
+      .no-badge(ng-show="!vm.hasDeveloperBadge")
+        p Register, submit, and pass review for your first iOS developer challenge
+
+        .badge-link
+          a.btn(ui-sref="challenges({type: 'all'})") View Challenges
+
+    .badge-item.design-challenger-badge.col-xs-12.col-md-4
+      .badge-header Designer Challenger Badge
+
+      p.badge-desc.has(ng-show="vm.hasDesignerBadge")
+        img.achieved(src="content/images/ico-okay-check.png", srcset="content/images/ico-okay-check@2x.png 2x")
+        span You have the designer badge
+
+      .no-badge(ng-show="!vm.hasDesignerBadge")
+        p Register, submit, and pass checkpoint for your first iOS design challenge
+
+        .badge-link
+          a.btn(ui-sref="challenges({type: 'all'})") View Challenges
+
 
     .badge-item.performer-badge.col-xs-12.col-md-4
       .badge-header High Performer Badges
