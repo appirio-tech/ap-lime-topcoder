@@ -3,10 +3,10 @@
     header.section-header
       img(class="landing-logo", src="content/images/logo-landing.png", alt="TopCoders logo")
 
-      h1.heading(ng-show="!main.loggedInUser") Dear Developers & Designers,
+      h3.heading(ng-show="!main.loggedInUser") Dear Developers & Designers,
         strong We love you.
 
-      h1.heading(ng-show="main.loggedInUser") Welcome #{''}
+      h3.heading(ng-show="main.loggedInUser") Welcome #{''}
         span(ng-bind="main.loggedInUser.handle")
         span ,
         strong We especially love you.
@@ -44,9 +44,9 @@
 .challenges-section#challenges
   section.container
     header.section-header
-      h1.heading Current Challenges
+      h2.heading Current Challenges
 
-      p Browse our available challenges and compete.
+      h3 Browse our available challenges and compete.
 
     ul.challenges.row
       li.col-xs-12.col-sm-6.col-md-4(ng-repeat="challenge in vm.challenges")
@@ -157,8 +157,8 @@ section.learn-improve-section
 .learn-section(ng-hide="main.loggedInUser")
   section.container
     header.section-header
-      h1.heading Ready to Stand Out in the Crowd?
+      h1 Ready to Stand Out in the Crowd?
 
-      p Learn, get badged, and compete as a member of the iOS Community
+      h3.subhed Learn, get badged, and compete as a member of the iOS Community
 
     a.btn(ui-sref="register") Become a member
