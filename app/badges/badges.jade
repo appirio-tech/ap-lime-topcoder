@@ -2,10 +2,10 @@ section.container.learn-badges-section#learn-more
   header.section-header
     h1.heading Stand Out in the iOS Community
 
-    p Learn, get badged, and compete as a member of the iOS Community
+    h4 Learn, get badged, and compete as a member of the iOS Community
   .badge-list.row
     .badge-item.participant-badge.col-xs-12.col-md-4
-      .badge-header Participant Badge
+      h5.badge-header Participant Badge
 
       p.badge-desc(ng-show="!vm.registered") Join the iOS Community to earn the participant badge.
 
@@ -19,7 +19,7 @@ section.container.learn-badges-section#learn-more
         span.text-danger.margin-left-2x(ng-show="vm.registrationError", ng-bind="vm.registrationError")
 
     .badge-item.education-badge.col-xs-12.col-md-4
-      .badge-header Education Badges
+      h5.badge-header Education Badges
 
       p Take an iOS training class to earn Education badges
 
@@ -27,7 +27,7 @@ section.container.learn-badges-section#learn-more
         a.btn(ui-sref="challenges({type: 'peer'})", disabled) Coming Soon
 
     .badge-item.peer-badge.col-xs-12.col-md-4
-      .badge-header Show Your Skills Badges
+      h5.badge-header Show Your Skills Badges
 
       p.badge-desc(ng-show="vm.hasSYSBadge")
         img.achieved(src="content/images/ico-okay-check.png", srcset="content/images/ico-okay-check@2x.png 2x")
@@ -41,7 +41,7 @@ section.container.learn-badges-section#learn-more
 
   .badge-list.row
     .badge-item.develop-challenger-badge.col-xs-12.col-md-4
-      .badge-header Developer Challenger Badge
+      h5.badge-header Developer Challenger Badge
 
       p.badge-desc(ng-show="vm.hasDeveloperBadge")
         img.achieved(src="content/images/ico-okay-check.png", srcset="content/images/ico-okay-check@2x.png 2x")
@@ -54,7 +54,7 @@ section.container.learn-badges-section#learn-more
           a.btn(ui-sref="challenges({type: 'all'})") View Challenges
 
     .badge-item.design-challenger-badge.col-xs-12.col-md-4
-      .badge-header Designer Challenger Badge
+      h5.badge-header Designer Challenger Badge
 
       p.badge-desc.has(ng-show="vm.hasDesignerBadge")
         img.achieved(src="content/images/ico-okay-check.png", srcset="content/images/ico-okay-check@2x.png 2x")
@@ -68,7 +68,7 @@ section.container.learn-badges-section#learn-more
 
 
     .badge-item.performer-badge.col-xs-12.col-md-4
-      .badge-header High Performer Badges
+      h5.badge-header High Performer Badges
 
       p Demonstrate customer-ready skills
 

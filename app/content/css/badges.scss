@@ -1,6 +1,9 @@
 @import 'partials/combined';
 
 .badges {
+  p {
+    font-size: 18px;
+  }
   .top-banner {
     color: $white;
     background: url('../images/learn-background.jpg');
@@ -78,7 +81,7 @@
         .learn-link {
           @include myriad-pro-light;
           line-height: 1;
-          font-size: 16px;
+          font-size: 18px;
         }
         a {
           color: $white;
@@ -153,7 +156,7 @@
       }
 
       .badge-header {
-        font-size: 22px;
+
       }
       p {
         margin-top: 5px;

@@ -14,7 +14,7 @@ div(ng-class="{'developer-slide-1': vm.challengesType != 'swiftoberfest', 'devel
             .lbl Platform:
             .val(ng-bind="challenge.platforms")
           .rw.alt.prizeRw(ng-hide="challenge.reviewType == 'PEER'")
-            .v $
+            h2.v $
               span(ng-bind="challenge.totalPrize")
           .rw.alt.time(ng-bind="challenge.submissionEndDate | localTime", ng-hide="challenge.reviewType == 'PEER'")
           .rw.challenge-peer(ng-show="challenge.reviewType == 'PEER'")
@@ -41,9 +41,9 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
           h1.section-header.bigger Show Your Skills Challenges
           .summary
            .row
-            .desc.col-xs-12 Ready to show your iOS mobile app development skills? Show Your Skills challenges include a peer-review process where you submit a solution to a problem and get reviewed by other developers working on that same problem.
+            h5.desc.col-xs-12 Ready to show your iOS mobile app development skills? Show Your Skills challenges include a peer-review process where you submit a solution to a problem and get reviewed by other developers working on that same problem.
 
-            .desc.col-xs-12 Peer reviews are one of the most important activities you can do to improve your code and skills. It’s a great way to learn by doing, see how others approach the problem, and get feedback on your solution. Plus, once you pass a Show Your Skills challenge you’ll earn the Show Your Skills badge and be eligible for great Swiftoberfest prizes!
+            h5.desc.col-xs-12 Peer reviews are one of the most important activities you can do to improve your code and skills. It’s a great way to learn by doing, see how others approach the problem, and get feedback on your solution. Plus, once you pass a Show Your Skills challenge you’ll earn the Show Your Skills badge and be eligible for great Swiftoberfest prizes!
 
 .challenges-section#view-challenges
   section.container
@@ -56,17 +56,17 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
       h1.heading(ng-show="vm.challengesType == 'all'") Current Challenges
       h1.heading(ng-show="vm.challengesType == 'swiftoberfest'") Current Swiftoberfest Challenges
 
-      .browse(ng-show="vm.challengesType == 'all'") Browse our available challenges and compete.
+      h3(ng-show="vm.challengesType == 'all'") Browse our available challenges and compete.
         .viewType.hidden-xs
           a.gridView(ng-click="isGrid=true")
           a.listView(ng-click="isGrid=false")
 
-      .browse(ng-show="vm.challengesType == 'swiftoberfest'") Browse our available Swiftoberfest challenges and compete.
+      h3(ng-show="vm.challengesType == 'swiftoberfest'") Browse our available Swiftoberfest challenges and compete.
         .viewType.hidden-xs
           a.gridView(ng-click="isGrid=true")
           a.listView(ng-click="isGrid=false")
 
-      .browse(ng-show="vm.challengesType == 'peer'") Show Your Skills Challenges: Register Today!
+      h3(ng-show="vm.challengesType == 'peer'") Show Your Skills Challenges: Register Today!
         .viewType.hidden-xs
           a.gridView(ng-click="isGrid=true")
           a.listView(ng-click="isGrid=false")
@@ -170,17 +170,17 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
       img(src="content/images/swiftoberfest-t-shirts.png")
 
   .main
-    h1 Show your skills and win a t-shirt!
+    h3 Show your skills and win a t-shirt!
 
     .summary
       .row
-        .desc.col-xs-12 If you’re one of the first 200 members to earn the Swift/iOS Ready! badge you’ll be the proud owner of our hottest new t-shirt, which was designed by a community member just like you! Note that during Swiftoberfest, you can also earn your Swift/iOS Ready! badge by earning a passing score on submissions for select real-world challenges. These challenges are marked with [Swift/iOS Ready] in the title.
+        p.desc.col-xs-12 If you’re one of the first 200 members to earn the Swift/iOS Ready! badge you’ll be the proud owner of our hottest new t-shirt, which was designed by a community member just like you! Note that during Swiftoberfest, you can also earn your Swift/iOS Ready! badge by earning a passing score on submissions for select real-world challenges. These challenges are marked with [Swift/iOS Ready] in the title.
 
 .learn-section(ng-hide="main.loggedInUser")
   section.container
     header.section-header
       h1.heading Ready to Stand Out in the Crowd?
 
-      p Learn, get badged, and compete as a member of the iOS Community
+      h3 Learn, get badged, and compete as a member of the iOS Community
 
     a.btn(ui-sref="register") Become a member
