@@ -3,23 +3,20 @@
 challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
   vm = this
   vm.domain = ENV.domain
-  vm.loading = false
 
-  vm.pageIndex = 1
-  vm.pageSize = 10
-  vm.hasMore = true
-  vm.challenges = []
   vm.slides = []
-
-  vm.isGrid = false
+  vm.main = {hasMore: true, loading: false, pageIndex: 1, pageSize: 10, isGrid: false, first: true, challenges: [], tense: 'active'}
+  vm.past = {hasMore: true, loading: false, pageIndex: 1, pageSize: 10, isGrid: false, challenges: [], tense: 'past'}
+  vm.states = [vm.main]
 
   vm.challengesType = $stateParams.type
 
-  getChallenges = () ->
+  getChallenges = (state) ->
     # prepares search request
     request =
-      pageIndex: vm.pageIndex
-      pageSize: vm.pageSize
+      pageIndex: state.pageIndex
+      pageSize: state.pageSize
+      tense: state.tense
 
     # add review filter if required
     if vm.challengesType == 'peer'
@@ -33,13 +30,13 @@ challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
       request.review = 'COMMUNITY,INTERNAL'
 
     # set loading flag
-    vm.loading = true
+    state.loading = true
 
     # call API
     ChallengeService.getChallenges(request)
     .then (response) ->
       # set off loading flag
-      vm.loading = false
+      state.loading = false
 
       # formats challenges for technologies, platforms array fields
       Helpers.formatArray response.data.data
@@ -51,32 +48,45 @@ challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
       challenges = Helpers.filterChallenges response.data.data, vm.challengesType
 
       # append the retrieved challenges into existing collection
-      vm.challenges = vm.challenges.concat challenges
+      state.challenges = state.challenges.concat challenges
 
       # total challenges applicable for the given filter
       total = challenges.length
 
       # detects if we need to show load more button
-      if vm.challenges.length == total
-        vm.hasMore = false
+      if state.challenges.length == total
+        state.hasMore = false
       else
-        vm.hasMore = true
+        state.hasMore = true
 
       # prepares challenges to be shown in carousel
-      if vm.pageIndex == 1
-        vm.slides = vm.challenges.slice 0, 3
+      if state.pageIndex == 1 and state == vm.main
+        vm.slides = state.challenges.slice 0, 3
+
+      #if vm.challengesType == 'peer'
+      #  vm.reviewChallenges = vm.challenges.filter (challenge) ->
+      #    challenge.currentPhaseName == 'Review'
+
+      #  console.log vm.reviewChallenges
+
+      #  vm.challenges = vm.challenges.filter (challenge) ->
+      #    challenge.currentPhaseName != 'Review'
 
     .catch (error) ->
       # TODO show error
-      vm.loading = false
+      state.loading = false
 
-  loadMore = () ->
+
+  loadMore = (state) ->
     console.log vm.pageIndex
-    vm.pageIndex++
-    getChallenges()
+    state.pageIndex++
+    getChallenges(state)
 
   activate = () ->
-    getChallenges()
+    getChallenges(vm.main)
+    if vm.challengesType == 'peer'
+      getChallenges(vm.past)
+      vm.states.push vm.past
 
 
   vm.loadMore = loadMore
