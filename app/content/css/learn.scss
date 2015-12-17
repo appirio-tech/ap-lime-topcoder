@@ -1,6 +1,7 @@
 @import 'partials/combined';
 
 .learn {
+  @include myriad-pro-light;
   padding-top: 30px;
   .top-banner {
     color: $white;
@@ -327,10 +328,8 @@
       margin-top: 30px;
 
       .heading {
-        color: $light-gray;
+        font-weight: 600;
         margin-bottom: 10px;
-        font-weight: bolder;
-        font-family: MyriadPro-Regulars, Calibri, sans-serif;
         @media only screen and (max-width: 415px) {
           font-size: 20px;
         }

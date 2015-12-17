@@ -453,7 +453,6 @@
       color: #383D43;
 
       h1 {
-        font-size: 30px;
         text-align: center;
         margin-bottom: 30px;
       }
@@ -974,11 +973,7 @@
       .banner-header {
         @include myriad-pro-light;
         line-height: 1.6;
-        @media only screen and (max-width: 1030px) {
-          font-size: 35px;
-        }
         @media only screen and (max-width: 640px) {
-          font-size: 28px;
           line-height: 1.1;
         }
 
@@ -1526,6 +1521,7 @@
 
 .rules,
 .toc {
+  @include myriad-pro-light;
   .inner-wrapper {
     padding-bottom: 70px;
     max-width: 930px;
