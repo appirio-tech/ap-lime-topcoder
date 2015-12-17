@@ -53,20 +53,20 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
       p To start, register for a Swift/iOS Ready! challenge.  Successful completion of one of these challenges results in a Swift/iOS Ready! badge that helps set you apart from other developers in the community.  Each challenge asks you to complete part of an iOS mobile app by demonstrating you have the Swift knowledge and capabilities to create high-quality iOS apps.  After you submit your solution, you will need to review 5 other submissions to complete the challenge and receive a score. If you pass, you receive the Swift/iOS Ready! badge.
 
     header.section-header.fluid
-      h1.heading(ng-show="vm.challengesType == 'all'") Current Challenges
-      h1.heading(ng-show="vm.challengesType == 'swiftoberfest'") Current Swiftoberfest Challenges
+      h2.heading(ng-show="vm.challengesType == 'all'") Current Challenges
+      h2.heading(ng-show="vm.challengesType == 'swiftoberfest'") Current Swiftoberfest Challenges
 
-      h3(ng-show="vm.challengesType == 'all'") Browse our available challenges and compete.
+      h4(ng-show="vm.challengesType == 'all'") Browse our available challenges and compete.
         .viewType.hidden-xs
           a.gridView(ng-click="isGrid=true")
           a.listView(ng-click="isGrid=false")
 
-      h3(ng-show="vm.challengesType == 'swiftoberfest'") Browse our available Swiftoberfest challenges and compete.
+      h4(ng-show="vm.challengesType == 'swiftoberfest'") Browse our available Swiftoberfest challenges and compete.
         .viewType.hidden-xs
           a.gridView(ng-click="isGrid=true")
           a.listView(ng-click="isGrid=false")
 
-      h3(ng-show="vm.challengesType == 'peer'") Show Your Skills Challenges: Register Today!
+      h4(ng-show="vm.challengesType == 'peer'") Show Your Skills Challenges: Register Today!
         .viewType.hidden-xs
           a.gridView(ng-click="isGrid=true")
           a.listView(ng-click="isGrid=false")
@@ -170,7 +170,7 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
       img(src="content/images/swiftoberfest-t-shirts.png")
 
   .main
-    h3 Show your skills and win a t-shirt!
+    h2 Show your skills and win a t-shirt!
 
     .summary
       .row
