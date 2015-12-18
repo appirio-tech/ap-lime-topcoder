@@ -34,7 +34,7 @@ register = ($scope, $state, Auth, Countries, ENV, $location, UtmCookieService, I
       console.log('Success')
       console.log data
       vm.registering = false
-      __gaTracker('send', 'TEST-register')
+      __gaTracker('send', 'event', 'register', 'submit')
 
       if data.data.result.status != 200
         regError data.data.result.content
