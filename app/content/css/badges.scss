@@ -4,6 +4,7 @@
   p {
     font-size: 18px;
   }
+  @include myriad-pro-light;
   .top-banner {
     color: $white;
     background: url('../images/learn-background.jpg');
@@ -156,9 +157,10 @@
       }
 
       .badge-header {
-
+        font-size: 22px;
       }
       p {
+        font-size: 17px;
         margin-top: 5px;
         line-height: 1.2;
         @media only screen and (max-width: 415px) {
