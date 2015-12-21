@@ -971,6 +971,9 @@
       }
 
       .banner-header {
+        &.limit {
+          max-width: 72%;
+        }
         @include myriad-pro-light;
         line-height: 1.6;
         @media only screen and (max-width: 640px) {
