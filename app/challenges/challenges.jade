@@ -14,7 +14,7 @@ div(ng-class="{'developer-slide-1': vm.challengesType != 'swiftoberfest', 'devel
             .lbl Platform:
             .val(ng-bind="challenge.platforms")
           .rw.alt.prizeRw(ng-hide="challenge.reviewType == 'PEER'")
-            .v $
+            h2.v $
               span(ng-bind="challenge.totalPrize")
           .rw.alt.time(ng-bind="challenge.submissionEndDate | localTime", ng-hide="challenge.reviewType == 'PEER'")
           .rw.challenge-peer(ng-show="challenge.reviewType == 'PEER'")
@@ -41,9 +41,9 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
           h1.section-header.bigger Show Your Skills Challenges
           .summary
            .row
-            .desc.col-xs-12 Ready to show your iOS mobile app development skills? Show Your Skills challenges include a peer-review process where you submit a solution to a problem and get reviewed by other developers working on that same problem.
+            h5.desc.col-xs-12 Ready to show your iOS mobile app development skills? Show Your Skills challenges include a peer-review process where you submit a solution to a problem and get reviewed by other developers working on that same problem.
 
-            .desc.col-xs-12 Peer reviews are one of the most important activities you can do to improve your code and skills. It’s a great way to learn by doing, see how others approach the problem, and get feedback on your solution. Plus, once you pass a Show Your Skills challenge you’ll earn the Show Your Skills badge and be eligible for great Swiftoberfest prizes!
+            h5.desc.col-xs-12 Peer reviews are one of the most important activities you can do to improve your code and skills. It’s a great way to learn by doing, see how others approach the problem, and get feedback on your solution. Plus, once you pass a Show Your Skills challenge you’ll earn the Show Your Skills badge and be eligible for great Swiftoberfest prizes!
 
 .challenges-section#view-challenges
   section.container
@@ -52,117 +52,116 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
 
       p To start, register for a Swift/iOS Ready! challenge.  Successful completion of one of these challenges results in a Swift/iOS Ready! badge that helps set you apart from other developers in the community.  Each challenge asks you to complete part of an iOS mobile app by demonstrating you have the Swift knowledge and capabilities to create high-quality iOS apps.  After you submit your solution, you will need to review 5 other submissions to complete the challenge and receive a score. If you pass, you receive the Swift/iOS Ready! badge.
 
-    header.section-header.fluid
-      h1.heading(ng-show="vm.challengesType == 'all'") Current Challenges
-      h1.heading(ng-show="vm.challengesType == 'swiftoberfest'") Current Swiftoberfest Challenges
+    .challenges(ng-repeat="state in vm.states", ng-show="state.challenges.length")
+      header.section-header.fluid
+        .browse
+          h1.heading(ng-show="vm.challengesType == 'all'") Current Challenges
+          h1.heading(ng-show="vm.challengesType == 'swiftoberfest'") Current Swiftoberfest Challenges
 
-      .browse(ng-show="vm.challengesType == 'all'") Browse our available challenges and compete.
-        .viewType.hidden-xs
-          a.gridView(ng-click="isGrid=true")
-          a.listView(ng-click="isGrid=false")
+          h3(ng-show="vm.challengesType == 'all'") Browse our available challenges and compete.
+            .viewType.hidden-xs
+              a.gridView(ng-click="state.isGrid=true")
+              a.listView(ng-click="state.isGrid=false")
 
-      .browse(ng-show="vm.challengesType == 'swiftoberfest'") Browse our available Swiftoberfest challenges and compete.
-        .viewType.hidden-xs
-          a.gridView(ng-click="isGrid=true")
-          a.listView(ng-click="isGrid=false")
+          h3(ng-show="vm.challengesType == 'swiftoberfest'") Browse our available Swiftoberfest challenges and compete.
+            .viewType.hidden-xs
+              a.gridView(ng-click="state.isGrid=true")
+              a.listView(ng-click="state.isGrid=false")
 
-      .browse(ng-show="vm.challengesType == 'peer'") Show Your Skills Challenges: Register Today!
-        .viewType.hidden-xs
-          a.gridView(ng-click="isGrid=true")
-          a.listView(ng-click="isGrid=false")
+          h3(ng-show="vm.challengesType == 'peer' && state.tense == 'active'") Show Your Skills Challenges: Register Today!
+          h3(ng-show="vm.challengesType == 'peer' && state.tense == 'past'") Past Show Your Skills Challenges
+            .viewType.hidden-xs
+              a.gridView(ng-click="state.isGrid=true")
+              a.listView(ng-click="state.isGrid=false")
 
-    .listView.hidden-xs(ng-show="!isGrid")
-      ul.challengeList
-        li.col-xs-12.header
-          .col1.pull-left &nbsp;
-          .col2.pull-left CHALLENGE
-          .col3.pull-left(ng-show="vm.challengesType == 'all'") PRIZE &amp; DEADLINE
-          .col3.pull-left(ng-show="vm.challengesType == 'swiftoberfest'") PRIZE &amp; DEADLINE
-          .col3.pull-left(ng-show="vm.challengesType == 'peer'") START &amp; END TIMES
-          .col4.pull-left REGISTRANTS
-          .col5.pull-left SUBMISSIONS
+      .listView.hidden-xs(ng-show="!state.isGrid")
+        ul.challengeList
+          li.col-xs-12.header
+            .col1.pull-left &nbsp;
+            .col2.pull-left CHALLENGE
+            .col3.pull-left(ng-show="vm.challengesType == 'all'") PRIZE &amp; DEADLINE
+            .col3.pull-left(ng-show="vm.challengesType == 'swiftoberfest'") PRIZE &amp; DEADLINE
+            .col3.pull-left(ng-show="vm.challengesType == 'peer'") START &amp; END TIMES
+            .col4.pull-left REGISTRANTS
+            .col5.pull-left SUBMISSIONS
 
-        li.liRw.col-xs-12(ng-repeat="challenge in vm.challenges")
-          .chrw.clearfix
-            figure.col1.imgWrap.pull-left
-              a(ng-href="{{challenge.url}}")
-                img.challenge-image(ng-show="challenge.reviewType == 'PEER'", src="content/images/svg/SYS-IOS-Swift-Ready-06.svg", alt="challenge image")
-                img.challenge-image(ng-show="challenge.challengeCommunity == 'design'", src="content/images/svg/design-generic.svg", alt="challenge image")
-                img.challenge-image(ng-show="challenge.reviewType != 'PEER' && challenge.challengeCommunity != 'design'", src="content/images/svg/development-generic.svg", alt="challenge image")
-            .chge.col2.pull-left
-              .inner
-                h4.chTitle
-                  a(ng-href="{{challenge.url}}") {{challenge.challengeName}}
-                .rw
-                  span.lbl Technologies:&#32
-                  span.val {{challenge.technologies}}
-                .rw
-                  span.lbl Platform:&#32
-                  span.val {{challenge.platforms}}
-            .pz.col3.pull-left
-              .inner(ng-hide="challenge.reviewType == 'PEER'")
-                .rw.prize(ng-bind="challenge.totalPrize || 0 | currency:undefined:0")
-                .rw.time(ng-bind="challenge.submissionEndDate | localTime")
-              .inner(ng-show="challenge.reviewType == 'PEER'")
+          li.liRw.col-xs-12(ng-repeat="challenge in state.challenges")
+            .chrw.clearfix
+              figure.col1.imgWrap.pull-left
+                a(ng-href="{{challenge.url}}")
+                  img.challenge-image(ng-show="challenge.reviewType == 'PEER'", src="content/images/svg/SYS-IOS-Swift-Ready-06.svg", alt="challenge image")
+                  img.challenge-image(ng-show="challenge.challengeCommunity == 'design'", src="content/images/svg/design-generic.svg", alt="challenge image")
+                  img.challenge-image(ng-show="challenge.reviewType != 'PEER' && challenge.challengeCommunity != 'design'", src="content/images/svg/development-generic.svg", alt="challenge image")
+              .chge.col2.pull-left
+                .inner
+                  h4.chTitle
+                    a(ng-href="{{challenge.url}}") {{challenge.challengeName}}
+                  .rw
+                    span.lbl Technologies:&#32
+                    span.val {{challenge.technologies}}
+                  .rw
+                    span.lbl Platform:&#32
+                    span.val {{challenge.platforms}}
+              .pz.col3.pull-left
+                .inner(ng-hide="challenge.reviewType == 'PEER'")
+                  .rw.prize(ng-bind="challenge.totalPrize || 0 | currency:undefined:0")
+                  .rw.time(ng-bind="challenge.submissionEndDate | localTime")
+                .inner(ng-show="challenge.reviewType == 'PEER'")
+                  .timeHeader Challenge start
+                  .time(ng-bind="challenge.registrationStartDate | localTime")
+                  .timeHeader.timeEnd Challenge end
+                  .time(ng-bind="challenge.submissionEndDate | localTime")
+              .regs.col4.pull-left
+                .inner
+                  .reg
+                    a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numRegistrants}}
+              .subs.col5.pull-left
+                .inner
+                  .sub
+                    a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numSubmissions}}
+
+      ul.challengesGrid.row(ng-show="state.isGrid")
+        li(ng-repeat="challenge in state.challenges")
+          section.challenge
+            .challenge-type {{challenge.type}}
+
+            a.challenge-image(ng-href="https://www.{{main.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop")
+              img(ng-show="challenge.reviewType == 'PEER'", src="content/images/svg/SYS-IOS-Swift-Ready-06.svg", alt="challenge image")
+              img(ng-show="challenge.challengeCommunity == 'design'", src="content/images/svg/design-generic.svg", alt="challenge image")
+              img(ng-show="challenge.reviewType != 'PEER' && challenge.challengeCommunity != 'design'", src="content/images/svg/development-generic.svg", alt="challenge image")
+
+            .challenge-details
+              h2.challenge-header
+                a(ng-href="{{challenge.url}}") {{challenge.challengeName}}
+
+              .challenge-data
+                p #[span.challenge-field Technologies:] {{challenge.technologies}}
+
+              .challenge-data
+                p #[span.challenge-field Platform:] {{challenge.platforms}}
+
+              .challenge-prize(ng-bind="challenge.totalPrize || 0 | currency:undefined:0", ng-hide="challenge.reviewType == 'PEER'")
+
+              .challenge-deadline(ng-bind="challenge.submissionEndDate | localTime", ng-hide="challenge.reviewType == 'PEER'")
+
+              .challenge-peer(ng-show="challenge.reviewType == 'PEER'")
                 .timeHeader Challenge start
                 .time(ng-bind="challenge.registrationStartDate | localTime")
                 .timeHeader.timeEnd Challenge end
                 .time(ng-bind="challenge.submissionEndDate | localTime")
-            .regs.col4.pull-left
-              .inner
-                .reg
-                  a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numRegistrants}}
-            .subs.col5.pull-left
-              .inner
-                .sub
-                  a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numSubmissions}}
 
-  ul.challengesGrid.row(ng-show="isGrid")
-    li(ng-repeat="challenge in vm.challenges")
-      section.challenge
-        .challenge-type {{challenge.type}}
+              .row.challenge-stats
+                .col-xs-6.challenge-registrants.challenge-stat
+                  .stats-type PRIZE & DEADLINE
 
-        a.challenge-image(ng-href="https://www.{{main.domain}}/challenge-details/{{challenge.challengeId}}/?type=develop")
-          img(ng-show="challenge.reviewType == 'PEER'", src="content/images/svg/SYS-IOS-Swift-Ready-06.svg", alt="challenge image")
-          img(ng-show="challenge.challengeCommunity == 'design'", src="content/images/svg/design-generic.svg", alt="challenge image")
-          img(ng-show="challenge.reviewType != 'PEER' && challenge.challengeCommunity != 'design'", src="content/images/svg/development-generic.svg", alt="challenge image")
+                  .stats-value
+                    a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numRegistrants}}
 
-        .challenge-details
-          h2.challenge-header
-            a(ng-href="{{challenge.url}}") {{challenge.challengeName}}
+                .col-xs-6.challenge-submissions.challenge-stat
+                  .stats-type SUBMISSIONS
 
-          .challenge-data
-            p #[span.challenge-field Technologies:] {{challenge.technologies}}
-
-          .challenge-data
-            p #[span.challenge-field Platform:] {{challenge.platforms}}
-
-          .challenge-prize(ng-bind="challenge.totalPrize || 0 | currency:undefined:0", ng-hide="challenge.reviewType == 'PEER'")
-
-          .challenge-deadline(ng-bind="challenge.submissionEndDate | localTime", ng-hide="challenge.reviewType == 'PEER'")
-
-          .challenge-peer(ng-show="challenge.reviewType == 'PEER'")
-            .timeHeader Challenge start
-            .time(ng-bind="challenge.registrationStartDate | localTime")
-            .timeHeader.timeEnd Challenge end
-            .time(ng-bind="challenge.submissionEndDate | localTime")
-
-          .row.challenge-stats
-            .col-xs-6.challenge-registrants.challenge-stat
-              .stats-type PRIZE & DEADLINE
-
-              .stats-value
-                a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numRegistrants}}
-
-            .col-xs-6.challenge-submissions.challenge-stat
-              .stats-type SUBMISSIONS
-
-              .stats-value
-                a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numSubmissions}}
-
-  ul.section-actions
-    li(ng-show="vm.hasMore && !vm.loading") #[a(ng-click="vm.loadMore()") Load more...]
-    li(ng-show="vm.hasMore && vm.loading") Loading...
+                  .stats-value
+                    a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numSubmissions}}
 
 .t-shirt-section
   .shirt
@@ -174,13 +173,13 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
 
     .summary
       .row
-        .desc.col-xs-12 If you’re one of the first 200 members to earn the Swift/iOS Ready! badge you’ll be the proud owner of our hottest new t-shirt, which was designed by a community member just like you! Note that during Swiftoberfest, you can also earn your Swift/iOS Ready! badge by earning a passing score on submissions for select real-world challenges. These challenges are marked with [Swift/iOS Ready] in the title.
+        p.desc.col-xs-12 If you’re one of the first 200 members to earn the Swift/iOS Ready! badge you’ll be the proud owner of our hottest new t-shirt, which was designed by a community member just like you! Note that during Swiftoberfest, you can also earn your Swift/iOS Ready! badge by earning a passing score on submissions for select real-world challenges. These challenges are marked with [Swift/iOS Ready] in the title.
 
 .learn-section(ng-hide="main.loggedInUser")
   section.container
     header.section-header
       h1.heading Ready to Stand Out in the Crowd?
 
-      p Learn, get badged, and compete as a member of the iOS Community
+      h3 Learn, get badged, and compete as a member of the iOS Community
 
     a.btn(ui-sref="register") Become a member

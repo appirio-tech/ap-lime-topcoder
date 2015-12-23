@@ -16,7 +16,7 @@ ChallengeService = (ENV, ApiService) ->
     if request?.event
       params.event = request.event
 
-    url = ENV.API_URL_V2 + '/challenges/active'
+    url = ENV.API_URL_V2 + '/challenges/' + (request.tense or 'active')
     promise = ApiService.requestHandler 'GET', url, params, true
     promise
 

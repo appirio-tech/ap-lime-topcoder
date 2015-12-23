@@ -50,7 +50,6 @@
       }
       .section-header {
         color: $white;
-        font-size: 55px;
         text-align: left;
         margin: 0;
         margin-top: 20px;
@@ -104,7 +103,7 @@
         }
 
         .rw {
-          font-size: 19px;
+          font-size: 18px;
           min-height: 26px;
           line-height: 26px;
           @media (max-width: 767px) {
@@ -181,7 +180,6 @@
           opacity: 0.9;
 
           .v {
-            font-size: 49px;
             line-height: 52px;
             margin-top: 21px;
             @media only screen and (max-width: 560px) {
@@ -260,7 +258,6 @@
         }
 
         .section-header {
-          font-size: 24px;
           line-height: 24px;
           &.bigger {
             font-size: 48px;
@@ -314,12 +311,9 @@
         word-spacing: 1px;
 
         .desc {
-          font-size: 20px;
           margin-bottom: 53px;
           @media (max-width: 767px) {
             margin-bottom: 20px;
-            font-size: 16px;
-            line-height: 18px;
           }
         }
         .cn {
@@ -395,7 +389,6 @@
     padding: 0 15px;
     text-align: center;
     @include myriad-pro-light;
-    font-size: 30px;
     line-height: 1.3;
     opacity: 0.9;
     color: #242f2d;
@@ -460,12 +453,11 @@
       color: #383D43;
 
       h1 {
-        font-size: 30px;
         text-align: center;
         margin-bottom: 30px;
       }
       p {
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1.2;
         @media only screen and (max-width: 767px) {
           font-size: 17px;
@@ -475,7 +467,6 @@
     .section-header {
       color: $header-gray;
       font-weight: 300;
-      font-size: 30px;
       margin-top: 62px;
 
       .heading {
@@ -485,6 +476,7 @@
         }
       }
       .browse {
+        font-size: 18px;
         @media only screen and (max-width: 450px) {
           font-size: 21px;
         }
@@ -912,7 +904,8 @@
   }
 
   .learn-section {
-    background-color: $white;
+    background-color: #eee;
+    color: #333;
   }
 
   .t-shirt-section {
@@ -943,12 +936,9 @@
       padding-top: 20px;
       padding-left: 20px;
 
-      h1 {
-        font-size: 30px;
-      }
       .desc {
+        font-size: 18px;
         margin-top: 20px;
-        font-size: 20px;
         line-height: 1.3;
         font-weight: 500;
       }
@@ -982,14 +972,12 @@
       }
 
       .banner-header {
-        @include myriad-pro-light;
-        font-size: 42px;
-        line-height: 1.6;
-        @media only screen and (max-width: 1030px) {
-          font-size: 35px;
+        &.limit {
+          max-width: 72%;
         }
+        @include myriad-pro-light;
+        line-height: 1.6;
         @media only screen and (max-width: 640px) {
-          font-size: 28px;
           line-height: 1.1;
         }
 
@@ -1111,7 +1099,6 @@
     text-align: center;
     opacity: 0.9;
     color: #242f2d;
-    font-size: 29px;
     margin-top: 69px;
     line-height: 1.3;
     @media only screen and (max-width: 415px) {
@@ -1145,7 +1132,6 @@
     .section-header {
       color: $header-gray;
       @include myriad-pro-light;
-      font-size: 48px;
       opacity: 1;
       margin-top: 51px;
       @media only screen and (max-width: 415px) {
@@ -1203,7 +1189,6 @@
       .content-question {
         color: $header-gray;
         @include myriad-pro-light;
-        font-size: 48px;
         opacity: 1;
         margin-top: 51px;
         line-height: 1.2;
@@ -1211,6 +1196,9 @@
           margin-top: 25px;
           font-size: 30px;
         }
+      }
+      .content-answer {
+        margin-top: 8px;
       }
     }
     .section-actions {
@@ -1243,6 +1231,7 @@
 
   .know-standings {
     margin-bottom: 0;
+    padding-top: 40px;
     background-image: url('../images/bg-badge.jpg');
     @include retina {
       background-image: url('../images/bg-badge@2x.png');
@@ -1257,7 +1246,6 @@
 
     .section-header {
       color: $white;
-      font-size: 32px;
       text-align: left;
       padding: 0 0px;
       @media only screen and (max-width: 415px) {
@@ -1305,7 +1293,7 @@
       &.leaderboard-table {
         @media only screen and (min-width: 992px) {
           position: absolute;
-          top: -430px;
+          top: -623px;
           left: 0;
         }
       }
@@ -1508,9 +1496,7 @@
     clear: both;
     overflow: hidden;
     .faqDetailsTitle {
-      font-size: 60px;
       color: #025f89;
-      line-height: 68px;
       font-weight: normal;
     }
     .faqDetailsMainContent {
@@ -1537,6 +1523,7 @@
 
 .rules,
 .toc {
+  @include myriad-pro-light;
   .inner-wrapper {
     padding-bottom: 70px;
     max-width: 930px;
@@ -1552,7 +1539,6 @@
       text-align: center;
       opacity: 0.9;
       color: #242f2d;
-      font-size: 29px;
       line-height: 1.3;
       @media only screen and (max-width: 640px) {
         font-size: 20px;
@@ -1574,7 +1560,8 @@
     }
     p {
       @include myriad-pro-light;
-      font-size: 20px;
+      font-size: 18px;
+      line-height: 1.4;
     }
     ol {
       list-style-type: decimal;
@@ -1582,8 +1569,6 @@
       li {
         margin-left: 20px;
         p {
-          font-size: 18px;
-          line-height: 1.4;
           color: $light-gray;
           font-family: MyriadPro-Light,Calibri,sans-serif;
           margin-bottom: 15px;

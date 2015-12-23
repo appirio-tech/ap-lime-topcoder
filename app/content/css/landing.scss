@@ -39,7 +39,6 @@
 
     .heading {
       color: $header-gray;
-      font-size: 36x;
       margin-bottom: 20px;
       @media only screen and (max-width: 415px) {
         font-size: 18px;
@@ -76,6 +75,7 @@
 
       .heading {
         margin-top: 32px;
+        font-size: 29px;
         color: #565859;
         @media only screen and (max-width: 675px) {
           font-size: 29px;
@@ -650,5 +650,11 @@
       padding-left: 30px;
       padding-right: 30px;
     }
+  }
+}
+
+learn-section {
+  .subhed {
+    margin-top: 6px;
   }
 }
