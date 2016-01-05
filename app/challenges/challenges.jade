@@ -163,18 +163,6 @@ carousel.carousel-section(interval="5000", ng-show="vm.challengesType == 'peer'"
                   .stats-value
                     a(ng-href="{{challenge.url}}#viewRegistrant") {{challenge.numSubmissions}}
 
-.t-shirt-section
-  .shirt
-    a(href="content/images/swiftoberfest-t-shirts.png", target="_blank")
-      img(src="content/images/swiftoberfest-t-shirts.png")
-
-  .main
-    h1 Show your skills and win a t-shirt!
-
-    .summary
-      .row
-        p.desc.col-xs-12 If you’re one of the first 200 members to earn the Swift/iOS Ready! badge you’ll be the proud owner of our hottest new t-shirt, which was designed by a community member just like you! Note that during Swiftoberfest, you can also earn your Swift/iOS Ready! badge by earning a passing score on submissions for select real-world challenges. These challenges are marked with [Swift/iOS Ready] in the title.
-
 .learn-section(ng-hide="main.loggedInUser")
   section.container
     header.section-header

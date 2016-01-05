@@ -18,7 +18,7 @@
       p Thanks for joining. Before you can compete, you'll need to confirm your email account with Topcoder, so be sure to check your email for the activation link.
 
     .banner-text(ng-show="main.loggedInUser && main.loggedInUser.memberSince")
-      p You’re eager to get started, and we’ve got a bunch of iOS/Swift challenges lined up to give you new opportunities to earn cash. We’ve also rolled out a new badging program to prove your app development expertise, and during Swiftoberfest you’ll have a chance to win great prizes by competing in challenges.
+      p You’re eager to get started, and we have a bunch of iOS/Swift challenges lined up to give you new opportunities to earn cash. We also have an exclusive iOS badging program to prove your app design and development expertise, so dive in and start competing!
 
     ul.banner-actions
       li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn more]
@@ -26,20 +26,34 @@
       li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a member]
       li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(ng-click="vm.registerForProgram()", du-smooth-scroll) Start Competing]
 
-.get-training-section#learn-more
+.get-training-section#learn-more(ng-show="!main.loggedInUser")
   section.container
-    h1.section-header Complete badges. Develop apps.  Earn cash.
+    h1.section-header Compete for cash. Learn from the best.
 
     .row
       .col-xs-12.col-md-6.col-md-push-6.content-col
-        p There's never been a better time to join the Topcoder iOS Community and begin honing your app design and development skills, because we're currently in the midst of Swiftoberfest: a three-month program during which we're giving away cash and tons of great prizes for earning badges and competing in Swift/iOS design and development challenges for select enterprise customers.
+        p As a member of the Topcoder iOS Community you can earn cash by competing in iOS design and development challenges, and you’ll be able to connect and engage with your peers around the globe as well as receive feedback on your work from the most successful iOS designers and developers. Members also get exclusive access to events like Q&A sessions with iOS app design and Swift development experts.
 
         ul.section-actions
           li
-            a(ui-sref="challenges({type: 'swiftoberfest'})") View Swiftoberfest challenges
+            a(ui-sref="challenges({type: 'all'})") View challenges
 
           li(ng-show="!main.loggedInUser")
             a.btn(ui-sref="register") Become a member
+
+.tco-section
+  section.container
+    h1.section-header Win a trip to Topcoder Open!
+
+    img(src="content/images/tournament-ios.png")
+
+    .row
+      p The iOS Community is growing daily and we are excited to announce a special opportunity for Topcoder iOS competitors. By competing in challenges designated with an iOS technology, you’ll earn points on our iOS TCO Tournament Leaderboards. The top winner from each stage of the TCO contest will win a trip to TCO16. See the iOS TCO contest rules for complete details.
+
+      ul.section-actions
+        li
+          a.btn(href="http://tco16.topcoder.com/overview/win-tco-trips/ios-tournament/") View contest rules and leaderboards
+
 
 .challenges-section#challenges
   section.container
