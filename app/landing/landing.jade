@@ -21,7 +21,7 @@
       p You’re eager to get started, and we have a bunch of iOS/Swift challenges lined up to give you new opportunities to earn cash. We also have an exclusive iOS badging program to prove your app design and development expertise, so dive in and start competing!
 
     ul.banner-actions
-      li #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn more]
+      li(ng-show="!main.loggedInUser") #[a.learn-link(href='#learn-more', du-smooth-scroll) Learn more]
 
       li(ng-show="!main.loggedInUser") #[a.btn(ui-sref="register") Become a member]
       li(ng-show="main.loggedInUser && main.loggedInUser.memberSince") #[a.btn(ng-click="vm.registerForProgram()", du-smooth-scroll) Start Competing]

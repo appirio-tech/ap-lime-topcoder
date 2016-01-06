@@ -11,6 +11,9 @@ challenges = ($scope, $state, $stateParams, ChallengeService, Helpers, ENV) ->
 
   vm.challengesType = $stateParams.type
 
+  if vm.challengesType == 'swiftoberfest'
+    $state.go('challenges', {type: 'all'})
+
   getChallenges = (state) ->
     # prepares search request
     request =
