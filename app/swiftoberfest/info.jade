@@ -1,58 +1,37 @@
 .top-banner
   section.container
-    h1.banner-header.limit Earn badges. Develop apps. Win cash and prizes.
+    h1.banner-header.limit Swiftoberfest 2015
 
     .banner-text
-      p Swiftoberfest is the perfect time of year to join Topcoder’s iOS Community. Build your Swift skills and earn cash and great prizes by competing in real-world mobile app challenges for some of the world’s top brands.
+      p Swiftoberfest was a three-month program in late 2015 to engage and grow the Topcoder iOS Community with dozens of new Swift/iOS Challenges. We gave away lots of cash and tons of great prizes to iOS Community members for earning badges and competing in design and development challenges for select enterprise customers. While Swiftoberfest is officially over, there are still lots of Swift/iOS challenges for you to compete in, and we’ll have more fun programs for the iOS Community in 2016!
 
       ul.banner-actions
         li
-          a.learn-link(href='#learn-more', du-smooth-scroll) Learn More
+          a.learn-link(href='#prize-section', du-smooth-scroll) Learn More
 
         li(ng-show="!main.loggedInUser")
           a.btn(ui-sref='register') Become a Member
 
-.get-training-section#learn-more
-  section.container
-    .row
-      .col-xs-12.col-md-6.col-md-push-6.content-col
-        h1.content-question So what exactly is Swiftoberfest?
-
-        p.content-answer Swiftoberfest is an initiative to engage and grow the Topcoder iOS Community with dozens of new iOS/Swift challenges. We’ve identified a group of forward-thinking enterprises that want to design, prototype, and build apps before the end of the year, and by participating in these challenges over the next few months you can earn cash as well as win great prizes like an Apple TV or MacBook Pro!
-
-        h2.content-question How long does it last?
-
-        p While Oktoberfest lasts for just 16 days, Swiftoberfest will continue until we complete all challenges necessary to build the enterprise apps. We want Swiftoberfest to be fun and rewarding, and also provide you with lots of chances to improve and get recognized for your Swift skills. So whether you’re new to Topcoder or a long-time member interested in trying new types of challenges, we hope you’ll join us in raising a stein to great challenges, a vibrant and growing community, and many months of Swift awesomeness!
-
-        ul.section-actions
-          li
-            a(ui-sref="challenges({type: 'swiftoberfest'})") View challenges
-
-          li(ng-show="!main.loggedInUser")
-            a.btn(ui-sref="register") Become a Member
-
-.prize-section
+.prize-section#prize-section
   section.container
     h1.banner-header Swiftoberfest cash and prizes
 
     .banner-text
-      p Just like any other challenge on Topcoder, if you win a Swiftoberfest challenge you’ll earn cash. But during Swiftoberfest you can also win cool prizes simply by competing!
+      p During Swiftoberfest, in addition to the usual cash payouts for design and development challenges, iOS Community members also earned points on the Swiftoberfest leaderboard. The top members on the leaderboard won cool prizes from Apple.
 
     h2.banner-header Show your skills challenges
 
     .banner-text
-      p Participate in a Show Your Skills challenge to earn the Swift/iOS Ready! badge. If you’re one of the first 200 members to earn the badge you’ll be the proud owner of our hottest new t-shirt, which was designed by a community member just like you! Note that during Swiftoberfest, you can also earn your Swift/iOS Ready! badge by earning a passing score on submissions for select real-world challenges. These challenges are marked with [Swift/iOS Ready] in the title.
+      p iOS Community members who participate in a Show Your Skills challenge have a chance to earn the Swift/iOS Ready! badge. Members who earned this badge during Swiftoberfest also won our latest t-shirt, which was designed by a Topcoder community member.
 
     h2.banner-header Real-world challenges
 
     .banner-text
-      p Compete against other iOS designers and developers in real-world challenges for your chance to earn cash as well as great prizes. We’re giving away Apple TVs in October, Apple Watches in November, and iPads and a MacBook Pro in December. See below for additional details on the leaderboard and prize eligibility.
+      p During Swiftoberfest members competed against other iOS designers and developers in real-world challenges for a chance to earn cash as well as great prizes. We gave away Apple TVs in October, Apple Watches in November, and iPads and a MacBook Pro in December. See the Swiftoberfest Leaderboard for the final member standings.
 
       ul.banner-actions
         li
-          //
-            a.learn-link(href='#leaderboard', du-smooth-scroll) See the leaderboard
-          a(ui-sref="challenges({type: 'swiftoberfest'})") View challenges
+          a.learn-link(ui-sref="swiftoberfestLeaderboard") View leaderboard
 
         li(ng-show="!main.loggedInUser")
           a.btn(ui-sref='register') Become a Member
