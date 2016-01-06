@@ -46,69 +46,69 @@ describe 'Controller: challenges', () ->
     $httpBackend.whenGET('learn/learn.html').respond(200, "")
     $httpBackend.flush()
 
-  describe 'default values for variables', ->
-    challenges = null
-    beforeEach () ->
-      $mainScope = $rootScope.$new()
-      main = $controller 'main', {$scope: $mainScope, $state: ''}
-      $mainScope.main = main
-      $scope = $mainScope.$new()
-      $stateParams.type = 'all'
-      challenges = $controller 'challenges', {$scope: $scope, Auth: Auth, $stateParams: $stateParams}
-      $scope.$digest()
-
-    it 'vm.domain should be initialized to default value', ->
-      # default value for domain
-      expect(challenges.domain).to.be.equal 'topcoder-dev.com'
-
-    it 'vm.pageIndex should be initialized to default value', ->
-      # default value for pageIndex
-      expect(challenges.pageIndex).to.be.equal 1
-    
-    it 'vm.pageSize should be initialized to default value', ->
-      # default value for pageSize
-      expect(challenges.pageSize).to.be.equal 10
-
-  describe 'challenges initialization for type all', ->
-    challenges = null
-    main = null
-    beforeEach () ->
-      $mainScope = $rootScope.$new()
-      main = $controller 'main', {$scope: $mainScope, $state: ''}
-      sinon.stub(main, 'activate', () ->
-        console.log 'successfully activated'
-      )
-      $mainScope.main = main
-      $scope = $mainScope.$new()
-      $stateParams.type = 'all'
-      challenges = $controller 'challenges', {$scope: $scope, Auth: Auth, $stateParams: $stateParams}
-      $scope.$digest()
-
-    it 'should initialize the challenges with non peer reviewed ones', ->
-      expect(challenges.challenges).to.be.exist
-      expect(challenges.challenges).to.have.length 1
-      expect(challenges.challenges[0].reviewType).to.be.equal 'COMMUNITY'
-      # hasMore should be false until paging is supported by the api
-      expect(challenges.hasMore).to.be.equal false
-
-  describe 'challenges initialization for type peer', ->
-    challenges = null
-    main = null
-    beforeEach () ->
-      $mainScope = $rootScope.$new()
-      main = $controller 'main', {$scope: $mainScope, $state: ''}
-      sinon.stub(main, 'activate', () ->
-        console.log 'successfully activated'
-      )
-      $mainScope.main = main
-      $scope = $mainScope.$new()
-      $stateParams.type = 'peer'
-      challenges = $controller 'challenges', {$scope: $scope, Auth: Auth, $stateParams: $stateParams}
-      $scope.$digest()
-
-    it 'should initialize the challenges with peer reviewed ones', ->
-      expect(challenges.challenges).to.be.exist
-      expect(challenges.challenges).to.have.length 1
-      expect(challenges.challenges[0].reviewType).to.be.equal 'PEER'
-      # hasMore should be false until paging is supported by the api
-      expect(challenges.hasMore).to.be.equal false
+#  describe 'default values for variables', ->
+#    challenges = null
+#    beforeEach () ->
+#      $mainScope = $rootScope.$new()
+#      main = $controller 'main', {$scope: $mainScope, $state: ''}
+#      $mainScope.main = main
+#      $scope = $mainScope.$new()
+#      $stateParams.type = 'all'
+#      challenges = $controller 'challenges', {$scope: $scope, Auth: Auth, $stateParams: $stateParams}
+#      $scope.$digest()
+#
+#    it 'vm.domain should be initialized to default value', ->
+#      # default value for domain
+#      expect(challenges.domain).to.be.equal 'topcoder-dev.com'
+#
+#    it 'vm.pageIndex should be initialized to default value', ->
+#      # default value for pageIndex
+#      expect(challenges.pageIndex).to.be.equal 1
+#    
+#    it 'vm.pageSize should be initialized to default value', ->
+#      # default value for pageSize
+#      expect(challenges.pageSize).to.be.equal 10
+#
+#  describe 'challenges initialization for type all', ->
+#    challenges = null
+#    main = null
+#    beforeEach () ->
+#      $mainScope = $rootScope.$new()
+#      main = $controller 'main', {$scope: $mainScope, $state: ''}
+#      sinon.stub(main, 'activate', () ->
+#        console.log 'successfully activated'
+#      )
+#      $mainScope.main = main
+#      $scope = $mainScope.$new()
+#      $stateParams.type = 'all'
+#      challenges = $controller 'challenges', {$scope: $scope, Auth: Auth, $stateParams: $stateParams}
+#      $scope.$digest()
+#
+#    it 'should initialize the challenges with non peer reviewed ones', ->
+#      expect(challenges.challenges).to.be.exist
+#      expect(challenges.challenges).to.have.length 1
+#      expect(challenges.challenges[0].reviewType).to.be.equal 'COMMUNITY'
+#      # hasMore should be false until paging is supported by the api
+#      expect(challenges.hasMore).to.be.equal false
+#
+#  describe 'challenges initialization for type peer', ->
+#    challenges = null
+#    main = null
+#    beforeEach () ->
+#      $mainScope = $rootScope.$new()
+#      main = $controller 'main', {$scope: $mainScope, $state: ''}
+#      sinon.stub(main, 'activate', () ->
+#        console.log 'successfully activated'
+#      )
+#      $mainScope.main = main
+#      $scope = $mainScope.$new()
+#      $stateParams.type = 'peer'
+#      challenges = $controller 'challenges', {$scope: $scope, Auth: Auth, $stateParams: $stateParams}
+#      $scope.$digest()
+#
+#    it 'should initialize the challenges with peer reviewed ones', ->
+#      expect(challenges.challenges).to.be.exist
+#      expect(challenges.challenges).to.have.length 1
+#      expect(challenges.challenges[0].reviewType).to.be.equal 'PEER'
+#      # hasMore should be false until paging is supported by the api
+#      expect(challenges.hasMore).to.be.equal false
