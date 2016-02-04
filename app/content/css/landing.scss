@@ -39,7 +39,6 @@
 
     .heading {
       color: $header-gray;
-      font-size: 36x;
       margin-bottom: 20px;
       @media only screen and (max-width: 415px) {
         font-size: 18px;
@@ -76,6 +75,7 @@
 
       .heading {
         margin-top: 32px;
+        font-size: 29px;
         color: #565859;
         @media only screen and (max-width: 675px) {
           font-size: 29px;
@@ -283,9 +283,66 @@
     }
   }
 
+  .tco-section {
+    background: rgba(61,60,60,0.95);
+    @include myriad-pro-light;
+    color: #fff;
+    padding-bottom: 69px;
+
+    h1.section-header {
+      color: #fff;
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+
+    img {
+      float: right;
+      margin-right: 90px;
+      @media (max-width: 750px) {
+        display: none;
+      }
+    }
+
+    .row p {
+      font-size: 18px;
+      line-height: 26px;
+      max-width: 550px;
+      margin-left: 90px;
+      float: left;
+      @media (max-width: 1000px) {
+        max-width: 450px;
+      }
+      @media (max-width: 900px) {
+        max-width: 300px;
+      }
+      @media (max-width: 750px) {
+        text-align: center;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+      }
+    }
+
+    .section-actions {
+      margin-top: 50px;
+      margin-left: 90px;
+      float: left;
+      @media (max-width: 900px) {
+        float: right;
+        margin-right: 100px;
+      }
+      @media (max-width: 750px) {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+    }
+  }
+
   .challenges-section {
     background-color: #f0f0f0;
-    margin-top: 7px;
     padding-top: 5px;
     padding-bottom: 40px;
 
@@ -650,5 +707,11 @@
       padding-left: 30px;
       padding-right: 30px;
     }
+  }
+}
+
+learn-section {
+  .subhed {
+    margin-top: 6px;
   }
 }

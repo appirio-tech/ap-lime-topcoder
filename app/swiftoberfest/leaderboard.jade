@@ -1,0 +1,51 @@
+.swiftoberfest-leaderboard
+  .know-standings
+    section.container
+
+      .row
+        .col-xs-12.col-md-6.col-md-push-6.content-col.coming-soon.ios-ready-badge
+
+          h1.section-header Swift / iOS Ready! Badge Sweepstakes
+
+          p iOS Community members who earned their Swift/iOS Ready! badge during Swiftoberfest were eligible for our Swift/iOS Ready Sweepstakes. Congratulations to members [muzehyun], [vipermuffin], [tomnaz], [martomi], [CodeStage], and [Josher8] for winning $99 USD to reimburse them for their Apple Developer Program annual fee!<br><br>Do you have your badge? If you haven't earned it yet, step up and prove you have what it takes by registering for the current Show Your Skills challenge.
+
+          ul.section-actions
+            li
+              a(ui-sref="challenges({type: 'peer'})") View challenges
+
+      .row.leaderboard-top
+        .col-xs-12.col-md-6.col-md-push-6.content-col.no-image
+
+          h1.section-header#leaderboard Swiftoberfest Leaderboard
+
+          p During Swiftoberfest, iOS Community members who competed in real-world Swiftoberfest challenges had a chance to earn Swiftoberfest leaderboard points. In addition to any cash earnings, members who passed review and finished in the top 10 places for any given challenge earned leaderboard points. The first place finisher received 100 points, second place received 90 points, and so on down to 10 points for 10th place and beyond. The more challenges members competed in, and the more entries they had that passed review, the more leaderboard points they earned.
+
+          p Swiftoberfest October Leaderboard Apple TV winners: [rckw], [seriyvolk83], [charlie09], [chekspir], [f0rc0d3r], [teevics], [qualitycore], [omer77], and [petetebe].
+
+          p Swiftoberfest November Leaderboard Apple Watch winners: [seriyvolk83], [rckw], and [muzehyun].
+
+          p Swiftoberfest December Leaderboard Apple iPad winners: [seriyvolk83], [rckw], and [N1k1tung].
+
+          p Overall Swiftoberfest Leaderboard Macbook Pro winner: [seriyvolk83].
+
+          ul.section-actions
+            li(ng-show="!main.loggedInUser")
+              a.btn(ui-sref="register") Become a Member
+
+      .row.leaderboard-container
+        .col-xs-12.col-md-6.content-col.no-image.leaderboard-table(ng-hide="vm.loadingLeaderboard")
+          .row.section-header
+            .col-xs-6.col-md-3.leaderboard-months(ng-class="{'active': vm.isLeaderboardMonth('overall')}",ng-click="vm.changeLeaderboardMonth('overall')") Overall
+            .col-xs-6.col-md-3.leaderboard-months(ng-class="{'active': vm.isLeaderboardMonth('october')}",ng-click="vm.changeLeaderboardMonth('october')") October
+            .col-xs-6.col-md-3.leaderboard-months(ng-class="{'active': vm.isLeaderboardMonth('november')}",ng-click="vm.changeLeaderboardMonth('november')") November
+            .col-xs-6.col-md-3.leaderboard-months(ng-class="{'active': vm.isLeaderboardMonth('december')}",ng-click="vm.changeLeaderboardMonth('december')") December
+
+          table.table
+            tr
+              th Handle
+              th.text-center Score
+            tr(ng-repeat="entry in vm.scores | orderBy:'score':true")
+              td {{entry.handle}}
+              td.text-center {{entry.score}}
+            tr(ng-show="vm.scores.length === 0")
+              td(colspan="2") No scores available

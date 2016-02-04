@@ -26,10 +26,7 @@ header.header-row(ng-hide="$state.current.name === 'signup'")
                 a(ui-sref="swiftoberfest") About Swiftoberfest
 
               li
-                a(ui-sref="toc") Contest Rules
-
-              li
-                a(ui-sref="rules") Sweepstakes Rules
+                a(ui-sref="swiftoberfestLeaderboard") Swiftoberfest Leaderboard
 
           li.dropdown.clearfix
             a.dropdown-toggle.dropdown-profile.pull-left(data-toggle="dropdown", aria-expanded="false", ng-class="{activeTab: $state.current.name == 'challenges'}")
@@ -43,9 +40,6 @@ header.header-row(ng-hide="$state.current.name === 'signup'")
 
               li
                 a(ui-sref="challenges({type: 'all'})") All iOS Challenges
-
-              li
-                a(ui-sref="challenges({type: 'swiftoberfest'})") Swiftoberfest Challenges
 
           li
             a(ui-sref="learn", ng-class="{activeTab: $state.current.name == 'learn'}") Learn
