@@ -283,7 +283,7 @@
     }
   }
 
-  .tco-section {
+  .tco-section, .community-spotlight {
     background: rgba(61,60,60,0.95);
     @include myriad-pro-light;
     color: #fff;
@@ -300,6 +300,9 @@
       margin-right: 90px;
       @media (max-width: 750px) {
         display: none;
+      }
+      &.diving {
+        height: 220px;
       }
     }
 
