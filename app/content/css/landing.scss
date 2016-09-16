@@ -283,7 +283,7 @@
     }
   }
 
-  .tco-section {
+  .tco-section, .community-spotlight {
     background: rgba(61,60,60,0.95);
     @include myriad-pro-light;
     color: #fff;
@@ -298,8 +298,11 @@
     img {
       float: right;
       margin-right: 90px;
-      @media (max-width: 750px) {
+      @media (max-width: 1200px) {
         display: none;
+      }
+      &.diving {
+        height: 220px;
       }
     }
 
@@ -328,11 +331,7 @@
       margin-top: 50px;
       margin-left: 90px;
       float: left;
-      @media (max-width: 900px) {
-        float: right;
-        margin-right: 100px;
-      }
-      @media (max-width: 750px) {
+      @media (max-width: 800px) {
         float: none;
         margin-left: auto;
         margin-right: auto;
