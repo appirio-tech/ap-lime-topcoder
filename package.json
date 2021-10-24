@@ -2,7 +2,7 @@
   "name": "lime-topcoder",
   "version": "0.0.0",
   "dependencies": {
-    "connect-modrewrite": "^0.8.1"
+    "connect-modrewrite": "^0.10.2"
   },
   "repository": {},
   "devDependencies": {
